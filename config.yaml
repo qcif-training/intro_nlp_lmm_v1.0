@@ -11,10 +11,10 @@
 carpentry: 'incubator'
 
 # Overall title for pages.
-title: 'Lesson Title' # FIXME
+title: 'Introduction to Natural Language Processing for Research' 
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: ~ # FIXME
+created: ~ 2024-05-10
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, data, lesson, The Carpentries' # FIXME
@@ -27,13 +27,13 @@ life_cycle: 'pre-alpha' # FIXME
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/carpentries/workbench-template-md' # FIXME
+source: 'https://github.com/qcif-training/intro_nlp_lmm_v1.0/' 
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org' # FIXME
+contact: 'training@qcif.edu.au' 
 
 # Navigation ------------------------------------------------
 #
@@ -59,7 +59,14 @@ contact: 'team@carpentries.org' # FIXME
 
 # Order of episodes in your lesson
 episodes: 
-- introduction.md
+- 01-introduction.md
+- 02-text-preprocessing.md
+- 03-text-analysis.md
+- 04-word-embedding.md
+- 05-transformers.md
+- 06-llms.md
+- 07-domain-specific-llms.md
+- 08-conclusion-final-project.md
 
 # Information for Learners
 learners: 
