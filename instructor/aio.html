@@ -578,7 +578,7 @@ need to train a Deep Learning model?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Unfortunately, this question is not easy to answer. It depends, among
 other things, on the complexity of the task (which you often do not know
@@ -738,7 +738,7 @@ Keras has a solution: <a href="https://keras.io/api/data_loading/image/" class="
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>WANT TO KNOW MORE: Python image libraries</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Two of the most commonly used libraries for image representation and
 manipulation are NumPy and Pillow (PIL). Additionally, when working with
@@ -882,7 +882,7 @@ Mean pixel value  0.0</code></pre>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>WANT TO KNOW MORE: Why Normalize?</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>ChatGPT</p>
 <p>Normalizing the RGB values to be between 0 and 1 is a common
@@ -1145,7 +1145,7 @@ dataset<a class="anchor" aria-label="anchor" href="#challenge-create-a-function-
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1246,7 +1246,7 @@ classes are well balanced.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>A. Training Set</p>
 <div class="codewrapper sourceCode" id="cb14">
@@ -1286,7 +1286,7 @@ Nmber of images in each class:
   <h3 class="accordion-header" id="headingSpoiler3">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>WANT TO KNOW MORE: Data Splitting Techniques</h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>ChatGPT</p>
 <p>Data is typically split into the training, validation, and test data
@@ -2743,16 +2743,17 @@ using transformers.</li>
 </div>
 </div>
 <p>Transformers have revolutionized the field of NLP since their
-introduction by Google team in 2017. Unlike previous models that
+introduction by the Google team in 2017. Unlike previous models that
 processed text sequentially, Transformers use an attention mechanism to
 process all words at once, allowing them to capture context more
-effectively.</p>
-<p>This parallel processing capability enables Transformers to handle
-long-range dependencies and understand the nuances of language better
-than their predecessors.</p>
-<figure><img src="../fig/transformers_1.png" class="figure mx-auto d-block"></figure><div class="section level3">
-<h3 id="introduction-to-artificial-neural-networks">5.1. Introduction to Artificial Neural Networks<a class="anchor" aria-label="anchor" href="#introduction-to-artificial-neural-networks"></a>
-</h3>
+effectively. This parallel processing capability enables Transformers to
+handle long-range dependencies and understand the nuances of language
+better than their predecessors. For now, try to recognize the building
+blocks of the general structure of a transformer</p>
+<figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/7ec8bb01-aa7e-4378-af45-ae28fbe8916b" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
+</figure><section id="introduction-to-artificial-neural-networks"><h2 class="section-heading">5.1. Introduction to Artificial Neural Networks<a class="anchor" aria-label="anchor" href="#introduction-to-artificial-neural-networks"></a>
+</h2>
+<hr class="half-width">
 <p>To understand how Transformers work we also need to learn about
 artificial neural networks (ANNs). Imagine a neural network as a team of
 workers in a factory. Each worker (neuron) has a specific task
@@ -2791,7 +2792,7 @@ do we have?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>(3 { neurons} x 4 { neurons} + 4{ biases}) = 16</p>
 <p>(4 { neurons} x 1 { neurons} + 1{ biases}) = 5</p>
@@ -2853,19 +2854,29 @@ more accurate responses to health-related inquiries.</p>
 </h4>
 <p>Builds a model specifically for a domain, using relevant data from
 the ground up.</p>
+<div id="discussion" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
 </div>
-</div>
-<div class="section level2 Discussion">
-<h2 id="discuss-in-groups-">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups-"></a>
-</h2>
+<div id="discussion" class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion"></a>
+</h3>
+<div class="callout-content">
 <p>Which approach do you think is more computation-intensive? Which is
 more accurate? How are these qualities related? Evaluate the trade-offs
 between fine-tuning and other approaches.</p>
 <figure><img src="../fig/transformers_3.png" class="figure mx-auto d-block"></figure>
 </div>
-<div class="section level2 Discussion">
-<h2 id="discuss-in-groups--1">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--1"></a>
-</h2>
+</div>
+</div>
+<div id="discussion-1" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="discussion-1" class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-1"></a>
+</h3>
+<div class="callout-content">
 <p>What is DSL and why are they useful for research tasks? Think of some
 examples of NLP tasks that require domain-specific LLMs, such as
 literature review, patent analysis, or material discovery. How do
@@ -2873,9 +2884,12 @@ domain-specific LLMs improve the performance and accuracy of these
 tasks?</p>
 <figure><img src="../fig/transformers_4.png" class="figure mx-auto d-block"></figure>
 </div>
-<div class="section level3">
-<h3 id="prompting">7.2. Prompting<a class="anchor" aria-label="anchor" href="#prompting"></a>
-</h3>
+</div>
+</div>
+</div>
+</section><section id="prompting"><h2 class="section-heading">7.2. Prompting<a class="anchor" aria-label="anchor" href="#prompting"></a>
+</h2>
+<hr class="half-width">
 <p>For research applications where highly reliable answers are crucial,
 Prompt Engineering combined with Retrieval-Augmented Generation (RAG) is
 often the most suitable approach. This combination allows for
@@ -2914,7 +2928,7 @@ sources:</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Be careful when fine-tuning a model</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>When fine-tuning a BERT model from Hugging Face, for instance, it is
 essential to approach the process with precision and care.</p>
@@ -2945,17 +2959,28 @@ experimentation and learning.</p>
 </div>
 </div>
 </div>
+<div id="discussion-2" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div class="section level2 Discussion">
-<h2 id="discuss-in-groups--2">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--2"></a>
-</h2>
+<div id="discussion-2" class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-2"></a>
+</h3>
+<div class="callout-content">
 <p>Guess the following architecture belongs to which optimization
 strategy:</p>
 <figure><img src="../fig/transformers_5.png" class="figure mx-auto d-block"></figure><p>Figure. LLMs optimization (source)</p>
 </div>
-<div class="section level2 Discussion">
-<h2 id="discuss-in-groups--3">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--3"></a>
-</h2>
+</div>
+</div>
+<div id="discussion-3" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="discussion-3" class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-3"></a>
+</h3>
+<div class="callout-content">
 <p>What are the challenges and trade-offs of domain-specific LLMs, such
 as data availability, model size, and complexity? Consider some of the
 factors that affect the quality and reliability of domain-specific LLMs,
@@ -2965,16 +2990,25 @@ and the generalization and robustness of the model. How do these factors
 pose problems or difficulties for domain-specific LLMs and how can we
 overcome them?</p>
 </div>
-<div class="section level2 Discussion">
-<h2 id="discuss-in-groups--4">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--4"></a>
-</h2>
-<p>What are some available approaches for creating domain-specific LLMs,
-such as fine-tuning and knowledge distillation? Consider some of the
-main steps and techniques for creating domain-specific LLMs, such as
-selecting a general LLM, collecting and preparing domain-specific data,
-training or fine-tuning the model, and evaluating and deploying the
-model. How do these approaches differ from each other and what are their
-advantages and disadvantages?</p>
+</div>
+</div>
+<div id="discussion-4" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="discussion-4" class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-4"></a>
+</h3>
+<div class="callout-content">
+<p>Teamwork: What are some available approaches for creating
+domain-specific LLMs, such as fine-tuning and knowledge distillation?
+Consider some of the main steps and techniques for creating
+domain-specific LLMs, such as selecting a general LLM, collecting and
+preparing domain-specific data, training or fine-tuning the model, and
+evaluating and deploying the model. How do these approaches differ from
+each other and what are their advantages and disadvantages?</p>
+</div>
+</div>
 </div>
 <div class="section level3">
 <h3 id="example">Example:<a class="anchor" aria-label="anchor" href="#example"></a>
@@ -3067,7 +3101,7 @@ followed the <strong>—</strong> correctly.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Choose a Model: Select a <strong>pre-trained</strong> model from
@@ -3092,7 +3126,7 @@ followed the <strong>examples</strong> correctly.</p></li>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Prompting Quality</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Remember, the quality of the output heavily depends on the quality
 and relevance of the examples you provide. It’s also important to note
@@ -3128,7 +3162,8 @@ significant resources.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</div></section><section id="aio-06-llms"><p>Content from <a href="06-llms.html">Large Language Models</a></p>
+</div>
+</section></section><section id="aio-06-llms"><p>Content from <a href="06-llms.html">Large Language Models</a></p>
 <hr>
 <p>Last updated on 2024-05-10 |
         
@@ -3831,7 +3866,7 @@ sources:</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Be careful when fine-tuning a model</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>When fine-tuning a BERT model from Hugging Face, for instance, it is
 essential to approach the process with precision and care.</p>
@@ -3983,7 +4018,7 @@ followed the <strong>—</strong> correctly.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Choose a Model: Select a <strong>pre-trained</strong> model from
@@ -4008,7 +4043,7 @@ followed the <strong>examples</strong> correctly.</p></li>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Prompting Quality</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>Remember, the quality of the output heavily depends on the quality
 and relevance of the examples you provide. It’s also important to note
