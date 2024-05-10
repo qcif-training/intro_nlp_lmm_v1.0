@@ -37,34 +37,28 @@ Please note that before the workshop, participants should have already a basic k
 
 Google Colab provides a free cloud-based Python environment that facilitates coding directly in your browser, with zero configuration required, easy sharing, and access to different processing units like CPU, GPU, and TPU.
 
-::::::::::::::::::::::::::::::::::::: challenge
+
 ## Setup Your Colab Notebook
 
 1. **Create a Google Account**: If you do not already have a Google account, sign up at *accounts.google.com*.
-2. Access Google Colab: Visit *colab.research.google.com* and sign in with your Google account.
-3. Familiarize Yourself with Colab Notebooks Colab notebooks are just like Jupyter notebooks.
+2. **Access Google Colab**: Visit *colab.research.google.com* and sign in with your Google account.
+3. **Familiarize Yourself** with Colab Notebooks; Colab notebooks are just like Jupyter notebooks.
 4. If you are new to Colab, check out Colab’s introductory guide: [Google Colaboratory](https://colab.google/)
-5. Set Up Your Workspace:
-    **
+5. **Set Up Your Workspace**:
    a. Create a new notebook via ‘File’ > ‘New notebook’.
    b. Rename your notebook to reflect the workshop content, e.g., ‘Introduction_to_NLP_Workshop’.
-   **
-7. Install Required Libraries: At the start of your notebook, use *!pip install* commands to install any required libraries.
+7. **Install Required Libraries**: At the start of your notebook, use *!pip install* commands to install any required libraries.
    For the first part of the workshop:
 
 ```python
 !pip install nltk spacy gensim textblob
 
 ```
-
-
 8. **Mount Google Drive (Optional)**: If you want to access files from your Google Drive, you can mount it using:
-
 ```python
 from google.colab import drive
 drive.mount('/content/drive')
 ```
-
 9. **Upload Datasets**: You can upload datasets directly to your Colab environment or access them from Google Drive.
 
 You can upload your data file either via drag and drop it to the main directory (see the following image) or by clicking on the upload icon on the page (see the screenshot image)
@@ -90,13 +84,9 @@ Click on the link and select the file
 
 ```
 Click on the Runtime menu.
-```
-![Screenshot 2024-05-09 130142](https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/bc1c5418-b288-4546-886d-f9997fae55c1)
-
-
-```
 Select Change Runtime Type.
 ```
+![Screenshot 2024-05-09 130142](https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/bc1c5418-b288-4546-886d-f9997fae55c1)
 
 ```
 Choose GPU from the dropdown menu and click Save.
@@ -111,22 +101,14 @@ You can get to the same setting window through the Runtime small icon on the top
 ```
 ![Screenshot 2024-05-09 130632](https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/419259c2-a070-4fbd-8e10-900e48d861e6)
 
+11. **Save Your Work**: Colab auto-saves your notebooks to Google Drive, but you can also save a copy via ‘File’ > ‘Save a copy in Drive’.
 
-::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::: callout
 
 Please note that these are free resources and we do not have to pay for using them. However, if you are using a paid Colab plan, you can also access premium GPUs like the V100 or A100 by upgrading your notebook’s GPU settings in the Runtime > Change runtime type menu. Additionally, paid plans provide access to high-memory virtual machines and longer runtimes. 
 
 :::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
-
-
-12. **Save Your Work**: Colab auto-saves your notebooks to Google Drive, but you can also save a copy via ‘File’ > ‘Save a copy in Drive’.
-
-
 
 ::::::::::::::::::::::::::::::::::::::::: callout
 
