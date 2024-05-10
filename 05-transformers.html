@@ -368,27 +368,29 @@ process complex patterns and data.</p>
 </figure></div>
 </div>
 </div>
-<div id="challenge1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<div id="challenge" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
-<p>Now let’s move the following text boxes toward their right places in
-the ANN architecture and add the correct label to each one:</p>
-<figure><img src="fig/transformers_2.png" class="figure mx-auto d-block"></figure><p>When we talk about ANNs, we also talk about their parameters. But
-what are parameters?</p>
-<p>Let’s draw a small neural network with 3 layers:</p>
-<p>Input Layer: 3 neurons Hidden Layer: 4 neurons Output Layer: 1
-neuron</p>
-<ul><li>Connect each neuron in the input layer to every neuron in the hidden
+<p>Let’s move the following text boxes toward their right places in the
+ANN architecture and add the correct label to each one:</p>
+<figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/39820eb0-7959-4ed1-bdfc-69131ab1a834" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
+</figure><p>When we talk about ANNs, we also talk about their parameters. But
+what are parameters? Let’s draw a small neural network with 3 following
+layers: x1</p>
+<ul><li>Input Layer: 3 neurons</li>
+<li>Hidden Layer: 4 neurons</li>
+<li>Output Layer: 1 neurons</li>
+</ul><ol style="list-style-type: decimal"><li>Connect each neuron in the input layer to every neuron in the hidden
 layer (next layer). How many connections (weights) do we have?</li>
 <li>Now, add a bias for each neuron in the hidden layer. How many biases
 do we have?</li>
 <li>Repeat the process for the hidden layer to the output layer.</li>
-</ul></div>
+</ol></div>
 </div>
 </div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
@@ -396,12 +398,12 @@ do we have?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p>(3 { neurons} x 4 { neurons} + 4{ biases}) = 16</p>
-<p>(4 { neurons} x 1 { neurons} + 1{ biases}) = 5</p>
-<p>Total parameters for this network: (16 + 5 = 21)</p>
-</div>
+<ul><li>(3 { neurons} x 4 { neurons} + 4{ biases}) = 16</li>
+<li>(4 { neurons} x 1 { neurons} + 1{ biases}) = 5</li>
+<li>Total parameters for this network: (16 + 5 = 21)</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -525,7 +527,7 @@ sources:</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Be careful when fine-tuning a model</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>When fine-tuning a BERT model from Hugging Face, for instance, it is
 essential to approach the process with precision and care.</p>
@@ -667,12 +669,12 @@ prompting:</p>
 <p>In this few-shot example, we provide the model with three
 question-answer pairs before posing a new question. The model uses the
 pattern it learned from the examples to answer the new question.</p>
-<div id="challenge" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+<div id="challenge-1" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <p>To summarize this approach in a few steps, fill in the following
@@ -695,7 +697,7 @@ followed the <strong>—</strong> correctly.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Choose a Model: Select a <strong>pre-trained</strong> model from
 Hugging Face that suits your task.</p></li>
@@ -718,7 +720,7 @@ followed the <strong>examples</strong> correctly.</p></li>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Prompting Quality</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Remember, the quality of the output heavily depends on the quality
 and relevance of the examples you provide. It’s also important to note
