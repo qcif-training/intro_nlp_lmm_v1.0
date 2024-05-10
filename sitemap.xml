@@ -1,75 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/01-introduction.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/01-introduction.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/404.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/02-text-preprocessing.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/CODE_OF_CONDUCT.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/03-text-analysis.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/LICENSE.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/04-word-embedding.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/aio.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/05-transformers.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/images.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/06-llms.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/index.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/07-domain-specific-llms.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/01-introduction.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/08-conclusion-final-project.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/404.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/CODE_OF_CONDUCT.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/LICENSE.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/aio.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/aio.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/images.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/images.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/index.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/index.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/instructor-notes.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/01-introduction.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/introduction.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/02-text-preprocessing.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/key-points.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/03-text-analysis.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/profiles.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/04-word-embedding.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor/reference.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/05-transformers.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/instructor-notes.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/06-llms.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/introduction.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/07-domain-specific-llms.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/key-points.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/08-conclusion-final-project.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/profiles.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/404.html</loc>
   </url>
   <url>
-    <loc>https://carpentries.github.io/workbench-template-md/reference.html</loc>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/CODE_OF_CONDUCT.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/aio.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/images.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/introduction.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/key-points.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/profiles.html</loc>
+  </url>
+  <url>
+    <loc>https://qcif-training.github.io/intro_nlp_lmm_v1.0/reference.html</loc>
   </url>
 </urlset>

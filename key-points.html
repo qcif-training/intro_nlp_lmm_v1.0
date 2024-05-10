@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>Lesson Title: Key Points</title>
+<title>Introduction to Natural Language Processing for Research: Key Points</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="assets/styles.css">
 <script src="assets/scripts.js" type="text/javascript"></script><!-- mathjax --><script type="text/x-mathjax-config">
@@ -65,7 +65,7 @@
       <img class="small-logo" alt="Carpentries Incubator" src="assets/images/incubator-logo-sm.svg">
 </div>
     <div class="lesson-title-md">
-      Lesson Title
+      Introduction to Natural Language Processing for Research
     </div>
     <div class="search-icon-sm">
       <!-- TODO: do not show until we have search
@@ -76,7 +76,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 <li class="nav-item">
           <span class="lesson-title">
-            Lesson Title
+            Introduction to Natural Language Processing for Research
           </span>
         </li>
         <li class="nav-item">
@@ -112,7 +112,7 @@
   </div>
 <!--/div.container-fluid -->
 </nav><div class="col-md-12 mobile-title">
-  Lesson Title
+  Introduction to Natural Language Processing for Research
 </div>
 
 <aside class="col-md-12 lesson-progress"><div style="width: %" class="percentage">
@@ -185,7 +185,91 @@
 <div class="accordion accordion-flush" id="accordionFlush2">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-heading2">
-        <a href="introduction.html">1. Using Markdown</a>
+        <a href="01-introduction.html">1. Introduction to Natural Language Processing</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush3">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading3">
+        <a href="02-text-preprocessing.html">2. Introduction to Text Preprocessing</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush4">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading4">
+        <a href="03-text-analysis.html">3. Text Analysis</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush5">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading5">
+        <a href="04-word-embedding.html">4. Word Embedding</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush6">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading6">
+        <a href="05-transformers.html">5. Transformers for Natural Language Processing</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush7">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading7">
+        <a href="06-llms.html">6. Large Language Models</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush8">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading8">
+        <a href="07-domain-specific-llms.html">7. Domain-Specific LLMs</a>
+    </div>
+<!--/div.accordion-header-->
+        
+  </div>
+<!--/div.accordion-item-->
+</div>
+<!--/div.accordion-flush-->
+
+<div class="accordion accordion-flush" id="accordionFlush9">
+  <div class="accordion-item">
+    <div class="accordion-header" id="flush-heading9">
+        <a href="08-conclusion-final-project.html">8. Wrap-up and Final Project</a>
     </div>
 <!--/div.accordion-header-->
         
@@ -248,18 +332,103 @@
     <main id="main-content" class="main-content"><div class="container lesson-content">
         
         
-<section id="introduction"><h2 class="section-heading"><a href="introduction.html">Using Markdown</a></h2>
+<section id="01-introduction"><h2 class="section-heading"><a href="01-introduction.html">Introduction to Natural Language Processing</a></h2>
 <hr class="half-width">
 <ul>
-<li>Use <code>.md</code> files for episodes when you want static
-content</li>
-<li>Use <code>.Rmd</code> files for episodes when you need to generate
-output</li>
-<li>Run <code>sandpaper::check_lesson()</code> to identify any issues
-with your lesson</li>
-<li>Run <code>sandpaper::build_lesson()</code> to preview your lesson
-locally</li>
-</ul></section>
+<li>Machine learning is the process where computers learn to recognise
+patterns of data.</li>
+<li>Deep learning is a subset of machine learning, which is a subset of
+artificial intelligence.</li>
+<li>Convolutional neural networks are well suited for image
+classification.</li>
+<li>To use Deep Learning effectively we follow a workflow of: defining
+the problem, identifying inputs and outputs, preparing data, choosing
+the type of network, training the model, tuning hyperparameters, and
+measuring performance before we can classify data.</li>
+</ul></section><section id="02-text-preprocessing"><h2 class="section-heading"><a href="02-text-preprocessing.html">Introduction to Text Preprocessing</a></h2>
+<hr class="half-width">
+<ul>
+<li>Image datasets can be found online or created uniquely for your
+research question.</li>
+<li>Images consist of pixels arranged in a particular order.</li>
+<li>Image data is usually preprocessed before use in a CNN for
+efficiency, consistency, and robustness.</li>
+<li>Input data generally consists of three sets: a training set used to
+fit model parameters; a validation set used to evaluate the model fit on
+training data; a test set used to evaluate the final model
+performance.</li>
+</ul></section><section id="03-text-analysis"><h2 class="section-heading"><a href="03-text-analysis.html">Text Analysis</a></h2>
+<hr class="half-width">
+<ul>
+<li>Artificial neural networks (ANN) are a machine learning technique
+based on a model inspired by groups of neurons in the brain.</li>
+<li>Convolution neural networks (CNN) are a type of ANN designed for
+image classification and object detection.</li>
+<li>The number of filters corresponds to the number of distinct features
+the layer is learning to recognise whereas the kernel size determines
+the level of features being captured.</li>
+<li>A CNN can consist of many types of layers including convolutional,
+pooling, flatten, and dense (fully connected) layers</li>
+<li>Convolutional layers are responsible for learning features from the
+input data.</li>
+<li>Pooling layers are often used to reduce the spatial dimensions of
+the data.</li>
+<li>The flatten layer is used to convert the multi-dimensional output of
+the convolutional and pooling layers into a flat vector.</li>
+<li>Dense layers are responsible for combining features learned by the
+previous layers to perform the final classification.</li>
+</ul></section><section id="04-word-embedding"><h2 class="section-heading"><a href="04-word-embedding.html">Word Embedding</a></h2>
+<hr class="half-width">
+<ul>
+<li>Tokenization is crucial for converting text into a format usable by
+machine learning models.</li>
+<li>BoW and TF-IDF are fundamental techniques for feature extraction in
+NLP.</li>
+<li>Word2Vec and GloVE generate embeddings that encapsulate word
+meanings based on context and co-occurrence, respectively.</li>
+<li>Understanding these concepts is essential for building effective NLP
+models that can interpret and process human language.</li>
+</ul></section><section id="05-transformers"><h2 class="section-heading"><a href="05-transformers.html">Transformers for Natural Language Processing</a></h2>
+<hr class="half-width">
+<ul>
+<li>Domain-specific LLMs are essential for tasks that require
+specialized knowledge.</li>
+<li>Prompt engineering, RAG, fine-tuning, and training from scratch are
+viable approaches to create DSLs.</li>
+<li>A mixed prompting-RAG approach is often preferred for its balance
+between performance and resource efficiency.</li>
+<li>Training from scratch offers the highest quality output but requires
+significant resources.</li>
+</ul></section><section id="06-llms"><h2 class="section-heading"><a href="06-llms.html">Large Language Models</a></h2>
+<hr class="half-width">
+<ul>
+<li>Domain-specific LLMs are essential for tasks that require
+specialized knowledge.</li>
+<li>Prompt engineering, RAG, fine-tuning, and training from scratch are
+viable approaches to create DSLs.</li>
+<li>A mixed prompting-RAG approach is often preferred for its balance
+between performance and resource efficiency.</li>
+<li>Training from scratch offers the highest quality output but requires
+significant resources.</li>
+</ul></section><section id="07-domain-specific-llms"><h2 class="section-heading"><a href="07-domain-specific-llms.html">Domain-Specific LLMs</a></h2>
+<hr class="half-width">
+<ul>
+<li>Domain-specific LLMs are essential for tasks that require
+specialized knowledge.</li>
+<li>Prompt engineering, RAG, fine-tuning, and training from scratch are
+viable approaches to create DSLs.</li>
+<li>A mixed prompting-RAG approach is often preferred for its balance
+between performance and resource efficiency.</li>
+<li>Training from scratch offers the highest quality output but requires
+significant resources.</li>
+</ul></section><section id="08-conclusion-final-project"><h2 class="section-heading"><a href="08-conclusion-final-project.html">Wrap-up and Final Project</a></h2>
+<hr class="half-width">
+<p>• Various NLP techniques from preprocessing to advanced LLMs are
+reviewed. • NLPs’ transformative potential provides real-world
+applications in diverse fields. • Few-shot learning can enhance the
+performance of LLMs for specific field of research. • Valuable resources
+are highlighted for continued learning and exploration in the field of
+NLP.</p></section>
 </div>
     </main>
 </div>
@@ -272,12 +441,12 @@ locally</li>
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
         
-        <a href="https://github.com/carpentries/workbench-template-md/edit/main/README.md" class="external-link">Edit on GitHub</a>
+        <a href="https://github.com/qcif-training/intro_nlp_lmm_v1.0/edit/main/README.md" class="external-link">Edit on GitHub</a>
         
 	
-        | <a href="https://github.com/carpentries/workbench-template-md/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
-        | <a href="https://github.com/carpentries/workbench-template-md/" class="external-link">Source</a></p>
-				<p><a href="https://github.com/carpentries/workbench-template-md/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
+        | <a href="https://github.com/qcif-training/intro_nlp_lmm_v1.0/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
+        | <a href="https://github.com/qcif-training/intro_nlp_lmm_v1.0/" class="external-link">Source</a></p>
+				<p><a href="https://github.com/qcif-training/intro_nlp_lmm_v1.0/blob/main/CITATION.cff" class="external-link">Cite</a> | <a href="mailto:training@qcif.edu.au">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
         
@@ -297,15 +466,15 @@ locally</li>
     {
   "@context": "https://schema.org",
   "@type": "TrainingMaterial",
-  "@id": "https://carpentries.github.io/workbench-template-md/key-points.html",
+  "@id": "https://qcif-training.github.io/intro_nlp_lmm_v1.0/key-points.html",
   "inLanguage": "en",
   "dct:conformsTo": "https://bioschemas.org/profiles/TrainingMaterial/1.0-RELEASE",
   "description": "A Carpentries Lesson teaching foundational data and coding skills to researchers worldwide",
   "keywords": "software, data, lesson, The Carpentries",
   "name": "Key Points",
   "creativeWorkStatus": "active",
-  "url": "https://carpentries.github.io/workbench-template-md/key-points.html",
-  "identifier": "https://carpentries.github.io/workbench-template-md/key-points.html",
+  "url": "https://qcif-training.github.io/intro_nlp_lmm_v1.0/key-points.html",
+  "identifier": "https://qcif-training.github.io/intro_nlp_lmm_v1.0/key-points.html",
   "dateCreated": "2024-05-10",
   "dateModified": "2024-05-10",
   "datePublished": "2024-05-10"
