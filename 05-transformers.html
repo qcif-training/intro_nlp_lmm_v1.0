@@ -324,19 +324,20 @@ using transformers.</li>
 introduction by Google team in 2017. Unlike previous models that
 processed text sequentially, Transformers use an attention mechanism to
 process all words at once, allowing them to capture context more
-effectively. This parallel processing capability enables Transformers to
-handle long-range dependencies and understand the nuances of language
-better than their predecessors.</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/c6b4d726-7cfc-4545-b9cc-c045f55f2ce6" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure><div class="section level3">
+effectively.</p>
+<p>This parallel processing capability enables Transformers to handle
+long-range dependencies and understand the nuances of language better
+than their predecessors.</p>
+<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/c6b4d726-7cfc-4545-b9cc-c045f55f2ce6" class="figure mx-auto d-block"></figure><div class="section level3">
 <h3 id="introduction-to-artificial-neural-networks">5.1. Introduction to Artificial Neural Networks<a class="anchor" aria-label="anchor" href="#introduction-to-artificial-neural-networks"></a></h3>
 <p>To understand how Transformers work we also need to learn about
 artificial neural networks (ANNs). Imagine a neural network as a team of
 workers in a factory. Each worker (neuron) has a specific task
 (processing information), and they pass their work along to the next
-person in line until the final product (output) is created. Just like a
-well-organized assembly line, a neural network processes information in
-stages, with each neuron contributing to the final result.</p>
+person in line until the final product (output) is created.</p>
+<p>Just like a well-organized assembly line, a neural network processes
+information in stages, with each neuron contributing to the final
+result.</p>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -347,17 +348,17 @@ stages, with each neuron contributing to the final result.</p>
 <div class="callout-content">
 <p>Now let’s move the following text boxes toward their right places in
 the ANN architecture and add the correct label to each one:</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/01097431-d114-48ce-9de5-552cb0c9596f" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure><p>When we talk about ANNs, we also talk about their parameters. But
-what are parameters? Let’s draw a small neural network with 3 following
-layers: x1 Input Layer: 3 neurons Hidden Layer: 4 neurons Output Layer:
-1 neurons</p>
-<p>• Connect each neuron in the input layer to every neuron in the
-hidden layer (next layer). How many connections (weights) do we have? •
-Now, add a bias for each neuron in the hidden layer. How many biases do
-we have? • Repeat the process for the hidden layer to the output
-layer.</p>
-</div>
+<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/01097431-d114-48ce-9de5-552cb0c9596f" class="figure mx-auto d-block"></figure><p>When we talk about ANNs, we also talk about their parameters. But
+what are parameters?</p>
+<p>Let’s draw a small neural network with 3 following layers:</p>
+<p>Input Layer: 3 neurons Hidden Layer: 4 neurons Output Layer: 1
+neurons</p>
+<ul><li>Connect each neuron in the input layer to every neuron in the hidden
+layer (next layer). How many connections (weights) do we have?</li>
+<li>Now, add a bias for each neuron in the hidden layer. How many biases
+do we have?</li>
+<li>Repeat the process for the hidden layer to the output layer.</li>
+</ul></div>
 </div>
 </div>
 <div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
@@ -367,9 +368,9 @@ layer.</p>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
-<p>(3 { neurons} x 4 { neurons} + 4{ biases}) = 16 (4 { neurons} x 1 {
-neurons} + 1{ biases}) = 5 Total parameters for this network: (16 + 5 =
-21)</p>
+<p>(3 { neurons} x 4 { neurons} + 4{ biases}) = 16</p>
+<p>(4 { neurons} x 1 { neurons} + 1{ biases}) = 5</p>
+<p>Total parameters for this network: (16 + 5 = 21)</p>
 </div>
 </div>
 </div>
@@ -377,41 +378,47 @@ neurons} + 1{ biases}) = 5 Total parameters for this network: (16 + 5 =
 <div class="section level4">
 <h4 id="prompt-optimization">1. Prompt Optimization:<a class="anchor" aria-label="anchor" href="#prompt-optimization"></a></h4>
 <p>To elicit specific and accurate responses from LLMs by designing
-prompts strategically. Zero-shot Prompting: This is the simplest form of
-prompting where the LLM is given a task or question without any context
-or examples. It relies on the LLM’s pre-existing knowledge to generate a
-response. Example: “What is the capital of France?” The LLM would
-respond with “Paris” based on its internal knowledge. Few-shot
-Prompting: In this technique, the LLM is provided with a few examples to
-demonstrate the expected response format or content. Example: To
-determine sentiment, you might provide examples like “I love sunny days.
-(+1)” and “I hate traffic. (-1)” before asking the LLM to analyze a new
-sentence.</p>
+prompts strategically.</p>
+<p><em>Zero-shot Prompting</em>: This is the simplest form of prompting
+where the LLM is given a task or question without any context or
+examples. It relies on the LLM’s pre-existing knowledge to generate a
+response.</p>
+<p>Example: “What is the capital of France?” The LLM would respond with
+“Paris” based on its internal knowledge.</p>
+<p><em>Few-shot Prompting</em>: In this technique, the LLM is provided
+with a few examples to demonstrate the expected response format or
+content.</p>
+<p>Example: To determine sentiment, you might provide examples like “I
+love sunny days. (+1)” and “I hate traffic. (-1)” before asking the LLM
+to analyze a new sentence.</p>
 </div>
 <div class="section level4">
 <h4 id="retrieval-augmented-generation-rag">2. Retrieval Augmented Generation (RAG):<a class="anchor" aria-label="anchor" href="#retrieval-augmented-generation-rag"></a></h4>
 <p>To supplement the LLM’s generative capabilities with information
-retrieved from external databases or documents. Retrieval: The LLM
-queries a database to find relevant information that can inform its
-response. Example: If asked about recent scientific discoveries, the LLM
-might retrieve articles or papers on the topic. Generation: After
-retrieving the information, the LLM integrates it into a coherent
-response. Example: Using the retrieved scientific articles, the LLM
-could generate a summary of the latest findings in a particular
-field.</p>
+retrieved from external databases or documents.</p>
+<p><em>Retrieval</em>: The LLM queries a database to find relevant
+information that can inform its response.</p>
+<p>Example: If asked about recent scientific discoveries, the LLM might
+retrieve articles or papers on the topic.</p>
+<p><em>Generation</em>: After retrieving the information, the LLM
+integrates it into a coherent response.</p>
+<p>Example: Using the retrieved scientific articles, the LLM could
+generate a summary of the latest findings in a particular field.</p>
 </div>
 <div class="section level4">
 <h4 id="fine-tuning">3. Fine-Tuning:<a class="anchor" aria-label="anchor" href="#fine-tuning"></a></h4>
 <p>To adapt a general-purpose LLM to excel at a specific task or within
-a particular domain. Language Modeling Task Fine-Tuning: This involves
-training the LLM on a large corpus of text to improve its ability to
-predict the next word or phrase in a sentence. Example: An LLM
-fine-tuned on legal documents would become better at generating text
-that resembles legal writing. Supervised Q&amp;A Fine-Tuning: Here, the
-LLM is trained on a dataset of question-answer pairs to enhance its
-performance on Q&amp;A tasks. Example: An LLM fine-tuned with medical
-Q&amp;A pairs would provide more accurate responses to health-related
-inquiries.</p>
+a particular domain.</p>
+<p><em>Language Modeling Task Fine-Tuning</em>: This involves training
+the LLM on a large corpus of text to improve its ability to predict the
+next word or phrase in a sentence.</p>
+<p>Example: An LLM fine-tuned on legal documents would become better at
+generating text that resembles legal writing.</p>
+<p><em>Supervised Q&amp;A Fine-Tuning</em>: Here, the LLM is trained on
+a dataset of question-answer pairs to enhance its performance on Q&amp;A
+tasks.</p>
+<p>Example: An LLM fine-tuned with medical Q&amp;A pairs would provide
+more accurate responses to health-related inquiries.</p>
 </div>
 <div class="section level4">
 <h4 id="training-from-scratch">4. Training from Scratch:<a class="anchor" aria-label="anchor" href="#training-from-scratch"></a></h4>
@@ -424,8 +431,7 @@ the ground up.</p>
 <p>Which approach do you think is more computation-intensive? Which is
 more accurate? How are these qualities related? Evaluate the trade-offs
 between fine-tuning and other approaches.</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/7526be09-de4d-4c59-b6df-93f0d2dca9d7" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure></div>
+<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/7526be09-de4d-4c59-b6df-93f0d2dca9d7" class="figure mx-auto d-block"></figure></div>
 <div class="section level2 Discussion">
 <h2 id="discuss-in-groups--1">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--1"></a></h2>
 <p>What is DSL and why are they useful for research tasks? Think of some
@@ -433,8 +439,7 @@ examples of NLP tasks that require domain-specific LLMs, such as
 literature review, patent analysis, or material discovery. How do
 domain-specific LLMs improve the performance and accuracy of these
 tasks?</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/6e5a6a74-eaa2-430d-b5b5-8198716fb4f7" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure></div>
+<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/6e5a6a74-eaa2-430d-b5b5-8198716fb4f7" class="figure mx-auto d-block"></figure></div>
 <div class="section level3">
 <h3 id="prompting">7.2. Prompting<a class="anchor" aria-label="anchor" href="#prompting"></a></h3>
 <p>For research applications where highly reliable answers are crucial,
@@ -478,26 +483,30 @@ sources:</p>
 <div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>When fine-tuning a BERT model from Hugging Face, for instance, it is
-essential to approach the process with precision and care. Begin by
-thoroughly understanding <strong>BERT’s architecture</strong> and the
-specific task at hand to select the most suitable model variant and
-hyperparameters. <strong>Prepare your dataset</strong> meticulously,
-ensuring it is clean, well-represented, and split correctly to avoid
-<strong>data leakage and overfitting</strong>. Hyperparameter selection,
-such as learning rates and batch sizes, should be made with
-consideration, and <strong>regularization</strong> techniques like
-dropout should be employed to enhance the model’s ability to generalize.
-<strong>Evaluate</strong> the model’s performance using appropriate
+essential to approach the process with precision and care.</p>
+<p>Begin by thoroughly understanding <strong>BERT’s
+architecture</strong> and the specific task at hand to select the most
+suitable model variant and hyperparameters.</p>
+<p><strong>Prepare your dataset</strong> meticulously, ensuring it is
+clean, well-represented, and split correctly to avoid <strong>data
+leakage and overfitting</strong>.</p>
+<p>Hyperparameter selection, such as learning rates and batch sizes,
+should be made with consideration, and <strong>regularization</strong>
+techniques like dropout should be employed to enhance the model’s
+ability to generalize.</p>
+<p><strong>Evaluate</strong> the model’s performance using appropriate
 metrics and address any class imbalances with weighted loss functions or
-similar strategies. Save checkpoints to preserve progress and document
-every step of the fine-tuning process for transparency and
-reproducibility. <strong>Ethical considerations</strong> are paramount;
-strive for a model that is fair and unbiased. Ensure compliance with
-data protection regulations, especially when handling sensitive
-information. Lastly, manage <strong>computational resources</strong>
-wisely and engage with the Hugging Face community for additional
-support. Fine-tuning is iterative, and success often comes through
-continuous experimentation and learning.</p>
+similar strategies.</p>
+<p>Save checkpoints to preserve progress and document every step of the
+fine-tuning process for transparency and reproducibility.</p>
+<p><strong>Ethical considerations</strong> are paramount; strive for a
+model that is fair and unbiased.</p>
+<p>Ensure compliance with data protection regulations, especially when
+handling sensitive information.</p>
+<p>Lastly, manage <strong>computational resources</strong> wisely and
+engage with the Hugging Face community for additional support.
+Fine-tuning is iterative, and success often comes through continuous
+experimentation and learning.</p>
 </div>
 </div>
 </div>
@@ -507,8 +516,7 @@ continuous experimentation and learning.</p>
 <h2 id="discuss-in-groups--2">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--2"></a></h2>
 <p>Guess the following architecture belongs to which optimization
 strategy:</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/9abb1cc9-9b10-4636-994a-ff55b017349c" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure><p>Figure. LLMs optimization (source)</p>
+<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/9abb1cc9-9b10-4636-994a-ff55b017349c" class="figure mx-auto d-block"></figure><p>Figure. LLMs optimization (source)</p>
 </div>
 <div class="section level2 Discussion">
 <h2 id="discuss-in-groups--3">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--3"></a></h2>
