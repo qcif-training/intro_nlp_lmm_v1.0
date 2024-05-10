@@ -52,19 +52,9 @@ Add your explanations below:
 ![](fig/llms_2.png)
 
 
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-::::::::::::::::::::::::::::::::::::: Discussion
-
-## Discuss in groups. 
-
-What is DSL and why are they useful for research tasks? Think of some examples of NLP tasks that require domain-specific LLMs, such as literature review, patent analysis, or material discovery. How do domain-specific LLMs improve the performance and accuracy of these tasks?
-
-![](fig/llms_3.png)
-
 :::::::::::::::::::::::: spoiler 
+
+## Discussion ideas
 
 1. Transformer Architecture: A neural network design that uses self-attention mechanisms to weigh the influence of different parts of the input data.
    
@@ -83,6 +73,17 @@ Thus, the completed graph will be:
 ![](fig/llms_4.png)
 
 :::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+::::::::::::::::::::::::::::::::::::: Discussion
+
+## Discuss in groups. 
+
+What is DSL and why are they useful for research tasks? Think of some examples of NLP tasks that require domain-specific LLMs, such as literature review, patent analysis, or material discovery. How do domain-specific LLMs improve the performance and accuracy of these tasks?
+
+![](fig/llms_3.png)
+
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
