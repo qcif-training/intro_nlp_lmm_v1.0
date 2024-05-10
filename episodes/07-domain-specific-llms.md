@@ -1,5 +1,5 @@
 ---
-title: '7. Domain-Specific LLMs'
+title: 'Domain-Specific LLMs'
 teaching: 10
 exercises: 2
 ---
