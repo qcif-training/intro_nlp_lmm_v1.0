@@ -398,10 +398,6 @@ Python, this workshop is perfect for those eager to apply NLP in diverse
 fields. It’s an excellent opportunity for researchers seeking to augment
 their work, develop innovative tools, or deepen their comprehension of
 language processing technologies.</p>
-<p>We emphasize collaborative learning and encourage participants to
-engage with peers throughout the workshop. Activities are designed for
-group interaction, but individual learners will also find the content
-enriching and manageable.</p>
 <div class="section level3">
 <h3 id="collaborative-learning">Collaborative Learning<a class="anchor" aria-label="anchor" href="#collaborative-learning"></a></h3>
 <p>We emphasize collaborative learning and encourage participants to
@@ -428,7 +424,7 @@ tasks.</li>
 <h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
 </h3>
 <div class="callout-content">
-<p>Please note that Before the workshop, participants should have
+<p>Please note that before the workshop, participants should have
 already a basic knowledge of:</p>
 <ul><li>Python programming, and completed <a href="https://swcarpentry.github.io/python-novice-gapminder/" class="external-link">Plotting
 and Programming in Python</a> and/or <a href="https://swcarpentry.github.io/python-novice-inflammation/" class="external-link">Programming
@@ -446,9 +442,9 @@ with Python</a>
 facilitates coding directly in your browser, with zero configuration
 required, easy sharing, and access to different processing units like
 CPU, GPU, and TPU.</p>
-<div id="setup-your-colab-notebook" class="callout challenge">
+<div id="setup-your-colab-notebook" class="callout discussion">
 <div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
+<i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="setup-your-colab-notebook" class="callout-inner">
 <h3 class="callout-title">Setup Your Colab Notebook<a class="anchor" aria-label="anchor" href="#setup-your-colab-notebook"></a>
@@ -463,79 +459,49 @@ sign in with your Google account.</li>
 like Jupyter notebooks.</li>
 <li>If you are new to Colab, check out Colab’s introductory guide: <a href="https://colab.google/" class="external-link">Google Colaboratory</a>
 </li>
-<li>Set Up Your Workspace: <strong>a. Create a new notebook via ‘File’
-&gt; ‘New notebook’.</strong> <strong>b. Rename your notebook to reflect
-the workshop content, e.g.,
-‘Introduction_to_NLP_Workshop’.</strong>
-</li>
+<li>Set Up Your Workspace: **
+<ol style="list-style-type: lower-alpha"><li>Create a new notebook via ‘File’ &gt; ‘New notebook’.</li>
+<li>Rename your notebook to reflect the workshop content, e.g.,
+‘Introduction_to_NLP_Workshop’. **</li>
+</ol></li>
 <li>Install Required Libraries: At the start of your notebook, use
 <em>!pip install</em> commands to install any required libraries. For
 the first part of the workshop:</li>
-</ol></div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">Installing libraries</h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
-<div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb1">
+</ol><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="op">!</span>pip install nltk spacy gensim textblob</span></code></pre>
 </div>
-</div>
-</div>
-</div>
-</div>
-<ol start="7" style="list-style-type: decimal"><li>
+<ol start="8" style="list-style-type: decimal"><li>
 <strong>Mount Google Drive (Optional)</strong>: If you want to
-access files from your Google Drive, you can mount it using:
-:::::::::::::::::::::::: solution ### Mount Google Drive</li>
+access files from your Google Drive, you can mount it using:</li>
 </ol><div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="im">from</span> google.colab <span class="im">import</span> drive</span>
 <span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>drive.mount(<span class="st">'/content/drive'</span>)</span></code></pre>
 </div>
-<p>::::::::::::::::::::::::::::::::::</p>
-<ol start="8" style="list-style-type: decimal"><li>
+<ol start="9" style="list-style-type: decimal"><li>
 <strong>Upload Datasets</strong>: You can upload datasets directly
 to your Colab environment or access them from Google Drive.</li>
 </ol><p>You can upload your data file either via drag and drop it to the main
 directory (see the following image) or by clicking on the upload icon on
 the page (see the screenshot image)</p>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">Upload Data in Colab</h4>
-</button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
-<div class="accordion-body">
 <p>The main window when you start with a new Colab notebook:</p>
 <figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/d8107b94-412f-4d27-8dc9-af2ee4cf66b1" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
 </figure><pre><code>Drag and Drop</code></pre>
 <figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/ae94ee40-c8e8-4e7a-b539-3664ecdae661" alt="Screenshot 2024-05-09 101655" class="figure mx-auto d-block"><div class="figcaption">Screenshot 2024-05-09 101655</div>
 </figure><pre><code>Click on the link and select the file</code></pre>
 <figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/085e5d5d-0c0b-432f-a8c2-82cdf5e93115" alt="Screenshot 2024-05-09 102308" class="figure mx-auto d-block"><div class="figcaption">Screenshot 2024-05-09 102308</div>
-</figure></div>
-</div>
-</div>
-</div>
-<ol start="10" style="list-style-type: decimal"><li>
+</figure><ol start="10" style="list-style-type: decimal"><li>
 <strong>Changing Hardware Accelerator</strong>: In Google Colab,
 hardware accelerators are dedicated processors that boost computational
 efficiency, facilitating faster execution of operations such as machine
 learning model training, intricate simulations, and large-scale data
 analysis. To learn more about the available free hardware and runtimes
 check out this <a href="https://research.google.com/colaboratory/faq.html#gpu-availability" class="external-link">link</a>.
-We can change the accelerator through the following steps:
-:::::::::::::::::::::::: solution</li>
-</ol><div class="section level3">
-<h3 id="selecting-the-hardware">Selecting the Hardware<a class="anchor" aria-label="anchor" href="#selecting-the-hardware"></a></h3>
-<pre><code>Click on the Runtime menu.</code></pre>
+We can change the accelerator through the following steps:</li>
+</ol><pre><code>Click on the Runtime menu.</code></pre>
 <figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/bc1c5418-b288-4546-886d-f9997fae55c1" alt="Screenshot 2024-05-09 130142" class="figure mx-auto d-block"><div class="figcaption">Screenshot 2024-05-09 130142</div>
 </figure><pre><code>Select Change Runtime Type.</code></pre>
 <pre><code>Choose GPU from the dropdown menu and click Save.</code></pre>
@@ -543,7 +509,9 @@ We can change the accelerator through the following steps:
 </figure><figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/c6ad197c-1641-4c89-8464-20dc268722f0" alt="Screenshot 2024-05-09 130443" class="figure mx-auto d-block"><div class="figcaption">Screenshot 2024-05-09 130443</div>
 </figure><pre><code>You can get to the same setting window through the Runtime small icon on the top right side of the screen.</code></pre>
 <figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/419259c2-a070-4fbd-8e10-900e48d861e6" alt="Screenshot 2024-05-09 130632" class="figure mx-auto d-block"><div class="figcaption">Screenshot 2024-05-09 130632</div>
-</figure><p>::::::::::::::::::::::::::::::::::</p>
+</figure></div>
+</div>
+</div>
 <div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -588,10 +556,10 @@ Notebook</a></p>
 <h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout4"></a>
 </h3>
 <div class="callout-content">
-<p>Callout This workshop is designed to be inclusive and accessible,
-using Google Colab to ensure equitable processing power for all
-participants. Please ensure you have a stable internet connection for
-the duration of the workshop.</p>
+<p>This workshop is designed to be inclusive and accessible, using
+Google Colab to ensure equitable processing power for all participants.
+Please ensure you have a stable internet connection for the duration of
+the workshop.</p>
 </div>
 </div>
 </div>
@@ -599,7 +567,6 @@ the duration of the workshop.</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</div>
 </section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link float-end" href="../instructor/01-introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
