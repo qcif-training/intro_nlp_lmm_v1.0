@@ -21,16 +21,17 @@ exercises: 6
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-![](fig/embedding_1.png)
-
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/c96878f9-4c4a-49d7-9ec8-346d75663b76)
+[source](https://carpentries-incubator.github.io/python-text-analysis/06-lsa/index.html)
 
 ## 4.1.	Introduction to Vector Space & Embeddings:
 
-We have discussed how tokenization works and how it is important in text analysis. For making robust and reliable NLP models we need to extract features from the text by using text embeddings. To understand this concept, we first talk about vector space. 
+We have discussed how tokenization works and how it is important in text analysis, however, this is not the whole story of preprocessing. For conducting robust and reliable text analysis with NLP models, vectorization and embedding are required after tokenization. To understand this concept, we first talk about vector space. 
 
 Vector space models represent text data as vectors, which can be used in various machine learning algorithms. Embeddings are dense vectors that capture the semantic meanings of words based on their context. 
 
-![](fig/embedding_2.png)
+![embedding_2](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/e22fea16-a593-4c75-988b-0ba81588f98b)
+[source](https://www.deeplearning.ai/resources/natural-language-processing/)
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
@@ -85,10 +86,12 @@ In summary, tokenization, the treatment of stop words, and the consideration of 
 
 ::: callout
 
-## Tokenization Vs. Embeddings
-In natural language processing, tokens are transformed into vectors that numerically capture their meanings and relationships within a vocabulary. Initially random, these vectors are refined during training, akin to neural network weights, to better reflect token meanings and associations. 
+## Tokenization Vs. Vectorization Vs. Embedding
 
-This process, known as “embedding,” allows a model to intuitively understand word relationships without explicit programming. Visualizing embeddings reveals a semantic map where tokens cluster with those of similar meanings, illustrating the interconnectedness of language elements. 
+Initially, **tokenization** breaks down text into discrete elements, or tokens, which can include words, phrases, symbols, and even punctuation, each represented by a unique numerical identifier. These tokens are then mapped to **vectors** of real numbers within an n-dimensional space, a process that is part of **embedding**. During model training, these vectors are adjusted to reflect the semantic similarities between tokens, positioning those with similar meanings closer together in the embedding space. This allows the model to grasp the nuances of language and transforms raw text into a format that machine learning algorithms can interpret, paving the way for advanced text analysis and understanding.
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/5a669f97-1bce-4466-ba6b-2b5e792124f0)
+[source](https://geoffrey-geofe.medium.com/tokenization-vs-embedding-understanding-the-differences-and-their-importance-in-nlp-b62718b5964a)
 
 :::
 
@@ -96,15 +99,26 @@ This process, known as “embedding,” allows a model to intuitively understand
 ## 4.2. Bag of Words & TF-IDF:
 Feature extraction in machine learning involves creating numerical features that describe a document’s relationship to its corpus. Traditional methods like Bag-of-Words and TF-IDF count words or n-grams, with the latter assigning weights based on a word’s importance, calculated by Term Frequency (TF) and Inverse Document Frequency (IDF). TF measures a word’s importance within a document, while IDF assesses its rarity across the corpus. 
 
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/2b3b5f37-667b-4fe8-bc31-e6798b6e2b61)
+[source](https://www.deeplearning.ai/resources/natural-language-processing/)
+
+
 The product of TF and IDF gives the TF-IDF score, which balances a word’s frequency in a document against its commonness in the corpus. This approach helps to highlight significant words while diminishing the impact of commonly used words like “the” or “a.” 
 
-![](fig/embedding_4.png)
+::::::::::::::::::::::::::::::::::::: instructor
+
+ - **BoW** "encodes the total number of times a document uses each word in the associated corpus through the CounterVectorizer."
+ - **TF-IDF** "creates features for each document based on how often each word shows up in a document versus the entire corpus.
+ - [source](https://www.deeplearning.ai/resources/natural-language-processing/)
+
+:::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ## Discussion
 
-Teamwork: Analyze a corpus of product reviews using both BoW and TF-IDF. Discuss how each method represents the importance of words and the potential impact on sentiment analysis. 
+Teamwork: Discuss how each method represents the importance of words and the potential impact on sentiment analysis. 
 
 :::::::::::::::: solution
 
@@ -123,7 +137,7 @@ Discuss how BoW represents the frequency of words without considering the contex
 
 Sentiment Analysis Implications:
 
-Consider how the lack of context in BoW might affect sentiment analysis. Evaluate whether TF-IDF’s emphasis on unique words improves the model’s ability to understand sentiment. 
+Analyze a corpus of product reviews using both BoW and TF-IDF. Consider how the lack of context in BoW might affect sentiment analysis. Evaluate whether TF-IDF’s emphasis on unique words improves the model’s ability to understand sentiment. 
 
 Share Findings: Groups should present their findings, highlighting the strengths and weaknesses of each method.
 
@@ -229,7 +243,7 @@ By understanding the roles of tokenization and embedding, we can better prepare 
 
 :::::::::::::::::::::::::::::::::::::::::: spoiler
 
-## What else? 
+## What is GLoVE? 
 
 Global Vectors for Word Representation (GLoVE)
 
