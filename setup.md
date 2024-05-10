@@ -65,19 +65,16 @@ You can upload your data file either via drag and drop it to the main directory 
 
 The main window when you start with a new Colab notebook:
 
-![image](fig/setup_1.png)
+![](fig/setup_1.png)
 
 ```
 Drag and Drop
 ```
-
-![Screenshot 2024-05-09 101655](fig/setup_2.png)
-
-
+![](fig/setup_2.png)
 ```
 Click on the link and select the file
 ```
-![Screenshot 2024-05-09 102308](fig/setup_3.png)
+![](fig/setup_3.png)
 
 10. **Changing Hardware Accelerator**:
   In Google Colab, hardware accelerators are dedicated processors that boost computational efficiency, facilitating faster execution of operations such as machine learning model training, intricate simulations, and large-scale data analysis. To learn more about the available free hardware and runtimes check out this [link](https://research.google.com/colaboratory/faq.html#gpu-availability). We can change the accelerator through the following steps:
@@ -86,20 +83,19 @@ Click on the link and select the file
 Click on the Runtime menu.
 Select Change Runtime Type.
 ```
-![Screenshot 2024-05-09 130142](fig/setup_4.png)
+![](fig/setup_4.png)
 
 ```
 Choose GPU from the dropdown menu and click Save.
 ```
+![](fig/setup_5.png)
 
-![Screenshot 2024-05-09 130334](fig/setup_5.png)
-
-![Screenshot 2024-05-09 130443](fig/setup_6.png)
+![](fig/setup_6.png)
 
 ```
 You can get to the same setting window through the Runtime small icon on the top right side of the screen.
 ```
-![Screenshot 2024-05-09 130632](fig/setup_7.png)
+![](fig/setup_7.png)
 
 11. **Save Your Work**: Colab auto-saves your notebooks to Google Drive, but you can also save a copy via ‘File’ > ‘Save a copy in Drive’.
 
