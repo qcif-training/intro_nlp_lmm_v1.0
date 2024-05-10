@@ -21,7 +21,7 @@ exercises: 2
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-### 6.1.	Introduction to LLMs
+## 6.1.	Introduction to LLMs
 
 Large Language Models (LLMs) have become a cornerstone of modern natural language processing (NLP). Since the introduction of the transformer architecture in 2017, LLMs have leveraged this design to achieve remarkable language understanding and generation capabilities. In the previous episode, we discussed the transformer architecture, which is integral to all LLMs, utilizing its encoder and decoder components to process language. 
 
@@ -29,9 +29,9 @@ LLMs have several key features. Gather in groups and discuss what are these key 
 
 ![](fig/llms_1.png)
 
-::::::::::::::::::::::::::::::::::::: Discussion
+::::::::::::::::::::::::::::::::::::: challenge
 
-## Discuss in groups. 
+### Discussion
 
 Add your explanations below: 
 
@@ -48,12 +48,10 @@ Add your explanations below:
 6. -------------
 
 
-:::::::::::::::::::::::: spoiler 
-
-## Solutions
+:::::::::::::::::::::::: solution 
 
 1. Transformer Architecture: A neural network design that uses self-attention mechanisms to weigh the influence of different parts of the input data.
-   
+
 2. Pre-training: involves teaching LLMs to anticipate words in sentences, using either bi-directional or uni-directional approaches, (based on the LLM type), without the need for understanding or experience.
    
 3. Word/Token Embedding: The process of converting words or phrases into numerical form (vectors) that computers can understand.
@@ -78,18 +76,18 @@ Thus, the completed graph will be:
 
 
 
-::::::::::::::::::::::::::::::::::::: Discussion
+::::::::::::::::::::::::::::::::::::: challenge
 
-## Discuss in groups. 
+## Discussion 
 
-What is DSL and why are they useful for research tasks? Think of some examples of NLP tasks that require domain-specific LLMs, such as literature review, patent analysis, or material discovery. How do domain-specific LLMs improve the performance and accuracy of these tasks?
+Teamwork: What is DSL and why are they useful for research tasks? Think of some examples of NLP tasks that require domain-specific LLMs, such as literature review, patent analysis, or material discovery. How do domain-specific LLMs improve the performance and accuracy of these tasks?
 
 ![](fig/llms_3.png)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-We can categorize LLMs based on the transformer architecture. Let’s have another look to the transformer architecture, this time divide it into its two main components: Encoder and Decoder. How do you think we should connect each one the following transformers to the correct color?
+We can categorize LLMs based on the transformer architecture. Let’s have another look into the transformer architecture, this time dividing it into two main components: Encoder and Decoder. How do you think we should connect each one of the following transformers to the correct color?
 
 
  
@@ -104,25 +102,25 @@ We can categorize LLMs based on the transformer architecture. Let’s have anoth
 •	The combination of encoders and decoders in transformers allows them to be versatile and perform a variety of tasks, from translation to summarization, depending on the specific requirements of the task at hand.
 
 
-::::::::::::::::::::::::::::::::::::::::: spoiler 
+::: callout
 
-## Heads-up: Encoder Vs. Decoder or BERT Vs. GPT
+### Heads-up: Encoder Vs. Decoder and/or BERT Vs. GPT
 
 We will see models like BERT use encoders for bidirectional understanding, and models like GPT use decoders for generating coherent text, making them suitable for chatbots or virtual assistants.
 
-::::::::::::::::::::::::::::::::::::::::::::::
+:::
 
-::::::::::::::::::::::::::::::::::::: Discussion
 
-## Discuss in groups. 
+::::::::::::::::::::::::::::::::::::: challenge
 
-Think of some examples of traditional NLP models, such as n-gram models, hidden Markov models, LSTMs and RNNs. How do large language models differ from them in terms of architecture, data, and performance?
+## Discussion
 
-:::::::::::::::::::::::: spoiler 
+Teamwork: Think of some examples of traditional NLP models, such as n-gram models, hidden Markov models, LSTMs, and RNNs. How do large language models differ from them in terms of architecture, data, and performance?
 
-## Discussion ideas
+:::::::::::::::::::::::: solution 
 
-Traditional NLP models, such as n-gram models, hidden Markov models (HMMs), Long Short-Term Memory networks (LSTMs), and Recurrent Neural Networks (RNNs), differ significantly from the recent LLMs. N-gram models predict the next item in a sequence based on the previous ‘n-1’ items without any deep understanding of context. HMMs are statistical models that output probabilities of sequences and are often used for tasks like part-of-speech tagging. LSTMs and RNNs are types of neural networks that can process sequences of data and are capable of learning order dependence in sequence prediction. 
+A: Traditional NLP models, such as n-gram models, hidden Markov models (HMMs), Long Short-Term Memory networks (LSTMs), and Recurrent Neural Networks (RNNs), differ significantly from the recent LLMs. N-gram models predict the next item in a sequence based on the previous ‘n-1’ items without any deep understanding of context. HMMs are statistical models that output probabilities of sequences and are often used for tasks like part-of-speech tagging. LSTMs and RNNs are types of neural networks that can process sequences of data and are capable of learning order dependence in sequence prediction. 
+
 
 Compared to these traditional models, LLMs have several key differences: 
 **Architecture**: Novel LLMs use transformer architectures, which are more advanced than the simple recurrent units of RNNs or the gated units of LSTMs. Transformers use self-attention to weigh the influence of different parts of the input data, which is more effective for understanding context. 
@@ -134,19 +132,23 @@ Compared to these traditional models, LLMs have several key differences:
 
 
 
-### 6.2.	BERT
+## 6.2.	BERT
 
 Bidirectional Encoder Representations from Transformers (BERT) is an LLM that uses an encoder-only architecture from transformers. It is designed to understand the context of a word based on all of its surroundings (bidirectional context). Let’s guess the missing words in the text below to comprehend the workings of BERT:
 
+
 ::::::::::::::::::::::::::::::::::::::::: Challenge 
 
-## Fill in the gaps
+### Fill in the gaps
 
 “BERT is a revolutionary language model that uses an ______ (encoder) to process words in a sentence. Unlike traditional models, it predicts words based on the ______ rather than in sequence. Its training involves ______ , where words are intentionally hidden, or ‘______’, and the model learns to predict them. This results in rich ______ that capture the nuanced meanings of words.”
 
-:::::::::::::::::::::::::::::::::::::::::::::: solution
+:::::::::::::::::::::::: solution 
 
 "BERT is a revolutionary language model that uses an **encoder** to process words in a sentence. Unlike traditional models, it predicts words based on the **context** rather than in sequence. Its training involves **self-supervised learning**, where words are intentionally hidden, or **'masked'**, and the model learns to predict them. This results in rich **embeddings** that capture the nuanced meanings of words.”
+
+:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ::::::::::::::::::::::::::::::::::::::::: spoiler 
@@ -163,18 +165,21 @@ For Next Sentence Prediction (NSP) BERT learns to predict if two sentences logic
 
 Generative Pretrained Transformer (GPT) models, on the other hand, use a decoder-only architecture. They excel at generating coherent and contextually relevant text. Check the following table that summarizes three different LLMs. The middle column misses some information about GPT models. With the help of your teammates complete the table and explain the differences in the end.
 
-::::::::::::::::::::::::::::::::::::::::: Activity 
+::::::::::::::::::::::::::::::::::::::::: Challenge
 
-## Activity: Fill in the gap
+### Activity: Fill in the gap
 Fill the in the gray boxes with correct explanations.
 
 ![](fig/llms_6.png)
 
 ![](fig/llms_7.png)
 
-::::::::::::::::::::::::::::::::::::: Discussion
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Discuss in groups. 
+
+::::::::::::::::::::::::::::::::::::::::: Challenge 
+
+### Discussion 
 
 From what you learned above how can you explain the differences between the three LLM types? Discuss in groups and share your answers.
 
@@ -193,9 +198,10 @@ Both are smart in their own ways, but they’re used for different types of lang
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+
 ::::::::::::::::::::::::::::::::::::::::: spoiler 
 
-## Heads-up: HELM: LLMs Comparison
+## How LLMs can be Compared? What is HELM?
 
 Models are often benchmarked using standardized datasets and metrics. The Holistic Evaluation of Language Models (HELM) by Stanford provides a comprehensive framework for evaluating LLMs across multiple dimensions.
 
@@ -205,15 +211,17 @@ GPT-4 models are outperforming other LLM models in terms of accuracy.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: Discussion
 
-## Discuss in groups. 
+::::::::::::::::::::::::::::::::::::::::: Challenge 
+
+## Discussion 
 
 What are some examples of LLMs, and how are they trained and used for research tasks? Consider some of the main features and characteristics of LLMs, such as transformer architecture, self-attention mechanism, pre-training and fine-tuning, and embedding capabilities. How do these features enable LLMs to perform various NLP tasks, such as text classification, text generation, or question answering?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-### 6.4.	Open-Source LLMs:
+
+## 6.4.	Open-Source LLMs:
 
 It is very important for researchers to openly have access to capable LLMs for their studies. Fortunately, some companies are supporting open-source LLMs. The BLOOM model, developed by the BigScience Workshop in collaboration with Hugging Face and other organizations, was released on July 6, 2022. It offers a wide range of model sizes, from 1.1 billion to 176 billion parameters, and is licensed under the open RAIL-M v1. BLOOM is known for its instruct models, coding capabilities, customization finetuning, and being open source. It is more openly accessible and benefits from a large community and extensive support. 
 
@@ -224,11 +232,10 @@ Now let’s summarize what we learned here in the following table:
 ![](fig/llms_10.png)
 
 
-::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: Discussion
+::::::::::::::::::::::::::::::::::::::::: Challenge 
 
-## Discuss in groups. 
+### Discussion 
 
 What are the challenges and trade-offs of domain-specific LLMs, such as data availability, model size, and complexity? 
 
@@ -236,9 +243,10 @@ Consider some of the factors that affect the quality and reliability of domain-s
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: Discussion
 
-## Discuss in groups. 
+::::::::::::::::::::::::::::::::::::::::: Challenge 
+
+### Discussion
 
 What are some available approaches for creating domain-specific LLMs, such as fine-tuning and knowledge distillation? 
 
@@ -247,7 +255,7 @@ Consider some of the main steps and techniques for creating domain-specific LLMs
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Example:
-Now let’s try One-shot and Few-shot prompting examples and see how it can help us to enhance the sensitivity of the LLM to our field of study: One-shot prompting involves providing the model with a single example to follow. It’s like giving the model a hint about what you expect. We will go through an example using Hugging Face’s transformers library:
+Now let’s try One-shot and Few-shot prompting examples and see how they can help us to enhance the sensitivity of the LLM to our field of study: One-shot prompting involves providing the model with a single example to follow. It’s like giving the model a hint about what you expect. We will go through an example using Hugging Face’s transformers library:
 
 ```python
 from transformers import pipeline
@@ -269,6 +277,7 @@ In this example, we provide the model with one translation example and then ask 
 But what if we have a Few-Shot Prompting? Few-shot prompting gives the model several examples to learn from. This can improve the model’s ability to understand and complete the task. Here is how you can implement few-shot prompting:
 
 ```python
+
 from transformers import pipeline
 
 # Load a pre-trained model and tokenizer
@@ -331,7 +340,7 @@ To summarize this approach in a few steps, fill in the following gaps:
 
 ::::::::::::::::::::::::::::::::::::::::: spoiler 
 
-## Heads-up: Prompting Quality
+## Why Prompting Quality is important?
 
 Remember, the quality of the output heavily depends on the quality and relevance of the examples you provide. It’s also important to note that larger models tend to perform better at these tasks due to their greater capacity to understand and generalize from examples.
 
@@ -341,7 +350,7 @@ Remember, the quality of the output heavily depends on the quality and relevance
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Domain-specific LLMs are essential for tasks that require specialized knowledge.
-- Prompt engineering, RAG, fine-tuning, and training from scratch are viable approaches to create DSLs.
+- Prompt engineering, RAG, fine-tuning, and training from scratch are viable approaches to creating DSLs.
 - A mixed prompting-RAG approach is often preferred for its balance between performance and resource efficiency.
 - Training from scratch offers the highest quality output but requires significant resources.
 
