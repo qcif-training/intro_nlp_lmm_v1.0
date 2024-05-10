@@ -349,6 +349,27 @@ person in line until the final product (output) is created.</p>
 <p>Just like a well-organized assembly line, a neural network processes
 information in stages, with each neuron contributing to the final
 result.</p>
+<div id="summation-and-activation-function" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="summation-and-activation-function" class="callout-inner">
+<h3 class="callout-title">Summation and Activation Function<a class="anchor" aria-label="anchor" href="#summation-and-activation-function"></a>
+</h3>
+<div class="callout-content">
+<p>If we zoom into a neuron in the hidden layer, we can see the
+mathematical operations (weights summation and activation function). an
+input is transformed at each hidden layer node through a process that
+multiplies the input by learned weights, adds a bias, and then applies
+an activation function to determine the node’s output. This output is
+either passed on to the next layer or contributes to the final output of
+the network. Essentially, each node performs a small calculation that,
+when combined with the operations of other nodes, allows the network to
+process complex patterns and data.</p>
+<figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/d1006506-ac54-43bc-b6e9-5181ca98be36" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
+</figure></div>
+</div>
+</div>
 <div id="challenge1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -377,7 +398,7 @@ do we have?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>(3 { neurons} x 4 { neurons} + 4{ biases}) = 16</p>
 <p>(4 { neurons} x 1 { neurons} + 1{ biases}) = 5</p>
@@ -506,7 +527,7 @@ sources:</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Be careful when fine-tuning a model</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>When fine-tuning a BERT model from Hugging Face, for instance, it is
 essential to approach the process with precision and care.</p>
@@ -676,7 +697,7 @@ followed the <strong>—</strong> correctly.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Choose a Model: Select a <strong>pre-trained</strong> model from
 Hugging Face that suits your task.</p></li>
@@ -699,7 +720,7 @@ followed the <strong>examples</strong> correctly.</p></li>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Prompting Quality</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>Remember, the quality of the output heavily depends on the quality
 and relevance of the examples you provide. It’s also important to note
