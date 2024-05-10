@@ -22,7 +22,7 @@ Transformers have revolutionized the field of NLP since their introduction by Go
 
 This parallel processing capability enables Transformers to handle long-range dependencies and understand the nuances of language better than their predecessors.
 
-![](https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/c6b4d726-7cfc-4545-b9cc-c045f55f2ce6)
+![](fig/transformers_1.png)
 
 
 
@@ -36,7 +36,7 @@ Just like a well-organized assembly line, a neural network processes information
 
 Now let’s move the following text boxes toward their right places in the ANN architecture and add the correct label to each one:
 
-![](https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/01097431-d114-48ce-9de5-552cb0c9596f)
+![](fig/transformers_2.png)
 
 
 When we talk about ANNs, we also talk about their parameters. But what are parameters? 
@@ -105,7 +105,7 @@ Builds a model specifically for a domain, using relevant data from the ground up
 
 Which approach do you think is more computation-intensive? Which is more accurate? How are these qualities related?  Evaluate the trade-offs between fine-tuning and other approaches.
 
-![](https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/7526be09-de4d-4c59-b6df-93f0d2dca9d7)
+![](fig/transformers_3.png)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -115,7 +115,7 @@ Which approach do you think is more computation-intensive? Which is more accurat
 
 What is DSL and why are they useful for research tasks? Think of some examples of NLP tasks that require domain-specific LLMs, such as literature review, patent analysis, or material discovery. How do domain-specific LLMs improve the performance and accuracy of these tasks?
 
-![](https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/6e5a6a74-eaa2-430d-b5b5-8198716fb4f7)
+![](fig/transformers_4.png)
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -181,7 +181,7 @@ Lastly, manage **computational resources** wisely and engage with the Hugging Fa
 
 Guess the following architecture belongs to which optimization strategy:
 
-![](https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/9abb1cc9-9b10-4636-994a-ff55b017349c)
+![](fig/transformers_5.png)
 
 Figure. LLMs optimization (source)
 
