@@ -51,12 +51,12 @@ One of the significant challenges in NLP is dealing with the ambiguity of langua
 
 This challenge leads to the fact that NLP systems often struggle with contextual understanding which is crucial in text analysis tasks. This can lead to misinterpretation of the meaning and sentiment of text. If a research paper mentions “novel results,” an NLP system might interpret “novel” as a literary work instead of “new” or “original,” which could mislead the analysis of the paper’s contributions.
 
-### Suggested Resource:
-Python’s Natural Language Toolkit (NLTK) for sentiment analysis
-TextBlob, a library for processing textual data
-Stanford NER for named entity recognition
-spaCy, an open-source software library for advanced NLP
-Sumy, a Python library for automatic summarization of text documents
-BERT-based models for extractive and abstractive summarization
-Gensim for topic modeling and document similarity analysis
-MALLET, a Java-based package for statistical natural language processing
+### Suggested Resources:
+- Python’s Natural Language Toolkit (NLTK) for sentiment analysis
+- TextBlob, a library for processing textual data
+- Stanford NER for named entity recognition
+- spaCy, an open-source software library for advanced NLP
+- Sumy, a Python library for automatic summarization of text documents
+- BERT-based models for extractive and abstractive summarization
+- Gensim for topic modeling and document similarity analysis
+- MALLET, a Java-based package for statistical natural language processing
