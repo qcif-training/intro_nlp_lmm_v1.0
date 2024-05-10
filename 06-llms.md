@@ -27,6 +27,8 @@ Large Language Models (LLMs) have become a cornerstone of modern natural languag
 
 LLMs have several key features. Gather in groups and discuss what are these key components. Explain the key features in detail and compare your thoughts with other group members:
 
+![](fig/llms_1.png)
+
 ::::::::::::::::::::::::::::::::::::: Discussion
 
 ## Discuss in groups. 
