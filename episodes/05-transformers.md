@@ -1,5 +1,5 @@
 ---
-title: '5.	Transformers for Natural Language Processing'
+title: 'Transformers for Natural Language Processing'
 teaching: 10
 exercises: 2
 ---
@@ -28,7 +28,7 @@ Transformers have revolutionized the field of NLP since their introduction by Go
 
 To understand how Transformers work we also need to learn about artificial neural networks (ANNs). Imagine a neural network as a team of workers in a factory. Each worker (neuron) has a specific task (processing information), and they pass their work along to the next person in line until the final product (output) is created. Just like a well-organized assembly line, a neural network processes information in stages, with each neuron contributing to the final result. 
 
-::::::::::::::::::::::::::::::::::::: Activity
+::::::::::::::::::::::::::::::::::::: challenge
 
 Now let’s move the following text boxes toward their right places in the ANN architecture and add the correct label to each one:
 
