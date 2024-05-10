@@ -1,28 +1,32 @@
+---
+title: "Introduction to Natural Language Processing"
+teaching: 10
+exercises: 0
+---
 
-## 1.	Introduction to NLP
+:::::::::::::::::::::::::::::::::::::: questions
 
-### Objectives
+- What are some common research applications of NLP?
+- What are the basic concepts and terminology of NLP?
+- How can I use NLP in my research field?
+- How can I acquire data for NLP tasks?
 
-Questions:
+::::::::::::::::::::::::::::::::::::::::::::::::
 
- •	What are some common research applications of NLP?
- 
- •	What are the basic concepts and terminology of NLP?
- 
- •	How can I acquire data for NLP tasks?
- 
-Objectives:
+::::::::::::::::::::::::::::::::::::: objectives
 
-•	Define natural language processing and its goals.
+- Define natural language processing and its goals.
+- Identify main research applications and challenges of NLP.
+- Explain the basic concepts and terminology of NLP, such as tokens, lemmas, and n-grams.
+- Use some popular datasets and libraries to acquire data for NLP tasks.
 
-•	Identify main research applications and challenges of NLP.
+::::::::::::::::::::::::::::::::::::::::::::::::
 
-•	Explain the basic concepts and terminology of NLP, such as tokens, lemmas, and n-grams.
+## Natural language processing in Reseach
 
-•	Use some popular datasets and libraries to acquire data for NLP tasks.
+Natural Language Processing (NLP) is becoming a popular and robust tool for a wide range of research projects. In this episode we embark on a journey to explore the transformative power of NLP tools in the realm of research. 
 
-
-Natural Language Processing (NLP) is becoming a popular and robust tool for a wide range of research projects. In this episode we embark on a journey to explore the transformative power of NLP tools in the realm of research. It is tailored for researchers who are keen on harnessing the capabilities of NLP to enhance and expedite their work. Whether you are delving into text classification, extracting pivotal information, discerning sentiments, summarizing extensive documents, translating across languages, or developing sophisticated question-answering systems, this session will lay the foundational knowledge you need to leverage NLP effectively.
+It is tailored for researchers who are keen on harnessing the capabilities of NLP to enhance and expedite their work. Whether you are delving into text classification, extracting pivotal information, discerning sentiments, summarizing extensive documents, translating across languages, or developing sophisticated question-answering systems, this session will lay the foundational knowledge you need to leverage NLP effectively.
 
 We will begin by delving into the Common Applications of NLP in Research, showcasing how these tools are not just theoretical concepts but practical instruments that drive forward today’s innovative research projects. From analyzing public sentiment to extracting critical data from a plethora of documents, NLP stands as a pillar in the modern researcher’s toolkit. 
 
@@ -33,6 +37,7 @@ Finally, we’ll guide you through Data Acquisition: Dataset Libraries, where yo
 By the end of this episode, you will not only understand the significance of NLP in research but also be equipped with the knowledge to start applying these tools to your own projects. Prepare to unlock new potentials and streamline your research process with the power of NLP!
 
 ## 1.1.	Common Applications of NLP in Research
+
 **Sentiment Analysis** is a powerful tool for researchers, especially in fields like market research, political science, and public health. It involves the computational identification of opinions expressed in text, categorizing them as positive, negative, or neutral. In market research for instance, sentiment analysis can be applied to product reviews to gauge consumer satisfaction: a study could analyze thousands of online reviews for a new smartphone model to determine the overall public sentiment. This can help companies identify areas of improvement or features that are well-received by consumers. 
 
 **Information Extraction** is crucial for quickly gathering specific information from large datasets. It is used extensively in legal research, medical research, and scientific studies to extract entities and relationships from texts. In legal research for example, information extraction can be used to sift through case law to find precedents related to a particular legal issue. A researcher could use NLP to extract instances of “negligence” from thousands of case files, aiding in the preparation of legal arguments. 
