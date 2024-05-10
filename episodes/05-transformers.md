@@ -18,15 +18,14 @@ exercises: 2
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-Transformers have revolutionized the field of NLP since their introduction by Google team in 2017. Unlike previous models that processed text sequentially, Transformers use an attention mechanism to process all words at once, allowing them to capture context more effectively. 
-
-This parallel processing capability enables Transformers to handle long-range dependencies and understand the nuances of language better than their predecessors.
-
-![](fig/transformers_1.png)
+Transformers have revolutionized the field of NLP since their introduction by the Google team in 2017. Unlike previous models that processed text sequentially, Transformers use an attention mechanism to process all words at once, allowing them to capture context more effectively. This parallel processing capability enables Transformers to handle long-range dependencies and understand the nuances of language better than their predecessors. For now, try to recognize the building blocks of the general structure of a transformer
 
 
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/7ec8bb01-aa7e-4378-af45-ae28fbe8916b)
 
-### 5.1.	Introduction to Artificial Neural Networks
+
+
+## 5.1. Introduction to Artificial Neural Networks
 
 To understand how Transformers work we also need to learn about artificial neural networks (ANNs). Imagine a neural network as a team of workers in a factory. Each worker (neuron) has a specific task (processing information), and they pass their work along to the next person in line until the final product (output) is created. 
 
@@ -99,9 +98,9 @@ Example: An LLM fine-tuned with medical Q&A pairs would provide more accurate re
 #### 4.	Training from Scratch: 
 Builds a model specifically for a domain, using relevant data from the ground up.
 
-::::::::::::::::::::::::::::::::::::: Discussion
+::::::::::::::::::::::::::::::::::::: challenge
 
-## Discuss in groups. 
+### Discussion
 
 Which approach do you think is more computation-intensive? Which is more accurate? How are these qualities related?  Evaluate the trade-offs between fine-tuning and other approaches.
 
@@ -109,9 +108,9 @@ Which approach do you think is more computation-intensive? Which is more accurat
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: Discussion
+::::::::::::::::::::::::::::::::::::: challenge
 
-## Discuss in groups. 
+### Discussion
 
 What is DSL and why are they useful for research tasks? Think of some examples of NLP tasks that require domain-specific LLMs, such as literature review, patent analysis, or material discovery. How do domain-specific LLMs improve the performance and accuracy of these tasks?
 
@@ -120,7 +119,7 @@ What is DSL and why are they useful for research tasks? Think of some examples o
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-### 7.2.	Prompting
+## 7.2. Prompting
 
 For research applications where highly reliable answers are crucial, Prompt Engineering combined with Retrieval-Augmented Generation (RAG) is often the most suitable approach. This combination allows for flexibility and high-quality outputs by leveraging both the generative capabilities of LLMs and the precision of domain-specific data sources:
 
@@ -175,9 +174,9 @@ Lastly, manage **computational resources** wisely and engage with the Hugging Fa
 ::::::::::::::::::::::::::::::::::::::::::::::
 
 
-::::::::::::::::::::::::::::::::::::: Discussion
+::::::::::::::::::::::::::::::::::::: challenge
 
-## Discuss in groups. 
+### Discussion
 
 Guess the following architecture belongs to which optimization strategy:
 
@@ -187,19 +186,19 @@ Figure. LLMs optimization (source)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: Discussion
+::::::::::::::::::::::::::::::::::::: challenge
 
-## Discuss in groups. 
+### Discussion
 
 What are the challenges and trade-offs of domain-specific LLMs, such as data availability, model size, and complexity? Consider some of the factors that affect the quality and reliability of domain-specific LLMs, such as the amount and quality of domain-specific data, the computational resources and time required for training or fine-tuning, and the generalization and robustness of the model. How do these factors pose problems or difficulties for domain-specific LLMs and how can we overcome them?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-::::::::::::::::::::::::::::::::::::: Discussion
+::::::::::::::::::::::::::::::::::::: challenge
 
-## Discuss in groups. 
+### Discussion
 
-What are some available approaches for creating domain-specific LLMs, such as fine-tuning and knowledge distillation? Consider some of the main steps and techniques for creating domain-specific LLMs, such as selecting a general LLM, collecting and preparing domain-specific data, training or fine-tuning the model, and evaluating and deploying the model. How do these approaches differ from each other and what are their advantages and disadvantages?
+Teamwork: What are some available approaches for creating domain-specific LLMs, such as fine-tuning and knowledge distillation? Consider some of the main steps and techniques for creating domain-specific LLMs, such as selecting a general LLM, collecting and preparing domain-specific data, training or fine-tuning the model, and evaluating and deploying the model. How do these approaches differ from each other and what are their advantages and disadvantages?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -254,7 +253,7 @@ In this few-shot example, we provide the model with three question-answer pairs 
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+### Challenge
 
 To summarize this approach in a few steps, fill in the following gaps:
 1.	Choose a Model: Select a **---** model from Hugging Face that suits your task.
@@ -286,7 +285,7 @@ To summarize this approach in a few steps, fill in the following gaps:
 
 ::::::::::::::::::::::::::::::::::::::::: spoiler 
 
-## Heads-up: Prompting Quality
+### Heads-up: Prompting Quality
 
 Remember, the quality of the output heavily depends on the quality and relevance of the examples you provide. It’s also important to note that larger models tend to perform better at these tasks due to their greater capacity to understand and generalize from examples.
 
