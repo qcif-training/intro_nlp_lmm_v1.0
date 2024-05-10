@@ -64,7 +64,7 @@ What is DSL and why are they useful for research tasks? Think of some examples o
 
 ![](fig/llms_3.png)
 
-:::::::::::::::::::::::: solution 
+:::::::::::::::::::::::: spoiler 
 
 1. Transformer Architecture: A neural network design that uses self-attention mechanisms to weigh the influence of different parts of the input data.
    
@@ -115,7 +115,7 @@ We will see models like BERT use encoders for bidirectional understanding, and m
 
 Think of some examples of traditional NLP models, such as n-gram models, hidden Markov models, LSTMs and RNNs. How do large language models differ from them in terms of architecture, data, and performance?
 
-:::::::::::::::::::::::: solution 
+:::::::::::::::::::::::: spoiler 
 
 Traditional NLP models, such as n-gram models, hidden Markov models (HMMs), Long Short-Term Memory networks (LSTMs), and Recurrent Neural Networks (RNNs), differ significantly from the recent LLMs. N-gram models predict the next item in a sequence based on the previous ‘n-1’ items without any deep understanding of context. HMMs are statistical models that output probabilities of sequences and are often used for tasks like part-of-speech tagging. LSTMs and RNNs are types of neural networks that can process sequences of data and are capable of learning order dependence in sequence prediction. 
 
