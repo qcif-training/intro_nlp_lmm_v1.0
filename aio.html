@@ -2327,7 +2327,7 @@ in vector space models. Consider the impact of ignoring common words
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><img src="fig/embedding_3.png" class="figure"><a href="https://medium.com/@saschametzger/what-are-tokens-vectors-and-embeddings-how-do-you-create-them-e2a3e698e037" class="external-link">source</a></p>
 <p>A: Ignoring stop words might lead to loss of some contextual
@@ -2344,7 +2344,7 @@ flexible syntax.</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Tell me MORE!</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Tokenization is a fundamental step in the processing of text for
 vector space models. It involves breaking down a string of text into
@@ -2453,7 +2453,7 @@ the potential impact on sentiment analysis.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>A: To compare the Bag of Words (BoW) and Term Frequency-Inverse
 Document Frequency (TF-IDF) methods in representing text data and their
@@ -2494,7 +2494,7 @@ the strengths and weaknesses of each method.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2612,7 +2612,7 @@ more accurately interpret human language.</p>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What else?</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Global Vectors for Word Representation (GLoVE)</p>
 <p>GLoVE is a model for learning word embeddings, which are
@@ -3162,21 +3162,11 @@ experience.</p></li>
 <li><hr></li>
 <li><hr></li>
 </ol>
-<figure><img src="fig/llms_2.png" class="figure mx-auto d-block"></figure>
-</div>
-<div class="section level2 Discussion">
-<h2 id="discuss-in-groups--1">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--1"></a>
-</h2>
-<p>What is DSL and why are they useful for research tasks? Think of some
-examples of NLP tasks that require domain-specific LLMs, such as
-literature review, patent analysis, or material discovery. How do
-domain-specific LLMs improve the performance and accuracy of these
-tasks?</p>
-<figure><img src="fig/llms_3.png" class="figure mx-auto d-block"></figure><div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<figure><img src="fig/llms_2.png" class="figure mx-auto d-block"></figure><div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">
-<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Show details</h3>
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Discussion ideas</h3>
 </button>
 <div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
@@ -3204,6 +3194,16 @@ knowledge to new tasks.</p></li>
 </div>
 </div>
 </div>
+</div>
+<div class="section level2 Discussion">
+<h2 id="discuss-in-groups--1">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--1"></a>
+</h2>
+<p>What is DSL and why are they useful for research tasks? Think of some
+examples of NLP tasks that require domain-specific LLMs, such as
+literature review, patent analysis, or material discovery. How do
+domain-specific LLMs improve the performance and accuracy of these
+tasks?</p>
+<figure><img src="fig/llms_3.png" class="figure mx-auto d-block"></figure>
 </div>
 <p>We can categorize LLMs based on the transformer architecture. Let’s
 have another look to the transformer architecture, this time divide it
@@ -4086,7 +4086,7 @@ field of interest.<a class="anchor" aria-label="anchor" href="#discuss-in-groups
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Field of Interest: Environmental Science</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>• NLP for Climate Change Research: How can NLP help in analyzing
 large volumes of research papers on climate change to identify trends
@@ -4163,7 +4163,7 @@ answers related to environmental topics.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The model should provide a relevant answer based on the few-shot
 examples provided. For instance, it might say: “Individuals can combat
