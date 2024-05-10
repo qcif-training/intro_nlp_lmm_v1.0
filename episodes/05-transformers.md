@@ -31,6 +31,8 @@ To understand how Transformers work we also need to learn about artificial neura
 
 Just like a well-organized assembly line, a neural network processes information in stages, with each neuron contributing to the final result. 
 
+
+
 ::: callout
 
 ### Summation and Activation Function
@@ -43,33 +45,32 @@ If we zoom into a neuron in the hidden layer, we can see the mathematical operat
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-Now let’s move the following text boxes toward their right places in the ANN architecture and add the correct label to each one:
+### Challenge
 
-![](fig/transformers_2.png)
+Let’s move the following text boxes toward their right places in the ANN architecture and add the correct label to each one:
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/39820eb0-7959-4ed1-bdfc-69131ab1a834)
 
 
-When we talk about ANNs, we also talk about their parameters. But what are parameters? 
+When we talk about ANNs, we also talk about their parameters. But what are parameters? Let’s draw a small neural network with 3 following layers: x1
 
-Let’s draw a small neural network with 3 layers: 
+- Input Layer: 3 neurons
+- Hidden Layer: 4 neurons
+- Output Layer: 1 neurons
 
-Input Layer: 3 neurons
-Hidden Layer: 4 neurons
-Output Layer: 1 neuron
-
-- Connect each neuron in the input layer to every neuron in the hidden layer (next layer). How many connections (weights) do we have?
-- Now, add a bias for each neuron in the hidden layer. How many biases do we have?
-- Repeat the process for the hidden layer to the output layer.
+1. Connect each neuron in the input layer to every neuron in the hidden layer (next layer). How many connections (weights) do we have?
+2. Now, add a bias for each neuron in the hidden layer. How many biases do we have?
+3. Repeat the process for the hidden layer to the output layer.
 
 :::::::::::::::::::::::: solution 
 
-(3 { neurons} x 4 { neurons} + 4{ biases}) = 16 
-
-(4 { neurons} x 1 { neurons} + 1{ biases}) = 5 
-
-Total parameters for this network: (16 + 5 = 21)
+- (3 { neurons} x 4 { neurons} + 4{ biases}) = 16 
+- (4 { neurons} x 1 { neurons} + 1{ biases}) = 5
+- Total parameters for this network: (16 + 5 = 21)
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 #### 1. Prompt Optimization:
