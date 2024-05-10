@@ -31,6 +31,16 @@ To understand how Transformers work we also need to learn about artificial neura
 
 Just like a well-organized assembly line, a neural network processes information in stages, with each neuron contributing to the final result. 
 
+::: callout
+
+### Summation and Activation Function
+If we zoom into a neuron in the hidden layer, we can see the mathematical operations (weights summation and activation function). an input is transformed at each hidden layer node through a process that multiplies the input by learned weights, adds a bias, and then applies an activation function to determine the node’s output. This output is either passed on to the next layer or contributes to the final output of the network. Essentially, each node performs a small calculation that, when combined with the operations of other nodes, allows the network to process complex patterns and data. 
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/d1006506-ac54-43bc-b6e9-5181ca98be36)
+
+:::
+
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 Now let’s move the following text boxes toward their right places in the ANN architecture and add the correct label to each one:
