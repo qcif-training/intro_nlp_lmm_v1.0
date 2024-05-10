@@ -120,6 +120,8 @@ Think of some examples of traditional NLP models, such as n-gram models, hidden 
 
 :::::::::::::::::::::::: spoiler 
 
+## Discussion ideas
+
 Traditional NLP models, such as n-gram models, hidden Markov models (HMMs), Long Short-Term Memory networks (LSTMs), and Recurrent Neural Networks (RNNs), differ significantly from the recent LLMs. N-gram models predict the next item in a sequence based on the previous ‘n-1’ items without any deep understanding of context. HMMs are statistical models that output probabilities of sequences and are often used for tasks like part-of-speech tagging. LSTMs and RNNs are types of neural networks that can process sequences of data and are capable of learning order dependence in sequence prediction. 
 
 Compared to these traditional models, LLMs have several key differences: 
