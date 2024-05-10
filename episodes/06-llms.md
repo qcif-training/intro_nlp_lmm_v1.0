@@ -6,17 +6,17 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-•	What are the main features of large language models?
-•	How BERT is different from GPT models?
-•	How can I use open-source LLMs, such as LLM examples in huggingface, for research tasks?
+- What are the main features of large language models?
+- How BERT is different from GPT models?
+- How can I use open-source LLMs, such as LLM examples in huggingface, for research tasks?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-•	Be able to explain the structure of large language models and their main components.
-•	Identify differences between BERT and GPT.
-•	Be able to use open-source LLMs, such as huggingface, for text summarization, classification, and generation.
+- Be able to explain the structure of large language models and their main components
+- Identify differences between BERT and GPT.
+- Be able to use open-source LLMs, such as huggingface, for text summarization, classification, and generation.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
