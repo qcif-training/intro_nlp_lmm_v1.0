@@ -41,11 +41,11 @@ Now let’s move the following text boxes toward their right places in the ANN a
 
 When we talk about ANNs, we also talk about their parameters. But what are parameters? 
 
-Let’s draw a small neural network with 3 following layers: 
+Let’s draw a small neural network with 3 layers: 
 
 Input Layer: 3 neurons
 Hidden Layer: 4 neurons
-Output Layer: 1 neurons
+Output Layer: 1 neuron
 
 - Connect each neuron in the input layer to every neuron in the hidden layer (next layer). How many connections (weights) do we have?
 - Now, add a bias for each neuron in the hidden layer. How many biases do we have?
