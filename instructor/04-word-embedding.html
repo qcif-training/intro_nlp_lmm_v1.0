@@ -335,16 +335,19 @@ traditional models.</li>
 </div>
 </div>
 </div>
-<figure><img src="../fig/embedding_1.png" class="figure mx-auto d-block"></figure><section id="introduction-to-vector-space-embeddings"><h2 class="section-heading">4.1. Introduction to Vector Space &amp; Embeddings:<a class="anchor" aria-label="anchor" href="#introduction-to-vector-space-embeddings"></a>
+<p><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/c96878f9-4c4a-49d7-9ec8-346d75663b76" alt="image" class="figure"><a href="https://carpentries-incubator.github.io/python-text-analysis/06-lsa/index.html" class="external-link">source</a></p>
+<section id="introduction-to-vector-space-embeddings"><h2 class="section-heading">4.1. Introduction to Vector Space &amp; Embeddings:<a class="anchor" aria-label="anchor" href="#introduction-to-vector-space-embeddings"></a>
 </h2>
 <hr class="half-width"><p>We have discussed how tokenization works and how it is important in
-text analysis. For making robust and reliable NLP models we need to
-extract features from the text by using text embeddings. To understand
-this concept, we first talk about vector space.</p>
+text analysis, however, this is not the whole story of preprocessing.
+For conducting robust and reliable text analysis with NLP models,
+vectorization and embedding are required after tokenization. To
+understand this concept, we first talk about vector space.</p>
 <p>Vector space models represent text data as vectors, which can be used
 in various machine learning algorithms. Embeddings are dense vectors
 that capture the semantic meanings of words based on their context.</p>
-<figure><img src="../fig/embedding_2.png" class="figure mx-auto d-block"></figure><div id="discussion" class="callout challenge">
+<p><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/e22fea16-a593-4c75-988b-0ba81588f98b" alt="embedding_2" class="figure"><a href="https://www.deeplearning.ai/resources/natural-language-processing/" class="external-link">source</a></p>
+<div id="discussion" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -433,24 +436,28 @@ of the representation and the performance of downstream tasks.</p>
 </div>
 </div>
 </div>
-<div id="tokenization-vs.-embeddings" class="callout">
+<div id="tokenization-vs.-vectorization-vs.-embedding" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="tokenization-vs.-embeddings" class="callout-inner">
-<h3 class="callout-title">Tokenization Vs. Embeddings<a class="anchor" aria-label="anchor" href="#tokenization-vs.-embeddings"></a>
+<div id="tokenization-vs.-vectorization-vs.-embedding" class="callout-inner">
+<h3 class="callout-title">Tokenization Vs. Vectorization Vs.
+Embedding<a class="anchor" aria-label="anchor" href="#tokenization-vs.-vectorization-vs.-embedding"></a>
 </h3>
 <div class="callout-content">
-<p>In natural language processing, tokens are transformed into vectors
-that numerically capture their meanings and relationships within a
-vocabulary. Initially random, these vectors are refined during training,
-akin to neural network weights, to better reflect token meanings and
-associations.</p>
-<p>This process, known as “embedding,” allows a model to intuitively
-understand word relationships without explicit programming. Visualizing
-embeddings reveals a semantic map where tokens cluster with those of
-similar meanings, illustrating the interconnectedness of language
-elements.</p>
+<p>Initially, <strong>tokenization</strong> breaks down text into
+discrete elements, or tokens, which can include words, phrases, symbols,
+and even punctuation, each represented by a unique numerical identifier.
+These tokens are then mapped to <strong>vectors</strong> of real numbers
+within an n-dimensional space, a process that is part of
+<strong>embedding</strong>. During model training, these vectors are
+adjusted to reflect the semantic similarities between tokens,
+positioning those with similar meanings closer together in the embedding
+space. This allows the model to grasp the nuances of language and
+transforms raw text into a format that machine learning algorithms can
+interpret, paving the way for advanced text analysis and
+understanding.</p>
+<p><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/5a669f97-1bce-4466-ba6b-2b5e792124f0" alt="image" class="figure"><a href="https://geoffrey-geofe.medium.com/tokenization-vs-embedding-understanding-the-differences-and-their-importance-in-nlp-b62718b5964a" class="external-link">source</a></p>
 </div>
 </div>
 </div>
@@ -463,11 +470,33 @@ with the latter assigning weights based on a word’s importance,
 calculated by Term Frequency (TF) and Inverse Document Frequency (IDF).
 TF measures a word’s importance within a document, while IDF assesses
 its rarity across the corpus.</p>
+<p><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/2b3b5f37-667b-4fe8-bc31-e6798b6e2b61" alt="image" class="figure"><a href="https://www.deeplearning.ai/resources/natural-language-processing/" class="external-link">source</a></p>
 <p>The product of TF and IDF gives the TF-IDF score, which balances a
 word’s frequency in a document against its commonness in the corpus.
 This approach helps to highlight significant words while diminishing the
 impact of commonly used words like “the” or “a.”</p>
-<figure><img src="../fig/embedding_4.png" class="figure mx-auto d-block"></figure><div id="discussion-1" class="callout challenge">
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>Instructor Note</h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div class="accordion-body">
+<ul><li>
+<strong>BoW</strong> “encodes the total number of times a document
+uses each word in the associated corpus through the
+CounterVectorizer.”</li>
+<li>
+<strong>TF-IDF</strong> “creates features for each document based on
+how often each word shows up in a document versus the entire
+corpus.</li>
+<li><a href="https://www.deeplearning.ai/resources/natural-language-processing/" class="external-link">source</a></li>
+</ul></div>
+</div>
+</div>
+</div>
+<div id="discussion-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -475,9 +504,8 @@ impact of commonly used words like “the” or “a.”</p>
 <h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-1"></a>
 </h3>
 <div class="callout-content">
-<p>Teamwork: Analyze a corpus of product reviews using both BoW and
-TF-IDF. Discuss how each method represents the importance of words and
-the potential impact on sentiment analysis.</p>
+<p>Teamwork: Discuss how each method represents the importance of words
+and the potential impact on sentiment analysis.</p>
 </div>
 </div>
 </div>
@@ -514,9 +542,10 @@ unique the word is across all documents.</p>
 </h3>
 <div class="callout-content">
 <p>Sentiment Analysis Implications:</p>
-<p>Consider how the lack of context in BoW might affect sentiment
-analysis. Evaluate whether TF-IDF’s emphasis on unique words improves
-the model’s ability to understand sentiment.</p>
+<p>Analyze a corpus of product reviews using both BoW and TF-IDF.
+Consider how the lack of context in BoW might affect sentiment analysis.
+Evaluate whether TF-IDF’s emphasis on unique words improves the model’s
+ability to understand sentiment.</p>
 <p>Share Findings: Groups should present their findings, highlighting
 the strengths and weaknesses of each method.</p>
 </div>
@@ -642,7 +671,7 @@ more accurately interpret human language.</p>
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">
-<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What else?</h3>
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What is GLoVE?</h3>
 </button>
 <div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
