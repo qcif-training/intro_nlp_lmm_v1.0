@@ -1,5 +1,5 @@
 ---
-title: '8. Wrap-up and Final Project'
+title: 'Wrap-up and Final Project'
 teaching: 10
 exercises: 1
 ---
