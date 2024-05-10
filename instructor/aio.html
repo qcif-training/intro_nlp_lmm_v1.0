@@ -382,531 +382,97 @@ tasks.</li>
 <p>Natural Language Processing (NLP) is becoming a popular and robust
 tool for a wide range of research projects. In this episode we embark on
 a journey to explore the transformative power of NLP tools in the realm
-of research. It is tailored for researchers who are keen on harnessing
-the capabilities of NLP to enhance and expedite their work. Whether you
-are delving into <strong>text classification</strong>, <strong>named
-entity recognition</strong>, <strong>sentiments analysis</strong>,
-<strong>summarizing</strong> extensive documents,
-<strong>translating</strong> across languages, or developing
-sophisticated <strong>question-answering</strong> systems, this session
-will lay the foundational knowledge you need to leverage NLP
-effectively.</p>
-<p>The techniques break down into two broad categories, predictors and
-classifiers. Predictors are used to predict a value (or set of values)
-given a set of inputs whereas classifiers try to classify data into
-different categories, or assign a label.</p>
-<p>Many, but not all, machine learning systems “learn” by taking a
-series of input data and output data and using it to form a model. The
-maths behind the machine learning doesn’t care what the data is as long
-as it can represented numerically or categorised. Some examples might
-include:</p>
-<ul>
-<li>Predicting a person’s weight based on their height.</li>
-<li>Predicting house prices given stock market prices.</li>
-<li>Classifying an email as spam or not.</li>
-<li>Classifying an image as, e.g., a person, place, or particular
-object.</li>
-</ul>
-<p>Typically we train our models with hundreds, thousands or even
-millions of examples before they work well enough to do any useful
-predictions or classifications with them.</p>
-</section><section id="deep-learning-machine-learning-and-artificial-intelligence"><h2 class="section-heading">Deep Learning, Machine Learning and Artificial Intelligence<a class="anchor" aria-label="anchor" href="#deep-learning-machine-learning-and-artificial-intelligence"></a>
+of research.</p>
+<p>It is tailored for researchers who are keen on harnessing the
+capabilities of NLP to enhance and expedite their work. Whether you are
+delving into text classification, extracting pivotal information,
+discerning sentiments, summarizing extensive documents, translating
+across languages, or developing sophisticated question-answering
+systems, this session will lay the foundational knowledge you need to
+leverage NLP effectively.</p>
+<p>We will begin by delving into the Common Applications of NLP in
+Research, showcasing how these tools are not just theoretical concepts
+but practical instruments that drive forward today’s innovative research
+projects. From analyzing public sentiment to extracting critical data
+from a plethora of documents, NLP stands as a pillar in the modern
+researcher’s toolkit.</p>
+<p>Next, we’ll demystify the Basic Concepts and Terminology of NLP.
+Understanding these fundamental terms is crucial, as they form the
+building blocks of any NLP application. We’ll cover everything from the
+basics of a corpus to the intricacies of transformers, ensuring you have
+a solid grasp of the language used in NLP.</p>
+<p>Finally, we’ll guide you through Data Acquisition: Dataset Libraries,
+where you’ll learn about the treasure troves of data available at your
+fingertips. We’ll compare different libraries and demonstrate how to
+access and utilize these resources through hands-on examples.</p>
+<p>By the end of this episode, you will not only understand the
+significance of NLP in research but also be equipped with the knowledge
+to start applying these tools to your own projects. Prepare to unlock
+new potentials and streamline your research process with the power of
+NLP!</p>
+</section><section id="common-applications-of-nlp-in-research"><h2 class="section-heading">1.1. Common Applications of NLP in Research<a class="anchor" aria-label="anchor" href="#common-applications-of-nlp-in-research"></a>
 </h2>
 <hr class="half-width">
-<p>Deep Learning (DL) is just one of many machine learning techniques,
-in which people often talk about machine learning being a form of
-artificial intelligence (AI). Definitions of artificial intelligence
-vary, but usually involve having computers mimic the behaviour of
-intelligent biological systems. Since the 1950s many works of science
-fiction have dealt with the idea of an artificial intelligence which
-matches, or exceeds, human intelligence in all areas. Although there
-have been great advances in AI and ML research recently, we can only
-come close to human like intelligence in a few specialist areas and are
-still a long way from a general purpose AI. The image below illustrates
-some differences between artificial intelligence, machine learning and
-deep learning.</p>
-<figure><img src="../fig/01_AI_ML_DL_differences.png" alt="Three nested circles defining deep learning as a subset of machine learning which is a subset of artifical intelligence" class="figure mx-auto d-block"><div class="figcaption">The image above is by Tukijaaliwa, CC BY-SA 4.0,
-via Wikimedia Commons, <a href="https://en.wikipedia.org/wiki/File:AI-ML-DL.svg" class="external-link">original
-source</a>
-</div>
-</figure><div id="callout1" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
-</h3>
-<div class="callout-content">
-<p>Concept: Differentiation between traditional Machine Learning models
-and Deep Learning models:</p>
-<p><strong>Traditional ML algorithms</strong>, known as shallow models,
-are limited to just one or maybe two layers of data transformation to
-generate an output. When dealing with complex data featuring high
-dimensions and growing feature space (i.e. many attributes and an
-expanding set of potential values for each feature), these shallow
-models become limited in their ability to compute accurate outputs.</p>
-<p><strong>Deep neural networks</strong> are the extension of shallow
-models with three layers: input, hidden, and outputs layers. The hidden
-layer(s) is where learning takes place. As a result, deep learning is
-best applied to large datasets for training and prediction. As
-observations and feature inputs decrease, shallow ML approaches begin to
-perform noticeably better.</p>
-</div>
-</div>
-</div>
-</section><section id="what-is-image-classification"><h2 class="section-heading">What is image classification?<a class="anchor" aria-label="anchor" href="#what-is-image-classification"></a>
-</h2>
-<hr class="half-width">
-<p>Image classification is a fundamental task in computer vision, which
-is a field of artificial intelligence focused on teaching computers to
-interpret and understand visual information from the world. Image
-classification specifically involves the process of assigning a label or
-category to an input image. The goal is to enable computers to recognise
-and categorise objects, scenes, or patterns within images, just as a
-human would. Image classification can refer to one of several tasks:</p>
-<figure><img src="../fig/01_Fei-Fei_Li_Justin_Johnson_Serena_Young__CS231N_2017.png" alt="Four types of image classification tasks include semantic segmentation to label every pixel; classification and localisation to detect a single object like a cat; object detection to detect multiple objects like cats and dogs; and instance segmentation to detect each pixel of multiple objects" class="figure mx-auto d-block"></figure><p>Image classification has numerous practical applications,
-including:</p>
-<ul>
-<li>
-<strong>Object Recognition</strong>: Identifying objects within
-images, such as cars, animals, or household items.</li>
-<li>
-<strong>Medical Imaging</strong>: Diagnosing diseases from medical
-images like X-rays or MRIs.</li>
-<li>
-<strong>Quality Control</strong>: Inspecting products for defects on
-manufacturing lines.</li>
-<li>
-<strong>Autonomous Vehicles</strong>: Identifying pedestrians,
-traffic signs, and other vehicles in self-driving cars.</li>
-<li>
-<strong>Security and Surveillance</strong>: Detecting anomalies or
-unauthorised objects in security footage.</li>
-</ul>
-<p>A Convolutional Neural Networks (CNN) is a Deep Learning algorithm
-that has become a cornerstone in image classification due to its ability
-to automatically learn features from images in a hierarchical fashion
-(i.e. each layer builds upon what was learned by the previous layer). It
-can achieve remarkable performance on a wide range of tasks.</p>
-</section><section id="deep-learning-workflow"><h2 class="section-heading">Deep Learning Workflow<a class="anchor" aria-label="anchor" href="#deep-learning-workflow"></a>
-</h2>
-<hr class="half-width">
-<p>To apply Deep Learning to a problem there are several steps to go
-through:</p>
+<p><strong>Sentiment Analysis</strong> is a powerful tool for
+researchers, especially in fields like market research, political
+science, and public health. It involves the computational identification
+of opinions expressed in text, categorizing them as positive, negative,
+or neutral. In market research for instance, sentiment analysis can be
+applied to product reviews to gauge consumer satisfaction: a study could
+analyze thousands of online reviews for a new smartphone model to
+determine the overall public sentiment. This can help companies identify
+areas of improvement or features that are well-received by
+consumers.</p>
+<p><strong>Information Extraction</strong> is crucial for quickly
+gathering specific information from large datasets. It is used
+extensively in legal research, medical research, and scientific studies
+to extract entities and relationships from texts. In legal research for
+example, information extraction can be used to sift through case law to
+find precedents related to a particular legal issue. A researcher could
+use NLP to extract instances of “negligence” from thousands of case
+files, aiding in the preparation of legal arguments.</p>
+<p><strong>Text Summarization</strong> helps researchers by providing
+concise summaries of lengthy documents, such as research papers or
+reports, allowing them to quickly understand the main points without
+reading the entire text. In biomedical research, text summarization can
+assist in literature reviews by providing summaries of research
+articles. For example, a researcher could use an NLP model to summarize
+articles on gene therapy, enabling them to quickly assimilate key
+findings from a vast array of publications.</p>
+<p><strong>Topic Modeling</strong> is used to uncover latent topics
+within large volumes of text, which is particularly useful in fields
+like sociology and history to identify trends and patterns in historical
+documents or social media data. For example, in historical research,
+topic modeling can reveal prevalent themes in primary source documents
+from a particular era. A historian might use NLP to analyze newspapers
+from the early 20th century to study public discourse around significant
+events like World War I.</p>
 <div class="section level3">
-<h3 id="step-1--formulate-outline-the-problem">Step 1. Formulate / Outline the problem<a class="anchor" aria-label="anchor" href="#step-1--formulate-outline-the-problem"></a>
+<h3 id="challenges-of-nlp">Challenges of NLP<a class="anchor" aria-label="anchor" href="#challenges-of-nlp"></a>
 </h3>
-<p>Firstly we must decide what it is we want our Deep Learning system to
-do. This lesson is all about image classification so our aim is to put
-an image into one of a few categories. Specifically in our case, we have
-10 categories: airplane, automobile, bird, cat, deer, dog, frog, horse,
-ship, truck</p>
+<p>One of the significant challenges in NLP is dealing with the
+ambiguity of language. Words or phrases can have multiple meanings, and
+determining the correct one based on context can be difficult for NLP
+systems. In a research paper discussing “bank erosion,” an NLP system
+might confuse “bank” with a financial institution rather than the
+geographical feature, leading to incorrect analysis.</p>
+<p>This challenge leads to the fact that NLP systems often struggle with
+contextual understanding which is crucial in text analysis tasks. This
+can lead to misinterpretation of the meaning and sentiment of text. If a
+research paper mentions “novel results,” an NLP system might interpret
+“novel” as a literary work instead of “new” or “original,” which could
+mislead the analysis of the paper’s contributions.</p>
 </div>
 <div class="section level3">
-<h3 id="step-2--identify-inputs-and-outputs">Step 2. Identify inputs and outputs<a class="anchor" aria-label="anchor" href="#step-2--identify-inputs-and-outputs"></a>
+<h3 id="suggested-resource">Suggested Resource:<a class="anchor" aria-label="anchor" href="#suggested-resource"></a>
 </h3>
-<p>Next identify what the inputs and outputs of the neural network will
-be. In our case, the data is images and the inputs could be the
-individual pixels of the images. We are performing a classification
-problem and we will have one output for each potential class.</p>
-</div>
-<div class="section level3">
-<h3 id="step-3--prepare-data">Step 3. Prepare data<a class="anchor" aria-label="anchor" href="#step-3--prepare-data"></a>
-</h3>
-<p>Many datasets are not ready for immediate use in a neural network and
-will require some preparation. Neural networks can only really deal with
-numerical data, so any non-numerical data (e.g., images) will have to be
-somehow converted to numerical data. Information on how this is done and
-the data structure will be explored in <a href="02-image-data">Episode
-02 Introduction to Image Data</a>.</p>
-<p>For this lesson, we will use an existing image dataset known as <a href="https://www.cs.toronto.edu/~kriz/cifar.html" class="external-link">CIFAR-10</a>
-(Canadian Institute for Advanced Research). We will introduce the
-different data preparation tasks in more detail in the next episode but
-for this introduction, we will prepare the datset with these steps:</p>
-<ul>
-<li>normalise the image pixel values to be between 0 and 1</li>
-<li>one-hot encode the training image labels</li>
-<li>divide the data into <strong>training</strong>,
-<strong>validation</strong>, and <strong>test</strong> subsets</li>
-</ul>
-<div class="section level4">
-<h4 id="preparing-the-code">Preparing the code<a class="anchor" aria-label="anchor" href="#preparing-the-code"></a>
-</h4>
-<p>It is the goal of this training workshop to produce a Deep Learning
-program, using a Convolutional Neural Network. At the end of this
-workshop, we hope this code can be used as a “starting point”. We will
-create an “initial program” for this introduction chapter that will be
-used as a foundation for the rest of the episodes.</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co"># load the required packages</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="im">from</span> tensorflow <span class="im">import</span> keras <span class="co"># for neural networks </span></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="im">from</span> sklearn.model_selection <span class="im">import</span> train_test_split <span class="co"># for splitting data into sets</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt <span class="co"># for plotting</span></span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="co"># create a function to prepare the dataset</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a><span class="kw">def</span> prepare_dataset(train_images, train_labels):</span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>    </span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a>    <span class="co"># normalize the RGB values to be between 0 and 1</span></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>    train_images <span class="op">=</span> train_images <span class="op">/</span> <span class="dv">255</span></span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a>    test_images <span class="op">=</span> train_labels <span class="op">/</span> <span class="dv">255</span></span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a>    </span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>    <span class="co"># one hot encode the training labels</span></span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a>    train_labels <span class="op">=</span> keras.utils.to_categorical(train_labels, <span class="bu">len</span>(class_names))</span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>    </span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>    <span class="co"># split the training data into training and validation set</span></span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>    train_images, val_images, train_labels, val_labels <span class="op">=</span> train_test_split(</span>
-<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>    train_images, train_labels, test_size <span class="op">=</span> <span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>    <span class="cf">return</span> train_images, val_images, train_labels, val_labels</span>
-<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="co"># load the data</span></span>
-<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a>(train_images, train_labels), (test_images, test_labels) <span class="op">=</span> keras.datasets.cifar10.load_data()</span>
-<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a></span>
-<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a><span class="co"># create a list of class names associated with each CIFAR-10 label</span></span>
-<span id="cb1-26"><a href="#cb1-26" tabindex="-1"></a>class_names <span class="op">=</span> [<span class="st">'airplane'</span>, <span class="st">'automobile'</span>, <span class="st">'bird'</span>, <span class="st">'cat'</span>, <span class="st">'deer'</span>, <span class="st">'dog'</span>, <span class="st">'frog'</span>, <span class="st">'horse'</span>, <span class="st">'ship'</span>, <span class="st">'truck'</span>]</span>
-<span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a><span class="co">### Step 3. Prepare data</span></span>
-<span id="cb1-29"><a href="#cb1-29" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" tabindex="-1"></a><span class="co"># prepare the dataset for training</span></span>
-<span id="cb1-31"><a href="#cb1-31" tabindex="-1"></a>train_images, val_images, train_labels, val_labels <span class="op">=</span> prepare_dataset(train_images, train_labels)</span></code></pre>
-</div>
-<div id="challenge-examine-the-cifar-10-dataset" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="challenge-examine-the-cifar-10-dataset" class="callout-inner">
-<h3 class="callout-title">CHALLENGE Examine the CIFAR-10 dataset<a class="anchor" aria-label="anchor" href="#challenge-examine-the-cifar-10-dataset"></a>
-</h3>
-<div class="callout-content">
-<p>Explain the output of these commands?</p>
-<div class="codewrapper sourceCode" id="cb2">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Train: Images=</span><span class="sc">%s</span><span class="st">, Labels=</span><span class="sc">%s</span><span class="st">'</span> <span class="op">%</span> (train_images.shape, train_labels.shape))</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Validate: Images=</span><span class="sc">%s</span><span class="st">, Labels=</span><span class="sc">%s</span><span class="st">'</span> <span class="op">%</span> (val_images.shape, val_labels.shape))</span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Test: Images=</span><span class="sc">%s</span><span class="st">, Labels=</span><span class="sc">%s</span><span class="st">'</span> <span class="op">%</span> (test_images.shape, test_labels.shape))</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">Output</h4>
-</button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
-<div class="accordion-body">
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>Train: Images=(40000, 32, 32, 3), Labels=(40000, 10)
-Validate: Images=(10000, 32, 32, 3), Labels=(10000, 10)
-Test: Images=(10000, 32, 32, 3), Labels=(10000, 1)</code></pre>
-</div>
-<p>The training set consists of 40000 images of 32x32 pixels and three
-channels (RGB values) and one-hot encoded labels.</p>
-<p>The validation set consist of 10000 images of 32x32 pixels and three
-channels (RGB values) and one-hot encoded labels.</p>
-<p>The test set consists of 10000 images of 32x32 pixels and three
-channels (RGB values) and labels.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="section level4">
-<h4 id="visualise-a-subset-of-the-cifar-10-dataset">Visualise a subset of the CIFAR-10 dataset<a class="anchor" aria-label="anchor" href="#visualise-a-subset-of-the-cifar-10-dataset"></a>
-</h4>
-<div class="codewrapper sourceCode" id="cb4">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co"># create a figure object and specify width, height in inches</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">10</span>,<span class="dv">10</span>))</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co"># plot a subset of the images </span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">25</span>):</span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>    plt.subplot(<span class="dv">5</span>,<span class="dv">5</span>,i<span class="op">+</span><span class="dv">1</span>)</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>    plt.imshow(train_images[i])</span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    plt.axis(<span class="st">'off'</span>)</span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>    plt.title(class_names[train_labels[i,].argmax()])</span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>plt.show()</span></code></pre>
-</div>
-<figure><img src="../fig/01_cifar10_plot_subset.png" alt="Subset of 25 CIFAR-10 images representing different object classes" class="figure mx-auto d-block"></figure>
-</div>
-</div>
-<div class="section level3">
-<h3 id="step-4--choose-a-pre-trained-model-or-build-a-new-architecture-from-scratch">Step 4. Choose a pre-trained model or build a new architecture from
-scratch<a class="anchor" aria-label="anchor" href="#step-4--choose-a-pre-trained-model-or-build-a-new-architecture-from-scratch"></a>
-</h3>
-<p>Often we can use an existing neural network instead of designing one
-from scratch. Training a network can take a lot of time and
-computational resources. There are a number of well publicised networks
-which have been demonstrated to perform well at certain tasks. If you
-know of one which already does a similar task well, then it makes sense
-to use one of these.</p>
-<p>If instead we decide to design our own network, then we need to think
-about how many input neurons it will have, how many hidden layers and
-how many outputs, and what types of layers to use. This will require
-some experimentation and tweaking of the network design a few times
-before achieving acceptable results.</p>
-<p>Here we present an initial model to be explained in detail later
-on:</p>
-<div class="section level4">
-<h4 id="define-the-model">Define the Model<a class="anchor" aria-label="anchor" href="#define-the-model"></a>
-</h4>
-<div class="codewrapper sourceCode" id="cb5">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">def</span> create_model_intro():</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>    </span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>    <span class="co"># CNN Part 1</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>    <span class="co"># Input layer of 32x32 images with three channels (RGB)</span></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>    inputs_intro <span class="op">=</span> keras.Input(shape<span class="op">=</span>train_images.shape[<span class="dv">1</span>:])</span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>    </span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>    <span class="co"># CNN Part 2</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>    <span class="co"># Convolutional layer with 16 filters, 3x3 kernel size, and ReLU activation</span></span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Conv2D(<span class="dv">16</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>)(inputs_intro)</span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>    <span class="co"># Pooling layer with input window sized 2,2</span></span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>))(x_intro)</span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    <span class="co"># Second Convolutional layer with 32 filters, 3x3 kernel size, and ReLU activation</span></span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Conv2D(<span class="dv">32</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>)(x_intro)</span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>    <span class="co"># Second Pooling layer with input window sized 2,2</span></span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>))(x_intro)</span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>    <span class="co"># Flatten layer to convert 2D feature maps into a 1D vector</span></span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Flatten()(x_intro)</span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>    <span class="co"># Dense layer with 64 neurons and ReLU activation</span></span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Dense(<span class="dv">64</span>, activation<span class="op">=</span><span class="st">'relu'</span>)(x_intro)</span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a>    </span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a>    <span class="co"># CNN Part 3</span></span>
-<span id="cb5-22"><a href="#cb5-22" tabindex="-1"></a>    <span class="co"># Output layer with 10 units (one for each class) and softmax activation</span></span>
-<span id="cb5-23"><a href="#cb5-23" tabindex="-1"></a>    outputs_intro <span class="op">=</span> keras.layers.Dense(<span class="dv">10</span>, activation<span class="op">=</span><span class="st">'softmax'</span>)(x_intro)</span>
-<span id="cb5-24"><a href="#cb5-24" tabindex="-1"></a>    </span>
-<span id="cb5-25"><a href="#cb5-25" tabindex="-1"></a>    <span class="co"># create the model</span></span>
-<span id="cb5-26"><a href="#cb5-26" tabindex="-1"></a>    model_intro <span class="op">=</span> keras.Model(inputs <span class="op">=</span> inputs_intro, </span>
-<span id="cb5-27"><a href="#cb5-27" tabindex="-1"></a>                              outputs <span class="op">=</span> outputs_intro, </span>
-<span id="cb5-28"><a href="#cb5-28" tabindex="-1"></a>                              name <span class="op">=</span> <span class="st">"cifar_model_intro"</span>)</span>
-<span id="cb5-29"><a href="#cb5-29" tabindex="-1"></a>    </span>
-<span id="cb5-30"><a href="#cb5-30" tabindex="-1"></a>    <span class="cf">return</span> model_intro</span>
-<span id="cb5-31"><a href="#cb5-31" tabindex="-1"></a></span>
-<span id="cb5-32"><a href="#cb5-32" tabindex="-1"></a><span class="co"># create the introduction model</span></span>
-<span id="cb5-33"><a href="#cb5-33" tabindex="-1"></a>model_intro <span class="op">=</span> create_model_intro()</span>
-<span id="cb5-34"><a href="#cb5-34" tabindex="-1"></a></span>
-<span id="cb5-35"><a href="#cb5-35" tabindex="-1"></a><span class="co"># view model summary</span></span>
-<span id="cb5-36"><a href="#cb5-36" tabindex="-1"></a>model_intro.summary()</span></code></pre>
-</div>
-</div>
-</div>
-<div class="section level3">
-<h3 id="step-5--choose-a-loss-function-and-optimizer-and-compile-model">Step 5. Choose a loss function and optimizer and compile model<a class="anchor" aria-label="anchor" href="#step-5--choose-a-loss-function-and-optimizer-and-compile-model"></a>
-</h3>
-<p>To set up a model for training we need to compile it. This is when
-you set up the rules and strategies for how your network is going to
-learn.</p>
-<p>The loss function tells the training algorithm how far away the
-predicted value was from the true value. We will learn how to choose a
-loss function in more detail in <a href="04-fit-cnn.html">Episode 4
-Compile and Train (Fit) a Convolutional Neural Network</a>.</p>
-<p>The optimizer is responsible for taking the output of the loss
-function and then applying some changes to the weights within the
-network. It is through this process that “learning” (adjustment of the
-weights) is achieved.</p>
-<div class="codewrapper sourceCode" id="cb6">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="co"># compile the model</span></span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>model_intro.<span class="bu">compile</span>(optimizer <span class="op">=</span> <span class="st">'adam'</span>,</span>
-<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>                    loss <span class="op">=</span> keras.losses.CategoricalCrossentropy(),</span>
-<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>                    metrics <span class="op">=</span> [<span class="st">'accuracy'</span>])</span></code></pre>
-</div>
-</div>
-<div class="section level3">
-<h3 id="step-6--train-the-model">Step 6. Train the model<a class="anchor" aria-label="anchor" href="#step-6--train-the-model"></a>
-</h3>
-<p>We can now go ahead and start training our neural network. We will
-probably keep doing this for a given number of iterations through our
-training dataset (referred to as epochs) or until the loss function
-gives a value under a certain threshold.</p>
-<div class="codewrapper sourceCode" id="cb7">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="co"># fit the model</span></span>
-<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>history_intro <span class="op">=</span> model_intro.fit(train_images, train_labels, epochs <span class="op">=</span> <span class="dv">10</span>, </span>
-<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>                                validation_data <span class="op">=</span> (val_images, val_labels),</span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>                                batch_size <span class="op">=</span> <span class="dv">32</span>)</span></code></pre>
-</div>
-<p>Your output will begin to print similar to the output below:</p>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>Epoch 1/10
-
-1250/1250 [==============================] - 15s 12ms/step - loss: 1.4651 - accuracy: 0.4738 - val_loss: 1.2736 - val_accuracy: 0.5507</code></pre>
-</div>
-<div class="section level4">
-<h4 id="what-does-this-output-mean">What does this output mean?<a class="anchor" aria-label="anchor" href="#what-does-this-output-mean"></a>
-</h4>
-<p>This output printed during the fit phase, i.e. training the model
-against known image labels, can be broken down as follows:</p>
-<ul>
-<li><p><code>Epoch</code> describes the number of full passes over all
-<em>training data</em>.</p></li>
-<li><p>In the output above, there are <strong>1250</strong> batches
-(steps) to complete each epoch. This number is calculated as the total
-number of images used as input divided by the batch size (40000/32).
-After 1250 batches, all training images will have been seen once and the
-model moves on to the next epoch.</p></li>
-<li><p><code>loss</code> is a value the model will attempt to minimise
-and is a measure of the dissimilarity or error between the true label of
-an image and the model prediction. Minimising this distance is where
-<em>learning</em> occurs to adjust weights and bias which reduce
-<code>loss</code>.</p></li>
-<li><p><code>val_loss</code> is a value calculated against the
-validation data and is a measure of the model’s performance against
-unseen data.</p></li>
-<li><p>Both values are a summation of errors made during each
-epoch.</p></li>
-<li><p><code>accuracy</code> and <code>val_accuracy</code> values are a
-percentage and are only revelant to <strong>classification
-problems</strong>.</p></li>
-<li><p>The <code>val_accuracy</code> score can be used to communicate a
-model’s effectiveness on unseen data.</p></li>
-</ul>
-</div>
-</div>
-<div class="section level3">
-<h3 id="step-7--perform-a-predictionclassification">Step 7. Perform a Prediction/Classification<a class="anchor" aria-label="anchor" href="#step-7--perform-a-predictionclassification"></a>
-</h3>
-<p>After training the network we can use it to perform predictions. This
-is how you would use the network after you have fully trained it to a
-satisfactory performance. The predictions performed here on a special
-hold-out set is used in the next step to measure the performance of the
-network.</p>
-<div class="codewrapper sourceCode" id="cb9">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="co"># make prediction for the first test image</span></span>
-<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>result_intro <span class="op">=</span> model_intro.predict(test_images[<span class="dv">0</span>].reshape(<span class="dv">1</span>,<span class="dv">32</span>,<span class="dv">32</span>,<span class="dv">3</span>))</span>
-<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="co"># extract class for prediction with highest probability</span></span>
-<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>class_names[result_intro.argmax()]</span>
-<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a></span>
-<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a><span class="co"># plot the first test image with its true label</span></span>
-<span id="cb9-8"><a href="#cb9-8" tabindex="-1"></a></span>
-<span id="cb9-9"><a href="#cb9-9" tabindex="-1"></a>plt.figure() <span class="co"># create a plot</span></span>
-<span id="cb9-10"><a href="#cb9-10" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" tabindex="-1"></a><span class="co"># display image</span></span>
-<span id="cb9-12"><a href="#cb9-12" tabindex="-1"></a>plt.imshow(test_images[<span class="dv">0</span>])</span>
-<span id="cb9-13"><a href="#cb9-13" tabindex="-1"></a>plt.title(<span class="st">'True class:'</span> <span class="op">+</span> class_names[result_intro.argmax()])</span>
-<span id="cb9-14"><a href="#cb9-14" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="#cb9-15" tabindex="-1"></a>plt.show() <span class="co"># view plot</span></span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>The predicted probability of each class is:  [[0.0074 0.0006 0.0456 0.525  0.0036 0.1062 0.0162 0.0006 0.2908 0.004 ]]
-The class with the highest predicted probability is:  cat</code></pre>
-</div>
-<figure><img src="../fig/01_test_image.png" alt="poor resolution image of a cat" class="figure mx-auto d-block"></figure><p>Congratulations, you just created your first image classification
-model and used it to classify an image!</p>
-<p>Was the classification correct? Why might it be incorrect and what
-can we do about?</p>
-<p>There are many ways to try to improve the accuracy of our model, such
-as adding or removing layers to the model definition and fine-tuning the
-hyperparameters, which takes us to the next steps in our workflow.</p>
-<div id="callout2" class="callout">
-<div class="callout-square">
-<i class="callout-icon" data-feather="bell"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout2"></a>
-</h3>
-<div class="callout-content">
-<p>My result is different!</p>
-<p>While the neural network itself is deterministic (ie without
-randomness), various factors in the training process, system setup, and
-data variability can lead to small variations in the output. These
-variations are usually minor and should not significantly impact the
-overall performance or behavior of the model.</p>
-<p>If you are finding significant differences in the model predictions,
-this could be a sign the model is not fully converged. “Convergence”
-refers to the point where the model has reached an optimal or
-near-optimal state in terms of learning from the training data.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="section level3">
-<h3 id="step-8--measure-performance">Step 8. Measure Performance<a class="anchor" aria-label="anchor" href="#step-8--measure-performance"></a>
-</h3>
-<p>Once we trained the network we want to measure its performance. To do
-this, we use additional data that was <strong>not</strong> part of the
-training, called a test dataset. There are many different methods
-available for measuring performance and which one is best depends on the
-type of task we are attempting. These metrics are often published as an
-indication of how well our network performs.</p>
-</div>
-<div class="section level3">
-<h3 id="step-9--tune-hyperparameters">Step 9. Tune Hyperparameters<a class="anchor" aria-label="anchor" href="#step-9--tune-hyperparameters"></a>
-</h3>
-<p>When building image recognition models in Python, especially using
-libraries like TensorFlow or Keras, the process involves not only
-designing a neural network but also choosing the best values for various
-hyperparameters that govern the training process.</p>
-<p><strong>Hyperparameters</strong> are all the parameters set by the
-person configuring the model as opposed to those learned by the
-algorithm itself. These hyperparameters can include the learning rate,
-the number of layers in the network, the number of neurons per layer,
-and many more. Hyperparameter tuning refers to the process of
-systematically searching for the best combination of hyperparameters
-that will optimise the model’s performance. This concept will be
-continued, with practical examples, in <a href="05-evaluate-predict-cnn.html">Episode 05 Evaluate a Convolutional
-Neural Network and Make Predictions (Classifications)</a></p>
-</div>
-<div class="section level3">
-<h3 id="step-10--share-model">Step 10. Share Model<a class="anchor" aria-label="anchor" href="#step-10--share-model"></a>
-</h3>
-<p>Now that we have a trained network that performs at a level we are
-happy with we can go and use it on real live data to perform a
-prediction. At this point we might want to consider publishing a file
-with both the architecture of our network and the weights which it has
-learned (assuming we did not use a pre-trained network). This will allow
-others to use it as as pre-trained network for their own purposes and
-for them to (mostly) reproduce our result.</p>
-<p>To share the model we must save it first:</p>
-<div class="codewrapper sourceCode" id="cb11">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># save  model</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>model_intro.save(<span class="st">'fit_outputs/model_intro.keras'</span>)</span></code></pre>
-</div>
-<p>We will return to each of these workflow steps throughout this lesson
-and discuss each component in more detail.</p>
-<div id="keypoints1" class="callout keypoints">
-<div class="callout-square">
-<i class="callout-icon" data-feather="key"></i>
-</div>
-<div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
-<div class="callout-content">
-<ul>
-<li>Machine learning is the process where computers learn to recognise
-patterns of data.</li>
-<li>Deep learning is a subset of machine learning, which is a subset of
-artificial intelligence.</li>
-<li>Convolutional neural networks are well suited for image
-classification.</li>
-<li>To use Deep Learning effectively we follow a workflow of: defining
-the problem, identifying inputs and outputs, preparing data, choosing
-the type of network, training the model, tuning hyperparameters, and
-measuring performance before we can classify data.</li>
-</ul>
-</div>
-</div>
-</div>
-<!-- Collect your link references at the bottom of your document -->
+<p>Python’s Natural Language Toolkit (NLTK) for sentiment analysis
+TextBlob, a library for processing textual data Stanford NER for named
+entity recognition spaCy, an open-source software library for advanced
+NLP Sumy, a Python library for automatic summarization of text documents
+BERT-based models for extractive and abstractive summarization Gensim
+for topic modeling and document similarity analysis MALLET, a Java-based
+package for statistical natural language processing</p>
 <!-- 
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
@@ -1007,7 +573,7 @@ need to train a Deep Learning model?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Unfortunately, this question is not easy to answer. It depends, among
 other things, on the complexity of the task (which you often do not know
@@ -1167,7 +733,7 @@ Keras has a solution: <a href="https://keras.io/api/data_loading/image/" class="
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>WANT TO KNOW MORE: Python image libraries</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Two of the most commonly used libraries for image representation and
 manipulation are NumPy and Pillow (PIL). Additionally, when working with
@@ -1311,7 +877,7 @@ Mean pixel value  0.0</code></pre>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>WANT TO KNOW MORE: Why Normalize?</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>ChatGPT</p>
 <p>Normalizing the RGB values to be between 0 and 1 is a common
@@ -1574,7 +1140,7 @@ dataset<a class="anchor" aria-label="anchor" href="#challenge-create-a-function-
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1675,7 +1241,7 @@ classes are well balanced.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>A. Training Set</p>
 <div class="codewrapper sourceCode" id="cb14">
@@ -1715,7 +1281,7 @@ Nmber of images in each class:
   <h3 class="accordion-header" id="headingSpoiler3">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>WANT TO KNOW MORE: Data Splitting Techniques</h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>ChatGPT</p>
 <p>Data is typically split into the training, validation, and test data
@@ -1984,7 +1550,7 @@ image to use an input.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2069,7 +1635,7 @@ layer.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2154,7 +1720,7 @@ convolution?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>There are different ways of dealing with border pixels.</p>
 <ul>
@@ -2212,7 +1778,7 @@ layer.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2282,7 +1848,7 @@ layer.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2333,7 +1899,7 @@ layer.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2351,7 +1917,7 @@ layer.</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What does Flatten mean exactly?</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>A flatten layer function is typically used to transform the
 two-dimensional arrays (matrices) generated by the convolutional and
@@ -2427,7 +1993,7 @@ layer.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2495,7 +2061,7 @@ our dataset. Hint 3: Use softmax activation.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8">Show me the solution</h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2533,7 +2099,7 @@ our dataset. Hint 3: Use softmax activation.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
   <h4 class="accordion-header" id="headingSolution9">Show me the solution</h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2762,7 +2328,7 @@ in vector space models. Consider the impact of ignoring common words
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><img src="../fig/embedding_3.png" class="figure"><a href="https://medium.com/@saschametzger/what-are-tokens-vectors-and-embeddings-how-do-you-create-them-e2a3e698e037" class="external-link">source</a></p>
 <p>A: Ignoring stop words might lead to loss of some contextual
@@ -2779,7 +2345,7 @@ flexible syntax.</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Tell me MORE!</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Tokenization is a fundamental step in the processing of text for
 vector space models. It involves breaking down a string of text into
@@ -2888,7 +2454,7 @@ the potential impact on sentiment analysis.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>A: To compare the Bag of Words (BoW) and Term Frequency-Inverse
 Document Frequency (TF-IDF) methods in representing text data and their
@@ -2929,7 +2495,7 @@ the strengths and weaknesses of each method.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3047,7 +2613,7 @@ more accurately interpret human language.</p>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What else?</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Global Vectors for Word Representation (GLoVE)</p>
 <p>GLoVE is a model for learning word embeddings, which are
@@ -3542,9 +3108,12 @@ any links that you are not going to use.
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<p>• What are the main features of large language models? • How BERT is
-different from GPT models? • How can I use open-source LLMs, such as LLM
-examples in huggingface, for research tasks?</p>
+<ul>
+<li>What are the main features of large language models?</li>
+<li>How BERT is different from GPT models?</li>
+<li>How can I use open-source LLMs, such as LLM examples in huggingface,
+for research tasks?</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3552,10 +3121,13 @@ examples in huggingface, for research tasks?</p>
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<p>• Be able to explain the structure of large language models and their
-main components. • Identify differences between BERT and GPT. • Be able
-to use open-source LLMs, such as huggingface, for text summarization,
-classification, and generation.</p>
+<ul>
+<li>Be able to explain the structure of large language models and their
+main components</li>
+<li>Identify differences between BERT and GPT.</li>
+<li>Be able to use open-source LLMs, such as huggingface, for text
+summarization, classification, and generation.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -3574,16 +3146,16 @@ components to process language.</p>
 <p>LLMs have several key features. Gather in groups and discuss what are
 these key components. Explain the key features in detail and compare
 your thoughts with other group members:</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/7a59c101-910a-4820-a110-af0f6bd12ceb" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure>
+<figure><img src="../fig/llms_1.png" class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level2 Discussion">
 <h2 id="discuss-in-groups-">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups-"></a>
 </h2>
-<p>Add your explanations in the below: 1. Transformer Architecture: A
-neural network design that uses self-attention mechanisms to weigh the
-influence of different parts of the input data.</p>
-<ol start="2" style="list-style-type: decimal">
+<p>Add your explanations below:</p>
+<ol style="list-style-type: decimal">
+<li><p>Transformer Architecture: A neural network design that uses
+self-attention mechanisms to weigh the influence of different parts of
+the input data.</p></li>
 <li><p>Pre-training: involves teaching LLMs to anticipate words in
 sentences, using either bi-directional or uni-directional approaches,
 (based on the LLM type), without the need for understanding or
@@ -3593,8 +3165,7 @@ experience.</p></li>
 <li><hr></li>
 <li><hr></li>
 </ol>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/3ee1fc7b-1f31-46b0-a9d6-64ee3eadb630" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure>
+<figure><img src="../fig/llms_2.png" class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level2 Discussion">
 <h2 id="discuss-in-groups--1">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--1"></a>
@@ -3604,13 +3175,12 @@ examples of NLP tasks that require domain-specific LLMs, such as
 literature review, patent analysis, or material discovery. How do
 domain-specific LLMs improve the performance and accuracy of these
 tasks?</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/6e5a6a74-eaa2-430d-b5b5-8198716fb4f7" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure><div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<figure><img src="../fig/llms_3.png" class="figure mx-auto d-block"></figure><div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Transformer Architecture: A neural network design that uses
@@ -3631,8 +3201,7 @@ training data and determine the model’s behavior.</p></li>
 knowledge to new tasks.</p></li>
 </ol>
 <p>Thus, the completed graph will be:</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/6c8520f5-c816-4929-b0c0-6f5161a0144e" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure>
+<figure><img src="../fig/llms_4.png" class="figure mx-auto d-block"></figure>
 </div>
 </div>
 </div>
@@ -3643,8 +3212,7 @@ have another look to the transformer architecture, this time divide it
 into its two main components: Encoder and Decoder. How do you think we
 should connect each one the following transformers to the correct
 color?</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/17fa5a60-cdad-4880-8b2f-03d33b97c1d0" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure><p>• Encoders are used for understanding tasks like sentence
+<figure><img src="../fig/llms_5.png" class="figure mx-auto d-block"></figure><p>• Encoders are used for understanding tasks like sentence
 classification.</p>
 <p>• Decoders excel in generative tasks like text generation.</p>
 <p>• The combination of encoders and decoders in transformers allows
@@ -3657,7 +3225,7 @@ hand.</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Encoder Vs. Decoder or BERT Vs. GPT</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>We will see models like BERT use encoders for bidirectional
 understanding, and models like GPT use decoders for generating coherent
@@ -3678,7 +3246,7 @@ performance?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>Traditional NLP models, such as n-gram models, hidden Markov models
 (HMMs), Long Short-Term Memory networks (LSTMs), and Recurrent Neural
@@ -3688,21 +3256,21 @@ items without any deep understanding of context. HMMs are statistical
 models that output probabilities of sequences and are often used for
 tasks like part-of-speech tagging. LSTMs and RNNs are types of neural
 networks that can process sequences of data and are capable of learning
-order dependence in sequence prediction. Compared to these traditional
-models, LLMs have several key differences:
-<strong>Architecture</strong>: Novel LLMs use transformer architectures,
-which are more advanced than the simple recurrent units of RNNs or the
-gated units of LSTMs. Transformers use self-attention to weigh the
-influence of different parts of the input data, which is more effective
-for understanding context. <strong>Data</strong>: Novel LLMs are trained
-on massive datasets, often sourced from the internet, which allows them
-to learn a wide variety of language patterns, common knowledge, and even
-reasoning abilities. Traditional models typically use smaller, more
-curated datasets. <strong>Performance</strong>: Novel LLMs generally
-outperform traditional models in a wide range of language tasks due to
-their ability to understand and generate human-like text. They can
-capture subtleties and complexities of language that simpler models
-cannot, leading to more accurate and coherent outputs.</p>
+order dependence in sequence prediction.</p>
+<p>Compared to these traditional models, LLMs have several key
+differences: <strong>Architecture</strong>: Novel LLMs use transformer
+architectures, which are more advanced than the simple recurrent units
+of RNNs or the gated units of LSTMs. Transformers use self-attention to
+weigh the influence of different parts of the input data, which is more
+effective for understanding context. <strong>Data</strong>: Novel LLMs
+are trained on massive datasets, often sourced from the internet, which
+allows them to learn a wide variety of language patterns, common
+knowledge, and even reasoning abilities. Traditional models typically
+use smaller, more curated datasets. <strong>Performance</strong>: Novel
+LLMs generally outperform traditional models in a wide range of language
+tasks due to their ability to understand and generate human-like text.
+They can capture subtleties and complexities of language that simpler
+models cannot, leading to more accurate and coherent outputs.</p>
 </div>
 </div>
 </div>
@@ -3734,15 +3302,16 @@ nuanced meanings of words.”</p>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: MLM &amp; NSP</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Pre-training of language models involves a process where models like
 BERT and GPT learn to predict words in sentences without specific task
 training. This is achieved through methods like Masked Language Model
 (MLM) for bi-directional models, which predict masked words using
 surrounding context. MLM in BERT predicts missing words in a sentence by
-masking them during training. For Next Sentence Prediction (NSP) BERT
-learns to predict if two sentences logically follow each other.</p>
+masking them during training.</p>
+<p>For Next Sentence Prediction (NSP) BERT learns to predict if two
+sentences logically follow each other.</p>
 </div>
 </div>
 </div>
@@ -3762,9 +3331,7 @@ explain the differences in the end.</p>
 <h2 id="activity-fill-in-the-gap-1">Activity: Fill in the gap<a class="anchor" aria-label="anchor" href="#activity-fill-in-the-gap-1"></a>
 </h2>
 <p>Fill the in the gray boxes with correct explanations.</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/838ec957-7000-4a89-93e1-f806a78defdb" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure><figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/1021a649-9656-450c-af4d-9cdf790fcc6b" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure>
+<figure><img src="../fig/llms_6.png" class="figure mx-auto d-block"></figure><figure><img src="../fig/llms_7.png" class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level2 Discussion">
 <h2 id="discuss-in-groups--3">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--3"></a>
@@ -3777,28 +3344,28 @@ answers.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>We can see it as the processes of trying to understand a conversation
 (BERT), versus trying to decide what to say next in the conversation
 (GPT). BERT is like someone who listens to the entire conversation
-before and after a word to really understand its meaning. For example,
-in the sentence “I ate an apple,” BERT would look at both “I ate an” and
-“apple” to figure out what <strong>“an”</strong> refers to. It’s trained
-by playing a game of <strong>‘guess the missing word,’</strong> where
-some words are hidden <strong>(masked)</strong> and it has to use the
-context to fill in the blanks. GPT, on the other hand, is like a
-storyteller who only needs to know what was said before to continue the
-tale. It would take “I ate an” and <strong>predict that the next
-word</strong> might be “apple.” It learns by <strong>reading a lot of
-text</strong> and practicing how to predict the next word in a sentence.
-Both are smart in their own ways, but they’re used for different types
-of language tasks. BERT is great for understanding the <strong>context
-of words</strong>, while GPT is excellent at <strong>generating new
-text</strong> based on what it’s seen before. The following schematics
-demonstrate their performing differences:</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/fa593349-b33a-45fe-807b-4c08a58fa57e" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure>
+before and after a word to really understand its meaning.</p>
+<p>For example, in the sentence “I ate an apple,” BERT would look at
+both “I ate an” and “apple” to figure out what <strong>“an”</strong>
+refers to. It’s trained by playing a game of <strong>‘guess the missing
+word,’</strong> where some words are hidden <strong>(masked)</strong>
+and it has to use the context to fill in the blanks.</p>
+<p>GPT, on the other hand, is like a storyteller who only needs to know
+what was said before to continue the tale. It would take “I ate an” and
+<strong>predict that the next word</strong> might be “apple.” It learns
+by <strong>reading a lot of text</strong> and practicing how to predict
+the next word in a sentence.</p>
+<p>Both are smart in their own ways, but they’re used for different
+types of language tasks. BERT is great for understanding the
+<strong>context of words</strong>, while GPT is excellent at
+<strong>generating new text</strong> based on what it’s seen before. The
+following schematics demonstrate their performing differences:</p>
+<figure><img src="../fig/llms_8.png" class="figure mx-auto d-block"></figure>
 </div>
 </div>
 </div>
@@ -3810,14 +3377,13 @@ demonstrate their performing differences:</p>
   <h3 class="accordion-header" id="headingSpoiler3">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: HELM: LLMs Comparison</h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>Models are often benchmarked using standardized datasets and metrics.
 The Holistic Evaluation of Language Models (HELM) by Stanford provides a
 comprehensive framework for evaluating LLMs across multiple
 dimensions.</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/5face1b7-d05e-4c91-8dfb-ed0f27a08049" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure><p>GPT-4 models are outperforming other LLM models in terms of
+<figure><img src="../fig/llms_9.png" class="figure mx-auto d-block"></figure><p>GPT-4 models are outperforming other LLM models in terms of
 accuracy.</p>
 </div>
 </div>
@@ -3844,42 +3410,42 @@ on July 6, 2022. It offers a wide range of model sizes, from 1.1 billion
 to 176 billion parameters, and is licensed under the open RAIL-M v1.
 BLOOM is known for its instruct models, coding capabilities,
 customization finetuning, and being open source. It is more openly
-accessible and benefits from a large community and extensive support. On
-the other hand, the LLaMA model, developed by Meta AI, was released on
-February 24, 2023. It is available in four sizes: 7 billion, 13 billion,
-33 billion, and 65 billion parameters. The license for LLaMA is
-restricted to noncommercial use, and access is primarily for
+accessible and benefits from a large community and extensive
+support.</p>
+<p>On the other hand, the LLaMA model, developed by Meta AI, was
+released on February 24, 2023. It is available in four sizes: 7 billion,
+13 billion, 33 billion, and 65 billion parameters. The license for LLaMA
+is restricted to noncommercial use, and access is primarily for
 researchers. Despite its smaller size, LLaMA is parameter-efficient and
 has outperformed GPT-3 on many benchmarks. However, its accessibility is
 more gated compared to BLOOM, and community support is limited to
-approved researchers. Now let’s summarize what we learned here in the
-following table:</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/5becd68d-7b5c-4ba7-b362-1875575d8980" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure>
+approved researchers.</p>
+<p>Now let’s summarize what we learned here in the following table:</p>
+<figure><img src="../fig/llms_10.png" class="figure mx-auto d-block"></figure>
 </div>
 </div>
 <div class="section level2 Discussion">
 <h2 id="discuss-in-groups--5">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--5"></a>
 </h2>
 <p>What are the challenges and trade-offs of domain-specific LLMs, such
-as data availability, model size, and complexity? Consider some of the
-factors that affect the quality and reliability of domain-specific LLMs,
-such as the amount and quality of domain-specific data, the
-computational resources and time required for training or fine-tuning,
-and the generalization and robustness of the model. How do these factors
-pose problems or difficulties for domain-specific LLMs and how can we
-overcome them?</p>
+as data availability, model size, and complexity?</p>
+<p>Consider some of the factors that affect the quality and reliability
+of domain-specific LLMs, such as the amount and quality of
+domain-specific data, the computational resources and time required for
+training or fine-tuning, and the generalization and robustness of the
+model. How do these factors pose problems or difficulties for
+domain-specific LLMs and how can we overcome them?</p>
 </div>
 <div class="section level2 Discussion">
 <h2 id="discuss-in-groups--6">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--6"></a>
 </h2>
 <p>What are some available approaches for creating domain-specific LLMs,
-such as fine-tuning and knowledge distillation? Consider some of the
-main steps and techniques for creating domain-specific LLMs, such as
-selecting a general LLM, collecting and preparing domain-specific data,
-training or fine-tuning the model, and evaluating and deploying the
-model. How do these approaches differ from each other and what are their
-advantages and disadvantages?</p>
+such as fine-tuning and knowledge distillation?</p>
+<p>Consider some of the main steps and techniques for creating
+domain-specific LLMs, such as selecting a general LLM, collecting and
+preparing domain-specific data, training or fine-tuning the model, and
+evaluating and deploying the model. How do these approaches differ from
+each other and what are their advantages and disadvantages?</p>
 </div>
 <div class="section level3">
 <h3 id="example">Example:<a class="anchor" aria-label="anchor" href="#example"></a>
@@ -3907,11 +3473,11 @@ go through an example using Hugging Face’s transformers library:</p>
 </div>
 <p>In this example, we provide the model with one translation example
 and then ask it to translate a new sentence. The model uses the context
-from the one-shot example to generate the translation. But what if we
-have a Few-Shot Prompting? Few-shot prompting gives the model several
-examples to learn from. This can improve the model’s ability to
-understand and complete the task. Here is how you can implement few-shot
-prompting:</p>
+from the one-shot example to generate the translation.</p>
+<p>But what if we have a Few-Shot Prompting? Few-shot prompting gives
+the model several examples to learn from. This can improve the model’s
+ability to understand and complete the task. Here is how you can
+implement few-shot prompting:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3972,7 +3538,7 @@ followed the <strong>—</strong> correctly.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Choose a Model: Select a <strong>pre-trained</strong> model from
@@ -3997,7 +3563,7 @@ followed the <strong>examples</strong> correctly.</p></li>
   <h3 class="accordion-header" id="headingSpoiler4">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Prompting Quality</h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <p>Remember, the quality of the output heavily depends on the quality
 and relevance of the examples you provide. It’s also important to note
@@ -4049,10 +3615,13 @@ any links that you are not going to use.
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<p>• How can tune the LLMs to be domain-specific? • What are some
-available approaches to empower LLMs solve specific research problems? •
-Which approach should I use for my research? • What are the challenges
-and trade-offs of domain-specific LLMs?</p>
+<ul>
+<li>How can tune the LLMs to be domain-specific?</li>
+<li>What are some available approaches to empower LLMs solve specific
+research problems?</li>
+<li>Which approach should I use for my research?</li>
+<li>What are the challenges and trade-offs of domain-specific LLMs?</li>
+</ul>
 </div>
 </div>
 </div>
@@ -4060,9 +3629,12 @@ and trade-offs of domain-specific LLMs?</p>
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<p>• Be able to identify approaches by which LLMs can be tuned for
-solving research problems. • Be able to use introductory approaches for
-creating domain-specific LLMs.</p>
+<ul>
+<li>Be able to identify approaches by which LLMs can be tuned for
+solving research problems.</li>
+<li>Be able to use introductory approaches for creating domain-specific
+LLMs.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -4078,43 +3650,49 @@ Generally, there are four ways to enhance the performance of LLMs:</p>
 <h4 id="prompt-optimization">1. Prompt Optimization:<a class="anchor" aria-label="anchor" href="#prompt-optimization"></a>
 </h4>
 <p>To elicit specific and accurate responses from LLMs by designing
-prompts strategically. Zero-shot Prompting: This is the simplest form of
+prompts strategically.</p>
+<p><strong>Zero-shot Prompting</strong>: This is the simplest form of
 prompting where the LLM is given a task or question without any context
 or examples. It relies on the LLM’s pre-existing knowledge to generate a
-response. Example: “What is the capital of France?” The LLM would
-respond with “Paris” based on its internal knowledge. Few-shot
-Prompting: In this technique, the LLM is provided with a few examples to
-demonstrate the expected response format or content. Example: To
-determine sentiment, you might provide examples like “I love sunny days.
-(+1)” and “I hate traffic. (-1)” before asking the LLM to analyze a new
-sentence.</p>
+response.</p>
+<p>Example: “What is the capital of France?” The LLM would respond with
+“Paris” based on its internal knowledge.</p>
+<p><strong>Few-shot Prompting</strong>: In this technique, the LLM is
+provided with a few examples to demonstrate the expected response format
+or content.</p>
+<p>Example: To determine sentiment, you might provide examples like “I
+love sunny days. (+1)” and “I hate traffic. (-1)” before asking the LLM
+to analyze a new sentence.</p>
 </div>
 <div class="section level4">
 <h4 id="retrieval-augmented-generation-rag">2. Retrieval Augmented Generation (RAG):<a class="anchor" aria-label="anchor" href="#retrieval-augmented-generation-rag"></a>
 </h4>
 <p>To supplement the LLM’s generative capabilities with information
-retrieved from external databases or documents. Retrieval: The LLM
-queries a database to find relevant information that can inform its
-response. Example: If asked about recent scientific discoveries, the LLM
-might retrieve articles or papers on the topic. Generation: After
-retrieving the information, the LLM integrates it into a coherent
-response. Example: Using the retrieved scientific articles, the LLM
-could generate a summary of the latest findings in a particular
-field.</p>
+retrieved from external databases or documents.</p>
+<p><strong>Retrieval</strong>: The LLM queries a database to find
+relevant information that can inform its response.</p>
+<p>Example: If asked about recent scientific discoveries, the LLM might
+retrieve articles or papers on the topic.</p>
+<p><strong>Generation</strong>: After retrieving the information, the
+LLM integrates it into a coherent response.</p>
+<p>Example: Using the retrieved scientific articles, the LLM could
+generate a summary of the latest findings in a particular field.</p>
 </div>
 <div class="section level4">
 <h4 id="fine-tuning">3. Fine-Tuning:<a class="anchor" aria-label="anchor" href="#fine-tuning"></a>
 </h4>
 <p>To adapt a general-purpose LLM to excel at a specific task or within
-a particular domain. Language Modeling Task Fine-Tuning: This involves
+a particular domain.</p>
+<p><strong>Language Modeling Task Fine-Tuning</strong>: This involves
 training the LLM on a large corpus of text to improve its ability to
-predict the next word or phrase in a sentence. Example: An LLM
-fine-tuned on legal documents would become better at generating text
-that resembles legal writing. Supervised Q&amp;A Fine-Tuning: Here, the
-LLM is trained on a dataset of question-answer pairs to enhance its
-performance on Q&amp;A tasks. Example: An LLM fine-tuned with medical
-Q&amp;A pairs would provide more accurate responses to health-related
-inquiries.</p>
+predict the next word or phrase in a sentence.</p>
+<p>Example: An LLM fine-tuned on legal documents would become better at
+generating text that resembles legal writing.</p>
+<p><strong>Supervised Q&amp;A Fine-Tuning</strong>: Here, the LLM is
+trained on a dataset of question-answer pairs to enhance its performance
+on Q&amp;A tasks.</p>
+<p>Example: An LLM fine-tuned with medical Q&amp;A pairs would provide
+more accurate responses to health-related inquiries.</p>
 </div>
 <div class="section level4">
 <h4 id="training-from-scratch">4. Training from Scratch:<a class="anchor" aria-label="anchor" href="#training-from-scratch"></a>
@@ -4129,8 +3707,7 @@ the ground up.</p>
 <p>Which approach do you think is more computation-intensive? Which is
 more accurate? How are these qualities related? Evaluate the trade-offs
 between fine-tuning and other approaches.</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/7526be09-de4d-4c59-b6df-93f0d2dca9d7" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure>
+<figure><img src="../fig/dsllms_1.png" class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level2 Discussion">
 <h2 id="discuss-in-groups--1">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--1"></a>
@@ -4140,8 +3717,7 @@ examples of NLP tasks that require domain-specific LLMs, such as
 literature review, patent analysis, or material discovery. How do
 domain-specific LLMs improve the performance and accuracy of these
 tasks?</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/6e5a6a74-eaa2-430d-b5b5-8198716fb4f7" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure>
+<figure><img src="../fig/dsllms_2.png" class="figure mx-auto d-block"></figure>
 </div>
 <div class="section level3">
 <h3 id="prompting">7.2. Prompting<a class="anchor" aria-label="anchor" href="#prompting"></a>
@@ -4184,29 +3760,32 @@ sources:</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Be careful when fine-tuning a model</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>When fine-tuning a BERT model from Hugging Face, for instance, it is
-essential to approach the process with precision and care. Begin by
-thoroughly understanding <strong>BERT’s architecture</strong> and the
-specific task at hand to select the most suitable model variant and
-hyperparameters. <strong>Prepare your dataset</strong> meticulously,
-ensuring it is clean, well-represented, and split correctly to avoid
-<strong>data leakage and overfitting</strong>. Hyperparameter selection,
-such as learning rates and batch sizes, should be made with
-consideration, and <strong>regularization</strong> techniques like
-dropout should be employed to enhance the model’s ability to generalize.
-<strong>Evaluate</strong> the model’s performance using appropriate
+essential to approach the process with precision and care.</p>
+<p>Begin by thoroughly understanding <strong>BERT’s
+architecture</strong> and the specific task at hand to select the most
+suitable model variant and hyperparameters.</p>
+<p><strong>Prepare your dataset</strong> meticulously, ensuring it is
+clean, well-represented, and split correctly to avoid <strong>data
+leakage and overfitting</strong>.</p>
+<p>Hyperparameter selection, such as learning rates and batch sizes,
+should be made with consideration, and <strong>regularization</strong>
+techniques like dropout should be employed to enhance the model’s
+ability to generalize.</p>
+<p><strong>Evaluate</strong> the model’s performance using appropriate
 metrics and address any class imbalances with weighted loss functions or
 similar strategies. Save checkpoints to preserve progress and document
 every step of the fine-tuning process for transparency and
-reproducibility. <strong>Ethical considerations</strong> are paramount;
-strive for a model that is fair and unbiased. Ensure compliance with
-data protection regulations, especially when handling sensitive
-information. Lastly, manage <strong>computational resources</strong>
-wisely and engage with the Hugging Face community for additional
-support. Fine-tuning is iterative, and success often comes through
-continuous experimentation and learning.</p>
+reproducibility.</p>
+<p><strong>Ethical considerations</strong> are paramount; strive for a
+model that is fair and unbiased. Ensure compliance with data protection
+regulations, especially when handling sensitive information.</p>
+<p>Lastly, manage <strong>computational resources</strong> wisely and
+engage with the Hugging Face community for additional support.
+Fine-tuning is iterative, and success often comes through continuous
+experimentation and learning.</p>
 </div>
 </div>
 </div>
@@ -4217,31 +3796,30 @@ continuous experimentation and learning.</p>
 </h2>
 <p>Guess the following architecture belongs to which optimization
 strategy:</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/9abb1cc9-9b10-4636-994a-ff55b017349c" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure><p>Figure. LLMs optimization (source)</p>
+<figure><img src="../fig/dsllms_3.png" class="figure mx-auto d-block"></figure><p>Figure. LLMs optimization (source)</p>
 </div>
 <div class="section level2 Discussion">
 <h2 id="discuss-in-groups--3">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--3"></a>
 </h2>
 <p>What are the challenges and trade-offs of domain-specific LLMs, such
-as data availability, model size, and complexity? Consider some of the
-factors that affect the quality and reliability of domain-specific LLMs,
-such as the amount and quality of domain-specific data, the
-computational resources and time required for training or fine-tuning,
-and the generalization and robustness of the model. How do these factors
-pose problems or difficulties for domain-specific LLMs and how can we
-overcome them?</p>
+as data availability, model size, and complexity?</p>
+<p>Consider some of the factors that affect the quality and reliability
+of domain-specific LLMs, such as the amount and quality of
+domain-specific data, the computational resources and time required for
+training or fine-tuning, and the generalization and robustness of the
+model. How do these factors pose problems or difficulties for
+domain-specific LLMs and how can we overcome them?</p>
 </div>
 <div class="section level2 Discussion">
 <h2 id="discuss-in-groups--4">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--4"></a>
 </h2>
 <p>What are some available approaches for creating domain-specific LLMs,
-such as fine-tuning and knowledge distillation? Consider some of the
-main steps and techniques for creating domain-specific LLMs, such as
-selecting a general LLM, collecting and preparing domain-specific data,
-training or fine-tuning the model, and evaluating and deploying the
-model. How do these approaches differ from each other and what are their
-advantages and disadvantages?</p>
+such as fine-tuning and knowledge distillation?</p>
+<p>Consider some of the main steps and techniques for creating
+domain-specific LLMs, such as selecting a general LLM, collecting and
+preparing domain-specific data, training or fine-tuning the model, and
+evaluating and deploying the model. How do these approaches differ from
+each other and what are their advantages and disadvantages?</p>
 </div>
 <div class="section level3">
 <h3 id="example">Example:<a class="anchor" aria-label="anchor" href="#example"></a>
@@ -4272,8 +3850,8 @@ and then ask it to translate a new sentence. The model uses the context
 from the one-shot example to generate the translation. But what if we
 have a Few-Shot Prompting? Few-shot prompting gives the model several
 examples to learn from. This can improve the model’s ability to
-understand and complete the task. Here is how you can implement few-shot
-prompting:</p>
+understand and complete the task.</p>
+<p>Here is how you can implement few-shot prompting:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -4334,7 +3912,7 @@ followed the <strong>—</strong> correctly.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Choose a Model: Select a <strong>pre-trained</strong> model from
@@ -4359,7 +3937,7 @@ followed the <strong>examples</strong> correctly.</p></li>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Prompting Quality</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Remember, the quality of the output heavily depends on the quality
 and relevance of the examples you provide. It’s also important to note

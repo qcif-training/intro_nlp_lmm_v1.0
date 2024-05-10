@@ -305,21 +305,23 @@
 <div class="card-body">
 <div class="inner">
 <h3 class="card-title">Questions</h3>
-<p>• How can tune the LLMs to be domain-specific? • What are some
-available approaches to empower LLMs solve specific research problems? •
-Which approach should I use for my research? • What are the challenges
-and trade-offs of domain-specific LLMs?</p>
-</div>
+<ul><li>How can tune the LLMs to be domain-specific?</li>
+<li>What are some available approaches to empower LLMs solve specific
+research problems?</li>
+<li>Which approach should I use for my research?</li>
+<li>What are the challenges and trade-offs of domain-specific LLMs?</li>
+</ul></div>
 </div>
 </div>
 <div class="col-md-8">
 <div class="card-body">
 <div class="inner bordered">
 <h3 class="card-title">Objectives</h3>
-<p>• Be able to identify approaches by which LLMs can be tuned for
-solving research problems. • Be able to use introductory approaches for
-creating domain-specific LLMs.</p>
-</div>
+<ul><li>Be able to identify approaches by which LLMs can be tuned for
+solving research problems.</li>
+<li>Be able to use introductory approaches for creating domain-specific
+LLMs.</li>
+</ul></div>
 </div>
 </div>
 </div>
@@ -332,41 +334,47 @@ Generally, there are four ways to enhance the performance of LLMs:</p>
 <div class="section level4">
 <h4 id="prompt-optimization">1. Prompt Optimization:<a class="anchor" aria-label="anchor" href="#prompt-optimization"></a></h4>
 <p>To elicit specific and accurate responses from LLMs by designing
-prompts strategically. Zero-shot Prompting: This is the simplest form of
+prompts strategically.</p>
+<p><strong>Zero-shot Prompting</strong>: This is the simplest form of
 prompting where the LLM is given a task or question without any context
 or examples. It relies on the LLM’s pre-existing knowledge to generate a
-response. Example: “What is the capital of France?” The LLM would
-respond with “Paris” based on its internal knowledge. Few-shot
-Prompting: In this technique, the LLM is provided with a few examples to
-demonstrate the expected response format or content. Example: To
-determine sentiment, you might provide examples like “I love sunny days.
-(+1)” and “I hate traffic. (-1)” before asking the LLM to analyze a new
-sentence.</p>
+response.</p>
+<p>Example: “What is the capital of France?” The LLM would respond with
+“Paris” based on its internal knowledge.</p>
+<p><strong>Few-shot Prompting</strong>: In this technique, the LLM is
+provided with a few examples to demonstrate the expected response format
+or content.</p>
+<p>Example: To determine sentiment, you might provide examples like “I
+love sunny days. (+1)” and “I hate traffic. (-1)” before asking the LLM
+to analyze a new sentence.</p>
 </div>
 <div class="section level4">
 <h4 id="retrieval-augmented-generation-rag">2. Retrieval Augmented Generation (RAG):<a class="anchor" aria-label="anchor" href="#retrieval-augmented-generation-rag"></a></h4>
 <p>To supplement the LLM’s generative capabilities with information
-retrieved from external databases or documents. Retrieval: The LLM
-queries a database to find relevant information that can inform its
-response. Example: If asked about recent scientific discoveries, the LLM
-might retrieve articles or papers on the topic. Generation: After
-retrieving the information, the LLM integrates it into a coherent
-response. Example: Using the retrieved scientific articles, the LLM
-could generate a summary of the latest findings in a particular
-field.</p>
+retrieved from external databases or documents.</p>
+<p><strong>Retrieval</strong>: The LLM queries a database to find
+relevant information that can inform its response.</p>
+<p>Example: If asked about recent scientific discoveries, the LLM might
+retrieve articles or papers on the topic.</p>
+<p><strong>Generation</strong>: After retrieving the information, the
+LLM integrates it into a coherent response.</p>
+<p>Example: Using the retrieved scientific articles, the LLM could
+generate a summary of the latest findings in a particular field.</p>
 </div>
 <div class="section level4">
 <h4 id="fine-tuning">3. Fine-Tuning:<a class="anchor" aria-label="anchor" href="#fine-tuning"></a></h4>
 <p>To adapt a general-purpose LLM to excel at a specific task or within
-a particular domain. Language Modeling Task Fine-Tuning: This involves
+a particular domain.</p>
+<p><strong>Language Modeling Task Fine-Tuning</strong>: This involves
 training the LLM on a large corpus of text to improve its ability to
-predict the next word or phrase in a sentence. Example: An LLM
-fine-tuned on legal documents would become better at generating text
-that resembles legal writing. Supervised Q&amp;A Fine-Tuning: Here, the
-LLM is trained on a dataset of question-answer pairs to enhance its
-performance on Q&amp;A tasks. Example: An LLM fine-tuned with medical
-Q&amp;A pairs would provide more accurate responses to health-related
-inquiries.</p>
+predict the next word or phrase in a sentence.</p>
+<p>Example: An LLM fine-tuned on legal documents would become better at
+generating text that resembles legal writing.</p>
+<p><strong>Supervised Q&amp;A Fine-Tuning</strong>: Here, the LLM is
+trained on a dataset of question-answer pairs to enhance its performance
+on Q&amp;A tasks.</p>
+<p>Example: An LLM fine-tuned with medical Q&amp;A pairs would provide
+more accurate responses to health-related inquiries.</p>
 </div>
 <div class="section level4">
 <h4 id="training-from-scratch">4. Training from Scratch:<a class="anchor" aria-label="anchor" href="#training-from-scratch"></a></h4>
@@ -379,8 +387,7 @@ the ground up.</p>
 <p>Which approach do you think is more computation-intensive? Which is
 more accurate? How are these qualities related? Evaluate the trade-offs
 between fine-tuning and other approaches.</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/7526be09-de4d-4c59-b6df-93f0d2dca9d7" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure></div>
+<figure><img src="../fig/dsllms_1.png" class="figure mx-auto d-block"></figure></div>
 <div class="section level2 Discussion">
 <h2 id="discuss-in-groups--1">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--1"></a></h2>
 <p>What is DSL and why are they useful for research tasks? Think of some
@@ -388,8 +395,7 @@ examples of NLP tasks that require domain-specific LLMs, such as
 literature review, patent analysis, or material discovery. How do
 domain-specific LLMs improve the performance and accuracy of these
 tasks?</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/6e5a6a74-eaa2-430d-b5b5-8198716fb4f7" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure></div>
+<figure><img src="../fig/dsllms_2.png" class="figure mx-auto d-block"></figure></div>
 <div class="section level3">
 <h3 id="prompting">7.2. Prompting<a class="anchor" aria-label="anchor" href="#prompting"></a></h3>
 <p>For research applications where highly reliable answers are crucial,
@@ -430,29 +436,32 @@ sources:</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Be careful when fine-tuning a model</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>When fine-tuning a BERT model from Hugging Face, for instance, it is
-essential to approach the process with precision and care. Begin by
-thoroughly understanding <strong>BERT’s architecture</strong> and the
-specific task at hand to select the most suitable model variant and
-hyperparameters. <strong>Prepare your dataset</strong> meticulously,
-ensuring it is clean, well-represented, and split correctly to avoid
-<strong>data leakage and overfitting</strong>. Hyperparameter selection,
-such as learning rates and batch sizes, should be made with
-consideration, and <strong>regularization</strong> techniques like
-dropout should be employed to enhance the model’s ability to generalize.
-<strong>Evaluate</strong> the model’s performance using appropriate
+essential to approach the process with precision and care.</p>
+<p>Begin by thoroughly understanding <strong>BERT’s
+architecture</strong> and the specific task at hand to select the most
+suitable model variant and hyperparameters.</p>
+<p><strong>Prepare your dataset</strong> meticulously, ensuring it is
+clean, well-represented, and split correctly to avoid <strong>data
+leakage and overfitting</strong>.</p>
+<p>Hyperparameter selection, such as learning rates and batch sizes,
+should be made with consideration, and <strong>regularization</strong>
+techniques like dropout should be employed to enhance the model’s
+ability to generalize.</p>
+<p><strong>Evaluate</strong> the model’s performance using appropriate
 metrics and address any class imbalances with weighted loss functions or
 similar strategies. Save checkpoints to preserve progress and document
 every step of the fine-tuning process for transparency and
-reproducibility. <strong>Ethical considerations</strong> are paramount;
-strive for a model that is fair and unbiased. Ensure compliance with
-data protection regulations, especially when handling sensitive
-information. Lastly, manage <strong>computational resources</strong>
-wisely and engage with the Hugging Face community for additional
-support. Fine-tuning is iterative, and success often comes through
-continuous experimentation and learning.</p>
+reproducibility.</p>
+<p><strong>Ethical considerations</strong> are paramount; strive for a
+model that is fair and unbiased. Ensure compliance with data protection
+regulations, especially when handling sensitive information.</p>
+<p>Lastly, manage <strong>computational resources</strong> wisely and
+engage with the Hugging Face community for additional support.
+Fine-tuning is iterative, and success often comes through continuous
+experimentation and learning.</p>
 </div>
 </div>
 </div>
@@ -462,29 +471,28 @@ continuous experimentation and learning.</p>
 <h2 id="discuss-in-groups--2">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--2"></a></h2>
 <p>Guess the following architecture belongs to which optimization
 strategy:</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/9abb1cc9-9b10-4636-994a-ff55b017349c" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure><p>Figure. LLMs optimization (source)</p>
+<figure><img src="../fig/dsllms_3.png" class="figure mx-auto d-block"></figure><p>Figure. LLMs optimization (source)</p>
 </div>
 <div class="section level2 Discussion">
 <h2 id="discuss-in-groups--3">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--3"></a></h2>
 <p>What are the challenges and trade-offs of domain-specific LLMs, such
-as data availability, model size, and complexity? Consider some of the
-factors that affect the quality and reliability of domain-specific LLMs,
-such as the amount and quality of domain-specific data, the
-computational resources and time required for training or fine-tuning,
-and the generalization and robustness of the model. How do these factors
-pose problems or difficulties for domain-specific LLMs and how can we
-overcome them?</p>
+as data availability, model size, and complexity?</p>
+<p>Consider some of the factors that affect the quality and reliability
+of domain-specific LLMs, such as the amount and quality of
+domain-specific data, the computational resources and time required for
+training or fine-tuning, and the generalization and robustness of the
+model. How do these factors pose problems or difficulties for
+domain-specific LLMs and how can we overcome them?</p>
 </div>
 <div class="section level2 Discussion">
 <h2 id="discuss-in-groups--4">Discuss in groups.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--4"></a></h2>
 <p>What are some available approaches for creating domain-specific LLMs,
-such as fine-tuning and knowledge distillation? Consider some of the
-main steps and techniques for creating domain-specific LLMs, such as
-selecting a general LLM, collecting and preparing domain-specific data,
-training or fine-tuning the model, and evaluating and deploying the
-model. How do these approaches differ from each other and what are their
-advantages and disadvantages?</p>
+such as fine-tuning and knowledge distillation?</p>
+<p>Consider some of the main steps and techniques for creating
+domain-specific LLMs, such as selecting a general LLM, collecting and
+preparing domain-specific data, training or fine-tuning the model, and
+evaluating and deploying the model. How do these approaches differ from
+each other and what are their advantages and disadvantages?</p>
 </div>
 <div class="section level3">
 <h3 id="example">Example:<a class="anchor" aria-label="anchor" href="#example"></a></h3>
@@ -514,8 +522,8 @@ and then ask it to translate a new sentence. The model uses the context
 from the one-shot example to generate the translation. But what if we
 have a Few-Shot Prompting? Few-shot prompting gives the model several
 examples to learn from. This can improve the model’s ability to
-understand and complete the task. Here is how you can implement few-shot
-prompting:</p>
+understand and complete the task.</p>
+<p>Here is how you can implement few-shot prompting:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -574,7 +582,7 @@ followed the <strong>—</strong> correctly.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Choose a Model: Select a <strong>pre-trained</strong> model from
 Hugging Face that suits your task.</p></li>
@@ -597,7 +605,7 @@ followed the <strong>examples</strong> correctly.</p></li>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Prompting Quality</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Remember, the quality of the output heavily depends on the quality
 and relevance of the examples you provide. It’s also important to note
