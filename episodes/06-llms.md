@@ -21,14 +21,11 @@ exercises: 2
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-### 7.1.	Introduction to LLMs
+### 6.1.	Introduction to LLMs
 
 Large Language Models (LLMs) have become a cornerstone of modern natural language processing (NLP). Since the introduction of the transformer architecture in 2017, LLMs have leveraged this design to achieve remarkable language understanding and generation capabilities. In the previous episode, we discussed the transformer architecture, which is integral to all LLMs, utilizing its encoder and decoder components to process language. 
 
 LLMs have several key features. Gather in groups and discuss what are these key components. Explain the key features in detail and compare your thoughts with other group members:
-
-
-![](fig/llms_1.png)
 
 ::::::::::::::::::::::::::::::::::::: Discussion
 
@@ -49,12 +46,9 @@ Add your explanations below:
 6. -------------
 
 
-![](fig/llms_2.png)
-
-
 :::::::::::::::::::::::: spoiler 
 
-## Discussion ideas
+## Solutions
 
 1. Transformer Architecture: A neural network design that uses self-attention mechanisms to weigh the influence of different parts of the input data.
    
@@ -74,6 +68,12 @@ Thus, the completed graph will be:
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+![](fig/llms_2.png)
+
 
 
 ::::::::::::::::::::::::::::::::::::: Discussion
