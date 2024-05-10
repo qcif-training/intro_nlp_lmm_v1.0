@@ -138,13 +138,15 @@ Compared to these traditional models, LLMs have several key differences:
 
 Bidirectional Encoder Representations from Transformers (BERT) is an LLM that uses an encoder-only architecture from transformers. It is designed to understand the context of a word based on all of its surroundings (bidirectional context). Let’s guess the missing words in the text below to comprehend the workings of BERT:
 
-::::::::::::::::::::::::::::::::::::::::: Activity 
+::::::::::::::::::::::::::::::::::::::::: Challenge 
 
-## Activity: Fill in the gap
+## Fill in the gaps
 
-“BERT is a revolutionary language model that uses an ______ (encoder) to process words in a sentence. Unlike traditional models, it predicts words based on the ______ (context) rather than in sequence. Its training involves ______ (self-supervised learning), where words are intentionally hidden, or ‘______’ (masked), and the model learns to predict them. This results in rich ______ (embeddings) that capture the nuanced meanings of words.”
+“BERT is a revolutionary language model that uses an ______ (encoder) to process words in a sentence. Unlike traditional models, it predicts words based on the ______ rather than in sequence. Its training involves ______ , where words are intentionally hidden, or ‘______’, and the model learns to predict them. This results in rich ______ that capture the nuanced meanings of words.”
 
-::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::: solution
+
+"BERT is a revolutionary language model that uses an **encoder** to process words in a sentence. Unlike traditional models, it predicts words based on the **context** rather than in sequence. Its training involves **self-supervised learning**, where words are intentionally hidden, or **'masked'**, and the model learns to predict them. This results in rich **embeddings** that capture the nuanced meanings of words.”
 
 
 ::::::::::::::::::::::::::::::::::::::::: spoiler 
