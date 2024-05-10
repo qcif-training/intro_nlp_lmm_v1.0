@@ -1007,7 +1007,7 @@ need to train a Deep Learning model?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>Unfortunately, this question is not easy to answer. It depends, among
 other things, on the complexity of the task (which you often do not know
@@ -1167,7 +1167,7 @@ Keras has a solution: <a href="https://keras.io/api/data_loading/image/" class="
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>WANT TO KNOW MORE: Python image libraries</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Two of the most commonly used libraries for image representation and
 manipulation are NumPy and Pillow (PIL). Additionally, when working with
@@ -1311,7 +1311,7 @@ Mean pixel value  0.0</code></pre>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>WANT TO KNOW MORE: Why Normalize?</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>ChatGPT</p>
 <p>Normalizing the RGB values to be between 0 and 1 is a common
@@ -1574,7 +1574,7 @@ dataset<a class="anchor" aria-label="anchor" href="#challenge-create-a-function-
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1675,7 +1675,7 @@ classes are well balanced.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>A. Training Set</p>
 <div class="codewrapper sourceCode" id="cb14">
@@ -1715,7 +1715,7 @@ Nmber of images in each class:
   <h3 class="accordion-header" id="headingSpoiler3">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>WANT TO KNOW MORE: Data Splitting Techniques</h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>ChatGPT</p>
 <p>Data is typically split into the training, validation, and test data
@@ -2733,19 +2733,17 @@ traditional models.</li>
 </div>
 </div>
 </div>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/b7dc9493-912f-43f4-9485-a716e1cca516" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure><section id="introduction-to-vector-space-embeddings"><h2 class="section-heading">4.1. Introduction to Vector Space &amp; Embeddings:<a class="anchor" aria-label="anchor" href="#introduction-to-vector-space-embeddings"></a>
+<figure><img src="../fig/embedding_1.png" class="figure mx-auto d-block"></figure><section id="introduction-to-vector-space-embeddings"><h2 class="section-heading">4.1. Introduction to Vector Space &amp; Embeddings:<a class="anchor" aria-label="anchor" href="#introduction-to-vector-space-embeddings"></a>
 </h2>
 <hr class="half-width">
 <p>We have discussed how tokenization works and how it is important in
 text analysis. For making robust and reliable NLP models we need to
 extract features from the text by using text embeddings. To understand
-this concept, we first talk about vector space. Vector space models
-represent text data as vectors, which can be used in various machine
-learning algorithms. Embeddings are dense vectors that capture the
-semantic meanings of words based on their context.</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/38e4c636-1bd9-46c9-a7f9-9522f1cadad7" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure><div id="discussion" class="callout challenge">
+this concept, we first talk about vector space.</p>
+<p>Vector space models represent text data as vectors, which can be used
+in various machine learning algorithms. Embeddings are dense vectors
+that capture the semantic meanings of words based on their context.</p>
+<figure><img src="../fig/embedding_2.png" class="figure mx-auto d-block"></figure><div id="discussion" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -2764,9 +2762,9 @@ in vector space models. Consider the impact of ignoring common words
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<p><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/0f7f3389-7102-4aec-ae36-6b5bf7b73a7b" alt="image" class="figure"><a href="https://medium.com/@saschametzger/what-are-tokens-vectors-and-embeddings-how-do-you-create-them-e2a3e698e037" class="external-link">source</a></p>
+<p><img src="../fig/embedding_3.png" class="figure"><a href="https://medium.com/@saschametzger/what-are-tokens-vectors-and-embeddings-how-do-you-create-them-e2a3e698e037" class="external-link">source</a></p>
 <p>A: Ignoring stop words might lead to loss of some contextual
 information but can also reduce noise. Preserving word order can be
 crucial for understanding the meaning, especially in languages with
@@ -2781,7 +2779,7 @@ flexible syntax.</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Tell me MORE!</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Tokenization is a fundamental step in the processing of text for
 vector space models. It involves breaking down a string of text into
@@ -2808,27 +2806,30 @@ for the model to understand the meaning of the text.</li>
 impact:</p>
 <p><em>Noise Reduction</em>: Stop words are often filtered out to reduce
 noise since they usually don’t carry important meaning and are highly
-frequent (e.g., “the,” “is,” “at”). <em>Focus on Content Words</em>: By
-removing stop words, the model can focus on content words that carry the
-core semantic meaning, potentially improving the performance of tasks
-like information retrieval or topic modeling. <em>Computational
-Efficiency</em>: Ignoring stop words reduces the dimensionality of the
-vector space, which can make computations more efficient.</p>
+frequent (e.g., “the,” “is,” “at”).</p>
+<p><em>Focus on Content Words</em>: By removing stop words, the model
+can focus on content words that carry the core semantic meaning,
+potentially improving the performance of tasks like information
+retrieval or topic modeling.</p>
+<p><em>Computational Efficiency</em>: Ignoring stop words reduces the
+dimensionality of the vector space, which can make computations more
+efficient.</p>
 <p>The importance of word order is another critical aspect:</p>
 <p><em>Contextual Meaning</em>: Word order is essential for capturing
 the syntactic structure and meaning of a sentence. Traditional
 bag-of-words models ignore word order, which can lead to a loss of
-contextual meaning. <em>Phrase Identification</em>: Preserving word
-order allows for the identification of multi-word expressions and
-phrases that have distinct meanings from their constituent words.
-<em>Word Embeddings</em>: Advanced models like word embeddings (e.g.,
+contextual meaning.</p>
+<p><em>Phrase Identification</em>: Preserving word order allows for the
+identification of multi-word expressions and phrases that have distinct
+meanings from their constituent words.</p>
+<p><em>Word Embeddings</em>: Advanced models like word embeddings (e.g.,
 Word2Vec) and contextual embeddings (e.g., BERT) can capture word order
 to some extent, leading to a more nuanced understanding of text
-semantics. In summary, tokenization, the treatment of stop words, and
-the consideration of word order are all crucial factors that influence
-how text is represented in vector space models, affecting both the
-quality of the representation and the performance of downstream
-tasks.</p>
+semantics.</p>
+<p>In summary, tokenization, the treatment of stop words, and the
+consideration of word order are all crucial factors that influence how
+text is represented in vector space models, affecting both the quality
+of the representation and the performance of downstream tasks.</p>
 </div>
 </div>
 </div>
@@ -2845,11 +2846,12 @@ tasks.</p>
 that numerically capture their meanings and relationships within a
 vocabulary. Initially random, these vectors are refined during training,
 akin to neural network weights, to better reflect token meanings and
-associations. This process, known as “embedding,” allows a model to
-intuitively understand word relationships without explicit programming.
-Visualizing embeddings reveals a semantic map where tokens cluster with
-those of similar meanings, illustrating the interconnectedness of
-language elements.</p>
+associations.</p>
+<p>This process, known as “embedding,” allows a model to intuitively
+understand word relationships without explicit programming. Visualizing
+embeddings reveals a semantic map where tokens cluster with those of
+similar meanings, illustrating the interconnectedness of language
+elements.</p>
 </div>
 </div>
 </div>
@@ -2862,13 +2864,12 @@ Traditional methods like Bag-of-Words and TF-IDF count words or n-grams,
 with the latter assigning weights based on a word’s importance,
 calculated by Term Frequency (TF) and Inverse Document Frequency (IDF).
 TF measures a word’s importance within a document, while IDF assesses
-its rarity across the corpus. The product of TF and IDF gives the TF-IDF
-score, which balances a word’s frequency in a document against its
-commonness in the corpus. This approach helps to highlight significant
-words while diminishing the impact of commonly used words like “the” or
-“a.”</p>
-<figure><img src="https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/857c6ae4-8a80-4dc2-9da8-ced57bb058d5" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure><div id="discussion-1" class="callout challenge">
+its rarity across the corpus.</p>
+<p>The product of TF and IDF gives the TF-IDF score, which balances a
+word’s frequency in a document against its commonness in the corpus.
+This approach helps to highlight significant words while diminishing the
+impact of commonly used words like “the” or “a.”</p>
+<figure><img src="../fig/embedding_4.png" class="figure mx-auto d-block"></figure><div id="discussion-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -2887,21 +2888,21 @@ the potential impact on sentiment analysis.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>A: To compare the Bag of Words (BoW) and Term Frequency-Inverse
 Document Frequency (TF-IDF) methods in representing text data and their
-implications for sentiment analysis. Data Collection: Gather a corpus of
-product reviews. For this activity, let’s assume we have a list of
-reviews stored in a variable called reviews. Clean the text data by
-removing punctuation, converting to lowercase, and possibly removing
-stop words. Use a vectorizer to convert the reviews into a BoW
-representation. Discuss how BoW represents the frequency of words
-without considering the context or rarity across documents. Use a
-vectorizer to convert the same reviews into a TF-IDF representation.
-Discuss how TF-IDF represents the importance of words by considering
-both the term frequency and how unique the word is across all
-documents.</p>
+implications for sentiment analysis.</p>
+<p>Data Collection: Gather a corpus of product reviews. For this
+activity, let’s assume we have a list of reviews stored in a variable
+called reviews. Clean the text data by removing punctuation, converting
+to lowercase, and possibly removing stop words. Use a vectorizer to
+convert the reviews into a BoW representation.</p>
+<p>Discuss how BoW represents the frequency of words without considering
+the context or rarity across documents. Use a vectorizer to convert the
+same reviews into a TF-IDF representation. Discuss how TF-IDF represents
+the importance of words by considering both the term frequency and how
+unique the word is across all documents.</p>
 </div>
 </div>
 </div>
@@ -2914,11 +2915,12 @@ documents.</p>
 <h3 class="callout-title">Teamwork<a class="anchor" aria-label="anchor" href="#teamwork"></a>
 </h3>
 <div class="callout-content">
-<p>Sentiment Analysis Implications: Consider how the lack of context in
-BoW might affect sentiment analysis. Evaluate whether TF-IDF’s emphasis
-on unique words improves the model’s ability to understand sentiment.
-Share Findings: Groups should present their findings, highlighting the
-strengths and weaknesses of each method.</p>
+<p>Sentiment Analysis Implications:</p>
+<p>Consider how the lack of context in BoW might affect sentiment
+analysis. Evaluate whether TF-IDF’s emphasis on unique words improves
+the model’s ability to understand sentiment.</p>
+<p>Share Findings: Groups should present their findings, highlighting
+the strengths and weaknesses of each method.</p>
 </div>
 </div>
 </div>
@@ -2927,7 +2929,7 @@ strengths and weaknesses of each method.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2970,10 +2972,11 @@ strengths and weaknesses of each method.</p>
 <p>The BoW matrix shows the frequency of each word in the reviews,
 disregarding context and word importance. The TF-IDF matrix shows the
 weighted importance of words, giving less weight to common words and
-more to unique ones. In sentiment analysis, BoW might misinterpret
-sentiments due to ignoring context, while TF-IDF might capture nuances
-better by emphasizing words that are significant in a particular review.
-By comparing BoW and TF-IDF, participants can gain insights into how
+more to unique ones.</p>
+<p>In sentiment analysis, BoW might misinterpret sentiments due to
+ignoring context, while TF-IDF might capture nuances better by
+emphasizing words that are significant in a particular review.</p>
+<p>By comparing BoW and TF-IDF, participants can gain insights into how
 each method processes text data and their potential impact on NLP tasks
 like sentiment analysis. This activity encourages critical thinking
 about feature representation in machine learning models.</p>
@@ -2982,18 +2985,19 @@ about feature representation in machine learning models.</p>
 <hr class="half-width">
 <p>More advanced techniques like Word2Vec and GLoVE, as well as feature
 learning during neural network training, have also been developed to
-improve feature extraction. Word2Vec uses neural networks to learn word
-associations from large text corpora. It has two architectures:
-Skip-Gram and Continuous Bag-of-Words (CBOW). After training, it
-discards the final layer and outputs word embeddings that capture
-context. These embeddings capture the context of words, making similar
-contexts yield similar embeddings. Post-data preprocessing, these
-numerical features can be used in various NLP models for tasks like
-classification or named entity recognition. Now let’s see how this
-framework can be used in practice. First import required libraries:
-Start by importing necessary libraries like gensim for Word2Vec and nltk
-for tokenization. Next, prepare the data: Tokenize your text data into
-words.</p>
+improve feature extraction.</p>
+<p>Word2Vec uses neural networks to learn word associations from large
+text corpora. It has two architectures: Skip-Gram and Continuous
+Bag-of-Words (CBOW).</p>
+<p>After training, it discards the final layer and outputs word
+embeddings that capture context. These embeddings capture the context of
+words, making similar contexts yield similar embeddings. Post-data
+preprocessing, these numerical features can be used in various NLP
+models for tasks like classification or named entity recognition.</p>
+<p>Now let’s see how this framework can be used in practice. First
+import required libraries: Start by importing necessary libraries like
+gensim for Word2Vec and nltk for tokenization. Next, prepare the data:
+Tokenize your text data into words.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -3029,20 +3033,21 @@ words of interest.</p>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="bu">print</span>(vector_embeddings)</span></code></pre>
 </div>
 <p>The code tokenizes the sample text, trains a Word2Vec model, and
-retrieves the vector for the word ‘embeddings’. The resulting vector is
-a 50-dimensional representation of ‘embeddings’, capturing its context
-within the sample text. This vector can then be used in various NLP
-tasks to represent the semantic meaning of the word ‘embeddings’. By
-understanding the roles of tokenization and embedding, we can better
-prepare text data for complex NLP tasks and build models that more
-accurately interpret human language.</p>
+retrieves the vector for the word ‘embeddings’.</p>
+<p>The resulting vector is a 50-dimensional representation of
+‘embeddings’, capturing its context within the sample text. This vector
+can then be used in various NLP tasks to represent the semantic meaning
+of the word ‘embeddings’.</p>
+<p>By understanding the roles of tokenization and embedding, we can
+better prepare text data for complex NLP tasks and build models that
+more accurately interpret human language.</p>
 <div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What else?</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Global Vectors for Word Representation (GLoVE)</p>
 <p>GLoVE is a model for learning word embeddings, which are
@@ -4169,7 +4174,7 @@ sources:</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Be careful when fine-tuning a model</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>When fine-tuning a BERT model from Hugging Face, for instance, it is
 essential to approach the process with precision and care. Begin by
@@ -4319,7 +4324,7 @@ followed the <strong>—</strong> correctly.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Choose a Model: Select a <strong>pre-trained</strong> model from
@@ -4344,7 +4349,7 @@ followed the <strong>examples</strong> correctly.</p></li>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Prompting Quality</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>Remember, the quality of the output heavily depends on the quality
 and relevance of the examples you provide. It’s also important to note
@@ -4486,7 +4491,7 @@ field of interest.<a class="anchor" aria-label="anchor" href="#discuss-in-groups
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Field of Interest: Environmental Science</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>• NLP for Climate Change Research: How can NLP help in analyzing
 large volumes of research papers on climate change to identify trends
@@ -4563,7 +4568,7 @@ answers related to environmental topics.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>The model should provide a relevant answer based on the few-shot
 examples provided. For instance, it might say: “Individuals can combat
