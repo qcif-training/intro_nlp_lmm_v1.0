@@ -36,7 +36,7 @@ Just like a well-organized assembly line, a neural network processes information
 ::: callout
 
 ### Summation and Activation Function
-If we zoom into a neuron in the hidden layer, we can see the mathematical operations (weights summation and activation function). an input is transformed at each hidden layer node through a process that multiplies the input by learned weights, adds a bias, and then applies an activation function to determine the node’s output. This output is either passed on to the next layer or contributes to the final output of the network. Essentially, each node performs a small calculation that, when combined with the operations of other nodes, allows the network to process complex patterns and data. 
+If we zoom into a neuron in the hidden layer, we can see the mathematical operations (weights summation and activation function). An input is transformed at each hidden layer node through a process that multiplies the input (x_i) by learned weights (w_i), adds a bias (b), and then applies an activation function to determine the node’s output. This output is either passed on to the next layer or contributes to the final output of the network. Essentially, each node performs a small calculation that, when combined with the operations of other nodes, allows the network to process complex patterns and data. 
 
 ![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/d1006506-ac54-43bc-b6e9-5181ca98be36)
 
@@ -45,9 +45,9 @@ If we zoom into a neuron in the hidden layer, we can see the mathematical operat
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-### Challenge
+### Activity
 
-Let’s move the following text boxes toward their right places in the ANN architecture and add the correct label to each one:
+Teamwork: Let’s move the following text boxes toward their right places in the ANN architecture and add the correct label to each one:
 
 ![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/39820eb0-7959-4ed1-bdfc-69131ab1a834)
 
@@ -63,6 +63,9 @@ When we talk about ANNs, we also talk about their parameters. But what are param
 3. Repeat the process for the hidden layer to the output layer.
 
 :::::::::::::::::::::::: solution 
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/144a8f7d-c1ac-4b57-8688-b5280cabd59c)
+
 
 - (3 { neurons} x 4 { neurons} + 4{ biases}) = 16 
 - (4 { neurons} x 1 { neurons} + 1{ biases}) = 5
