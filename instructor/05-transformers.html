@@ -358,28 +358,29 @@ result.</p>
 </h3>
 <div class="callout-content">
 <p>If we zoom into a neuron in the hidden layer, we can see the
-mathematical operations (weights summation and activation function). an
+mathematical operations (weights summation and activation function). An
 input is transformed at each hidden layer node through a process that
-multiplies the input by learned weights, adds a bias, and then applies
-an activation function to determine the node’s output. This output is
-either passed on to the next layer or contributes to the final output of
-the network. Essentially, each node performs a small calculation that,
-when combined with the operations of other nodes, allows the network to
-process complex patterns and data.</p>
+multiplies the input (x_i) by learned weights (w_i), adds a bias (b),
+and then applies an activation function to determine the node’s output.
+This output is either passed on to the next layer or contributes to the
+final output of the network. Essentially, each node performs a small
+calculation that, when combined with the operations of other nodes,
+allows the network to process complex patterns and data.</p>
 <figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/d1006506-ac54-43bc-b6e9-5181ca98be36" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
 </figure></div>
 </div>
 </div>
-<div id="challenge" class="callout challenge">
+<div id="activity" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+<div id="activity" class="callout-inner">
+<h3 class="callout-title">Activity<a class="anchor" aria-label="anchor" href="#activity"></a>
 </h3>
 <div class="callout-content">
-<p>Let’s move the following text boxes toward their right places in the
-ANN architecture and add the correct label to each one:</p>
+<p>Teamwork: Let’s move the following text boxes toward their right
+places in the ANN architecture and add the correct label to each
+one:</p>
 <figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/39820eb0-7959-4ed1-bdfc-69131ab1a834" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
 </figure><p>When we talk about ANNs, we also talk about their parameters. But
 what are parameters? Let’s draw a small neural network with 3 following
@@ -402,7 +403,8 @@ do we have?</li>
 </button>
 <div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
-<ul><li>(3 { neurons} x 4 { neurons} + 4{ biases}) = 16</li>
+<figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/144a8f7d-c1ac-4b57-8688-b5280cabd59c" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
+</figure><ul><li>(3 { neurons} x 4 { neurons} + 4{ biases}) = 16</li>
 <li>(4 { neurons} x 1 { neurons} + 1{ biases}) = 5</li>
 <li>Total parameters for this network: (16 + 5 = 21)</li>
 </ul></div>
@@ -671,12 +673,12 @@ prompting:</p>
 <p>In this few-shot example, we provide the model with three
 question-answer pairs before posing a new question. The model uses the
 pattern it learned from the examples to answer the new question.</p>
-<div id="challenge-1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+<div id="challenge" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <p>To summarize this approach in a few steps, fill in the following
