@@ -62,6 +62,7 @@ Google Colab provides a free cloud-based Python environment that facilitates cod
 ```
 
 ::::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::
 
 7. **Mount Google Drive (Optional)**: If you want to access files from your Google Drive, you can mount it using:
 :::::::::::::::::::::::: solution
