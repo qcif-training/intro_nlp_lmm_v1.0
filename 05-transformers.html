@@ -380,9 +380,9 @@ allows the network to process complex patterns and data.</p>
 places in the ANN architecture and add the correct label to each
 one:</p>
 <figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/39820eb0-7959-4ed1-bdfc-69131ab1a834" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
-</figure><p>When we talk about ANNs, we also talk about their parameters. But
-what are parameters? Let’s draw a small neural network with 3 following
-layers: x1</p>
+</figure><p>When we talk about ANNs, we also consider their parameters. But what
+are the parameters? Draw a small neural network with 3 following layers:
+x1</p>
 <ul><li>Input Layer: 3 neurons</li>
 <li>Hidden Layer: 4 neurons</li>
 <li>Output Layer: 1 neurons</li>
@@ -406,6 +406,36 @@ do we have?</li>
 <li>(4 { neurons} x 1 { neurons} + 1{ biases}) = 5</li>
 <li>Total parameters for this network: (16 + 5 = 21)</li>
 </ul></div>
+</div>
+</div>
+</div>
+<div id="challenge" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="challenge" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+</h3>
+<div class="callout-content">
+<p>Q: Add another hidden layer with 4 neurons to the previous ANN and
+calculate the number of parameters:</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/144a8f7d-c1ac-4b57-8688-b5280cabd59c" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
+</figure><p>We would add: (4 ) weights from the first to the second hidden layer
+(4) biases for the new hidden layer (4 ) weights from the second hidden
+layer to the output layer (we already counted the biases for the output
+layer) That’s an additional (16 + 4 = 20) parameters, bringing our total
+to (21 + 20 = 41) parameters.</p>
+</div>
 </div>
 </div>
 </div>
@@ -671,12 +701,12 @@ prompting:</p>
 <p>In this few-shot example, we provide the model with three
 question-answer pairs before posing a new question. The model uses the
 pattern it learned from the examples to answer the new question.</p>
-<div id="challenge" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+<div id="challenge-1" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <p>To summarize this approach in a few steps, fill in the following
@@ -694,12 +724,12 @@ followed the <strong>—</strong> correctly.</p></li>
 </ol></div>
 </div>
 </div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Choose a Model: Select a <strong>pre-trained</strong> model from
 Hugging Face that suits your task.</p></li>
