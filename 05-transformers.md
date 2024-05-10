@@ -52,7 +52,7 @@ Teamwork: Let’s move the following text boxes toward their right places in the
 ![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/39820eb0-7959-4ed1-bdfc-69131ab1a834)
 
 
-When we talk about ANNs, we also talk about their parameters. But what are parameters? Let’s draw a small neural network with 3 following layers: x1
+When we talk about ANNs, we also consider their parameters. But what are the parameters? Draw a small neural network with 3 following layers: x1
 
 - Input Layer: 3 neurons
 - Hidden Layer: 4 neurons
@@ -74,6 +74,30 @@ When we talk about ANNs, we also talk about their parameters. But what are param
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge
+
+
+Q: Add another hidden layer with 4 neurons to the previous ANN and calculate the number of parameters:
+
+:::::::::::::::::::::::: solution 
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/144a8f7d-c1ac-4b57-8688-b5280cabd59c)
+
+
+We would add:
+(4 \times 4) weights from the first to the second hidden layer
+(4) biases for the new hidden layer
+(4 \times 1) weights from the second hidden layer to the output layer (we already counted the biases for the output layer)
+That’s an additional (16 + 4 = 20) parameters, bringing our total to (21 + 20 = 41) parameters.
+
+:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 #### 1. Prompt Optimization:
