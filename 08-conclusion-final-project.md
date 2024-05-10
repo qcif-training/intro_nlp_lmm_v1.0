@@ -22,10 +22,10 @@ exercises: 1
 ### 8.1.	Takeaway from This Workshop
 
 We have covered a vast landscape of NLP, starting with the basics and moving towards the intricacies of LLMs. Here is a brief recap to illustrate our journey: 
-  - Text Preprocessing: Imagine cleaning a dataset of tweets for sentiment analysis. We learned how to remove noise and prepare the text for accurate classification.
-  - Text Analysis: Consider the task of extracting key information from news articles. Techniques like Named Entity Recognition helped us identify and categorize entities within the text.
-  - Word Embedding: We explored how words can be converted into vectors, enabling us to capture semantic relationships, as seen in the Word2Vec algorithm.
-  - Transformers and LLMs: We saw how transformers like BERT and GPT can be fine-tuned for tasks such as summarizing medical research papers, showcasing their power and flexibility.
+- Text Preprocessing: Imagine cleaning a dataset of tweets for sentiment analysis. We learned how to remove noise and prepare the text for accurate classification.
+- Text Analysis: Consider the task of extracting key information from news articles. Techniques like Named Entity Recognition helped us identify and categorize entities within the text.
+- Word Embedding: We explored how words can be converted into vectors, enabling us to capture semantic relationships, as seen in the Word2Vec algorithm.
+- Transformers and LLMs: We saw how transformers like BERT and GPT can be fine-tuned for tasks such as summarizing medical research papers, showcasing their power and flexibility.
 
 To reinforce our understanding, let’s engage in the following activity:
 
@@ -33,16 +33,16 @@ To reinforce our understanding, let’s engage in the following activity:
 
 ## Discuss in groups. Share insights on how NLP can be applied in your field of interest  
 
-A: Stemming
-B: Word2Vec	
-C: Text Preprocessing	
-D: Part-of-Speech Tagging	
-E: Stop-words Removal	
-F: Transformers	
-G: Bag of Words	
-H: Tokenization	
-I: BERT	
-J: Lemmatization
+a) Stemming
+b) Word2Vec	
+c) Text Preprocessing	
+d) Part-of-Speech Tagging	
+e) Stop-words Removal	
+f) Transformers	
+g) Bag of Words	
+h) Tokenization	
+i) BERT	
+j) Lemmatization
 
 
 ```
@@ -85,7 +85,7 @@ J: Lemmatization
 ## Discuss in groups. Share insights on how NLP can be applied in your field of interest.
 
 
-:::::::::::::::::::::::: solution 
+:::::::::::::::::::::::: spoiler 
 
 #### Field of Interest: Environmental Science
 •	NLP for Climate Change Research: How can NLP help in analyzing large volumes of research papers on climate change to identify trends and gaps in the literature?
