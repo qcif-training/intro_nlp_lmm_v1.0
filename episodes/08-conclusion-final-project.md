@@ -21,7 +21,7 @@ exercises: 1
 
 ### 8.1.	Takeaway from This Workshop
 
-We have covered a vast landscape of NLP, starting with the basics and moving towards the intricacies of LLMs. Here is a brief recap to illustrate our journey:
+We have covered a vast landscape of NLP, starting with the basics and moving towards the intricacies of LLMs. Here is a brief recap to illustrate our journey: 
   - Text Preprocessing: Imagine cleaning a dataset of tweets for sentiment analysis. We learned how to remove noise and prepare the text for accurate classification.
   - Text Analysis: Consider the task of extracting key information from news articles. Techniques like Named Entity Recognition helped us identify and categorize entities within the text.
   - Word Embedding: We explored how words can be converted into vectors, enabling us to capture semantic relationships, as seen in the Word2Vec algorithm.
@@ -140,7 +140,11 @@ print(response['answer'])
 ```
 :::::::::::::::::::::::: solution 
 
-The model should provide a relevant answer based on the few-shot examples provided. For instance, it might say: “Individuals can combat climate change by reducing their carbon footprint, using less energy, recycling, and supporting eco-friendly policies.” In this challenge, we used the **distilbert-base-uncased** model from Hugging Face’s transformers library to create a question-answering system. Few-shot prompting was employed to give the model context about environmental topics, which helps it generate more accurate answers to user queries. The **qa_pipeline** function is used to pass the prompt to the model, which then processes the information and returns an answer to the user’s question. This mini-project showcases how LLMs can be fine-tuned to specific fields of interest, providing valuable assistance in answering domain-specific queries.
+The model should provide a relevant answer based on the few-shot examples provided. For instance, it might say: “Individuals can combat climate change by reducing their carbon footprint, using less energy, recycling, and supporting eco-friendly policies”. 
+
+In this challenge, we used the **distilbert-base-uncased** model from Hugging Face’s transformers library to create a question-answering system. Few-shot prompting is employed to give the model context about environmental topics, which helps it generate more accurate answers to user queries. The **qa_pipeline** function is used to pass the prompt to the model, which then processes the information and returns an answer to the user’s question. 
+
+This mini-project showcases how LLMs can be fine-tuned to specific fields of interest, providing valuable assistance in answering domain-specific queries.
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -148,10 +152,11 @@ The model should provide a relevant answer based on the few-shot examples provid
 ### 8.2.	Further Resources
 
 For continued learning, here are detailed resources:
-•	Natural Language Processing Specialization (Coursera): A series of courses that cover NLP foundations, algorithms, and how to build NLP applications.
-•	Stanford NLP Group: Access to pioneering NLP research, datasets, and tools like Stanford Parser and Stanford POS Tagger.
-•	Hugging Face: A platform for sharing and collaborating on ML models, with a focus on democratizing NLP technologies.
-•	Kaggle: An online community for data scientists, offering datasets, notebooks, and competitions to practice and improve your NLP skills.
+- Natural Language Processing Specialization (Coursera): A series of courses that cover NLP foundations, algorithms, and how to build NLP applications.
+- Stanford NLP Group: Access to pioneering NLP research, datasets, and tools like Stanford Parser and Stanford POS Tagger.
+- Hugging Face: A platform for sharing and collaborating on ML models, with a focus on democratizing NLP technologies.
+- Kaggle: An online community for data scientists, offering datasets, notebooks, and competitions to practice and improve your NLP skills.
+
 Each resource is a gateway to further knowledge, community engagement, and hands-on experience.
 
 
