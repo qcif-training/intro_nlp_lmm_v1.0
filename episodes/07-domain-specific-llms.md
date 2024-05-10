@@ -6,17 +6,17 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-•	How can tune the LLMs to be domain-specific? 
-•	What are some available approaches to empower LLMs solve specific research problems? 
-•	Which approach should I use for my research? 
-•	What are the challenges and trade-offs of domain-specific LLMs?
+- How can tune the LLMs to be domain-specific?
+- What are some available approaches to empower LLMs solve specific research problems?
+- Which approach should I use for my research?
+- What are the challenges and trade-offs of domain-specific LLMs?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-•	Be able to identify approaches by which LLMs can be tuned for solving research problems.
-•	Be able to use introductory approaches for creating domain-specific LLMs.
+- Be able to identify approaches by which LLMs can be tuned for solving research problems.
+- Be able to use introductory approaches for creating domain-specific LLMs.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -25,13 +25,36 @@ exercises: 2
 To enhance the response quality of an LLM for solving specific problems we need to use strategies by which we can tune the LLM. Generally, there are four ways to enhance the performance of LLMs:
 
 #### 1. Prompt Optimization:
-To elicit specific and accurate responses from LLMs by designing prompts strategically. Zero-shot Prompting: This is the simplest form of prompting where the LLM is given a task or question without any context or examples. It relies on the LLM’s pre-existing knowledge to generate a response. Example: “What is the capital of France?” The LLM would respond with “Paris” based on its internal knowledge. Few-shot Prompting: In this technique, the LLM is provided with a few examples to demonstrate the expected response format or content. Example: To determine sentiment, you might provide examples like “I love sunny days. (+1)” and “I hate traffic. (-1)” before asking the LLM to analyze a new sentence.
+To elicit specific and accurate responses from LLMs by designing prompts strategically. 
+
+**Zero-shot Prompting**: This is the simplest form of prompting where the LLM is given a task or question without any context or examples. It relies on the LLM’s pre-existing knowledge to generate a response. 
+
+Example: “What is the capital of France?” The LLM would respond with “Paris” based on its internal knowledge. 
+
+**Few-shot Prompting**: In this technique, the LLM is provided with a few examples to demonstrate the expected response format or content. 
+
+Example: To determine sentiment, you might provide examples like “I love sunny days. (+1)” and “I hate traffic. (-1)” before asking the LLM to analyze a new sentence.
 
 #### 2. Retrieval Augmented Generation (RAG):
-To supplement the LLM’s generative capabilities with information retrieved from external databases or documents. Retrieval: The LLM queries a database to find relevant information that can inform its response. Example: If asked about recent scientific discoveries, the LLM might retrieve articles or papers on the topic. Generation: After retrieving the information, the LLM integrates it into a coherent response. Example: Using the retrieved scientific articles, the LLM could generate a summary of the latest findings in a particular field.
+To supplement the LLM’s generative capabilities with information retrieved from external databases or documents. 
+
+**Retrieval**: The LLM queries a database to find relevant information that can inform its response. 
+
+Example: If asked about recent scientific discoveries, the LLM might retrieve articles or papers on the topic. 
+
+**Generation**: After retrieving the information, the LLM integrates it into a coherent response. 
+
+Example: Using the retrieved scientific articles, the LLM could generate a summary of the latest findings in a particular field.
 
 #### 3. Fine-Tuning: 
-To adapt a general-purpose LLM to excel at a specific task or within a particular domain. Language Modeling Task Fine-Tuning: This involves training the LLM on a large corpus of text to improve its ability to predict the next word or phrase in a sentence. Example: An LLM fine-tuned on legal documents would become better at generating text that resembles legal writing. Supervised Q&A Fine-Tuning: Here, the LLM is trained on a dataset of question-answer pairs to enhance its performance on Q&A tasks.
+To adapt a general-purpose LLM to excel at a specific task or within a particular domain. 
+
+**Language Modeling Task Fine-Tuning**: This involves training the LLM on a large corpus of text to improve its ability to predict the next word or phrase in a sentence. 
+
+Example: An LLM fine-tuned on legal documents would become better at generating text that resembles legal writing. 
+
+**Supervised Q&A Fine-Tuning**: Here, the LLM is trained on a dataset of question-answer pairs to enhance its performance on Q&A tasks.
+
 Example: An LLM fine-tuned with medical Q&A pairs would provide more accurate responses to health-related inquiries.
 
 #### 4.	Training from Scratch: 
@@ -44,7 +67,7 @@ Builds a model specifically for a domain, using relevant data from the ground up
 
 Which approach do you think is more computation-intensive? Which is more accurate? How are these qualities related?  Evaluate the trade-offs between fine-tuning and other approaches.
 
-![image](https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/7526be09-de4d-4c59-b6df-93f0d2dca9d7)
+![](fig/dsllms_1.png)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -54,7 +77,7 @@ Which approach do you think is more computation-intensive? Which is more accurat
 
 What is DSL and why are they useful for research tasks? Think of some examples of NLP tasks that require domain-specific LLMs, such as literature review, patent analysis, or material discovery. How do domain-specific LLMs improve the performance and accuracy of these tasks?
 
-![image](https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/6e5a6a74-eaa2-430d-b5b5-8198716fb4f7)
+![](fig/dsllms_2.png)
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -93,7 +116,19 @@ print(f"{label}: {score:.4f}")
 
 ## Heads-up: Be careful when fine-tuning a model
 
-When fine-tuning a BERT model from Hugging Face, for instance, it is essential to approach the process with precision and care. Begin by thoroughly understanding **BERT’s architecture** and the specific task at hand to select the most suitable model variant and hyperparameters. **Prepare your dataset** meticulously, ensuring it is clean, well-represented, and split correctly to avoid **data leakage and overfitting**. Hyperparameter selection, such as learning rates and batch sizes, should be made with consideration, and **regularization** techniques like dropout should be employed to enhance the model’s ability to generalize. **Evaluate** the model’s performance using appropriate metrics and address any class imbalances with weighted loss functions or similar strategies. Save checkpoints to preserve progress and document every step of the fine-tuning process for transparency and reproducibility. **Ethical considerations** are paramount; strive for a model that is fair and unbiased. Ensure compliance with data protection regulations, especially when handling sensitive information. Lastly, manage **computational resources** wisely and engage with the Hugging Face community for additional support. Fine-tuning is iterative, and success often comes through continuous experimentation and learning.
+When fine-tuning a BERT model from Hugging Face, for instance, it is essential to approach the process with precision and care. 
+
+Begin by thoroughly understanding **BERT’s architecture** and the specific task at hand to select the most suitable model variant and hyperparameters. 
+
+**Prepare your dataset** meticulously, ensuring it is clean, well-represented, and split correctly to avoid **data leakage and overfitting**. 
+
+Hyperparameter selection, such as learning rates and batch sizes, should be made with consideration, and **regularization** techniques like dropout should be employed to enhance the model’s ability to generalize. 
+
+**Evaluate** the model’s performance using appropriate metrics and address any class imbalances with weighted loss functions or similar strategies. Save checkpoints to preserve progress and document every step of the fine-tuning process for transparency and reproducibility. 
+
+**Ethical considerations** are paramount; strive for a model that is fair and unbiased. Ensure compliance with data protection regulations, especially when handling sensitive information. 
+
+Lastly, manage **computational resources** wisely and engage with the Hugging Face community for additional support. Fine-tuning is iterative, and success often comes through continuous experimentation and learning.
 
 ::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -104,7 +139,7 @@ When fine-tuning a BERT model from Hugging Face, for instance, it is essential t
 
 Guess the following architecture belongs to which optimization strategy:
 
-![image](https://github.com/sabah-gaznaghi/intro-nlp-llm/assets/45458783/9abb1cc9-9b10-4636-994a-ff55b017349c)
+![](fig/dsllms_3.png)
 
 Figure. LLMs optimization (source)
 
@@ -114,7 +149,9 @@ Figure. LLMs optimization (source)
 
 ## Discuss in groups. 
 
-What are the challenges and trade-offs of domain-specific LLMs, such as data availability, model size, and complexity? Consider some of the factors that affect the quality and reliability of domain-specific LLMs, such as the amount and quality of domain-specific data, the computational resources and time required for training or fine-tuning, and the generalization and robustness of the model. How do these factors pose problems or difficulties for domain-specific LLMs and how can we overcome them?
+What are the challenges and trade-offs of domain-specific LLMs, such as data availability, model size, and complexity? 
+
+Consider some of the factors that affect the quality and reliability of domain-specific LLMs, such as the amount and quality of domain-specific data, the computational resources and time required for training or fine-tuning, and the generalization and robustness of the model. How do these factors pose problems or difficulties for domain-specific LLMs and how can we overcome them?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -122,7 +159,9 @@ What are the challenges and trade-offs of domain-specific LLMs, such as data ava
 
 ## Discuss in groups. 
 
-What are some available approaches for creating domain-specific LLMs, such as fine-tuning and knowledge distillation? Consider some of the main steps and techniques for creating domain-specific LLMs, such as selecting a general LLM, collecting and preparing domain-specific data, training or fine-tuning the model, and evaluating and deploying the model. How do these approaches differ from each other and what are their advantages and disadvantages?
+What are some available approaches for creating domain-specific LLMs, such as fine-tuning and knowledge distillation? 
+
+Consider some of the main steps and techniques for creating domain-specific LLMs, such as selecting a general LLM, collecting and preparing domain-specific data, training or fine-tuning the model, and evaluating and deploying the model. How do these approaches differ from each other and what are their advantages and disadvantages?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -144,7 +183,9 @@ result = generator(prompt, max_length=100)
 print(result[0]['generated_text'])
 ```
 
-In this example, we provide the model with one translation example and then ask it to translate a new sentence. The model uses the context from the one-shot example to generate the translation. But what if we have a Few-Shot Prompting? Few-shot prompting gives the model several examples to learn from. This can improve the model’s ability to understand and complete the task. Here is how you can implement few-shot prompting:
+In this example, we provide the model with one translation example and then ask it to translate a new sentence. The model uses the context from the one-shot example to generate the translation. But what if we have a Few-Shot Prompting? Few-shot prompting gives the model several examples to learn from. This can improve the model’s ability to understand and complete the task. 
+
+Here is how you can implement few-shot prompting:
 
 ```python
 from transformers import pipeline
