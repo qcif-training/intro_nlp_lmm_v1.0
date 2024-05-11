@@ -36,7 +36,7 @@ Just like a well-organized assembly line, a neural network processes information
 
 ### Activity
 
-Teamwork: Take a look at the architecture of a simple ANN below. Identify the constructing layers of this ANN and add the correct name label to each one.
+Teamwork: Take a look at the architecture of a simple ANN below. Identify the underlying layers and components of this ANN and add the correct name label to each one.
 
 ![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/445b963e-caf1-451d-8edc-e686f8950ae5)
 
