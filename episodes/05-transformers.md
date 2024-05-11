@@ -155,6 +155,34 @@ Briefly, we can say:
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+::: callout
+
+### Attention Mechanism
+
+So far, we have learned what the architecture of a transformer block looks like. However, for simplicity, many parts of this architecture have not been considered. 
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/559580aa-f2c9-4ec0-b87d-7e1438839431)
+
+In the following section, we will show the underlying components of a transformer.
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/2b325dc1-20d8-4bac-91b8-030067ee8097)
+
+For more details see [source](https://arxiv.org/abs/1706.03762).
+
+Attention mechanisms in transformers, allow LLMs to focus on different parts of the input text to understand context and relationships between words. The concept of ‘attention’ in encoders and decoders is akin to the selective focus of ‘fast reading,’ where one zeroes in on crucial information and disregards the irrelevant. This mechanism adapts to the context of a query, emphasizing different words or tokens based on the query’s intent. For instance, in the sentence “Sarah went to a restaurant to meet her friend that night,” the words highlighted would vary depending on whether the question is about the action (What?), location (Where?), individuals involved (Who?), or time (When?).
+
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/f28a1a04-40f7-4ad3-a846-4f0d4c4ddee4)
+[source](https://medium.com/@hunter-j-phillips/multi-head-attention-7924371d477a)
+
+
+In transformer models, this selective focus is achieved through ‘queries,’ ‘keys,’ and ‘values,’ all represented as vectors. A query vector seeks out the closest key vectors, which are encoded representations of values. The relationship between words, like ‘where’ and ‘restaurant,’ is determined by their frequency of co-occurrence in sentences, allowing the model to assign greater attention to ‘restaurant’ when the query pertains to a location. This dynamic adjustment of focus enables transformers to process language with a nuanced understanding of context and relevance.
+
+:::
+
+
+
+
 #### 1. Prompt Optimization:
 To elicit specific and accurate responses from LLMs by designing prompts strategically. 
 
