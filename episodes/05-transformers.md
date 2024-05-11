@@ -87,7 +87,7 @@ Backpropagation is an algorithmic cornerstone in the training of ANNs, serving a
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-### Activity
+### Challenge
 
 Teamwork: When we talk about ANNs, we also consider their parameters. But what are the parameters? Draw a small neural network with 3 following layers: x1
 
