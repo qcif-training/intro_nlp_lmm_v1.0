@@ -383,7 +383,7 @@ output: "Perovskite nanocrystals have emerged as a promising class of materials 
 
 ### Challenge
 
-Comparing Transformer with VADER on a large size text. Use Huggingface library database.
+Comparing Transformer with VADER on a large size text. Use the Huggingface library database.
 
 
 :::::::::::::::: solution
@@ -425,6 +425,48 @@ A:
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
