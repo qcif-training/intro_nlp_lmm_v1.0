@@ -81,12 +81,7 @@ Backpropagation is an algorithmic cornerstone in the training of ANNs, serving a
 
 ### Activity
 
-Teamwork: Let’s move the following text boxes toward their right places in the ANN architecture and add the correct label to each one:
-
-
-
-
-When we talk about ANNs, we also consider their parameters. But what are the parameters? Draw a small neural network with 3 following layers: x1
+Teamwork: When we talk about ANNs, we also consider their parameters. But what are the parameters? Draw a small neural network with 3 following layers: x1
 
 - Input Layer: 3 neurons
 - Hidden Layer: 4 neurons
@@ -108,12 +103,6 @@ When we talk about ANNs, we also consider their parameters. But what are the par
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-
-
-
-
-::::::::::::::::::::::::::::::::::::: challenge
-
 ### Challenge
 
 
@@ -134,6 +123,37 @@ That’s an additional (16 + 4 = 20) parameters, bringing our total to (21 + 20 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+
+## 5.2. Transformers
+
+As mentioned in the introduction, Most of the recent NLP models are built based on Transformers. Building on our understanding of ANNs, let’s explore the architecture of transformers. Transformers consist of several key components that work together to process and generate data.
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+### Activity
+
+Teamwork: We go back to the first figure of this episode. In the simplified schematic below, write the function of each component in the allocated textbox:
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/e94c677a-53c5-4da3-87ac-e45960429986)
+
+
+:::::::::::::::::::::::: solution 
+
+A:
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/25823a7c-6059-4c83-b592-a273fa59b9ec)
+
+Briefly, we can say:
+
+- Encoder: Processes input text into contextualized representations, enabling the understanding of the context within the input sequence. It is like the ‘listener’ in a conversation, taking in information and understanding it.
+- Decoder: Generates output sequences by translating the contextualized representations from the encoder into coherent text, often using mechanisms like masked multi-head attention and encoder-decoder attention to maintain sequence order and coherence. This acts as the ‘speaker’ in the conversation, generating the output based on the information processed by the encoder.
+- Positional Encoding: Adds unique information to each word embedding, indicating the word’s position in the sequence, which is essential for the model to maintain the order of words and understand their relative positions within a sentence
+- Input Embedding: The input text is converted into vectors that the model can understand. Think of it as translating words into a secret code that the transformer can read.
+- Output Embedding: Similar to input embedding, but for the output text. It translates the transformer’s secret code back into words we can understand.
+- Softmax Output: Applies the softmax function to the final layer’s outputs to convert them into a probability distribution, which helps in tasks like classification and sequence generation by selecting the most likely next word or class. It is like choosing the best response in a conversation from many options.
+
+
+:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 #### 1. Prompt Optimization:
 To elicit specific and accurate responses from LLMs by designing prompts strategically. 
