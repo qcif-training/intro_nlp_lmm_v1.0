@@ -50,6 +50,7 @@ Teamwork: Take a look at the architecture of a simple ANN below. Identify the un
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
 :::::::::::::::::::::::::::::::::::::::::: spoiler
 ### What is Multilayer Perceptron then?
 
@@ -65,7 +66,7 @@ If we zoom into a neuron in the hidden layer, we can see the mathematical operat
 
 ![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/d1006506-ac54-43bc-b6e9-5181ca98be36)
 
-:::
+
 
 :::::::::::::::::::::::::::::::::::::::::: spoiler
 
@@ -105,6 +106,10 @@ Teamwork: When we talk about ANNs, we also consider their parameters. But what a
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
 
 ### Challenge
 
@@ -231,7 +236,7 @@ Transformers are essential for NLP tasks because they overcome the limitations o
 Sentiment analysis is a powerful tool in NLP that helps determine the emotional tone behind the text. It is used to understand opinions, sentiments, emotions, and attitudes from various entities and classify them according to their polarity. 
 
 
-::::::::::::::::::::::::::::::::::::: activity
+::::::::::::::::::::::::::::::::::::: challenge
 ### Activity
 
 Teamwork: How do you categorize the following text in terms of positive and negative sounding? Select an Emoji.
