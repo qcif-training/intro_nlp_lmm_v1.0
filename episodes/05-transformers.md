@@ -180,6 +180,58 @@ In transformer models, this selective focus is achieved through ‘queries,’ �
 
 :::
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Discussion
+
+Teamwork: Have you heard of any other applications of the Transformers rather than in NLPs? Explain why transformers can be useful for other AI applications. Share your thoughts and findings with other groups.
+
+:::::::::::::::: solution
+
+A: Transformers, initially popular in NLP, have found applications beyond text analysis. They excel in computer vision, speech recognition, and even genomics. Their versatility extends to music generation and recommendation systems. Transformers’ innovative architecture allows them to adapt to diverse tasks, revolutionizing AI applications.
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+::: callout
+
+## Transformers in Text Translation
+Imagine you want to translate the sentence “What time is it?” from English to German using a transformer.
+The input embedding layer converts each English word into a vector.
+The six layers of encoders process these vectors, understanding the context of the sentence.
+The six layers of decoders then start generating the German translation, one word at a time.
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/09e7ae0f-bfc1-4d7c-be5f-443b97c05bd3)
+
+For each word, the Softmax output predicts the most likely next word in German.
+The output embedding layer converts these predictions back into readable German words.
+By the end, you get the German translation of **“What time is it?”** as **“Wie spät ist es?”**
+
+:::
+
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+## What are other sequencial learning models? 
+
+Transformers are essential for NLP tasks because they overcome the limitations of earlier models like recurrent neural networks (RNNs) and long short-term memory models (LSTMs), which struggled with long sequences and were computationally intensive respectively. Transformers, in contrast to the sequential input processing of RNNs, handle entire sequences simultaneously. This parallel processing capability enables data scientists to employ GPUs to train large language models (LLMs) based on transformers, which markedly decreases the duration of training.
+
+![rnn-transf-nlp](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/a0a429e4-c87e-4529-9151-781dd566c800)
+[source](https://thegradient.pub/transformers-are-graph-neural-networks/)
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+
+
+
+
+
+
 
 
 
