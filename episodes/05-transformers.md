@@ -32,6 +32,31 @@ To understand how Transformers work we also need to learn about artificial neura
 Just like a well-organized assembly line, a neural network processes information in stages, with each neuron contributing to the final result. 
 
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Activity
+
+Teamwork: Take a look at the architecture of a simple ANN below. Identify the constructing layers of this ANN and add the correct name label to each one.
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/445b963e-caf1-451d-8edc-e686f8950ae5)
+
+
+:::::::::::::::::::::::: solution 
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/523924b5-055b-4125-8bce-aa2be2b38ca8)
+
+
+:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+### What is Multilayer Perceptron then?
+
+In the context of machine learning Multilayer Perceptron (MLP) is indeed a fully connected multi-layer neural network and is a classic example of a feedforward artificial neural network (ANN). It typically includes an input layer, one or more hidden layers, and an output layer. When an MLP has more than one hidden layer, it can be considered a deep ANN, part of a broader category known as deep learning. 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ::: callout
 
@@ -43,13 +68,14 @@ If we zoom into a neuron in the hidden layer, we can see the mathematical operat
 :::
 
 
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ### Activity
 
 Teamwork: Let’s move the following text boxes toward their right places in the ANN architecture and add the correct label to each one:
 
-![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/39820eb0-7959-4ed1-bdfc-69131ab1a834)
+
 
 
 When we talk about ANNs, we also consider their parameters. But what are the parameters? Draw a small neural network with 3 following layers: x1
@@ -83,17 +109,18 @@ When we talk about ANNs, we also consider their parameters. But what are the par
 ### Challenge
 
 
-Q: Add another hidden layer with 4 neurons to the previous ANN and calculate the number of parameters:
+Q: Add another hidden layer with 4 neurons to the previous ANN and calculate the number of parameters.
 
 :::::::::::::::::::::::: solution 
 
-![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/144a8f7d-c1ac-4b57-8688-b5280cabd59c)
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/39820eb0-7959-4ed1-bdfc-69131ab1a834)
 
 
 We would add:
-(4 \times 4) weights from the first to the second hidden layer
-(4) biases for the new hidden layer
-(4 \times 1) weights from the second hidden layer to the output layer (we already counted the biases for the output layer)
+- (4 * 4) weights from the first to the second hidden layer
+- (4) biases for the new hidden layer
+- (4 * 1) weights from the second hidden layer to the output layer (we already counted the biases for the output layer)
+
 That’s an additional (16 + 4 = 20) parameters, bringing our total to (21 + 20 = 41) parameters.
 
 :::::::::::::::::::::::::::::::::
