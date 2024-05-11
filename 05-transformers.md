@@ -53,7 +53,7 @@ Teamwork: Take a look at the architecture of a simple ANN below. Identify the co
 :::::::::::::::::::::::::::::::::::::::::: spoiler
 ### What is Multilayer Perceptron then?
 
-In the context of machine learning Multilayer Perceptron (MLP) is indeed a fully connected multi-layer neural network and is a classic example of a feedforward artificial neural network (ANN). It typically includes an input layer, one or more hidden layers, and an output layer. When an MLP has more than one hidden layer, it can be considered a deep ANN, part of a broader category known as deep learning. 
+In the context of machine learning, a multilayer perceptron (MLP) is indeed a fully connected multi-layer neural network and is a classic example of a feedforward artificial neural network (ANN). It typically includes an input layer, one or more hidden layers, and an output layer. When an MLP has more than one hidden layer, it can be considered a deep ANN, part of a broader category known as deep learning. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -67,7 +67,15 @@ If we zoom into a neuron in the hidden layer, we can see the mathematical operat
 
 :::
 
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+### What happens next? How to optimize an ANN? 
 
+Backpropagation is an algorithmic cornerstone in the training of ANNs, serving as a method for optimizing weights and biases through gradient descent. Conceptually, it is akin to an iterative refinement process where the network’s output error is propagated backward, layer by layer, using the chain rule of calculus. This backward flow of error information allows for the computation of gradients, which inform the magnitude and direction of adjustments to be made to the network’s parameters. The objective is to iteratively reduce the differences between the predicted output and the actual target values. This systematic adjustment of parameters, guided by error gradients, incrementally leads to a more accurate ANN model.
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/5ae4d845-c3d2-42df-87f0-e928be9ba64b)
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
