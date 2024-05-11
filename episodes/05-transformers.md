@@ -408,6 +408,23 @@ Text summarization is the process of distilling the most important information f
 
 
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Discussion
+
+How extractive and abstractive summarization methods are different? Connect the following text boxes to the correct category. Share your results with other group members.
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/dcbd3939-f4a4-44e2-987d-1372c49ce284)
+
+
+:::::::::::::::: solution
+
+A: 
+
+
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 
 
