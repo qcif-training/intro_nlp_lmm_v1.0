@@ -32,6 +32,7 @@ To understand how Transformers work we also need to learn about artificial neura
 Just like a well-organized assembly line, a neural network processes information in stages, with each neuron contributing to the final result. 
 
 
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ### Activity
@@ -59,12 +60,15 @@ In the context of machine learning, a multilayer perceptron (MLP) is indeed a fu
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
 ::: callout
 
 ### Summation and Activation Function
 If we zoom into a neuron in the hidden layer, we can see the mathematical operations (weights summation and activation function). An input is transformed at each hidden layer node through a process that multiplies the input (x_i) by learned weights (w_i), adds a bias (b), and then applies an activation function to determine the node’s output. This output is either passed on to the next layer or contributes to the final output of the network. Essentially, each node performs a small calculation that, when combined with the operations of other nodes, allows the network to process complex patterns and data. 
 
 ![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/d1006506-ac54-43bc-b6e9-5181ca98be36)
+
+::: 
 
 
 
@@ -132,6 +136,7 @@ That’s an additional (16 + 4 = 20) parameters, bringing our total to (21 + 20 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
 ## 5.2. Transformers
 
 As mentioned in the introduction, Most of the recent NLP models are built based on Transformers. Building on our understanding of ANNs, let’s explore the architecture of transformers. Transformers consist of several key components that work together to process and generate data.
@@ -162,6 +167,8 @@ Briefly, we can say:
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 ::: callout
 
@@ -196,12 +203,14 @@ In transformer models, this selective focus is achieved through ‘queries,’ �
 
 Teamwork: Have you heard of any other applications of the Transformers rather than in NLPs? Explain why transformers can be useful for other AI applications. Share your thoughts and findings with other groups.
 
+
 :::::::::::::::: solution
 
 A: Transformers, initially popular in NLP, have found applications beyond text analysis. They excel in computer vision, speech recognition, and even genomics. Their versatility extends to music generation and recommendation systems. Transformers’ innovative architecture allows them to adapt to diverse tasks, revolutionizing AI applications.
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 ::: callout
@@ -221,6 +230,7 @@ By the end, you get the German translation of **“What time is it?”** as **�
 :::
 
 
+
 :::::::::::::::::::::::::::::::::::::::::: spoiler
 
 ### What are other sequential learning models? 
@@ -233,9 +243,11 @@ Transformers are essential for NLP tasks because they overcome the limitations o
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
 ## 5.3. Semantic Analysis
 
 Sentiment analysis is a powerful tool in NLP that helps determine the emotional tone behind the text. It is used to understand opinions, sentiments, emotions, and attitudes from various entities and classify them according to their polarity. 
+
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
@@ -250,6 +262,7 @@ Teamwork: How do you categorize the following text in terms of positive and nega
 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 Computer models can do this job for us! Let’s see how it works through a step-by-step example: First, install the required libraries and pipelines:
@@ -340,6 +353,7 @@ A: Transformers use deep learning models that can understand context and nuances
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
@@ -439,6 +453,7 @@ A:
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
 Now, let’s see how to use the Hugging Face Transformers library to perform abstractive summarization.
 First, from the transformers import pipeline:
 
@@ -471,6 +486,7 @@ Output:
 
 
 ```
+
 
 
 ::: callout
