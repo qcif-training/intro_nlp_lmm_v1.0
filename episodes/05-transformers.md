@@ -182,7 +182,7 @@ In transformer models, this selective focus is achieved through ‘queries,’ �
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Discussion
+### Discussion
 
 Teamwork: Have you heard of any other applications of the Transformers rather than in NLPs? Explain why transformers can be useful for other AI applications. Share your thoughts and findings with other groups.
 
@@ -196,7 +196,7 @@ A: Transformers, initially popular in NLP, have found applications beyond text a
 
 ::: callout
 
-## Transformers in Text Translation
+### Transformers in Text Translation
 Imagine you want to translate the sentence “What time is it?” from English to German using a transformer.
 The input embedding layer converts each English word into a vector.
 The six layers of encoders process these vectors, understanding the context of the sentence.
@@ -213,7 +213,7 @@ By the end, you get the German translation of **“What time is it?”** as **�
 
 :::::::::::::::::::::::::::::::::::::::::: spoiler
 
-## What are other sequencial learning models? 
+### What are other sequential learning models? 
 
 Transformers are essential for NLP tasks because they overcome the limitations of earlier models like recurrent neural networks (RNNs) and long short-term memory models (LSTMs), which struggled with long sequences and were computationally intensive respectively. Transformers, in contrast to the sequential input processing of RNNs, handle entire sequences simultaneously. This parallel processing capability enables data scientists to employ GPUs to train large language models (LLMs) based on transformers, which markedly decreases the duration of training.
 
@@ -221,6 +221,58 @@ Transformers are essential for NLP tasks because they overcome the limitations o
 [source](https://thegradient.pub/transformers-are-graph-neural-networks/)
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+## 5.3. Semantic Analysis
+
+Sentiment analysis is a powerful tool in NLP that helps determine the emotional tone behind the text. It is used to understand opinions, sentiments, emotions, and attitudes from various entities and classify them according to their polarity. 
+
+
+::::::::::::::::::::::::::::::::::::: activity
+### Activity
+
+Teamwork: How do you categorize the following text in terms of positive and negative sounding? Select an Emoji.
+
+*“A research team has unveiled a novel ligand exchange technique that enables the synthesis of organic cation-based perovskite quantum dots (PQDs), ensuring exceptional stability while suppressing internal defects in the photoactive layer of solar cells.”* [source](https://www.sciencedaily.com/releases/2024/02/240221160400.htm)
+
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/897d0938-d84f-4189-afac-b8f244e16b46)
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Computer models can do this job for us! Let’s see how it works through a step-by-step example: First, install the required libraries and pipelines:
+
+
+```python
+
+pip install transformers
+from transformers import pipeline
+```
+
+Now, initialize the sentiment analysis pipeline and analyze the sentiment of a sample text:
+
+```python
+
+sentiment_pipeline = pipeline('sentiment-analysis')
+text = " A research team has unveiled a novel ligand exchange technique that enables the synthesis of organic cation-based perovskite quantum dots (PQDs), ensuring exceptional stability while suppressing internal defects in the photoactive layer of solar cells."
+sentiment = sentiment_pipeline(text)
+```
+
+After the analysis is completed, you can print out the results:
+
+```python
+
+print(f"Sentiment: {sentiment[0]['label']}, Confidence: {sentiment[0]['score']:.2f}")
+
+Output: Output: Sentiment: POSITIVE, Confidence: 1.00
+
+```
+
+In this example, the sentiment analysis pipeline from the Hugging Face library is used to analyze the sentiment of a research paper abstract. The model predicts the sentiment as positive, negative, or neutral, along with a confidence score. This can be particularly useful for gauging the reception of research papers in a field.
+
+
 
 
 
