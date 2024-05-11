@@ -266,11 +266,171 @@ After the analysis is completed, you can print out the results:
 
 print(f"Sentiment: {sentiment[0]['label']}, Confidence: {sentiment[0]['score']:.2f}")
 
-Output: Output: Sentiment: POSITIVE, Confidence: 1.00
+# Output
+
+Output: Sentiment: POSITIVE, Confidence: 1.00
 
 ```
 
 In this example, the sentiment analysis pipeline from the Hugging Face library is used to analyze the sentiment of a research paper abstract. The model predicts the sentiment as positive, negative, or neutral, along with a confidence score. This can be particularly useful for gauging the reception of research papers in a field.
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+### Activity
+
+Teamwork: Fill in the blanks to complete the sentiment analysis process:
+Install the __________ library for sentiment analysis.
+Use the __________ function to create a sentiment analysis pipeline.
+The sentiment analysis model will output a __________ and a __________ score.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+::: callout
+
+### VADRER
+
+Valence Aware Dictionary and sEntiment Reasoner (VADER) is a lexicon and rule-based sentiment analysis tool that is particularly attuned to sentiments expressed in social media. VADER analyzes the sentiment of the text and returns a dictionary with scores for negative, neutral, positive, and a compound score that aggregates them. It is useful for quick sentiment analysis, especially on social media texts. Let’s how we can use this framework. 
+
+First, we need to import the SentimentIntensityAnalyzer module from VADER library:
+
+```python
+
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+# Initialize VADER sentiment intensity analyzer:
+analyzer = SentimentIntensityAnalyzer()
+
+# We use the same sample text:
+text = " A research team has unveiled a novel ligand exchange technique that enables the synthesis of organic cation-based perovskite quantum dots (PQDs), ensuring exceptional stability while suppressing internal defects in the photoactive layer of solar cells."
+
+# Now we can analyze sentiment:
+vader_sentiment = analyzer.polarity_scores(text)
+
+# Print the sentiment:
+print(f"Sentiment: {vader_sentiment}")
+Output: Sentiment: {'neg': 0.069, 'neu': 0.818, 'pos': 0.113, 'compound': 0.1779}
+```
+
+:::
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Discussion
+
+Teamwork: Which framework do you think could be more helpful for research applications? Elaborate your opinion. Share your thoughts with other team members.
+
+:::::::::::::::: solution
+
+A: Transformers use deep learning models that can understand context and nuances of language, making them suitable for complex and lengthy texts. They can be particularly useful for sentiment analysis of research papers, as they can understand the complex language and context often found in academic writing. This allows for a more nuanced understanding of the sentiment conveyed in the papers. VADER, on the other hand, is a rule-based model that excels in analyzing short texts with clear sentiment expressions, often found in social media.
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge
+
+Use the transformers library to perform sentiment analysis on the following text: 
+
+*"Perovskite nanocrystals have emerged as a promising class of materials for next-generation optoelectronic devices due to their unique properties. Their crystal structure allows for tunable bandgaps, which are the energy differences between occupied and unoccupied electronic states. This tunability enables the creation of materials that can absorb and emit light across a wide range of the electromagnetic spectrum, making them suitable for applications like solar cells, light-emitting diodes (LEDs), and lasers."*
+
+
+Print the original text and the sentiment score and label. You can use the following code to load the transformers library and the pre-trained model and tokenizer for sentiment analysis:
+
+```python
+
+from transformers import pipeline
+sentiment_analysis = pipeline("sentiment-analysis")
+
+```
+
+
+:::::::::::::::: solution
+
+A: 
+
+```python
+from transformers import pipeline
+sentiment_analysis = pipeline("sentiment-analysis")
+text = "This book is amazing. It is well-written, engaging, and informative. I learned a lot from reading it and I highly recommend it to anyone interested in natural language processing."
+print(text)
+print(sentiment_analysis(text))
+```
+Output:
+
+```python
+
+output: "Perovskite nanocrystals have emerged as a promising class of materials for next-generation optoelectronic devices due to their unique properties. Their crystal structure allows for tunable bandgaps, which are the energy differences between occupied and unoccupied electronic states. This tunability enables the creation of materials that can absorb and emit light across a wide range of the electromagnetic spectrum, making them suitable for applications like solar cells, light-emitting diodes (LEDs), and lasers."
+
+[{'label': 'POSITIVE', 'score': 0.9998656511306763}]
+```
+
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge
+
+Comparing Transformer with VADER on a large size text. Use Huggingface library database.
+
+
+:::::::::::::::: solution
+
+A: 
+
+```python
+from transformers import pipeline
+
+```
+
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+## 5.4. Text Summarization
+
+
+Text summarization is the process of distilling the most important information from a source (or sources) to produce an abbreviated version for a particular user and task. It can be broadly classified into two types: extractive and abstractive summarization.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
