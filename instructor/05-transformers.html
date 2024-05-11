@@ -200,7 +200,9 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction-to-artificial-neural-networks">5.1. Introduction to Artificial Neural Networks</a></li>
-<li><a href="#prompting">7.2. Prompting</a></li>
+<li><a href="#transformers">5.2. Transformers</a></li>
+<li><a href="#semantic-analysis">5.3. Semantic Analysis</a></li>
+<li><a href="#text-summarization">5.4. Text Summarization</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
         
@@ -447,12 +449,9 @@ incrementally leads to a more accurate ANN model.</p>
 <h3 class="callout-title">Activity<a class="anchor" aria-label="anchor" href="#activity-1"></a>
 </h3>
 <div class="callout-content">
-<p>Teamwork: Let’s move the following text boxes toward their right
-places in the ANN architecture and add the correct label to each
-one:</p>
-<p>When we talk about ANNs, we also consider their parameters. But what
-are the parameters? Draw a small neural network with 3 following layers:
-x1</p>
+<p>Teamwork: When we talk about ANNs, we also consider their parameters.
+But what are the parameters? Draw a small neural network with 3
+following layers: x1</p>
 <ul><li>Input Layer: 3 neurons</li>
 <li>Hidden Layer: 4 neurons</li>
 <li>Output Layer: 1 neurons</li>
@@ -510,289 +509,26 @@ for the output layer)</p>
 </div>
 </div>
 </div>
-<div class="section level4">
-<h4 id="prompt-optimization">1. Prompt Optimization:<a class="anchor" aria-label="anchor" href="#prompt-optimization"></a></h4>
-<p>To elicit specific and accurate responses from LLMs by designing
-prompts strategically.</p>
-<p><em>Zero-shot Prompting</em>: This is the simplest form of prompting
-where the LLM is given a task or question without any context or
-examples. It relies on the LLM’s pre-existing knowledge to generate a
-response.</p>
-<p>Example: “What is the capital of France?” The LLM would respond with
-“Paris” based on its internal knowledge.</p>
-<p><em>Few-shot Prompting</em>: In this technique, the LLM is provided
-with a few examples to demonstrate the expected response format or
-content.</p>
-<p>Example: To determine sentiment, you might provide examples like “I
-love sunny days. (+1)” and “I hate traffic. (-1)” before asking the LLM
-to analyze a new sentence.</p>
-</div>
-<div class="section level4">
-<h4 id="retrieval-augmented-generation-rag">2. Retrieval Augmented Generation (RAG):<a class="anchor" aria-label="anchor" href="#retrieval-augmented-generation-rag"></a></h4>
-<p>To supplement the LLM’s generative capabilities with information
-retrieved from external databases or documents.</p>
-<p><em>Retrieval</em>: The LLM queries a database to find relevant
-information that can inform its response.</p>
-<p>Example: If asked about recent scientific discoveries, the LLM might
-retrieve articles or papers on the topic.</p>
-<p><em>Generation</em>: After retrieving the information, the LLM
-integrates it into a coherent response.</p>
-<p>Example: Using the retrieved scientific articles, the LLM could
-generate a summary of the latest findings in a particular field.</p>
-</div>
-<div class="section level4">
-<h4 id="fine-tuning">3. Fine-Tuning:<a class="anchor" aria-label="anchor" href="#fine-tuning"></a></h4>
-<p>To adapt a general-purpose LLM to excel at a specific task or within
-a particular domain.</p>
-<p><em>Language Modeling Task Fine-Tuning</em>: This involves training
-the LLM on a large corpus of text to improve its ability to predict the
-next word or phrase in a sentence.</p>
-<p>Example: An LLM fine-tuned on legal documents would become better at
-generating text that resembles legal writing.</p>
-<p><em>Supervised Q&amp;A Fine-Tuning</em>: Here, the LLM is trained on
-a dataset of question-answer pairs to enhance its performance on Q&amp;A
-tasks.</p>
-<p>Example: An LLM fine-tuned with medical Q&amp;A pairs would provide
-more accurate responses to health-related inquiries.</p>
-</div>
-<div class="section level4">
-<h4 id="training-from-scratch">4. Training from Scratch:<a class="anchor" aria-label="anchor" href="#training-from-scratch"></a></h4>
-<p>Builds a model specifically for a domain, using relevant data from
-the ground up.</p>
-<div id="discussion" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="discussion" class="callout-inner">
-<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion"></a>
-</h3>
-<div class="callout-content">
-<p>Which approach do you think is more computation-intensive? Which is
-more accurate? How are these qualities related? Evaluate the trade-offs
-between fine-tuning and other approaches.</p>
-<figure><img src="../fig/transformers_3.png" class="figure mx-auto d-block"></figure></div>
-</div>
-</div>
-<div id="discussion-1" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="discussion-1" class="callout-inner">
-<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-1"></a>
-</h3>
-<div class="callout-content">
-<p>What is DSL and why are they useful for research tasks? Think of some
-examples of NLP tasks that require domain-specific LLMs, such as
-literature review, patent analysis, or material discovery. How do
-domain-specific LLMs improve the performance and accuracy of these
-tasks?</p>
-<figure><img src="../fig/transformers_4.png" class="figure mx-auto d-block"></figure></div>
-</div>
-</div>
-</div>
-</section><section id="prompting"><h2 class="section-heading">7.2. Prompting<a class="anchor" aria-label="anchor" href="#prompting"></a>
+</section><section id="transformers"><h2 class="section-heading">5.2. Transformers<a class="anchor" aria-label="anchor" href="#transformers"></a>
 </h2>
-<hr class="half-width"><p>For research applications where highly reliable answers are crucial,
-Prompt Engineering combined with Retrieval-Augmented Generation (RAG) is
-often the most suitable approach. This combination allows for
-flexibility and high-quality outputs by leveraging both the generative
-capabilities of LLMs and the precision of domain-specific data
-sources:</p>
-<div class="codewrapper sourceCode" id="cb1">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>Install the Hugging Face libraries</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="op">!</span>pip install transformers datasets</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="co"># Initialize the zero-shot classification pipeline</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>classifier <span class="op">=</span> pipeline(<span class="st">"zero-shot-classification"</span>, model<span class="op">=</span><span class="st">"facebook/bart-large-mnli"</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a><span class="co"># Example research question</span></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a>question <span class="op">=</span> <span class="st">"What is the role of CRISPR-Cas9 in genome editing?"</span></span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a></span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a><span class="co"># Candidate topics to classify the question</span></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a>topics <span class="op">=</span> [<span class="st">"Biology"</span>, <span class="st">"Technology"</span>, <span class="st">"Healthcare"</span>, <span class="st">"Genetics"</span>, <span class="st">"Ethics"</span>]</span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a></span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="co"># Perform zero-shot classification</span></span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a>result <span class="op">=</span> classifier(question, candidate_labels<span class="op">=</span>topics)</span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a><span class="co"># Output the results</span></span>
-<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Question: </span><span class="sc">{</span>question<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Classified under topics with the following scores:"</span>)</span>
-<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="cf">for</span> label, score <span class="kw">in</span> <span class="bu">zip</span>(result[<span class="st">'labels'</span>], result[<span class="st">'scores'</span>]):</span>
-<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>label<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>score<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre>
-</div>
-<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
-  <h3 class="accordion-header" id="headingSpoiler3">
-<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Be careful when fine-tuning a model</h3>
-</button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
-<div class="accordion-body">
-<p>When fine-tuning a BERT model from Hugging Face, for instance, it is
-essential to approach the process with precision and care.</p>
-<p>Begin by thoroughly understanding <strong>BERT’s
-architecture</strong> and the specific task at hand to select the most
-suitable model variant and hyperparameters.</p>
-<p><strong>Prepare your dataset</strong> meticulously, ensuring it is
-clean, well-represented, and split correctly to avoid <strong>data
-leakage and overfitting</strong>.</p>
-<p>Hyperparameter selection, such as learning rates and batch sizes,
-should be made with consideration, and <strong>regularization</strong>
-techniques like dropout should be employed to enhance the model’s
-ability to generalize.</p>
-<p><strong>Evaluate</strong> the model’s performance using appropriate
-metrics and address any class imbalances with weighted loss functions or
-similar strategies.</p>
-<p>Save checkpoints to preserve progress and document every step of the
-fine-tuning process for transparency and reproducibility.</p>
-<p><strong>Ethical considerations</strong> are paramount; strive for a
-model that is fair and unbiased.</p>
-<p>Ensure compliance with data protection regulations, especially when
-handling sensitive information.</p>
-<p>Lastly, manage <strong>computational resources</strong> wisely and
-engage with the Hugging Face community for additional support.
-Fine-tuning is iterative, and success often comes through continuous
-experimentation and learning.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="discussion-2" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="discussion-2" class="callout-inner">
-<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-2"></a>
-</h3>
-<div class="callout-content">
-<p>Guess the following architecture belongs to which optimization
-strategy:</p>
-<figure><img src="../fig/transformers_5.png" class="figure mx-auto d-block"></figure><p>Figure. LLMs optimization (source)</p>
-</div>
-</div>
-</div>
-<div id="discussion-3" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="discussion-3" class="callout-inner">
-<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-3"></a>
-</h3>
-<div class="callout-content">
-<p>What are the challenges and trade-offs of domain-specific LLMs, such
-as data availability, model size, and complexity? Consider some of the
-factors that affect the quality and reliability of domain-specific LLMs,
-such as the amount and quality of domain-specific data, the
-computational resources and time required for training or fine-tuning,
-and the generalization and robustness of the model. How do these factors
-pose problems or difficulties for domain-specific LLMs and how can we
-overcome them?</p>
-</div>
-</div>
-</div>
-<div id="discussion-4" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="discussion-4" class="callout-inner">
-<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-4"></a>
-</h3>
-<div class="callout-content">
-<p>Teamwork: What are some available approaches for creating
-domain-specific LLMs, such as fine-tuning and knowledge distillation?
-Consider some of the main steps and techniques for creating
-domain-specific LLMs, such as selecting a general LLM, collecting and
-preparing domain-specific data, training or fine-tuning the model, and
-evaluating and deploying the model. How do these approaches differ from
-each other and what are their advantages and disadvantages?</p>
-</div>
-</div>
-</div>
-<div class="section level3">
-<h3 id="example">Example:<a class="anchor" aria-label="anchor" href="#example"></a></h3>
-<p>Now let’s try One-shot and Few-shot prompting examples and see how it
-can help us to enhance the sensitivity of the LLM to our field of study:
-One-shot prompting involves providing the model with a single example to
-follow. It’s like giving the model a hint about what you expect. We will
-go through an example using Hugging Face’s transformers library:</p>
-<div class="codewrapper sourceCode" id="cb2">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="co"># Load a pre-trained model and tokenizer</span></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>model_name <span class="op">=</span> <span class="st">"gpt2"</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>generator <span class="op">=</span> pipeline(<span class="st">'text-generation'</span>, model<span class="op">=</span>model_name)</span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co"># One-shot example</span></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a>prompt <span class="op">=</span> <span class="st">"Translate 'Hello, how are you?' to French:</span><span class="ch">\n</span><span class="st">Bonjour, comment ça va?</span><span class="ch">\n</span><span class="st">Translate 'I am learning new things every day' to French:"</span></span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>result <span class="op">=</span> generator(prompt, max_length<span class="op">=</span><span class="dv">100</span>)</span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a></span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co"># Output the result</span></span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="bu">print</span>(result[<span class="dv">0</span>][<span class="st">'generated_text'</span>])</span></code></pre>
-</div>
-<p>In this example, we provide the model with one translation example
-and then ask it to translate a new sentence. The model uses the context
-from the one-shot example to generate the translation. But what if we
-have a Few-Shot Prompting? Few-shot prompting gives the model several
-examples to learn from. This can improve the model’s ability to
-understand and complete the task. Here is how you can implement few-shot
-prompting:</p>
-<div class="codewrapper sourceCode" id="cb3">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co"># Load a pre-trained model and tokenizer</span></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>model_name <span class="op">=</span> <span class="st">"gpt2"</span></span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>generator <span class="op">=</span> pipeline(<span class="st">'text-generation'</span>, model<span class="op">=</span>model_name)</span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co"># Few-shot examples</span></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>prompt <span class="op">=</span> <span class="st">"""</span><span class="ch">\</span></span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="st">Q: What is the capital of France?</span></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="st">A: Paris.</span></span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="st">Q: What is the largest mammal?</span></span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="st">A: Blue whale.</span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="st">Q: What is the human body's largest organ?</span></span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="st">A: The skin.</span></span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="st">Q: What is the currency of Japan?</span></span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="st">A:"""</span></span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a>result <span class="op">=</span> generator(prompt, max_length<span class="op">=</span><span class="dv">100</span>)</span>
-<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a></span>
-<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a><span class="co"># Output the result</span></span>
-<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a><span class="bu">print</span>(result[<span class="dv">0</span>][<span class="st">'generated_text'</span>])</span></code></pre>
-</div>
-<p>In this few-shot example, we provide the model with three
-question-answer pairs before posing a new question. The model uses the
-pattern it learned from the examples to answer the new question.</p>
-<div id="challenge-1" class="callout challenge">
+<hr class="half-width"><p>As mentioned in the introduction, Most of the recent NLP models are
+built based on Transformers. Building on our understanding of ANNs,
+let’s explore the architecture of transformers. Transformers consist of
+several key components that work together to process and generate
+data.</p>
+<div id="activity-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+<div id="activity-2" class="callout-inner">
+<h3 class="callout-title">Activity<a class="anchor" aria-label="anchor" href="#activity-2"></a>
 </h3>
 <div class="callout-content">
-<p>To summarize this approach in a few steps, fill in the following
-gaps: 1. Choose a Model: Select a <strong>—</strong> model from Hugging
-Face that suits your task.</p>
-<ol start="2" style="list-style-type: decimal"><li><p>Load the Model: Use the <strong>—</strong> function to load the
-model and tokenizer.</p></li>
-<li><p>Craft Your Prompt: Write a <strong>—</strong> that includes one
-or more examples, depending on whether you’re doing one-shot or few-shot
-prompting.</p></li>
-<li><p>Generate Text: Call the <strong>—</strong> with your prompt to
-generate the <strong>—</strong>.</p></li>
-<li><p>Review the Output: Check the generated text to see if the model
-followed the <strong>—</strong> correctly.</p></li>
-</ol></div>
+<p>Teamwork: We go back to the first figure of this episode. In the
+simplified schematic below, write the function of each component in the
+allocated textbox:</p>
+<figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/e94c677a-53c5-4da3-87ac-e45960429986" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
+</figure></div>
 </div>
 </div>
 <div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
@@ -802,33 +538,638 @@ followed the <strong>—</strong> correctly.</p></li>
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
-<ol style="list-style-type: decimal"><li><p>Choose a Model: Select a <strong>pre-trained</strong> model from
-Hugging Face that suits your task.</p></li>
-<li><p>Load the Model: Use the <strong>pipeline</strong> function to
-load the model and tokenizer.</p></li>
-<li><p>Craft Your Prompt: Write a <strong>prompt</strong> that includes
-one or more examples, depending on whether you’re doing one-shot or
-few-shot prompting.</p></li>
-<li><p>Generate Text: Call the <strong>generator</strong> with your
-prompt to generate the <strong>output</strong>.</p></li>
-<li><p>Review the Output: Check the generated text to see if the model
-followed the <strong>examples</strong> correctly.</p></li>
-</ol></div>
+<p>A: <img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/25823a7c-6059-4c83-b592-a273fa59b9ec" alt="image" class="figure"></p>
+<p>Briefly, we can say:</p>
+<ul><li>Encoder: Processes input text into contextualized representations,
+enabling the understanding of the context within the input sequence. It
+is like the ‘listener’ in a conversation, taking in information and
+understanding it.</li>
+<li>Decoder: Generates output sequences by translating the
+contextualized representations from the encoder into coherent text,
+often using mechanisms like masked multi-head attention and
+encoder-decoder attention to maintain sequence order and coherence. This
+acts as the ‘speaker’ in the conversation, generating the output based
+on the information processed by the encoder.</li>
+<li>Positional Encoding: Adds unique information to each word embedding,
+indicating the word’s position in the sequence, which is essential for
+the model to maintain the order of words and understand their relative
+positions within a sentence</li>
+<li>Input Embedding: The input text is converted into vectors that the
+model can understand. Think of it as translating words into a secret
+code that the transformer can read.</li>
+<li>Output Embedding: Similar to input embedding, but for the output
+text. It translates the transformer’s secret code back into words we can
+understand.</li>
+<li>Softmax Output: Applies the softmax function to the final layer’s
+outputs to convert them into a probability distribution, which helps in
+tasks like classification and sequence generation by selecting the most
+likely next word or class. It is like choosing the best response in a
+conversation from many options.</li>
+</ul></div>
 </div>
 </div>
 </div>
-<div id="accordionSpoiler4" class="accordion spoiler-accordion accordion-flush">
+<div id="attention-mechanism" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="attention-mechanism" class="callout-inner">
+<h3 class="callout-title">Attention Mechanism<a class="anchor" aria-label="anchor" href="#attention-mechanism"></a>
+</h3>
+<div class="callout-content">
+<p>So far, we have learned what the architecture of a transformer block
+looks like. However, for simplicity, many parts of this architecture
+have not been considered.</p>
+<figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/559580aa-f2c9-4ec0-b87d-7e1438839431" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
+</figure><p>In the following section, we will show the underlying components of a
+transformer.</p>
+<figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/2b325dc1-20d8-4bac-91b8-030067ee8097" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
+</figure><p>For more details see <a href="https://arxiv.org/abs/1706.03762" class="external-link">source</a>.</p>
+<p>Attention mechanisms in transformers, allow LLMs to focus on
+different parts of the input text to understand context and
+relationships between words. The concept of ‘attention’ in encoders and
+decoders is akin to the selective focus of ‘fast reading,’ where one
+zeroes in on crucial information and disregards the irrelevant. This
+mechanism adapts to the context of a query, emphasizing different words
+or tokens based on the query’s intent. For instance, in the sentence
+“Sarah went to a restaurant to meet her friend that night,” the words
+highlighted would vary depending on whether the question is about the
+action (What?), location (Where?), individuals involved (Who?), or time
+(When?).</p>
+<p><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/f28a1a04-40f7-4ad3-a846-4f0d4c4ddee4" alt="image" class="figure"><a href="https://medium.com/@hunter-j-phillips/multi-head-attention-7924371d477a" class="external-link">source</a></p>
+<p>In transformer models, this selective focus is achieved through
+‘queries,’ ‘keys,’ and ‘values,’ all represented as vectors. A query
+vector seeks out the closest key vectors, which are encoded
+representations of values. The relationship between words, like ‘where’
+and ‘restaurant,’ is determined by their frequency of co-occurrence in
+sentences, allowing the model to assign greater attention to
+‘restaurant’ when the query pertains to a location. This dynamic
+adjustment of focus enables transformers to process language with a
+nuanced understanding of context and relevance.</p>
+</div>
+</div>
+</div>
+<div id="discussion" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="discussion" class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion"></a>
+</h3>
+<div class="callout-content">
+<p>Teamwork: Have you heard of any other applications of the
+Transformers rather than in NLPs? Explain why transformers can be useful
+for other AI applications. Share your thoughts and findings with other
+groups.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
-  <h3 class="accordion-header" id="headingSpoiler4">
-<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: Prompting Quality</h3>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
-<p>Remember, the quality of the output heavily depends on the quality
-and relevance of the examples you provide. It’s also important to note
-that larger models tend to perform better at these tasks due to their
-greater capacity to understand and generalize from examples.</p>
+<p>A: Transformers, initially popular in NLP, have found applications
+beyond text analysis. They excel in computer vision, speech recognition,
+and even genomics. Their versatility extends to music generation and
+recommendation systems. Transformers’ innovative architecture allows
+them to adapt to diverse tasks, revolutionizing AI applications.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="transformers-in-text-translation" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="transformers-in-text-translation" class="callout-inner">
+<h3 class="callout-title">Transformers in Text Translation<a class="anchor" aria-label="anchor" href="#transformers-in-text-translation"></a>
+</h3>
+<div class="callout-content">
+<p>Imagine you want to translate the sentence “What time is it?” from
+English to German using a transformer. The input embedding layer
+converts each English word into a vector. The six layers of encoders
+process these vectors, understanding the context of the sentence. The
+six layers of decoders then start generating the German translation, one
+word at a time.</p>
+<figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/09e7ae0f-bfc1-4d7c-be5f-443b97c05bd3" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
+</figure><p>For each word, the Softmax output predicts the most likely next word
+in German. The output embedding layer converts these predictions back
+into readable German words. By the end, you get the German translation
+of <strong>“What time is it?”</strong> as <strong>“Wie spät ist
+es?”</strong></p>
+</div>
+</div>
+</div>
+<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
+  <h3 class="accordion-header" id="headingSpoiler3">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What are other sequential learning models?</h3>
+</button>
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div class="accordion-body">
+<p>Transformers are essential for NLP tasks because they overcome the
+limitations of earlier models like recurrent neural networks (RNNs) and
+long short-term memory models (LSTMs), which struggled with long
+sequences and were computationally intensive respectively. Transformers,
+in contrast to the sequential input processing of RNNs, handle entire
+sequences simultaneously. This parallel processing capability enables
+data scientists to employ GPUs to train large language models (LLMs)
+based on transformers, which markedly decreases the duration of
+training.</p>
+<p><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/a0a429e4-c87e-4529-9151-781dd566c800" alt="rnn-transf-nlp" class="figure"><a href="https://thegradient.pub/transformers-are-graph-neural-networks/" class="external-link">source</a></p>
+</div>
+</div>
+</div>
+</div>
+</section><section id="semantic-analysis"><h2 class="section-heading">5.3. Semantic Analysis<a class="anchor" aria-label="anchor" href="#semantic-analysis"></a>
+</h2>
+<hr class="half-width"><p>Sentiment analysis is a powerful tool in NLP that helps determine the
+emotional tone behind the text. It is used to understand opinions,
+sentiments, emotions, and attitudes from various entities and classify
+them according to their polarity.</p>
+<div id="activity-3" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="activity-3" class="callout-inner">
+<h3 class="callout-title">Activity<a class="anchor" aria-label="anchor" href="#activity-3"></a>
+</h3>
+<div class="callout-content">
+<p>Teamwork: How do you categorize the following text in terms of
+positive and negative sounding? Select an Emoji.</p>
+<p><em>“A research team has unveiled a novel ligand exchange technique
+that enables the synthesis of organic cation-based perovskite quantum
+dots (PQDs), ensuring exceptional stability while suppressing internal
+defects in the photoactive layer of solar cells.”</em> <a href="https://www.sciencedaily.com/releases/2024/02/240221160400.htm" class="external-link">source</a></p>
+<figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/897d0938-d84f-4189-afac-b8f244e16b46" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
+</figure></div>
+</div>
+</div>
+<p>Computer models can do this job for us! Let’s see how it works
+through a step-by-step example: First, install the required libraries
+and pipelines:</p>
+<div class="codewrapper sourceCode" id="cb1">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>pip install transformers</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span></code></pre>
+</div>
+<p>Now, initialize the sentiment analysis pipeline and analyze the
+sentiment of a sample text:</p>
+<div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>sentiment_pipeline <span class="op">=</span> pipeline(<span class="st">'sentiment-analysis'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>text <span class="op">=</span> <span class="st">" A research team has unveiled a novel ligand exchange technique that enables the synthesis of organic cation-based perovskite quantum dots (PQDs), ensuring exceptional stability while suppressing internal defects in the photoactive layer of solar cells."</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>sentiment <span class="op">=</span> sentiment_pipeline(text)</span></code></pre>
+</div>
+<p>After the analysis is completed, you can print out the results:</p>
+<div class="codewrapper sourceCode" id="cb3">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sentiment: </span><span class="sc">{</span>sentiment[<span class="dv">0</span>][<span class="st">'label'</span>]<span class="sc">}</span><span class="ss">, Confidence: </span><span class="sc">{</span>sentiment[<span class="dv">0</span>][<span class="st">'score'</span>]<span class="sc">:.2f}</span><span class="ss">"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co"># Output</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>Output: Sentiment: POSITIVE, Confidence: <span class="fl">1.00</span></span></code></pre>
+</div>
+<p>In this example, the sentiment analysis pipeline from the Hugging
+Face library is used to analyze the sentiment of a research paper
+abstract. The model predicts the sentiment as positive, negative, or
+neutral, along with a confidence score. This can be particularly useful
+for gauging the reception of research papers in a field.</p>
+<div id="activity-4" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="activity-4" class="callout-inner">
+<h3 class="callout-title">Activity<a class="anchor" aria-label="anchor" href="#activity-4"></a>
+</h3>
+<div class="callout-content">
+<p>Teamwork: Fill in the blanks to complete the sentiment analysis
+process: Install the __________ library for sentiment analysis. Use the
+__________ function to create a sentiment analysis pipeline. The
+sentiment analysis model will output a __________ and a __________
+score.</p>
+</div>
+</div>
+</div>
+<div id="vadrer" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="vadrer" class="callout-inner">
+<h3 class="callout-title">VADRER<a class="anchor" aria-label="anchor" href="#vadrer"></a>
+</h3>
+<div class="callout-content">
+<p>Valence Aware Dictionary and sEntiment Reasoner (VADER) is a lexicon
+and rule-based sentiment analysis tool that is particularly attuned to
+sentiments expressed in social media. VADER analyzes the sentiment of
+the text and returns a dictionary with scores for negative, neutral,
+positive, and a compound score that aggregates them. It is useful for
+quick sentiment analysis, especially on social media texts. Let’s how we
+can use this framework.</p>
+<p>First, we need to import the SentimentIntensityAnalyzer module from
+VADER library:</p>
+<div class="codewrapper sourceCode" id="cb4">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="im">from</span> vaderSentiment.vaderSentiment <span class="im">import</span> SentimentIntensityAnalyzer</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="co"># Initialize VADER sentiment intensity analyzer:</span></span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>analyzer <span class="op">=</span> SentimentIntensityAnalyzer()</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="co"># We use the same sample text:</span></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>text <span class="op">=</span> <span class="st">" A research team has unveiled a novel ligand exchange technique that enables the synthesis of organic cation-based perovskite quantum dots (PQDs), ensuring exceptional stability while suppressing internal defects in the photoactive layer of solar cells."</span></span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a><span class="co"># Now we can analyze sentiment:</span></span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>vader_sentiment <span class="op">=</span> analyzer.polarity_scores(text)</span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="co"># Print the sentiment:</span></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Sentiment: </span><span class="sc">{</span>vader_sentiment<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a>Output: Sentiment: {<span class="st">'neg'</span>: <span class="fl">0.069</span>, <span class="st">'neu'</span>: <span class="fl">0.818</span>, <span class="st">'pos'</span>: <span class="fl">0.113</span>, <span class="st">'compound'</span>: <span class="fl">0.1779</span>}</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="discussion-1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="discussion-1" class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-1"></a>
+</h3>
+<div class="callout-content">
+<p>Teamwork: Which framework do you think could be more helpful for
+research applications? Elaborate your opinion. Share your thoughts with
+other team members.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
+  <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
+</button>
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div class="accordion-body">
+<p>A: Transformers use deep learning models that can understand context
+and nuances of language, making them suitable for complex and lengthy
+texts. They can be particularly useful for sentiment analysis of
+research papers, as they can understand the complex language and context
+often found in academic writing. This allows for a more nuanced
+understanding of the sentiment conveyed in the papers. VADER, on the
+other hand, is a rule-based model that excels in analyzing short texts
+with clear sentiment expressions, often found in social media.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="challenge-1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="challenge-1" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
+<div class="callout-content">
+<p>Use the transformers library to perform sentiment analysis on the
+following text:</p>
+<p><em>“Perovskite nanocrystals have emerged as a promising class of
+materials for next-generation optoelectronic devices due to their unique
+properties. Their crystal structure allows for tunable bandgaps, which
+are the energy differences between occupied and unoccupied electronic
+states. This tunability enables the creation of materials that can
+absorb and emit light across a wide range of the electromagnetic
+spectrum, making them suitable for applications like solar cells,
+light-emitting diodes (LEDs), and lasers.”</em></p>
+<p>Print the original text and the sentiment score and label. You can
+use the following code to load the transformers library and the
+pre-trained model and tokenizer for sentiment analysis:</p>
+<div class="codewrapper sourceCode" id="cb5">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>sentiment_analysis <span class="op">=</span> pipeline(<span class="st">"sentiment-analysis"</span>)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution7" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
+  <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
+</button>
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div class="accordion-body">
+<p>A:</p>
+<div class="codewrapper sourceCode" id="cb6">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>sentiment_analysis <span class="op">=</span> pipeline(<span class="st">"sentiment-analysis"</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"This book is amazing. It is well-written, engaging, and informative. I learned a lot from reading it and I highly recommend it to anyone interested in natural language processing."</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="bu">print</span>(text)</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="bu">print</span>(sentiment_analysis(text))</span></code></pre>
+</div>
+<p>Output:</p>
+<div class="codewrapper sourceCode" id="cb7">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a></span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>output: <span class="st">"Perovskite nanocrystals have emerged as a promising class of materials for next-generation optoelectronic devices due to their unique properties. Their crystal structure allows for tunable bandgaps, which are the energy differences between occupied and unoccupied electronic states. This tunability enables the creation of materials that can absorb and emit light across a wide range of the electromagnetic spectrum, making them suitable for applications like solar cells, light-emitting diodes (LEDs), and lasers."</span></span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>[{<span class="st">'label'</span>: <span class="st">'POSITIVE'</span>, <span class="st">'score'</span>: <span class="fl">0.9998656511306763</span>}]</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="challenge-2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="challenge-2" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+</h3>
+<div class="callout-content">
+<p>Comparing Transformer with VADER on a large size text. Use the
+Huggingface library database.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution8" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
+  <h4 class="accordion-header" id="headingSolution8">Show me the solution</h4>
+</button>
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div class="accordion-body">
+<p>A:</p>
+<div class="codewrapper sourceCode" id="cb8">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="text-summarization"><h2 class="section-heading">5.4. Text Summarization<a class="anchor" aria-label="anchor" href="#text-summarization"></a>
+</h2>
+<hr class="half-width"><p>Text summarization is the process of distilling the most important
+information from a source (or sources) to produce an abbreviated version
+for a particular user and task. It can be broadly classified into two
+types: extractive and abstractive summarization.</p>
+<div id="discussion-2" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="discussion-2" class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-2"></a>
+</h3>
+<div class="callout-content">
+<p>How extractive and abstractive summarization methods are different?
+Connect the following text boxes to the correct category. Share your
+results with other group members.</p>
+<figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/1630ffcf-90c8-49df-9abe-98a739fd58ef" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
+</figure></div>
+</div>
+</div>
+<div id="accordionSolution9" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
+  <h4 class="accordion-header" id="headingSolution9">Show me the solution</h4>
+</button>
+<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div class="accordion-body">
+<p>A: <img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/166c2025-14b0-4f1b-aee5-3f46d4f3c8b4" alt="image" class="figure"></p>
+</div>
+</div>
+</div>
+</div>
+<p>Now, let’s see how to use the Hugging Face Transformers library to
+perform abstractive summarization. First, from the transformers import
+pipeline:</p>
+<div class="codewrapper sourceCode" id="cb9">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="co"># Initialize the summarization pipeline</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>summarizer <span class="op">=</span> pipeline(<span class="st">"summarization"</span>)</span></code></pre>
+</div>
+<p>Input a sample text from an article from <a href="https://www.sciencedaily.com/releases/2024/02/240221160400.htm#:~:text=Summary%3A,photoactive%20layer%20of%20solar%20cells." class="external-link">source</a>:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"A groundbreaking research breakthrough in solar energy has propelled the development of the world's most efficient quantum dot (QD) solar cell, marking a significant leap towards the commercialization of next-generation solar cells. This cutting-edge QD solution and device have demonstrated exceptional performance, retaining their efficiency even after long-term storage. Led by Professor Sung-Yeon Jang from the School of Energy and Chemical Engineering at UNIST, a team of researchers has unveiled a novel ligand exchange technique. This innovative approach enables the synthesis of organic cation-based perovskite quantum dots (PQDs), ensuring exceptional stability while suppressing internal defects in the photoactive layer of solar cells. Our developed technology has achieved an impressive 18.1</span><span class="sc">% e</span><span class="st">fficiency in QD solar cells,"</span> stated Professor Jang. This remarkable achievement represents the highest efficiency among quantum dot solar cells recognized by the National Renewable Energy Laboratory (NREL) <span class="kw">in</span> the United States. The increasing interest <span class="kw">in</span> related fields <span class="kw">is</span> evident, <span class="im">as</span> last year, three scientists who discovered <span class="kw">and</span> developed QDs, <span class="im">as</span> advanced nanotechnology products, were awarded the Nobel Prize <span class="kw">in</span> Chemistry. QDs are semiconducting nanocrystals <span class="cf">with</span> typical dimensions ranging <span class="im">from</span> several to tens of nanometers, capable of controlling photoelectric properties based on their particle size. PQDs, <span class="kw">in</span> particular, have garnered significant attention <span class="im">from</span> researchers due to their outstanding photoelectric properties. Furthermore, their manufacturing process involves simple spraying <span class="kw">or</span> application to a solvent, eliminating the need <span class="cf">for</span> the growth process on substrates. This streamlined approach allows <span class="cf">for</span> high<span class="op">-</span>quality production <span class="kw">in</span> various manufacturing environments. However, the practical use of QDs <span class="im">as</span> solar cells necessitates a technology that reduces the distance between QDs through ligand exchange, a process that binds a large molecule, such <span class="im">as</span> a ligand receptor, to the surface of a QD. Organic PQDs face notable challenges, including defects <span class="kw">in</span> their crystals <span class="kw">and</span> surfaces during the substitution process. As a result, inorganic PQDs <span class="cf">with</span> limited efficiency of up to <span class="dv">16</span><span class="op">%</span> have been predominantly utilized <span class="im">as</span> materials <span class="cf">for</span> solar cells. In this study, the research team employed an alkyl ammonium iodide<span class="op">-</span>based ligand exchange strategy, effectively substituting ligands <span class="cf">for</span> organic PQDs <span class="cf">with</span> excellent solar utilization. This breakthrough enables the creation of a photoactive layer of QDs <span class="cf">for</span> solar cells <span class="cf">with</span> high substitution efficiency <span class="kw">and</span> controlled defects. Consequently, the efficiency of organic PQDs, previously limited to <span class="dv">13</span><span class="op">%</span> using existing ligand substitution technology, has been significantly improved to <span class="fl">18.1</span><span class="op">%</span>. Moreover, these solar cells demonstrate exceptional stability, maintaining their performance even after <span class="bu">long</span><span class="op">-</span>term storage <span class="cf">for</span> over two years. The newly<span class="op">-</span>developed organic PQD solar cells exhibit both high efficiency <span class="kw">and</span> stability simultaneously. Previous research on QD solar cells predominantly employed inorganic PQDs,<span class="st">" remarked Sang-Hak Lee, the first author of the study. Through this study, we have demonstrated the potential by addressing the challenges associated with organic PQDs, which have proven difficult to utilize. This study presents a new direction for the ligand exchange method in organic PQDs, serving as a catalyst to revolutionize the field of QD solar cell material research in the future,"</span> commented Professor Jang. The findings of this study, co<span class="op">-</span>authored by Dr. Javid Aqoma Khoiruddin <span class="kw">and</span> Sang<span class="op">-</span>Hak Lee, have been published online <span class="kw">in</span> Nature Energy on January <span class="dv">27</span>, <span class="fl">2024.</span> The research was made possible through the support of the <span class="st">'Basic Research Laboratory (BRL)'</span> <span class="kw">and</span> <span class="st">'Mid-Career Researcher Program,'</span> <span class="im">as</span> well <span class="im">as</span> the <span class="st">'Nano·Material Technology Development Program,'</span> funded by the National Research Foundation of Korea (NRF) under the Ministry of Science <span class="kw">and</span> ICT (MSIT). It has also received support through the <span class="st">'Global Basic Research Lab Project."</span></span></code></pre>
+</div>
+<p>Now we can perform summarization and print the results:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>summary <span class="op">=</span> summarizer(text, max_length<span class="op">=</span><span class="dv">130</span>, min_length<span class="op">=</span><span class="dv">30</span>, do_sample<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="co"># Print the summary:</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Summary:"</span>, summary[<span class="dv">0</span>][<span class="st">'summary_text'</span>])</span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a>Output: </span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a></span></code></pre>
+</div>
+<div id="sumy-for-summarization" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="sumy-for-summarization" class="callout-inner">
+<h3 class="callout-title">Sumy for summarization<a class="anchor" aria-label="anchor" href="#sumy-for-summarization"></a>
+</h3>
+<div class="callout-content">
+<p>Sumy is a Python library for extractive summarization. It uses
+algorithms like LSA to rank sentences based on their importance and
+creates a summary by selecting the top-ranked sentences. We can see how
+it works in practice: We start with importing the PlaintextParser and
+LsaSummarizer modules:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="im">from</span> sumy.parsers.plaintext <span class="im">import</span> PlaintextParser</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="im">from</span> sumy.nlp.tokenizers <span class="im">import</span> Tokenizer</span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a><span class="im">from</span> sumy.summarizers.lsa <span class="im">import</span> LsaSummarizer</span></code></pre>
+</div>
+<p>To create a parser we use the same text sample from an article from
+<a href="https://www.sciencedaily.com/releases/2024/02/240221160400.htm#:~:text=Summary%3A,photoactive%20layer%20of%20solar%20cells." class="external-link">source</a>:</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>parser <span class="op">=</span> PlaintextParser.from_string(text, Tokenizer(<span class="st">"english"</span>))</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co"># Next, we initialize the LSA summarize:</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a></span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>summarizer <span class="op">=</span> LsaSummarizer()</span>
+<span id="cb13-7"><a href="#cb13-7" tabindex="-1"></a></span>
+<span id="cb13-8"><a href="#cb13-8" tabindex="-1"></a><span class="co"># Summarize the text and print the results</span></span>
+<span id="cb13-9"><a href="#cb13-9" tabindex="-1"></a></span>
+<span id="cb13-10"><a href="#cb13-10" tabindex="-1"></a>summary <span class="op">=</span> summarizer(parser.document, <span class="dv">5</span>)</span>
+<span id="cb13-11"><a href="#cb13-11" tabindex="-1"></a></span>
+<span id="cb13-12"><a href="#cb13-12" tabindex="-1"></a><span class="cf">for</span> sentence <span class="kw">in</span> summary:</span>
+<span id="cb13-13"><a href="#cb13-13" tabindex="-1"></a>    <span class="bu">print</span>(sentence)</span>
+<span id="cb13-14"><a href="#cb13-14" tabindex="-1"></a></span>
+<span id="cb13-15"><a href="#cb13-15" tabindex="-1"></a>Output:</span></code></pre>
+</div>
+<p>Sumy extracts key sentences from the original text, which can be
+quicker but may lack the cohesiveness of an abstractive summary. On the
+other hand, Transformer is suitable for generating a new summary that
+captures the text’s essence in a coherent and often more readable
+form.</p>
+</div>
+</div>
+</div>
+<div id="activity-5" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="activity-5" class="callout-inner">
+<h3 class="callout-title">Activity<a class="anchor" aria-label="anchor" href="#activity-5"></a>
+</h3>
+<div class="callout-content">
+<p>Teamwork: Which framework could be more useful for text
+summarizations in your field of research? Explain why?</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution10" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
+  <h4 class="accordion-header" id="headingSolution10">Show me the solution</h4>
+</button>
+<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
+<div class="accordion-body">
+<p>A: Transformers are particularly useful for summarizing research
+papers and documents where understanding the context and generating a
+coherent summary is crucial. They can produce summaries that are not
+only concise but also maintain the narrative flow, making them more
+readable. Sumy, while quicker and less resource-intensive, is best
+suited for scenarios where extracting key information without the need
+for narrative flow is acceptable.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="challenge-3" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="challenge-3" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+</h3>
+<div class="callout-content">
+<p>Use the transformers library to perform text summarization on the
+following text [generated by Copilot]:</p>
+<p>“Perovskite nanocrystals are a class of semiconductor nanocrystals
+that have attracted a lot of attention in recent years due to their
+unique optical and electronic properties. Perovskite nanocrystals have
+an ABX3 composition, where A is a monovalent cation (such as cesium,
+methylammonium, or formamidinium), B is a divalent metal (such as lead
+or tin), and X is a halide (such as chloride, bromide, or iodide).
+Perovskite nanocrystals can emit brightly across the entire visible
+spectrum, with tunable colors depending on their composition and size.
+They also have high quantum yields, fast radiative decay rates, and
+narrow emission line widths, making them ideal candidates for various
+optoelectronic applications. The first report of perovskite nanocrystals
+was published in 2014 by Protesescu et al., who synthesized cesium lead
+halide nanocrystals using a hot-injection method. They demonstrated that
+the nanocrystals had cubic or orthorhombic crystal structures, depending
+on the halide ratio, and that they exhibited strong photoluminescence
+with quantum yields up to 90%. They also showed that the emission
+wavelength could be tuned from 410 nm to 700 nm by changing the halide
+composition or the nanocrystal size. Since then, many other groups have
+developed various synthetic methods and strategies to control the shape,
+size, composition, and surface chemistry of perovskite nanocrystals. One
+of the remarkable features of perovskite nanocrystals is their defect
+tolerance, which means that they can maintain high luminescence even
+with a high density of surface or bulk defects. This is in contrast to
+other semiconductor nanocrystals, such as CdSe, which require surface
+passivation to prevent non-radiative recombination and quenching of the
+emission. The defect tolerance of perovskite nanocrystals is attributed
+to their electronic band structure, which has a large density of states
+near the band edges and a small effective mass of the charge carriers.
+These factors reduce the formation energy and the localization of
+defects and enhance the radiative recombination rate of the excitons.
+Another interesting aspect of perovskite nanocrystals is their weak
+quantum confinement, which means that their emission properties are not
+strongly affected by their size. This is because the exciton binding
+energy of perovskite nanocrystals is much larger than the quantum
+confinement energy, and thus the excitons are localized within a few
+unit cells regardless of the nanocrystal size. As a result, perovskite
+nanocrystals can exhibit narrow emission line widths even with a large
+size distribution, which simplifies the synthesis and purification
+processes. Moreover, perovskite nanocrystals can show dual emission from
+both the band edge and the surface states, which can be exploited for
+color tuning and white light generation. Perovskite nanocrystals have
+been applied to a wide range of photonic devices, such as light-emitting
+diodes, lasers, solar cells, photodetectors, and scintillators.
+Perovskite nanocrystals can offer high brightness, color purity, and
+stability as light emitters, and can be integrated with various
+substrates and architectures. Perovskite nanocrystals can also act as
+efficient light absorbers and charge transporters and can be coupled
+with other materials to enhance the performance and functionality of the
+devices. Perovskite nanocrystals have shown promising results in terms
+of efficiency, stability, and versatility in these applications.
+However, perovskite nanocrystals also face some challenges and
+limitations, such as the toxicity of lead, the instability under ambient
+conditions, the hysteresis and degradation under electrical or optical
+stress, and the reproducibility and scalability of the synthesis and
+fabrication methods. These issues need to be addressed and overcome to
+realize the full potential of perovskite nanocrystals in practical
+devices. Therefore, further research and development are needed to
+improve the material quality, stability, and compatibility of perovskite
+nanocrystals, and to explore new compositions, structures, and
+functionalities of these fascinating nanomaterials.”</p>
+<p>Print the summarized text.</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>summarizer <span class="op">=</span> pipeline(<span class="st">"summarization"</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>...</span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution11" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution11" aria-expanded="false" aria-controls="collapseSolution11">
+  <h4 class="accordion-header" id="headingSolution11">Show me the solution</h4>
+</button>
+<div id="collapseSolution11" class="accordion-collapse collapse" aria-labelledby="headingSolution11" data-bs-parent="#accordionSolution11">
+<div class="accordion-body">
+<p>A: You can use the following code to load the transformers library
+and the pre-trained model and tokenizer for text summarization:</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="im">from</span> transformers <span class="im">import</span> pipeline</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>summarizer <span class="op">=</span> pipeline(<span class="st">"summarization"</span>)</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>text <span class="op">=</span> <span class="st">" Perovskite nanocrystals are a class of semiconductor nanocrystals that have attracted…</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="er">Output:</span></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a></span></code></pre>
+</div>
 </div>
 </div>
 </div>
@@ -841,14 +1182,20 @@ greater capacity to understand and generalize from examples.</p>
 <h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
 </h3>
 <div class="callout-content">
-<ul><li>Domain-specific LLMs are essential for tasks that require
-specialized knowledge.</li>
-<li>Prompt engineering, RAG, fine-tuning, and training from scratch are
-viable approaches to create DSLs.</li>
-<li>A mixed prompting-RAG approach is often preferred for its balance
-between performance and resource efficiency.</li>
-<li>Training from scratch offers the highest quality output but requires
-significant resources.</li>
+<ul><li>Transformers revolutionized NLP by processing words in parallel
+through an attention mechanism, capturing context more effectively than
+sequential models</li>
+<li>The summation and activation function within a neuron transform
+inputs through weighted sums and biases, followed by an activation
+function to produce an output.</li>
+<li>Transformers consist of encoders, decoders, positional encoding,
+input/output embedding, and softmax output, working together to process
+and generate data.</li>
+<li>Transformers are not limited to NLP and can be applied to other AI
+applications due to their ability to handle complex data patterns.</li>
+<li>Sentiment analysis and text summarization are practical applications
+of transformers in NLP, enabling the analysis of emotional tone and the
+creation of concise summaries from large texts.</li>
 </ul></div>
 </div>
 </div>
@@ -857,7 +1204,6 @@ significant resources.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/04-word-embedding.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
