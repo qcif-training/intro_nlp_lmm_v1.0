@@ -193,9 +193,13 @@ For Next Sentence Prediction (NSP) BERT learns to predict if two sentences logic
 
 ::::::::::::::::::::::::::::::::::::::::::::::
 
+
+
 ## 6.3. GPT
 
 Generative Pretrained Transformer (GPT) models, on the other hand, use a decoder-only architecture. They excel at generating coherent and contextually relevant text. Check the following table that summarizes three different LLMs. The middle column misses some information about GPT models. With the help of your teammates complete the table and explain the differences in the end.
+
+
 
 ::::::::::::::::::::::::::::::::::::::::: Challenge
 
@@ -238,8 +242,8 @@ A: *We can see it as the processes of trying to understand a conversation (BERT)
 [source](https://medium.com/@reyhaneh.esmailbeigi/bert-gpt-and-bart-a-short-comparison-5d6a57175fca)
 
 
-:::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 ::::::::::::::::::::::::::::::::::::::::: spoiler 
