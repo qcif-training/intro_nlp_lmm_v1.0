@@ -4,7 +4,7 @@ teaching: 10
 exercises: 0
 ---
 
-:::::::::::::::::::::::::::::::::::::: questions
+:::::::::::::::::::::::::::::::::::::: questions 
 
 - What are some common research applications of NLP?
 - What are the basic concepts and terminology of NLP?
@@ -16,25 +16,30 @@ exercises: 0
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Define natural language processing and its goals.
-- Identify main research applications and challenges of NLP.
+- Identify the main research applications and challenges of NLP.
 - Explain the basic concepts and terminology of NLP, such as tokens, lemmas, and n-grams.
 - Use some popular datasets and libraries to acquire data for NLP tasks.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-## Natural language processing in Reseach
+
+## 1.1. Introduction to NLP Workshop
 
 Natural Language Processing (NLP) is becoming a popular and robust tool for a wide range of research projects. In this episode we embark on a journey to explore the transformative power of NLP tools in the realm of research. 
 
 It is tailored for researchers who are keen on harnessing the capabilities of NLP to enhance and expedite their work. Whether you are delving into text classification, extracting pivotal information, discerning sentiments, summarizing extensive documents, translating across languages, or developing sophisticated question-answering systems, this session will lay the foundational knowledge you need to leverage NLP effectively.
 
-We will begin by delving into the Common Applications of NLP in Research, showcasing how these tools are not just theoretical concepts but practical instruments that drive forward today’s innovative research projects. From analyzing public sentiment to extracting critical data from a plethora of documents, NLP stands as a pillar in the modern researcher’s toolkit. 
+We will begin by delving into the **Common Applications of NLP in Research**, showcasing how these tools are not just theoretical concepts but practical instruments that drive forward today’s innovative research projects. From analyzing public sentiment to extracting critical data from a plethora of documents, NLP stands as a pillar in the modern researcher’s toolkit. 
 
-Next, we’ll demystify the Basic Concepts and Terminology of NLP. Understanding these fundamental terms is crucial, as they form the building blocks of any NLP application. We’ll cover everything from the basics of a corpus to the intricacies of transformers, ensuring you have a solid grasp of the language used in NLP. 
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/3d548b7f-cfd3-41d6-87bd-42f437d1415b)
+[*DALL-E 3*]
+
+Next, we’ll demystify the **Basic Concepts and Terminology of NLP**. Understanding these fundamental terms is crucial, as they form the building blocks of any NLP application. We’ll cover everything from the basics of a corpus to the intricacies of transformers, ensuring you have a solid grasp of the language used in NLP. 
 
 Finally, we’ll guide you through Data Acquisition: Dataset Libraries, where you’ll learn about the treasure troves of data available at your fingertips. We’ll compare different libraries and demonstrate how to access and utilize these resources through hands-on examples. 
 
 By the end of this episode, you will not only understand the significance of NLP in research but also be equipped with the knowledge to start applying these tools to your own projects. Prepare to unlock new potentials and streamline your research process with the power of NLP!
+
 
 ## 1.1.	Common Applications of NLP in Research
 
@@ -60,3 +65,98 @@ This challenge leads to the fact that NLP systems often struggle with contextual
 - BERT-based models for extractive and abstractive summarization
 - Gensim for topic modeling and document similarity analysis
 - MALLET, a Java-based package for statistical natural language processing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Chemistry Joke
+
+Q: If you aren't part of the solution, then what are you?
+
+:::::::::::::::: solution
+
+A: part of the precipitate
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+### What Else Might We Use A Spoiler For?
+
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+::: callout
+This is a callout block. It contains at least three colons
+:::
+
+
+
+
+
+
+::::::::::::::::::::::::::::::::::::: keypoints 
+
+- Image datasets can be found online or created uniquely for your research question.
+- Images consist of pixels arranged in a particular order.
+- Image data is usually preprocessed before use in a CNN for efficiency, consistency, and robustness.
+- Input data generally consists of three sets: a training set used to fit model parameters; a validation set used to evaluate the model fit on training data; and a test set used to evaluate the final model performance.
+
+::::::::::::::::::::::::::::::::::::::::::::::::
