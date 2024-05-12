@@ -164,7 +164,7 @@
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#introduction-to-nlp-workshop">1.1. Introduction to NLP Workshop</a></li>
-<li><a href="#common-applications-of-nlp-in-research">1.1. Common Applications of NLP in Research</a></li>
+<li><a href="#common-applications-of-nlp-in-research">1.2. Common Applications of NLP in Research</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
         
@@ -369,13 +369,13 @@ significance of NLP in research but also be equipped with the knowledge
 to start applying these tools to your own projects. Prepare to unlock
 new potentials and streamline your research process with the power of
 NLP!</p>
-</section><section id="common-applications-of-nlp-in-research"><h2 class="section-heading">1.1. Common Applications of NLP in Research<a class="anchor" aria-label="anchor" href="#common-applications-of-nlp-in-research"></a>
+</section><section id="common-applications-of-nlp-in-research"><h2 class="section-heading">1.2. Common Applications of NLP in Research<a class="anchor" aria-label="anchor" href="#common-applications-of-nlp-in-research"></a>
 </h2>
 <hr class="half-width"><p><strong>Sentiment Analysis</strong> is a powerful tool for
 researchers, especially in fields like market research, political
 science, and public health. It involves the computational identification
 of opinions expressed in text, categorizing them as positive, negative,
-or neutral. In market research for instance, sentiment analysis can be
+or neutral. In market research, for instance, sentiment analysis can be
 applied to product reviews to gauge consumer satisfaction: a study could
 analyze thousands of online reviews for a new smartphone model to
 determine the overall public sentiment. This can help companies identify
@@ -384,7 +384,7 @@ consumers.</p>
 <p><strong>Information Extraction</strong> is crucial for quickly
 gathering specific information from large datasets. It is used
 extensively in legal research, medical research, and scientific studies
-to extract entities and relationships from texts. In legal research for
+to extract entities and relationships from texts. In legal research, for
 example, information extraction can be used to sift through case law to
 find precedents related to a particular legal issue. A researcher could
 use NLP to extract instances of “negligence” from thousands of case
@@ -400,28 +400,45 @@ findings from a vast array of publications.</p>
 <p><strong>Topic Modeling</strong> is used to uncover latent topics
 within large volumes of text, which is particularly useful in fields
 like sociology and history to identify trends and patterns in historical
-documents or social media data. For example, in historical research,
-topic modeling can reveal prevalent themes in primary source documents
-from a particular era. A historian might use NLP to analyze newspapers
-from the early 20th century to study public discourse around significant
-events like World War I.</p>
-<div class="section level3">
-<h3 id="challenges-of-nlp">Challenges of NLP<a class="anchor" aria-label="anchor" href="#challenges-of-nlp"></a></h3>
+documents or social media data.</p>
+<p><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/3d6bc7c3-dff0-430f-a44b-544d0944e59c" alt="image" class="figure"><a href="https://dl.acm.org/doi/10.1145/2133806.2133826" class="external-link">source</a></p>
+<p>For example, in historical research, topic modeling can reveal
+prevalent themes in primary source documents from a particular era. A
+historian might use NLP to analyze newspapers from the early 20th
+century to study public discourse around significant events like World
+War I.</p>
+<div id="challenges-of-nlp" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div id="challenges-of-nlp" class="callout-inner">
+<h3 class="callout-title">Challenges of NLP<a class="anchor" aria-label="anchor" href="#challenges-of-nlp"></a>
+</h3>
+<div class="callout-content">
 <p>One of the significant challenges in NLP is dealing with the
 ambiguity of language. Words or phrases can have multiple meanings, and
 determining the correct one based on context can be difficult for NLP
 systems. In a research paper discussing “bank erosion,” an NLP system
 might confuse “bank” with a financial institution rather than the
 geographical feature, leading to incorrect analysis.</p>
-<p>This challenge leads to the fact that NLP systems often struggle with
-contextual understanding which is crucial in text analysis tasks. This
-can lead to misinterpretation of the meaning and sentiment of text. If a
-research paper mentions “novel results,” an NLP system might interpret
-“novel” as a literary work instead of “new” or “original,” which could
-mislead the analysis of the paper’s contributions.</p>
+<p><strong>This challenge leads to the fact that the classical NLP
+systems often struggle with contextual understanding which is crucial in
+text analysis tasks.</strong> This can lead to misinterpretation of the
+meaning and sentiment of the text. If a research paper mentions “novel
+results,” an NLP system might interpret “novel” as a literary work
+instead of “new” or “original,” which could mislead the analysis of the
+paper’s contributions.</p>
 </div>
-<div class="section level3">
-<h3 id="suggested-resources">Suggested Resources:<a class="anchor" aria-label="anchor" href="#suggested-resources"></a></h3>
+</div>
+</div>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Suggested Resources:</h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div class="accordion-body">
 <ul><li>Python’s Natural Language Toolkit (NLTK) for sentiment analysis</li>
 <li>TextBlob, a library for processing textual data</li>
 <li>Stanford NER for named entity recognition</li>
@@ -432,7 +449,11 @@ documents</li>
 <li>Gensim for topic modeling and document similarity analysis</li>
 <li>MALLET, a Java-based package for statistical natural language
 processing</li>
-</ul><div id="chemistry-joke" class="callout challenge">
+</ul></div>
+</div>
+</div>
+</div>
+<div id="chemistry-joke" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -456,25 +477,25 @@ processing</li>
 </div>
 </div>
 </div>
-<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
-  <h3 class="accordion-header" id="headingSpoiler1">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What Else Might We Use A Spoiler For?</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 
 </div>
 </div>
 </div>
 </div>
-<div id="callout1" class="callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout2"></a>
 </h3>
 <div class="callout-content">
 <p>This is a callout block. It contains at least three colons</p>
@@ -505,7 +526,6 @@ performance.</li>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/index.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
