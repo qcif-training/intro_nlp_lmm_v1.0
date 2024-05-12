@@ -629,9 +629,13 @@ Q: Fill in the blanks with the correct terms related to text summarization:
 A: 
 
 - Extractive summarization selects sentences directly from the original text, while abstractive summarization generates new sentences.
+  
 - Transformers are advanced tools used for generating more coherent and human-like summaries.
+  
 - The BERT and GPT models are examples of transformers that understand the context and semantics of the text.
+  
 - Abstractive summarization can often create summaries that are more concise and coherent than extractive methods.
+  
 - Advanced summarization tools use machine learning and natural language processing to interpret and condense text.
 
 :::::::::::::::::::::::::
@@ -640,7 +644,6 @@ A:
 
 
 ::: callout
-
 
 With that being said we still can use libraries such as Gensim for text summarization. We need to import the summarize module first:
 
@@ -661,14 +664,9 @@ print(summary)
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Artificial neural networks (ANN) are a machine learning technique based on a model inspired by groups of neurons in the brain.
-- Convolution neural networks (CNN) are a type of ANN designed for image classification and object detection.
-- The number of filters corresponds to the number of distinct features the layer is learning to recognise whereas the kernel size determines the level of features being captured.
-- A CNN can consist of many types of layers including convolutional, pooling, flatten, and dense (fully connected) layers
-- Convolutional layers are responsible for learning features from the input data.
-- Pooling layers are often used to reduce the spatial dimensions of the data.
-- The flatten layer is used to convert the multi-dimensional output of the convolutional and pooling layers into a flat vector.
-- Dense layers are responsible for combining features learned by the previous layers to perform the final classification.
+- Named Entity Recognition (NER) is crucial for identifying and categorizing key information in text, such as names of people, organizations, and locations.
+- Topic Modeling helps uncover the underlying thematic structure in a large corpus of text, which is beneficial for summarizing and understanding large datasets.
+- Text Summarization provides a concise version of a longer text, highlighting the main points, which is essential for quick comprehension of extensive research material.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
