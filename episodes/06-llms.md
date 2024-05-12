@@ -473,169 +473,110 @@ output:
 
 
 
+::::::::::::::::::::::::::::::::::::: challenge
 
+### Challenge 
 
+Use the huggingface library to access and use an open-source domain-specific LLM for text classification. You can use the following code to load the huggingface library and the pre-trained model and tokenizer for text classification:
 
+```python
 
+from transformers import pipeline
+text_classifier = pipeline("text-classification")
+...
 
+```
 
+Use the text_classifier to classify the following text into one of the categories: metals, ceramics, polymers, or composites. Print the text and the predicted category and score.
 
+```python
 
+Text: "Polyethylene is a thermoplastic polymer that consists of long chains of ethylene monomers. It is one of the most common and widely used plastics in the world. It has many applications, such as packaging, bottles, containers, films, pipes, and cables. Polyethylene can be classified into different grades based on its density, molecular weight, branching, and crystallinity."
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 
 :::::::::::::::::::::::: solution 
-:::::::::::::::::::::::::::::::::
 
-
-
-
-
-Let’s try One-shot and Few-shot prompting examples and see how they can help us to enhance the sensitivity of the LLM to our field of study: One-shot prompting involves providing the model with a single example to follow. It’s like giving the model a hint about what you expect. We will go through an example using Hugging Face’s transformers library:
-
-```python
-from transformers import pipeline
-
-# Load a pre-trained model and tokenizer
-model_name = "gpt2"
-generator = pipeline('text-generation', model=model_name)
-
-# One-shot example
-prompt = "Translate 'Hello, how are you?' to French:\nBonjour, comment ça va?\nTranslate 'I am learning new things every day' to French:"
-result = generator(prompt, max_length=100)
-
-# Output the result
-print(result[0]['generated_text'])
-```
-
-In this example, we provide the model with one translation example and then ask it to translate a new sentence. The model uses the context from the one-shot example to generate the translation. 
-
-But what if we have a Few-Shot Prompting? Few-shot prompting gives the model several examples to learn from. This can improve the model’s ability to understand and complete the task. Here is how you can implement few-shot prompting:
+A:
 
 ```python
 
 from transformers import pipeline
+text_classifier = pipeline("text-classification")
+text = "Polyethylene is a thermoplastic polymer that consists of long chains of ethylene monomers. It is one of the most common and widely used plastics in the world. It has many applications, such as packaging, bottles, containers, films, pipes, and cables. Polyethylene can be classified into different grades based on its density, molecular weight, branching, and crystallinity."
+print(text)
+print(text_classifier(text))
 
-# Load a pre-trained model and tokenizer
-model_name = "gpt2"
-generator = pipeline('text-generation', model=model_name)
-
-# Few-shot examples
-prompt = """\
-Q: What is the capital of France?
-A: Paris.
-
-Q: What is the largest mammal?
-A: Blue whale.
-
-Q: What is the human body's largest organ?
-A: The skin.
-
-Q: What is the currency of Japan?
-A:"""
-result = generator(prompt, max_length=100)
-
-# Output the result
-print(result[0]['generated_text'])
 ```
 
-In this few-shot example, we provide the model with three question-answer pairs before posing a new question. The model uses the pattern it learned from the examples to answer the new question.
+```
+
+output: "Polyethylene is a thermoplastic polymer that consists of long chains of ethylene monomers. It is one of the most common and widely used plastics in the world. It has many applications, such as packaging, bottles, containers, films, pipes, and cables. Polyethylene can be classified into different grades based on its density, molecular weight, branching, and crystallinity."
+"[{'label': 'polymers', 'score': 0.9987659454345703}]"
+
+```
+
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+### Challenge
 
-To summarize this approach in a few steps, fill in the following gaps:
-1.	Choose a Model: Select a **---** model from Hugging Face that suits your task.
-   
-2.	Load the Model: Use the **---** function to load the model and tokenizer.
-  
-3.	Craft Your Prompt: Write a **---** that includes one or more examples, depending on whether you’re doing one-shot or few-shot prompting.
-  
-4.	Generate Text: Call the **---** with your prompt to generate the **---**.
-  
-5.	Review the Output: Check the generated text to see if the model followed the **---** correctly.
+Use the huggingface library to access and use an open-source LLM for text generation. You can use the following code to load the huggingface library and the pre-trained model and tokenizer for text generation:
+
+
+```python
+
+from transformers import pipeline
+text_generator = pipeline("text-generation")
+
+```
+
+Use the text_generator to generate a paragraph of text based on the following prompt: "The applications of nanomaterials in material science are". Print the prompt and the generated text.
 
 
 :::::::::::::::::::::::: solution 
 
-1.	Choose a Model: Select a **pre-trained** model from Hugging Face that suits your task.
-   
-2.	Load the Model: Use the **pipeline** function to load the model and tokenizer.
-  
-3.	Craft Your Prompt: Write a **prompt** that includes one or more examples, depending on whether you’re doing one-shot or few-shot prompting.
-  
-4.	Generate Text: Call the **generator** with your prompt to generate the **output**.
-  
-5.	Review the Output: Check the generated text to see if the model followed the **examples** correctly.
+```python
 
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
+from transformers import pipeline
+text_generator = pipeline("text-generation")
+prompt = "The applications of nanomaterials in material science are"
+generated_text = text_generator(prompt)[0]['generated_text']
+print(prompt)
+print(generated_text)
+
+```
 
 
-::::::::::::::::::::::::::::::::::::::::: spoiler 
+```
 
-## Why Prompting Quality is important?
+output: "The applications of nanomaterials in material science are
+The applications of nanomaterials in material science are diverse and promising. Nanomaterials are materials that have at least one dimension in the nanometer range (1-100 nm). Nanomaterials can exhibit novel physical, chemical, and biological properties that are different from their bulk counterparts, such as high surface area, quantum confinement, enhanced reactivity, and tunable functionality. Nanomaterials can be used for various purposes in material science, such as improving the performance and functionality of existing materials, creating new materials with unique properties, and enabling new functionalities and devices. Some examples of nanomaterials applications in material science are:
 
-Remember, the quality of the output heavily depends on the quality and relevance of the examples you provide. It’s also important to note that larger models tend to perform better at these tasks due to their greater capacity to understand and generalize from examples.
+- Nanocomposites: Nanomaterials can be incorporated into other materials, such as polymers, metals, ceramics, or biomaterials, to form nanocomposites that have improved mechanical, thermal, electrical, optical, or magnetic properties. For instance, carbon nanotubes can be used to reinforce polymer composites and increase their strength, stiffness, and conductivity.
+- Nanocoatings: Nanomaterials can be used to coat the surface of other materials, such as metals, glass, or plastics, to provide them with enhanced protection, durability, or functionality. For example, titanium dioxide nanoparticles can be used to coat glass and make it self-cleaning, anti-fogging, and anti-bacterial.
+- Nanosensors: Nanomaterials can be used to sense and measure various physical, chemical, or biological parameters, such as temperature, pressure, strain, pH, or biomolecules. For example, gold nanoparticles can be used to detect and quantify the presence of specific DNA sequences or proteins by changing their color or fluorescence.
+- Nanomedicine: Nanomaterials can be used for various biomedical applications, such as drug delivery, imaging, diagnosis, or therapy. For example, magnetic nanoparticles can be used to deliver drugs to specific target sites in the body by using an external magnetic field, or to enhance the contrast of magnetic resonance imaging (MRI).
 
-::::::::::::::::::::::::::::::::::::::::::::::::
+```
+
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Domain-specific LLMs are essential for tasks that require specialized knowledge.
-- Prompt engineering, RAG, fine-tuning, and training from scratch are viable approaches to creating DSLs.
-- A mixed prompting-RAG approach is often preferred for its balance between performance and resource efficiency.
-- Training from scratch offers the highest quality output but requires significant resources.
+- LLMs are based on the transformer architecture.
+- BERT and GPT have distinct approaches to processing language.
+- Open source LLMs provide transparency and customization for research applications.
+- Benchmarking with HELM offers a holistic view of model performance.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
