@@ -2330,7 +2330,7 @@ in vector space models. Consider the impact of ignoring common words
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p><img src="fig/embedding_3.png" class="figure"><a href="https://medium.com/@saschametzger/what-are-tokens-vectors-and-embeddings-how-do-you-create-them-e2a3e698e037" class="external-link">source</a></p>
 <p>A: Ignoring stop words might lead to loss of some contextual
@@ -2347,7 +2347,7 @@ flexible syntax.</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Tell me MORE!</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Tokenization is a fundamental step in the processing of text for
 vector space models. It involves breaking down a string of text into
@@ -2461,7 +2461,7 @@ and the potential impact on sentiment analysis.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>A: To compare the Bag of Words (BoW) and Term Frequency-Inverse
 Document Frequency (TF-IDF) methods in representing text data and their
@@ -2503,7 +2503,7 @@ the strengths and weaknesses of each method.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2621,7 +2621,7 @@ more accurately interpret human language.</p>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What is GLoVE?</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Global Vectors for Word Representation (GLoVE)</p>
 <p>GLoVE is a model for learning word embeddings, which are
@@ -4668,6 +4668,7 @@ summary of the latest findings in a particular field.</p>
 </div>
 </div>
 </div>
+<p><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/b35c25f0-6176-490c-b726-662025f47075" alt="image" class="figure"><a href="https://www.maartengrootendorst.com/blog/improving-llms/" class="external-link">source</a></p>
 <p><strong>3. Fine-Tuning:</strong></p>
 <p>To adapt a general-purpose LLM to excel at a specific task or within
 a particular domain.</p>
@@ -4714,9 +4715,9 @@ accurate responses to health-related inquiries.</p>
 <p><strong>4. Training from Scratch:</strong></p>
 <p>Builds a model specifically for a domain, using relevant data from
 the ground up.</p>
-<div id="discussion" class="callout discussion">
+<div id="discussion" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="discussion" class="callout-inner">
 <h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion"></a>
@@ -4725,7 +4726,18 @@ the ground up.</p>
 <p>Teamwork: Which approach do you think is more computation-intensive?
 Which is more accurate? How are these qualities related? Evaluate the
 trade-offs between fine-tuning and other approaches.</p>
-<figure><img src="fig/dsllms_1.png" class="figure mx-auto d-block"></figure>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/c4f63e42-dcf9-4cfa-86fb-cf68357df229" alt="image" class="figure"><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/cffb0c09-6578-4206-94c3-ba90eca87515" alt="image" class="figure"><a href="https://medium.com/@pandey.vikesh/should-you-prompt-rag-tune-or-train-a-guide-to-choose-the-right-generative-ai-approach-5e264043bd7d" class="external-link">source</a></p>
+</div>
 </div>
 </div>
 </div>
@@ -4820,26 +4832,43 @@ experimentation and learning.</p></li>
 </div>
 </div>
 </div>
+<div id="challenge" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="challenge" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+</h3>
+<div class="callout-content">
+<p>Check the following structure. Guess which optimization strategy is
+represented in these architectures.</p>
+<p><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/cfec9a3a-e334-4a87-8318-5c7495e0f6b7" alt="image" class="figure"><a href="https://www.linkedin.com/pulse/fine-tuning-prompt-engineering-rag-lokesh--kjaie/" class="external-link">source</a></p>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<p>RAG addresses the challenge of <strong>real-time</strong> data
+fetching by merging the generative talents of these models with the
+ability to consult a broad document corpus, enhancing their responses.
+The potential for live-RAG in chatbots suggests a future where AI can
+conduct on-the-spot searches, access up-to-date information, and rival
+search engines in answering timely questions.</p>
+</div>
+</div>
+</div>
+</div>
 <div id="discussion-2" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="discussion-2" class="callout-inner">
 <h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-2"></a>
-</h3>
-<div class="callout-content">
-<p>Teamwork: Guess the following architecture belongs to which
-optimization strategy:</p>
-<figure><img src="fig/dsllms_3.png" class="figure mx-auto d-block"></figure><p>Figure. LLMs optimization (source)</p>
-</div>
-</div>
-</div>
-<div id="discussion-3" class="callout discussion">
-<div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
-</div>
-<div id="discussion-3" class="callout-inner">
-<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-3"></a>
 </h3>
 <div class="callout-content">
 <p>Teamwork: What are the challenges and trade-offs of domain-specific
@@ -4853,12 +4882,12 @@ domain-specific LLMs and how can we overcome them?</p>
 </div>
 </div>
 </div>
-<div id="discussion-4" class="callout discussion">
+<div id="discussion-3" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="discussion-4" class="callout-inner">
-<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-4"></a>
+<div id="discussion-3" class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-3"></a>
 </h3>
 <div class="callout-content">
 <p>What are some available approaches for creating domain-specific LLMs,
@@ -4932,12 +4961,12 @@ ability to understand and complete the task.</p>
 <p>In this few-shot example, we provide the model with three
 question-answer pairs before posing a new question. The model uses the
 pattern it learned from the examples to answer the new question.</p>
-<div id="challenge" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+<div id="challenge-1" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <p>To summarize this approach in a few steps, fill in the following
@@ -4957,12 +4986,12 @@ followed the <strong>—</strong> correctly.</p></li>
 </div>
 </div>
 </div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li><p>Choose a Model: Select a <strong>pre-trained</strong> model from
