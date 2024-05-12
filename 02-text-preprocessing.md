@@ -158,7 +158,7 @@ trading_text = "Trading strategies often involve analyzing patterns and executin
 trading_tokens = [token.text for token in nlp(trading_text)]
 ```
 
-We can see the results by using *print()* function. The tokens from both texts:
+We can see the results by using the *print()* function. The tokens from both texts:
 
 ```python
 print("Perovskite Tokens:", perovskite_tokens)
@@ -172,12 +172,124 @@ Trading Tokens: ['Trading', 'strategies', 'often', 'involve', 'analyzing', 'patt
 ```
 
 
-The tokens from the perovskite text will be specific to materials science, while the trading tokens will include terms related to market analysis. The scientific texts may use more complex and compound words, while trading texts might include more action-oriented and analytical language. This comparison helps in understanding the specialized language used in different fields. 
+The tokens from the perovskite text will be specific to materials science, while the trading tokens will include terms related to market analysis. The scientific texts may use more complex and compound words while trading texts might include more action-oriented and analytical language. This comparison helps in understanding the specialized language used in different fields. 
+
+:::
+
+
+## 2.3. Stemming and Lemmatization
+
+Stemming and lemmatization are techniques used to reduce words to their base or root form, aiding in the normalization of text. As discussed in the previous episode, these two methods are different. Decide whether stemming or lemmatization would be more appropriate for analyzing a set of research texts on perovskite nanocrystals.
+
+Following our initial example for Tokenization, we can see how lemmatization works. We start with processing the text with *spaCy* to perform lemmatization:
+
+```python
+
+lemmas = [token.lemma_ for token in doc]
+```
+
+We can print the original text and the lemmatized text:
+
+```python
+
+print("Original Text:", perovskite_text)
+print("Lemmatized Text:", ' '.join(lemmas))
+```
+
+Output: 
+
+**Original Text**: Perovskite nanocrystals are a class of semiconductor nanocrystals with unique properties that distinguish them from traditional quantum dots. These nanocrystals have an ABX3 composition, where 'A' can be cesium, methylammonium (MA), or formamidinium (FA); 'B' is typically lead or tin; and 'X' is a halogen ion like chloride, bromide, or iodide. Their remarkable optoelectronic properties, such as high photoluminescence quantum yields and tunable emission across the visible spectrum, make them ideal for applications in light-emitting diodes, lasers, and solar cells.
+
+**Lemmatized Text**: Perovskite nanocrystal be a class of semiconductor nanocrystal with unique property that distinguish they from traditional quantum dot . these nanocrystal have an ABX3 composition , where ' A ' can be cesium , methylammonium ( MA ) , or formamidinium ( FA ) ; ' b ' be typically lead or tin ; and ' x ' be a halogen ion like chloride , bromide , or iodide . their remarkable optoelectronic property , such as high photoluminescence quantum yield and tunable emission across the visible spectrum , make they ideal for application in light - emit diode , laser , and solar cell .
+
+
+
+
+::: callout
+
+The spaCy library does not have stemming capabilities and if we want to compare stemming and lemmatization, we also need to use another language processing library called NLTK (refer to episode 1). 
 
 :::
 
 
 
+Based on what we just learned let's compare lemmatization and stemming. First, we need to import the necessary libraries for stemming and lemmatization:
+
+```python
+
+import spacy
+import nltk
+from nltk.stem.porter import PorterStemmer
+nltk.download('punkt')
+```
+
+Next, we can create an instance of the PorterStemmer for NLTK and load the English language model for spaCy (similar to what we did earlier in this episode).
+
+
+```python
+
+stemmer = PorterStemmer()
+nlp = spacy.load("en_core_web_sm")
+```
+
+We can conduct stemming and lemmatization with identical text data:
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+### text
+text = " Perovskite nanocrystals are a class of semiconductor nanocrystals with unique properties that distinguish them from traditional quantum dots. These nanocrystals have an ABX3 composition, where 'A' can be cesium, methylammonium (MA), or formamidinium (FA); 'B' is typically lead or tin; and 'X' is a halogen ion like chloride, bromide, or iodide. Their remarkable optoelectronic properties, such as high photoluminescence quantum yields and tunable emission across the visible spectrum, make them ideal for applications in light-emitting diodes, lasers, and solar cells."
+Before we can stem or lemmatize, we need to tokenize the text.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+```python
+
+from nltk.tokenize import word_tokenize
+tokens = word_tokenize(text)  
+# Apply stemming to each token:
+stemmed_tokens = [stemmer.stem(token) for token in tokens]
+```
+
+For lemmatization, we process the text with spaCy and extract the lemma for each token:
+
+
+```python
+
+doc = nlp(text)
+lemmatized_tokens = [token.lemma_ for token in doc]
+```
+
+Finally, we can compare the stemmed and lemmatized tokens:
+
+
+```python
+
+print("Original Tokens:", tokens)
+print("Stemmed Tokens:", stemmed_tokens)
+print("Lemmatized Tokens:", lemmatized_tokens)
+```
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+### Output
+
+- Original Tokens: ['Perovskite', 'nanocrystals', 'are', 'a', 'class', 'of', 'semiconductor', 'nanocrystals', 'with', 'unique', 'properties', 'that', 'distinguish', 'them', 'from', 'traditional', 'quantum', 'dots', '.', 'These', 'nanocrystals', 'have', 'an', 'ABX3', 'composition', ',', 'where', "'", 'A', "'", 'can', 'be', 'cesium', ',', 'methylammonium', '(', 'MA', ')', ',', 'or', 'formamidinium', '(', 'FA', ')', ';', "'", 'B', "'", 'is', 'typically', 'lead', 'or', 'tin', ';', 'and', "'", 'X', "'", 'is', 'a', 'halogen', 'ion', 'like', 'chloride', ',', 'bromide', ',', 'or', 'iodide', '.', 'Their', 'remarkable', 'optoelectronic', 'properties', ',', 'such', 'as', 'high', 'photoluminescence', 'quantum', 'yields', 'and', 'tunable', 'emission', 'across', 'the', 'visible', 'spectrum', ',', 'make', 'them', 'ideal', 'for', 'applications', 'in', 'light-emitting', 'diodes', ',', 'lasers', ',', 'and', 'solar', 'cells', '.']
+
+- Stemmed Tokens: ['perovskit', 'nanocryst', 'are', 'a', 'class', 'of', 'semiconductor', 'nanocryst', 'with', 'uniqu', 'properti', 'that', 'distinguish', 'them', 'from', 'tradit', 'quantum', 'dot', '.', 'these', 'nanocryst', 'have', 'an', 'abx3', 'composit', ',', 'where', "'", 'a', "'", 'can', 'be', 'cesium', ',', 'methylammonium', '(', 'ma', ')', ',', 'or', 'formamidinium', '(', 'fa', ')', ';', "'", 'b', "'", 'is', 'typic', 'lead', 'or', 'tin', ';', 'and', "'", 'x', "'", 'is', 'a', 'halogen', 'ion', 'like', 'chlorid', ',', 'bromid', ',', 'or', 'iodid', '.', 'their', 'remark', 'optoelectron', 'properti', ',', 'such', 'as', 'high', 'photoluminesc', 'quantum', 'yield', 'and', 'tunabl', 'emiss', 'across', 'the', 'visibl', 'spectrum', ',', 'make', 'them', 'ideal', 'for', 'applic', 'in', 'light-emit', 'diod', ',', 'laser', ',', 'and', 'solar', 'cell', '.']
+
+- Lemmatized Tokens: ['Perovskite', 'nanocrystal', 'be', 'a', 'class', 'of', 'semiconductor', 'nanocrystal', 'with', 'unique', 'property', 'that', 'distinguish', 'they', 'from', 'traditional', 'quantum', 'dot', '.', 'these', 'nanocrystal', 'have', 'an', 'ABX3', 'composition', ',', 'where', "'", 'A', "'", 'can', 'be', 'cesium', ',', 'methylammonium', '(', 'MA', ')', ',', 'or', 'formamidinium', '(', 'FA', ')', ';', "'", 'b', "'", 'be', 'typically', 'lead', 'or', 'tin', ';', 'and', "'", 'x', "'", 'be', 'a', 'halogen', 'ion', 'like', 'chloride', ',', 'bromide', ',', 'or', 'iodide', '.', 'their', 'remarkable', 'optoelectronic', 'property', ',', 'such', 'as', 'high', 'photoluminescence', 'quantum', 'yield', 'and', 'tunable', 'emission', 'across', 'the', 'visible', 'spectrum', ',', 'make', 'they', 'ideal', 'for', 'application', 'in', 'light', '-', 'emit', 'diode', ',', 'laser', ',', 'and', 'solar', 'cell', '.'] 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+We can see how stemming often cuts off the end of words, sometimes resulting in non-words, while lemmatization returns the base or dictionary form of the word. For example, stemming might reduce **“properties”** to **“properti”** while lemmatization would correctly identify the lemma as **“property”**. Lemmatization provides a more readable and meaningful result, which is particularly useful in NLP tasks that require understanding the context and meaning of words.
+
+
+
+## 2.4. Stop-words Removal
+
+Removing stop-words, which are common words that add little value to the analysis (such as ‘and’ and ‘the’), helps focus on the important content. Assuming 'doc' is the processed text from the previous example for ‘perovskite nanocrystals’, we can define a list to hold non-stop words list comprehensions:
 
 
 
