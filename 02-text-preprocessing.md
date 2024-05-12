@@ -510,6 +510,7 @@ print("Filtered sentence:", filtered_sentence)
 
 
 ::: callout
+### Warning!
 
 While stopwords are often removed to improve analysis, they can be important for certain tasks like sentiment analysis, where the word ‘not’ can change the entire meaning of a sentence.
 
@@ -517,11 +518,11 @@ While stopwords are often removed to improve analysis, they can be important for
 
 
 
+:::::::::::::::::::::::::::::::::::::::::: spoiler
 
+### What Else Might We Want to Know About Tokenization?
 
-::: callout
-
-it is important to note that tokenization is just the beginning. In modern NLP, vectorization, and embeddings play a pivotal role in capturing the context and meaning of text.
+It is important to note that tokenization is just the beginning. In modern NLP, vectorization, and embeddings play a pivotal role in capturing the context and meaning of text.
 
 Vectorization is the process of converting tokens into a numerical format that machine learning models can understand. This often involves creating a bag-of-words model, where each token is represented by a unique number in a vector. Embeddings are advanced representations where words are mapped to vectors of real numbers. They capture not just the presence of tokens but also the semantic relationships between them. This is achieved through techniques like Word2Vec, GloVe, or BERT, which we will explore in the second part of our workshop.
 
@@ -529,8 +530,7 @@ These embeddings allow models to understand the text in a more nuanced way, lead
 
 *Stay tuned for our next session, where we will dive deeper into how we can use vectorization and embeddings to enhance our NLP models and truly capture the richness of language.*
 
-:::
-
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 
