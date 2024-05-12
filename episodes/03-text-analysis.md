@@ -375,7 +375,7 @@ What are some of the challenges and limitations of text analysis in your researc
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-### Chemistry Joke
+### Challenge
 
 Q: Use the Gensim library to perform topic modeling on the following text, print the original text and the list of topics and their keywords. 
 
