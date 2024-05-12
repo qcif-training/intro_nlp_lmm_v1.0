@@ -528,6 +528,79 @@ Both texts discuss novel materials (perovskite nanocrystals and graphene) with u
 
 
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge
+
+Q: Use the Gensim library to perform topic modeling on the following text print the original text and the list of topics and their keywords. 
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+### Text
+
+text = "Natural language processing (NLP) is a subfield of computer science, information engineering, and artificial intelligence concerned with the interactions between computers and human (natural) languages, in particular how to program computers to process and analyze large amounts of natural language data. Challenges in natural language processing frequently involve speech recognition, natural language understanding, and natural language generation." 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+You can use the following code to load the Gensim library and the pre-trained model for topic modeling:
+
+
+```python
+
+import gensim
+from gensim import corpora
+from gensim.models import LdaModel
+from gensim.utils import simple_preprocess
+
+```
+
+:::::::::::::::: solution
+
+A: 
+
+```python
+
+import gensim
+from gensim import corpora
+from gensim.models import LdaModel
+from gensim.utils import simple_preprocess
+
+tokens = simple_preprocess(text)
+dictionary = corpora.Dictionary([tokens])
+corpus = [dictionary.doc2bow(tokens)]
+model = LdaModel(corpus, num_topics=2, id2word=dictionary)
+print(text)
+print(model.print_topics())
+```
+
+```
+
+output = Natural language processing (NLP) is a subfield of computer science, information engineering, and artificial intelligence concerned with the interactions between computers and human (natural) languages, in particular how to program computers to process and analyze large amounts of natural language data. Challenges in natural language processing frequently involve speech recognition, natural language understanding, and natural language generation.
+
+[(0, '0.051*"natural" + 0.051*"language" + 0.051*"processing" + 0.027*"nlp" + 0.027*"challenges" + 0.027*"speech" + 0.027*"recognition" + 0.027*"understanding" + 0.027*"generation" + 0.027*"frequently"'), (1, '0.051*"natural" + 0.051*"language" + 0.051*"computers" + 0.027*"interactions" + 0.027*"between" + 0.027*"human" + 0.027*"languages" + 0.027*"particular" + 0.027*"program" + 0.027*"process"')]
+
+
+```
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
