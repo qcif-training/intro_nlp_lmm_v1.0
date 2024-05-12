@@ -31,19 +31,26 @@ To enhance the response quality of an LLM for solving specific problems we need 
 
 To elicit specific and accurate responses from LLMs by designing prompts strategically. 
 
-*Zero-shot Prompting*: This is the simplest form of prompting where the LLM is given a task or question without any context or examples. It relies on the LLM’s pre-existing knowledge to generate a response. 
+- *Zero-shot Prompting*: This is the simplest form of prompting where the LLM is given a task or question without any context or examples. It relies on the LLM’s pre-existing knowledge to generate a response. 
 
 :::::::::::::::::::::::::::::::::::::::::: spoiler
 
-**Example**
+#### Example
 
-Example: “What is the capital of France?” The LLM would respond with “Paris” based on its internal knowledge. 
+“What is the capital of France?” The LLM would respond with “Paris” based on its internal knowledge. 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-*Few-shot Prompting*: In this technique, the LLM is provided with a few examples to demonstrate the expected response format or content. 
 
-Example: To determine sentiment, you might provide examples like “I love sunny days. (+1)” and “I hate traffic. (-1)” before asking the LLM to analyze a new sentence.
+- *Few-shot Prompting*: In this technique, the LLM is provided with a few examples to demonstrate the expected response format or content. 
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+#### Example
+
+To determine sentiment, you might provide examples like “I love sunny days. (+1)” and “I hate traffic. (-1)” before asking the LLM to analyze a new sentence.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 **2. Retrieval Augmented Generation (RAG):**
@@ -51,33 +58,62 @@ Example: To determine sentiment, you might provide examples like “I love sunny
 To supplement the LLM’s generative capabilities with information retrieved from external databases or documents. 
 
 
-*Retrieval*: The LLM queries a database to find relevant information that can inform its response. 
+- *Retrieval*: The LLM queries a database to find relevant information that can inform its response. 
 
-Example: If asked about recent scientific discoveries, the LLM might retrieve articles or papers on the topic. 
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+#### Example
+
+If asked about recent scientific discoveries, the LLM might retrieve articles or papers on the topic.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-*Generation*: After retrieving the information, the LLM integrates it into a coherent response. 
+- *Generation*: After retrieving the information, the LLM integrates it into a coherent response. 
 
-Example: Using the retrieved scientific articles, the LLM could generate a summary of the latest findings in a particular field.
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+#### Example
+
+Using the retrieved scientific articles, the LLM could generate a summary of the latest findings in a particular field.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 **3. Fine-Tuning:** 
 
 To adapt a general-purpose LLM to excel at a specific task or within a particular domain. 
 
-*Language Modeling Task Fine-Tuning*: This involves training the LLM on a large corpus of text to improve its ability to predict the next word or phrase in a sentence. 
+- *Language Modeling Task Fine-Tuning*: This involves training the LLM on a large corpus of text to improve its ability to predict the next word or phrase in a sentence. 
 
-Example: An LLM fine-tuned on legal documents would become better at generating text that resembles legal writing. 
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+#### Example
+
+An LLM fine-tuned on legal documents would become better at generating text that resembles legal writing. 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-*Supervised Q&A Fine-Tuning*: Here, the LLM is trained on a dataset of question-answer pairs to enhance its performance on Q&A tasks.
+- *Supervised Q&A Fine-Tuning*: Here, the LLM is trained on a dataset of question-answer pairs to enhance its performance on Q&A tasks.
 
-Example: An LLM fine-tuned with medical Q&A pairs would provide more accurate responses to health-related inquiries.
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+#### Example
+
+An LLM fine-tuned with medical Q&A pairs would provide more accurate responses to health-related inquiries.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 **4.	Training from Scratch:** 
 
 Builds a model specifically for a domain, using relevant data from the ground up.
+
+
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
