@@ -66,15 +66,39 @@ Teamwork: What are some examples of NLP in your daily research tasks? What are c
 
 ## 1.2.	Common Applications of NLP in Research
 
-**Sentiment Analysis** is a powerful tool for researchers, especially in fields like market research, political science, and public health. It involves the computational identification of opinions expressed in text, categorizing them as positive, negative, or neutral. In market research, for instance, sentiment analysis can be applied to product reviews to gauge consumer satisfaction: a study could analyze thousands of online reviews for a new smartphone model to determine the overall public sentiment. This can help companies identify areas of improvement or features that are well-received by consumers. 
+**Sentiment Analysis** is a powerful tool for researchers, especially in fields like market research, political science, and public health. It involves the computational identification of opinions expressed in text, categorizing them as positive, negative, or neutral. 
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+### Example
+In market research, for instance, sentiment analysis can be applied to product reviews to gauge consumer satisfaction: a study could analyze thousands of online reviews for a new smartphone model to determine the overall public sentiment. This can help companies identify areas of improvement or features that are well-received by consumers. 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 
-**Information Extraction** is crucial for quickly gathering specific information from large datasets. It is used extensively in legal research, medical research, and scientific studies to extract entities and relationships from texts. In legal research, for example, information extraction can be used to sift through case law to find precedents related to a particular legal issue. A researcher could use NLP to extract instances of “negligence” from thousands of case files, aiding in the preparation of legal arguments. 
+
+**Information Extraction** is crucial for quickly gathering specific information from large datasets. It is used extensively in legal research, medical research, and scientific studies to extract entities and relationships from texts. 
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+### Example
+In legal research, for example, information extraction can be used to sift through case law to find precedents related to a particular legal issue. A researcher could use NLP to extract instances of “negligence” from thousands of case files, aiding in the preparation of legal arguments. 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
 
-**Text Summarization** helps researchers by providing concise summaries of lengthy documents, such as research papers or reports, allowing them to quickly understand the main points without reading the entire text. In biomedical research, text summarization can assist in literature reviews by providing summaries of research articles. For example, a researcher could use an NLP model to summarize articles on gene therapy, enabling them to quickly assimilate key findings from a vast array of publications.
+
+**Text Summarization** helps researchers by providing concise summaries of lengthy documents, such as research papers or reports, allowing them to quickly understand the main points without reading the entire text. 
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+### Example
+In biomedical research, text summarization can assist in literature reviews by providing summaries of research articles. For example, a researcher could use an NLP model to summarize articles on gene therapy, enabling them to quickly assimilate key findings from a vast array of publications.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 
@@ -84,10 +108,26 @@ Teamwork: What are some examples of NLP in your daily research tasks? What are c
 ![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/3d6bc7c3-dff0-430f-a44b-544d0944e59c)
 [source](https://dl.acm.org/doi/10.1145/2133806.2133826)
 
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+### Example
 For example, in historical research, topic modeling can reveal prevalent themes in primary source documents from a particular era. A historian might use NLP to analyze newspapers from the early 20th century to study public discourse around significant events like World War I.
 
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
-**Named Entity Recognition** is a process where an algorithm takes a string of text (sentence or paragraph) and identifies relevant nouns (people, places, and organizations) that are mentioned in that string. NER is used in many fields in NLP, and it can help answer many real-world questions, such as: Which companies were mentioned in the news article? Were specified products mentioned in complaints or reviews? Does the tweet (recently rebranded to X) contain the name of a person? Does the tweet contain this person’s location?
+
+
+
+**Named Entity Recognition** is a process where an algorithm takes a string of text (sentence or paragraph) and identifies relevant nouns (people, places, and organizations) that are mentioned in that string. 
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+### Example
+NER is used in many fields in NLP, and it can help answer many real-world questions, such as: Which companies were mentioned in the news article? Were specified products mentioned in complaints or reviews? Does the tweet (recently rebranded to X) contain the name of a person? Does the tweet contain this person’s location?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 
 ![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/27b2f4a2-f0a8-4061-8f52-223f2a0f8e31)
