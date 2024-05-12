@@ -113,6 +113,15 @@ for sentence in sentences:
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Discussion
+
+Teamwork: Why is text preprocessing necessary for NLP tasks? Think of some examples of NLP tasks that require text preprocessing, such as sentiment analysis, machine translation, or text summarization. How does text preprocessing improve the performance and accuracy of these tasks?
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 ## 2.2. Tokeniziation
 
@@ -180,6 +189,17 @@ The tokens from the perovskite text will be specific to materials science, while
 ## 2.3. Stemming and Lemmatization
 
 Stemming and lemmatization are techniques used to reduce words to their base or root form, aiding in the normalization of text. As discussed in the previous episode, these two methods are different. Decide whether stemming or lemmatization would be more appropriate for analyzing a set of research texts on perovskite nanocrystals.
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Discussion
+
+Teamwork: From the differences between lemmatization and stemming that we learned in the last episode, which technique will you select to get more accurate text analysis results? Explain why?
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 Following our initial example for Tokenization, we can see how lemmatization works. We start with processing the text with *spaCy* to perform lemmatization:
 
