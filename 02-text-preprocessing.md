@@ -444,6 +444,7 @@ print("Original text:", text)
 # Print the lemmatized text:
 lemmatized_text = " ".join([token.lemma_ for token in doc])
 print("Lemmatized text:", lemmatized_text)
+```
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
@@ -531,8 +532,6 @@ These embeddings allow models to understand the text in a more nuanced way, lead
 :::
 
 
-:::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
