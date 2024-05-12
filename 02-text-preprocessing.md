@@ -325,10 +325,10 @@ print("Filtered sentence:", filtered_sentence)
 A: 
 
 ```python
-import _____
+import spacy
 nlp = spacy.load("en_core_web_sm")
 doc = nlp("This is a very simple and short sentence.")
-filtered_sentence = [____ for ____ in doc if not ____]
+filtered_sentence = [word for words in doc if not word.is_stop]
 print("Filtered sentence:", filtered_sentence)
 ```
 
@@ -416,20 +416,22 @@ A: part of the precipitate
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
+
 :::::::::::::::::::::::::::::::::::::::::: spoiler
 
 ### What Else Might We Use A Spoiler For?
 
-- 
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 
 ::: callout
 This is a callout block. It contains at least three colons
 :::
-
-
 
 
 
