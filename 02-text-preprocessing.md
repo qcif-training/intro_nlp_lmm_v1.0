@@ -100,7 +100,7 @@ A:
 import spacy
 nlp = spacy.load("en_core_web_sm")
 # Add the paragraph about your field of research here
-text = "***" 
+text = "***" # varies based on your field of research
 doc = nlp(text)
 # Fill in the blank to extract sentences:
 sentences = list(doc.sents) 
@@ -117,7 +117,6 @@ for sentence in sentences:
 ## 2.2. Tokeniziation
 
 As already mentioned, in the first episode, Tokenization breaks down text into individual words or tokens, which is a fundamental step for many NLP tasks.
-
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
@@ -141,6 +140,41 @@ Tokenization is not just about splitting text into words; it’s about understan
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
+
+::: callout
+
+Tokenization is very important for text analysis tasks such as sentiment analysis. Here we can compare two different texts from different fields and see how their associated tokens are different:
+
+```python
+
+perovskite_tokens = [token.text for token in nlp(perovskite_text)]
+```
+
+Now, we can add a new text from the trading context for comparison. Tokenization of a trading text can be performed similarly to the previous text.
+
+```python
+trading_text = "Trading strategies often involve analyzing patterns and executing trades based on predicted market movements. Successful traders analyze trends and volatility to make informed decisions."
+
+trading_tokens = [token.text for token in nlp(trading_text)]
+```
+
+We can see the results by using *print()* function. The tokens from both texts:
+
+```python
+print("Perovskite Tokens:", perovskite_tokens)
+print("Trading Tokens:", trading_tokens)
+```
+
+```
+Output: 
+Perovskite Tokens: ['Perovskite', 'nanocrystals', 'are', 'a', 'class', 'of', 'semiconductor', 'nanocrystals', 'with', 'unique', 'properties', 'that', 'distinguish', 'them', 'from', 'traditional', 'quantum', 'dots', '.']
+Trading Tokens: ['Trading', 'strategies', 'often', 'involve', 'analyzing', 'patterns', 'and', 'executing', 'trades', 'based', 'on', 'predicted', 'market', 'movements', '.', 'Successful', 'traders', 'analyze', 'trends', 'and', 'volatility', 'to', 'make', 'informed', 'decisions', '.']
+```
+
+
+The tokens from the perovskite text will be specific to materials science, while the trading tokens will include terms related to market analysis. The scientific texts may use more complex and compound words, while trading texts might include more action-oriented and analytical language. This comparison helps in understanding the specialized language used in different fields. 
+
+:::
 
 
 
