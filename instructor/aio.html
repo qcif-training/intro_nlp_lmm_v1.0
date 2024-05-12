@@ -607,7 +607,7 @@ from a paragraph about “your field of research”:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>A:</p>
 <div class="codewrapper sourceCode" id="cb9">
@@ -644,6 +644,77 @@ tasks?</p>
 </div>
 </div>
 </div>
+<div id="challenge" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="challenge" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+</h3>
+<div class="callout-content">
+<p>Q: Use the spaCy library to perform sentence segmentation and
+tokenization on the following text:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>text: <span class="st">"The research (Ref. [1]) focuses on developing perovskite nanocrystals with a bandgap of 1.5 eV, suitable for solar cell applications!"</span>. </span></code></pre>
+</div>
+<p>Print the number of sentences and tokens in the text, and the list of
+sentences and tokens. You can use the following code to load the
+<em>spaCy</em> library and the English language model:</p>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<p>A:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="co"># Load the English language model:</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a><span class="co"># Define the text with marks, letters, and numbers:</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"The research (Ref. [1]) focuses on developing perovskite nanocrystals with a bandgap of 1.5 eV, suitable for solar cell applications.!"</span></span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a><span class="co"># Process the text with spaCy</span></span>
+<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a>doc <span class="op">=</span> nlp(text)</span>
+<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a></span>
+<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="co"># Print the original text:</span></span>
+<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original text:"</span>, text)</span>
+<span id="cb12-14"><a href="#cb12-14" tabindex="-1"></a></span>
+<span id="cb12-15"><a href="#cb12-15" tabindex="-1"></a><span class="co"># Sentence segmentation:</span></span>
+<span id="cb12-16"><a href="#cb12-16" tabindex="-1"></a>sentences <span class="op">=</span> <span class="bu">list</span>(doc.sents)</span>
+<span id="cb12-17"><a href="#cb12-17" tabindex="-1"></a></span>
+<span id="cb12-18"><a href="#cb12-18" tabindex="-1"></a><span class="co"># Print the sentences:</span></span>
+<span id="cb12-19"><a href="#cb12-19" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Sentences:"</span>)</span>
+<span id="cb12-20"><a href="#cb12-20" tabindex="-1"></a><span class="cf">for</span> sentence <span class="kw">in</span> sentences:</span>
+<span id="cb12-21"><a href="#cb12-21" tabindex="-1"></a>    <span class="bu">print</span>(sentence.text)</span>
+<span id="cb12-22"><a href="#cb12-22" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="#cb12-23" tabindex="-1"></a><span class="co"># Tokenization:</span></span>
+<span id="cb12-24"><a href="#cb12-24" tabindex="-1"></a>tokens <span class="op">=</span> [token.text <span class="cf">for</span> token <span class="kw">in</span> doc]</span>
+<span id="cb12-25"><a href="#cb12-25" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="#cb12-26" tabindex="-1"></a><span class="co"># Print the tokens:</span></span>
+<span id="cb12-27"><a href="#cb12-27" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Tokens:"</span>)</span>
+<span id="cb12-28"><a href="#cb12-28" tabindex="-1"></a><span class="bu">print</span>(tokens)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section><section id="tokeniziation"><h2 class="section-heading">2.2. Tokeniziation<a class="anchor" aria-label="anchor" href="#tokeniziation"></a>
 </h2>
 <hr class="half-width">
@@ -665,16 +736,19 @@ vocabulary used in the scientific literature. Using the sentences we
 listed in the previous section, we can see how Tokenization performs.
 Assuming ‘sentences’ is a list of sentences from the previous example,
 choose a sentence to tokenize:</p>
-<div class="codewrapper sourceCode" id="cb10">
+<div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>sentence_to_tokenize <span class="op">=</span> sentences[<span class="dv">0</span>]</span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co"># Tokenize the chosen sentence by using a list comprehension:</span></span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>tokens <span class="op">=</span> [token.perovskite_text <span class="cf">for</span> token <span class="kw">in</span> sentence_to_tokenize]</span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="co"># We can print the tokens:</span></span>
-<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="bu">print</span>(tokens)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>sentence_to_tokenize <span class="op">=</span> sentences[<span class="dv">0</span>]</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="co"># Tokenize the chosen sentence by using a list comprehension:</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>tokens <span class="op">=</span> [token.perovskite_text <span class="cf">for</span> token <span class="kw">in</span> sentence_to_tokenize]</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="co"># We can print the tokens:</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="bu">print</span>(tokens)</span></code></pre>
 </div>
-<pre><code>Output: ['Perovskite', 'nanocrystals', 'are', 'a', 'class', 'of', 'semiconductor', 'nanocrystals', 'with', 'unique', 'properties', 'that', 'distinguish', 'them', 'from', 'traditional', 'quantum', 'dots', '.']</code></pre>
+<p>Output: [‘Perovskite’, ‘nanocrystals’, ‘are’, ‘a’, ‘class’, ‘of’,
+‘semiconductor’, ‘nanocrystals’, ‘with’, ‘unique’, ‘properties’, ‘that’,
+‘distinguish’, ‘them’, ‘from’, ‘traditional’, ‘quantum’, ‘dots’,
+‘.’]</p>
 <p>Tokenization is not just about splitting text into words; it’s about
 understanding the boundaries of words and symbols in different contexts,
 which can vary greatly between languages and even within the same
@@ -693,29 +767,29 @@ language in different settings.</p>
 <p>Tokenization is very important for text analysis tasks such as
 sentiment analysis. Here we can compare two different texts from
 different fields and see how their associated tokens are different:</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>perovskite_tokens <span class="op">=</span> [token.text <span class="cf">for</span> token <span class="kw">in</span> nlp(perovskite_text)]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>perovskite_tokens <span class="op">=</span> [token.text <span class="cf">for</span> token <span class="kw">in</span> nlp(perovskite_text)]</span></code></pre>
 </div>
 <p>Now, we can add a new text from the trading context for comparison.
 Tokenization of a trading text can be performed similarly to the
 previous text.</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>trading_text <span class="op">=</span> <span class="st">"Trading strategies often involve analyzing patterns and executing trades based on predicted market movements. Successful traders analyze trends and volatility to make informed decisions."</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>trading_tokens <span class="op">=</span> [token.text <span class="cf">for</span> token <span class="kw">in</span> nlp(trading_text)]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a>trading_text <span class="op">=</span> <span class="st">"Trading strategies often involve analyzing patterns and executing trades based on predicted market movements. Successful traders analyze trends and volatility to make informed decisions."</span></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>trading_tokens <span class="op">=</span> [token.text <span class="cf">for</span> token <span class="kw">in</span> nlp(trading_text)]</span></code></pre>
 </div>
 <p>We can see the results by using the <em>print()</em> function. The
 tokens from both texts:</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Perovskite Tokens:"</span>, perovskite_tokens)</span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Trading Tokens:"</span>, trading_tokens)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Perovskite Tokens:"</span>, perovskite_tokens)</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Trading Tokens:"</span>, trading_tokens)</span></code></pre>
 </div>
 <pre><code>Output: 
 Perovskite Tokens: ['Perovskite', 'nanocrystals', 'are', 'a', 'class', 'of', 'semiconductor', 'nanocrystals', 'with', 'unique', 'properties', 'that', 'distinguish', 'them', 'from', 'traditional', 'quantum', 'dots', '.']
@@ -754,19 +828,19 @@ get more accurate text analysis results? Explain why?</p>
 <p>Following our initial example for Tokenization, we can see how
 lemmatization works. We start with processing the text with
 <em>spaCy</em> to perform lemmatization:</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>lemmas <span class="op">=</span> [token.lemma_ <span class="cf">for</span> token <span class="kw">in</span> doc]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>lemmas <span class="op">=</span> [token.lemma_ <span class="cf">for</span> token <span class="kw">in</span> doc]</span></code></pre>
 </div>
 <p>We can print the original text and the lemmatized text:</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original Text:"</span>, perovskite_text)</span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Lemmatized Text:"</span>, <span class="st">' '</span>.join(lemmas))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original Text:"</span>, perovskite_text)</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Lemmatized Text:"</span>, <span class="st">' '</span>.join(lemmas))</span></code></pre>
 </div>
 <p>Output:</p>
 <p><strong>Original Text</strong>: Perovskite nanocrystals are a class
@@ -804,24 +878,24 @@ language processing library called NLTK (refer to episode 1).</p>
 <p>Based on what we just learned let’s compare lemmatization and
 stemming. First, we need to import the necessary libraries for stemming
 and lemmatization:</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="im">import</span> spacy</span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="im">import</span> nltk</span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="im">from</span> nltk.stem.porter <span class="im">import</span> PorterStemmer</span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>nltk.download(<span class="st">'punkt'</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="im">import</span> nltk</span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="im">from</span> nltk.stem.porter <span class="im">import</span> PorterStemmer</span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>nltk.download(<span class="st">'punkt'</span>)</span></code></pre>
 </div>
 <p>Next, we can create an instance of the PorterStemmer for NLTK and
 load the English language model for spaCy (similar to what we did
 earlier in this episode).</p>
-<div class="codewrapper sourceCode" id="cb19">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a></span>
-<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a>stemmer <span class="op">=</span> PorterStemmer()</span>
-<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>stemmer <span class="op">=</span> PorterStemmer()</span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span></code></pre>
 </div>
 <p>We can conduct stemming and lemmatization with identical text
 data:</p>
@@ -831,7 +905,7 @@ data:</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>text</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>text = ” Perovskite nanocrystals are a class of semiconductor
 nanocrystals with unique properties that distinguish them from
@@ -847,32 +921,32 @@ need to tokenize the text.</p>
 </div>
 </div>
 </div>
-<div class="codewrapper sourceCode" id="cb20">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a></span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
-<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a>tokens <span class="op">=</span> word_tokenize(text)  </span>
-<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="co"># Apply stemming to each token:</span></span>
-<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a>stemmed_tokens <span class="op">=</span> [stemmer.stem(token) <span class="cf">for</span> token <span class="kw">in</span> tokens]</span></code></pre>
-</div>
-<p>For lemmatization, we process the text with spaCy and extract the
-lemma for each token:</p>
-<div class="codewrapper sourceCode" id="cb21">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a></span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>doc <span class="op">=</span> nlp(text)</span>
-<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>lemmatized_tokens <span class="op">=</span> [token.lemma_ <span class="cf">for</span> token <span class="kw">in</span> doc]</span></code></pre>
-</div>
-<p>Finally, we can compare the stemmed and lemmatized tokens:</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original Tokens:"</span>, tokens)</span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Stemmed Tokens:"</span>, stemmed_tokens)</span>
-<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Lemmatized Tokens:"</span>, lemmatized_tokens)</span></code></pre>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="im">from</span> nltk.tokenize <span class="im">import</span> word_tokenize</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>tokens <span class="op">=</span> word_tokenize(text)  </span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a><span class="co"># Apply stemming to each token:</span></span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a>stemmed_tokens <span class="op">=</span> [stemmer.stem(token) <span class="cf">for</span> token <span class="kw">in</span> tokens]</span></code></pre>
+</div>
+<p>For lemmatization, we process the text with spaCy and extract the
+lemma for each token:</p>
+<div class="codewrapper sourceCode" id="cb23">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a></span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>doc <span class="op">=</span> nlp(text)</span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a>lemmatized_tokens <span class="op">=</span> [token.lemma_ <span class="cf">for</span> token <span class="kw">in</span> doc]</span></code></pre>
+</div>
+<p>Finally, we can compare the stemmed and lemmatized tokens:</p>
+<div class="codewrapper sourceCode" id="cb24">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a></span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original Tokens:"</span>, tokens)</span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Stemmed Tokens:"</span>, stemmed_tokens)</span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Lemmatized Tokens:"</span>, lemmatized_tokens)</span></code></pre>
 </div>
 <div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
@@ -880,7 +954,7 @@ lemma for each token:</p>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Output</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <ul>
 <li><p>Original Tokens: [‘Perovskite’, ‘nanocrystals’, ‘are’, ‘a’,
@@ -937,21 +1011,75 @@ lemmatization would correctly identify the lemma as
 <strong>“property”</strong>. Lemmatization provides a more readable and
 meaningful result, which is particularly useful in NLP tasks that
 require understanding the context and meaning of words.</p>
-</section><section id="stop-words-removal"><h2 class="section-heading">2.4. Stop-words Removal<a class="anchor" aria-label="anchor" href="#stop-words-removal"></a>
-</h2>
-<hr class="half-width">
-<p>Removing stop-words, which are common words that add little value to
-the analysis (such as ‘and’ and ‘the’), helps focus on the important
-content. Assuming ‘doc’ is the processed text from the previous example
-for ‘perovskite nanocrystals’, we can define a list to hold non-stop
-words list comprehensions:</p>
-<div class="codewrapper sourceCode" id="cb23">
+<div id="challenge-1" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="challenge-1" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
+</h3>
+<div class="callout-content">
+<p>Q: Use the spaCy library to perform lemmatization on the following
+text: “Perovskite nanocrystals are a promising class of materials for
+optoelectronic applications due to their tunable bandgaps and high
+photoluminescence efficiencies.” Print the original text and the
+lemmatized text. You can use the following code to load the spacy
+library and the English language model:</p>
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a></span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>filtered_sentence <span class="op">=</span> [word <span class="cf">for</span> word <span class="kw">in</span> doc <span class="cf">if</span> <span class="kw">not</span> word.is_stop]</span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="co"># print the filtered sentence and see how it is changed:</span></span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered sentence:"</span>, filtered_sentence)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div class="accordion-body">
+<p>A:</p>
+<div class="codewrapper sourceCode" id="cb26">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a></span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a><span class="co"># Load the English language model:</span></span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a><span class="co"># Define the text:</span></span>
+<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Perovskite nanocrystals are a promising class of materials for optoelectronic applications due to their tunable bandgaps and high photoluminescence efficiencies."</span></span>
+<span id="cb26-8"><a href="#cb26-8" tabindex="-1"></a></span>
+<span id="cb26-9"><a href="#cb26-9" tabindex="-1"></a><span class="co"># Process the text with spaCy:</span></span>
+<span id="cb26-10"><a href="#cb26-10" tabindex="-1"></a>doc <span class="op">=</span> nlp(text)</span>
+<span id="cb26-11"><a href="#cb26-11" tabindex="-1"></a></span>
+<span id="cb26-12"><a href="#cb26-12" tabindex="-1"></a><span class="co"># Print the original text:</span></span>
+<span id="cb26-13"><a href="#cb26-13" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original text:"</span>, text)</span>
+<span id="cb26-14"><a href="#cb26-14" tabindex="-1"></a><span class="co"># Print the lemmatized text:</span></span>
+<span id="cb26-15"><a href="#cb26-15" tabindex="-1"></a>lemmatized_text <span class="op">=</span> <span class="st">" "</span>.join([token.lemma_ <span class="cf">for</span> token <span class="kw">in</span> doc])</span>
+<span id="cb26-16"><a href="#cb26-16" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Lemmatized text:"</span>, lemmatized_text)</span>
+<span id="cb26-17"><a href="#cb26-17" tabindex="-1"></a></span>
+<span id="cb26-18"><a href="#cb26-18" tabindex="-1"></a>:::::::::::::::::::::::::</span>
+<span id="cb26-19"><a href="#cb26-19" tabindex="-1"></a>:::::::::::::::::::::::::::::::::::::::::::::::</span>
+<span id="cb26-20"><a href="#cb26-20" tabindex="-1"></a></span>
+<span id="cb26-21"><a href="#cb26-21" tabindex="-1"></a></span>
+<span id="cb26-22"><a href="#cb26-22" tabindex="-1"></a></span>
+<span id="cb26-23"><a href="#cb26-23" tabindex="-1"></a></span>
+<span id="cb26-24"><a href="#cb26-24" tabindex="-1"></a></span>
+<span id="cb26-25"><a href="#cb26-25" tabindex="-1"></a><span class="co">## 2.4. Stop-words Removal</span></span>
+<span id="cb26-26"><a href="#cb26-26" tabindex="-1"></a></span>
+<span id="cb26-27"><a href="#cb26-27" tabindex="-1"></a>Removing stop<span class="op">-</span>words, which are common words that add little value to the analysis (such <span class="im">as</span> ‘and’ <span class="kw">and</span> ‘the’), helps focus on the important content. Assuming <span class="st">'doc'</span> <span class="kw">is</span> the processed text <span class="im">from</span> the previous example <span class="cf">for</span> ‘perovskite nanocrystals’, we can define a <span class="bu">list</span> to hold non<span class="op">-</span>stop words <span class="bu">list</span> comprehensions:</span>
+<span id="cb26-28"><a href="#cb26-28" tabindex="-1"></a></span>
+<span id="cb26-29"><a href="#cb26-29" tabindex="-1"></a></span>
+<span id="cb26-30"><a href="#cb26-30" tabindex="-1"></a>```python</span>
+<span id="cb26-31"><a href="#cb26-31" tabindex="-1"></a></span>
+<span id="cb26-32"><a href="#cb26-32" tabindex="-1"></a>filtered_sentence <span class="op">=</span> [word <span class="cf">for</span> word <span class="kw">in</span> doc <span class="cf">if</span> <span class="kw">not</span> word.is_stop]</span>
+<span id="cb26-33"><a href="#cb26-33" tabindex="-1"></a><span class="co"># print the filtered sentence and see how it is changed:</span></span>
+<span id="cb26-34"><a href="#cb26-34" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered sentence:"</span>, filtered_sentence)</span></code></pre>
 </div>
 <p>Output: Filtered sentence: [Perovskite, nanocrystals, class,
 semiconductor, nanocrystals, unique, properties, distinguish,
@@ -964,44 +1092,44 @@ spectrum, ,, ideal, applications, light, -, emitting, diodes, ,, lasers,
 ,, solar, cells, .]</p>
 <p>List comprehensions provide a convenient method for rapidly
 generating lists based on a straightforward condition.</p>
-<div id="challenge" class="callout challenge">
+<div id="challenge-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
+<div id="challenge-2" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
 </h3>
 <div class="callout-content">
 <p>Q: To see how list comprehensions are created, fill in the missing
 parts of the code to remove stop-words from a given sentence.</p>
-<div class="codewrapper sourceCode" id="cb24">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="im">import</span> _____</span>
-<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
-<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a>doc <span class="op">=</span> nlp(<span class="st">"This is a very simple and short sentence."</span>)</span>
-<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>filtered_sentence <span class="op">=</span> [____ <span class="cf">for</span> ____ <span class="kw">in</span> doc <span class="cf">if</span> <span class="kw">not</span> ____]</span>
-<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered sentence:"</span>, filtered_sentence)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="im">import</span> _____</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>doc <span class="op">=</span> nlp(<span class="st">"This is a very simple and short sentence."</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>filtered_sentence <span class="op">=</span> [____ <span class="cf">for</span> ____ <span class="kw">in</span> doc <span class="cf">if</span> <span class="kw">not</span> ____]</span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered sentence:"</span>, filtered_sentence)</span></code></pre>
 </div>
 </div>
 </div>
 </div>
-<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
-  <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>A:</p>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="im">import</span> spacy</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
-<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>doc <span class="op">=</span> nlp(<span class="st">"This is a very simple and short sentence."</span>)</span>
-<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>filtered_sentence <span class="op">=</span> [word <span class="cf">for</span> words <span class="kw">in</span> doc <span class="cf">if</span> <span class="kw">not</span> word.is_stop]</span>
-<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered sentence:"</span>, filtered_sentence)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>doc <span class="op">=</span> nlp(<span class="st">"This is a very simple and short sentence."</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>filtered_sentence <span class="op">=</span> [word <span class="cf">for</span> words <span class="kw">in</span> doc <span class="cf">if</span> <span class="kw">not</span> word.is_stop]</span>
+<span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered sentence:"</span>, filtered_sentence)</span></code></pre>
 </div>
 </div>
 </div>
@@ -1015,46 +1143,9 @@ parts of the code to remove stop-words from a given sentence.</p>
 <h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout3"></a>
 </h3>
 <div class="callout-content">
-<p>While stop-words are often removed to improve analysis, they can be
+<p>While stopwords are often removed to improve analysis, they can be
 important for certain tasks like sentiment analysis, where the word
 ‘not’ can change the entire meaning of a sentence.</p>
-</div>
-</div>
-</div>
-<div id="chemistry-joke" class="callout challenge">
-<div class="callout-square">
-<i class="callout-icon" data-feather="zap"></i>
-</div>
-<div id="chemistry-joke" class="callout-inner">
-<h3 class="callout-title">Chemistry Joke<a class="anchor" aria-label="anchor" href="#chemistry-joke"></a>
-</h3>
-<div class="callout-content">
-<p>Q: If you aren’t part of the solution, then what are you?</p>
-</div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
-<div class="accordion-body">
-<p>A: part of the precipitate</p>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
-  <h3 class="accordion-header" id="headingSpoiler3">
-<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What Else Might We Use A Spoiler For?</h3>
-</button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
-<div class="accordion-body">
-
-</div>
 </div>
 </div>
 </div>
@@ -1066,7 +1157,27 @@ important for certain tasks like sentiment analysis, where the word
 <h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout4"></a>
 </h3>
 <div class="callout-content">
-<p>This is a callout block. It contains at least three colons</p>
+<p>it is important to note that tokenization is just the beginning. In
+modern NLP, vectorization, and embeddings play a pivotal role in
+capturing the context and meaning of text.</p>
+<p>Vectorization is the process of converting tokens into a numerical
+format that machine learning models can understand. This often involves
+creating a bag-of-words model, where each token is represented by a
+unique number in a vector. Embeddings are advanced representations where
+words are mapped to vectors of real numbers. They capture not just the
+presence of tokens but also the semantic relationships between them.
+This is achieved through techniques like Word2Vec, GloVe, or BERT, which
+we will explore in the second part of our workshop.</p>
+<p>These embeddings allow models to understand the text in a more
+nuanced way, leading to better performance on tasks such as sentiment
+analysis, machine translation, and more.</p>
+<p><em>Stay tuned for our next session, where we will dive deeper into
+how we can use vectorization and embeddings to enhance our NLP models
+and truly capture the richness of language.</em></p>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -1079,15 +1190,14 @@ important for certain tasks like sentiment analysis, where the word
 </h3>
 <div class="callout-content">
 <ul>
-<li>Image datasets can be found online or created uniquely for your
-research question.</li>
-<li>Images consist of pixels arranged in a particular order.</li>
-<li>Image data is usually preprocessed before use in a CNN for
-efficiency, consistency, and robustness.</li>
-<li>Input data generally consists of three sets: a training set used to
-fit model parameters; a validation set used to evaluate the model fit on
-training data; and a test set used to evaluate the final model
-performance.</li>
+<li>Text preprocessing is essential for cleaning and standardizing text
+data.</li>
+<li>Techniques like sentence segmentation, tokenization, stemming, and
+lemmatization are fundamental to text preprocessing.</li>
+<li>Removing stop-words helps in focusing on the important words in text
+analysis.</li>
+<li>Tokenization splits sentences into tokens, which are the basic units
+for further processing.</li>
 </ul>
 </div>
 </div>
@@ -5242,7 +5352,7 @@ little meaning.</strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>A: 1</p>
 </div>
@@ -5268,7 +5378,7 @@ interest.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p><strong><em>Environmental Science</em></strong></p>
 <ul>
@@ -5350,7 +5460,7 @@ answers related to environmental topics.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The model should provide a relevant answer based on the few-shot
 examples provided. For instance, it might say: “Individuals can combat
