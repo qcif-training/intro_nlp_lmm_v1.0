@@ -426,8 +426,104 @@ print(model.print_topics())
 
 
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Chemistry Joke
+
+Q: Use the genism to perform topic modeling on the following two different texts and provide a comparison.
 
 
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+### Text
+
+text1 = "Perovskite nanocrystals have emerged as a promising class of materials for next-generation optoelectronic devices due to their unique properties. Their crystal structure allows for tunable bandgaps, which are the energy differences between occupied and unoccupied electronic states. This tunability enables the creation of materials that can absorb and emit light across a wide range of the electromagnetic spectrum, making them suitable for applications like solar cells, light-emitting diodes (LEDs), and lasers. Additionally, perovskite nanocrystals exhibit high photoluminescence efficiencies, meaning they can efficiently convert absorbed light into emitted light, further adding to their potential for various optoelectronic applications." 
+
+
+text2 = "Graphene is a one-atom-thick sheet of carbon atoms arranged in a honeycomb lattice. It is a remarkable material with unique properties, including high electrical conductivity, thermal conductivity, mechanical strength, and optical transparency. Graphene has the potential to revolutionize various fields, including electronics, photonics, and composite materials. Due to its excellent electrical conductivity, graphene is a promising candidate for next-generation electronic devices, such as transistors and sensors. Additionally, its high thermal conductivity makes it suitable for heat dissipation applications."
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+:::::::::::::::: solution
+
+A: After storing the two texts in text1 and text2, preprocess the text (e.g., tokenization, stop word removal, stemming/lemmatization). Split the texts into documents:
+
+
+```python
+
+import gensim
+from gensim import corpora
+documents = [text1.split(), text2.split()]
+
+# Create a dictionary:
+dictionary = corpora.Dictionary(documents)
+
+# Create a corpus (bag of words representation):
+corpus = [dictionary.doc2bow(doc) for doc in documents]
+
+# Train the LDA model (adjust num_topics as needed):
+lda_model = gensim.models.LdaModel(corpus, id2word=dictionary, num_topics=3, passes=20)
+
+# Print the original texts:
+print("Original Texts:")
+print(f"Text 1:\n{text1}\n")
+print(f"Text 2:\n{text2}\n")
+
+# Identify shared and distinct keywords for each topic:
+print("Topics and Keywords:")
+for topic in lda_model.show_topics(formatted=False):
+    print(f"\nTopic {topic[0]}:")
+    topic_words = [w[0] for w in topic[1]]
+    print(f"Text 1 Keywords:", [w for w in topic_words if w in text1])
+    print(f"Text 2 Keywords:", [w for w in topic_words if w in text2])
+
+# Explain the conceptual similarity:
+print("\nConceptual Similarity:")
+print("Both texts discuss novel materials (perovskite nanocrystals and graphene) with unique properties. While the specific applications and functionalities differ slightly, they both highlight the potential of these materials for various technological advancements.")
+```
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+### Output
+
+Original Texts:
+
+Text 1:
+Perovskite nanocrystals have emerged as a promising class of materials for next-generation optoelectronic devices due to their unique properties. Their crystal structure allows for tunable bandgaps, which are the energy differences between occupied and unoccupied electronic states. This tunability enables the creation of materials that can absorb and emit light across a wide range of the electromagnetic spectrum, making them suitable for applications like solar cells, light-emitting diodes (LEDs), and lasers. Additionally, perovskite nanocrystals exhibit high photoluminescence efficiencies, meaning they can efficiently convert absorbed light into emitted light, further adding to their potential for various optoelectronic applications.
+
+Text 2:
+Graphene is a one-atom-thick sheet of carbon atoms arranged in a honeycomb lattice. It is a remarkable material with unique properties, including high electrical conductivity, thermal conductivity, mechanical strength, and optical transparency. Graphene has the potential to revolutionize various fields, including electronics, photonics, and composite materials. Due to its excellent electrical conductivity, graphene is a promising candidate for next-generation electronic devices, such as transistors and sensors. Additionally, its high thermal conductivity makes it suitable for heat dissipation applications.
+
+
+Topics and Keywords:
+
+```
+Topic 0:
+
+Text 1 Keywords: ['applications', 'devices', 'material', 'optoelectronic', 'properties']
+Text 2 Keywords: ['applications', 'conductivity', 'electronic', 'graphene', 'material', 'potential']
+
+Topic 1:
+	
+Text 1 Keywords: ['bandgaps', 'crystal', 'electronic', 'properties', 'structure']
+Text 2 Keywords: ['conductivity', 'electrical', 'graphene', 'material', 'properties']
+
+Topic 2:
+
+Text 1 Keywords: ['absorption', 'emit', 'light', 'spectrum']
+Text 2 Keywords: ['conductivity', 'graphene', 'material', 'optical', 'potential']
+```
+
+Conceptual Similarity:
+
+Both texts discuss novel materials (perovskite nanocrystals and graphene) with unique properties. While the specific applications and functionalities differ slightly (optoelectronic devices vs. electronic devices), they both highlight the potential of these materials for various technological advancements. Notably, both topics identify "material," "properties," and "applications" as keywords, suggesting a shared focus on the materials' characteristics and their potential uses. Additionally, keywords like "electronic," "conductivity," and "potential" appear in both texts within different topics, indicating a conceptual overlap in exploring the electronic properties and potential applications of these materials.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 
 
