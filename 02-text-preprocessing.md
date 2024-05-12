@@ -65,7 +65,7 @@ We use *for loop* and *print()* function to output each sentence to show the seg
 
 ```python
 for sentence in sentences:
-   print(sentence.perovskite_text)
+   print(sentence.text)
 ```
 
 
