@@ -6,22 +6,247 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions 
 
-- How much data do you need for Deep Learning?
-- Where can I find image data to train my model?
-- How do I plot image data in python?
-- How do I prepare image data for use in a convolutional neural network (CNN)?
-- Know the difference between training, testing, and validation datasets.
+- How can I prepare data for NLP text analysis?
+- How can I use spaCy for text preprocessing?
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Identify sources of image data.
-- Understand the properties of image data.
-- Write code to plot image data.
-- Prepare an image dataset to train a convolutional neural network (CNN).
+- Define text preprocessing and its purpose for NLP tasks.
+- Perform sentence segmentation, tokenization lemmatization, and stop-words removal, using spaCy.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Text preprocessing is the method of cleaning and preparing text data for use in NLP. This step is vital because it transforms raw data into a format that can be analyzed and used effectively by NLP algorithms.
+
+
+
+## 2.1. Sentence Segmentation
+
+Sentence segmentation divides a text into its constituent sentences, which is essential for understanding the structure and flow of the content. We start with a field-specific text example and see how it works. We can start with a paragraph about perovskite nanocrystals from the context of material engineering. Divide it into sentences.
+
+We can use the open-source library, spaCy, to perform this task. First, we import the spaCy library:
+
+```python
+
+import spacy
+```
+
+Then we need to Load the English language model:
+
+```python
+nlp = spacy.load("en_core_web_sm")
+```
+
+We can store our text here:
+
+```python
+perovskite_text = "Perovskite nanocrystals are a class of semiconductor nanocrystals with unique properties that distinguish them from traditional quantum dots. These nanocrystals have an ABX3 composition, where 'A' can be cesium, methylammonium (MA), or formamidinium (FA); 'B' is typically lead or tin; and 'X' is a halogen ion like chloride, bromide, or iodide. Their remarkable optoelectronic properties, such as high photoluminescence quantum yields and tunable emission across the visible spectrum, make them ideal for applications in light-emitting diodes, lasers, and solar cells."
+```
+
+Now we process the text with spaCy:
+
+```python
+doc = nlp(perovskite_text)
+```
+
+To extract sentences from the processed text we use the *list()* function:
+
+```python
+sentences = list(doc.sents)
+```
+
+
+We use *for loop* and *print()* function to output each sentence to show the segmentation:
+
+```python
+for sentence in sentences:
+   print(sentence.perovskite_text)
+```
+
+
+```
+Output: Perovskite nanocrystals are a class of semiconductor nanocrystals with unique properties that distinguish them from traditional quantum dots.
+These nanocrystals have an ABX3 composition, where 'A' can be cesium, methylammonium (MA), or formamidinium (FA); 'B' is typically lead or tin; and 'X' is a halogen ion like chloride, bromide, or iodide.
+Their remarkable optoelectronic properties, such as high photoluminescence quantum yields and tunable emission across the visible spectrum, make them ideal for applications in light-emitting diodes, lasers, and solar cells.
+```
+
+::::::::::::::::::::::::::::::::::::: challenge
+## Discussion
+
+Q: Let’s try again by completing the code below to segment sentences from a paragraph about “your field of research”:
+
+```python
+import spacy
+nlp = _____.load("en_core_web_sm")
+# Add the paragraph about your field of research here
+text = "___" 
+doc = nlp(___)
+# Fill in the blank to extract sentences:
+sentences = list(______) 
+# Fill in the blank to print each sentence
+for sentence in sentences:
+  print(______)  
+```
+
+:::::::::::::::: solution
+
+A:
+
+```python
+import spacy
+nlp = spacy.load("en_core_web_sm")
+# Add the paragraph about your field of research here
+text = "***" 
+doc = nlp(text)
+# Fill in the blank to extract sentences:
+sentences = list(doc.sents) 
+# Fill in the blank to print each sentence
+for sentence in sentences:
+  print(sentence.text)  
+```
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+## 2.2. Tokeniziation
+
+As already mentioned, in the first episode, Tokenization breaks down text into individual words or tokens, which is a fundamental step for many NLP tasks.
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+## Discussion
+
+Teamwork: To better understand how it works let’s Match tokens from the provided paragraph about perovskite nanocrystals with similar tokens from another scientific text. This helps in understanding the common vocabulary used in the scientific literature. Using the sentences we listed in the previous section, we can see how Tokenization performs. Assuming 'sentences' is a list of sentences from the previous example, choose a sentence to tokenize:
+
+```python
+sentence_to_tokenize = sentences[0]
+# Tokenize the chosen sentence by using a list comprehension:
+tokens = [token.perovskite_text for token in sentence_to_tokenize]
+# We can print the tokens:
+print(tokens)
+```
+
+```
+Output: ['Perovskite', 'nanocrystals', 'are', 'a', 'class', 'of', 'semiconductor', 'nanocrystals', 'with', 'unique', 'properties', 'that', 'distinguish', 'them', 'from', 'traditional', 'quantum', 'dots', '.']
+```
+
+Tokenization is not just about splitting text into words; it’s about understanding the boundaries of words and symbols in different contexts, which can vary greatly between languages and even within the same language in different settings.
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Chemistry Joke
+
+Q: If you aren't part of the solution, then what are you?
+
+:::::::::::::::: solution
+
+A: part of the precipitate
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+### What Else Might We Use A Spoiler For?
+
+- 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+::: callout
+This is a callout block. It contains at least three colons
+:::
+
+
+
+
+
+
+
+
 
 ## Deep Learning Workflow
 
