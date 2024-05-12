@@ -34,7 +34,7 @@ We will begin by delving into the **Common Applications of NLP in Research**, sh
 
 
 ![NLP for Research](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/7a1d0e09-bbad-4b16-8de2-b312efe0db11)
-[*DALL-E 3*]
+Prompt: "NLP for Research" [*DALL-E 3*]
 
 
 
