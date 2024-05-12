@@ -271,6 +271,26 @@ What are some examples of LLMs, and how are they trained and used for research t
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge
+
+How can we compare different LLMs? Are there any benchmarks? 
+
+:::::::::::::::::::::::: solution 
+
+A: Comparing Performance (Benchmarking):
+1.	Performance can be compared based on the model’s architecture, computational efficiency, and suitability for specific tasks.
+2.	Benchmarks and leaderboards (such as HELM) can provide insights into how different models perform on standardized datasets.
+3.	Community feedback and use-case studies can also inform the practical effectiveness of different LLMs.
+
+
+:::::::::::::::::::::::::::::::::
+::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
 ## 6.4. Open-Source LLMs:
 
 It is very important for researchers to openly have access to capable LLMs for their studies. Fortunately, some companies are supporting open-source LLMs. The BLOOM model, developed by the BigScience Workshop in collaboration with Hugging Face and other organizations, was released on July 6, 2022. It offers a wide range of model sizes, from 1.1 billion to 176 billion parameters, and is licensed under the open RAIL-M v1. BLOOM is known for its instruct models, coding capabilities, customization finetuning, and being open source. It is more openly accessible and benefits from a large community and extensive support. 
@@ -283,27 +303,239 @@ Now let’s summarize what we learned here in the following table:
 
 
 
+Hugging Face provides several different LLMs. Now we want to see how we can use an open-source model. using the Hugging Face datasets library and an open-source Large Language Model (LLM). We will go through the process of setting up the environment, installing necessary libraries, loading a dataset, and then using an LLM to process the data. We will start with setting up the environment. 
+
+
+
+::: callout
+
+### Heads up
+
+Before we begin, ensure that you have Python installed on your system. Python 3.6 or later is recommended. You can download Python from the official Python website. 
+:::
+
+Next, we will install the necessary libraries through the terminal or command prompt:
+
+
+```python
+
+pip install datasets transformers
+
+```
+
+We use the **squad dataset** here, which is a question-answering dataset Question-answering is one of main goals of utilizing LLMs for research projects. When you run this script, the expected output should be the answer to the question based on the provided context. Here is how to load it:
+
+
+```python
+
+from datasets import load_dataset
+# Load the SQuAD dataset
+squad_dataset = load_dataset('squad')
+
+# Print the first example in the training set
+print(squad_dataset['train'][0])
+
+
+```
+
+Now, we can load a pre-trained model from Hugging Face. For this example, let’s use the bert-base-uncased model, which is different from BLOOM and is suitable for question-answering tasks:
+
+
+```python
+
+from transformers import AutoModelForQuestionAnswering, AutoTokenizer
+# Load the tokenizer and model
+tokenizer = AutoTokenizer.from_pretrained('bert-base-uncased')
+model = AutoModelForQuestionAnswering.from_pretrained('bert-base-uncased')
+
+
+```
+
+We need to define the question and context here:
+
+
+```python
+
+question = "What is the name of the university in Paris that was founded in 1257?"
+context = "The University of Paris, founded in 1257, is often referred to as the Sorbonne after the college created by Robert de Sorbon. It is one of the world's oldest universities."
+
+```
+
+
+Recall to be able to feed data into the model, we should already tokenize our data. Once we have our data tokenized, we can use the model to make predictions. Here is how to tokenize the first example:
+
+
+
+```python
+
+
+# Tokenize the first example
+Inputs = tokenizer(squad_dataset['train'][0]['question'], squad_dataset['train'][0]['context'], return_tensors='pt')
+
+# Get model predictions
+outputs = model(**inputs)
+
+
+```
+
+Note that the model outputs are raw **logits**. We need to convert these into an answer by selecting the tokens with the highest start and end scores:
+
+
+```python
+
+
+import torch
+# Find the tokens with the highest `start` and `end` scores
+answer_start = torch.argmax(outputs.start_logits)
+answer_end = torch.argmax(outputs.end_logits) + 1
+
+# Convert tokens to the answer string
+answer = tokenizer.convert_tokens_to_string(tokenizer.convert_ids_to_tokens (inputs['input_ids'][0][answer_start:answer_end]))
+print(answer)
+
+
+```
+
+This will print the answer to the question based on the context provided in the dataset. In this case, the output would be:
+
+
+```python
+
+Output: the sorbonne
+
+```
+
+This output indicates that the model has correctly identified “the Sorbonne” as the name of the university in Paris founded in 1257, based on the context given. Remember, the actual output may vary slightly depending on the model version and the specific weights used at the time of inference.
+
+
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ### Discussion 
 
-Teamwork: What are the challenges and trade-offs of domain-specific LLMs, such as data availability, model size, and complexity? 
-
-Consider some of the factors that affect the quality and reliability of domain-specific LLMs, such as the amount and quality of domain-specific data, the computational resources and time required for training or fine-tuning, and the generalization and robustness of the model. How do these factors pose problems or difficulties for domain-specific LLMs and how can we overcome them?
+Teamwork: What are the challenges and implications of LLMs, such as scalability, generalization, and social impact? What does it mean when an LLM hallucinates?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-### Discussion
+### Challenge
 
-Teamwork: What are some available approaches for creating domain-specific LLMs, such as fine-tuning and knowledge distillation? 
 
-Consider some of the main steps and techniques for creating domain-specific LLMs, such as selecting a general LLM, collecting and preparing domain-specific data, training or fine-tuning the model, and evaluating and deploying the model. How do these approaches differ from each other and what are their advantages and disadvantages?
+Use the OpenAI library to access and use an open-source LLM for text summarization. You can use the following code to load the OpenAI library and the pre-trained model and tokenizer for text summarization:
 
+```python
+
+import openai
+openai.api_key = "sk-<your_api_key>"
+text_summarizer = openai.Completion.create(engine="davinci", task="summarize")
+
+```
+
+
+Use the text_summarizer to summarize the following text.
+
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+### Text
+
+"Perovskite nanocrystals are a class of semiconductor nanocrystals, which exhibit unique characteristics that separate them from traditional quantum dots. Perovskite nanocrystals have an ABX3 composition where A = cesium, methylammonium (MA), or formamidinium (FA); B = lead or tin; and X = chloride, bromide, or iodide. Their unique qualities largely involve their unusual band structure which renders these materials effectively defect-tolerant or able to emit brightly without surface passivation. This is in contrast to other quantum dots such as CdSe which must be passivated with an epitaxially matched shell to be bright emitters. In addition to this, lead-halide perovskite nanocrystals remain bright emitters when the size of the nanocrystal imposes only weak quantum confinement. This enables the production of nanocrystals that exhibit narrow emission linewidths regardless of their polydispersity. The combination of these attributes and their easy-to-perform synthesis has resulted in numerous articles demonstrating the use of perovskite nanocrystals as both classical and quantum light sources with considerable commercial interest. Perovskite nanocrystals have been applied to numerous other optoelectronic applications such as light-emitting diodes, lasers, visible communication, scintillators, solar cells, and photodetectors. The first report of perovskite nanocrystals was published in 2014 by Protesescu et al., who synthesized cesium lead halide nanocrystals using a hot-injection method. They showed that the nanocrystals can emit brightly when excited by ultraviolet or blue light, and their colors are tunable across the entire visible spectrum by changing the halide from chloride (UV/blue) to bromide (green) and iodide (red). They also demonstrated that the nanocrystals can be incorporated into thin films and show high photoluminescence quantum yields (PLQYs) of up to 90%. Since then, many other synthetic methods have been developed to produce perovskite nanocrystals with different shapes, sizes, compositions, and surface ligands. Some of the common methods include ligand-assisted reprecipitation, antisolvent precipitation, solvothermal synthesis, microwave-assisted synthesis, and microfluidic synthesis. Perovskite nanocrystals can be classified into different types based on their structure, dimensionality, and composition. The most common type is the three-dimensional (3D) perovskite nanocrystals, which have a cubic or orthorhombic crystal structure and a band gap that depends on the halide content. The 3D perovskite nanocrystals can be further divided into pure halide perovskites (such as CsPbX3) and mixed halide perovskites (such as CsPb(Br/I)3), which can exhibit color tuning, anion exchange, and halide segregation phenomena. Another type is the two-dimensional (2D) perovskite nanocrystals, which have a layered structure with organic cations sandwiched between inorganic perovskite layers. The 2D perovskite nanocrystals have a quantum well-like band structure and a band gap that depends on the thickness of the perovskite layers. The 2D perovskite nanocrystals can also be mixed with 3D perovskite nanocrystals to form quasi-2D perovskite nanocrystals, which can improve the stability and emission efficiency of the nanocrystals. A third type is the metal-free perovskite nanocrystals, which replace the metal cations (such as Pb or Sn) with other elements (such as Bi or Sb). The metal-free perovskite nanocrystals have a lower toxicity and higher stability than the metal-based perovskite nanocrystals, but they also have a lower PLQY and a broader emission linewidth. The development of perovskite nanocrystals in the past few years has been remarkable, with significant advances in synthesis, characterization, and application. However, there are still some challenges and opportunities for further improvement. One of the major challenges is the stability of perovskite nanocrystals, which are sensitive to moisture, oxygen, heat, light, and electric fields. These factors can cause degradation, phase transition, and non-radiative recombination of the nanocrystals, resulting in reduced emission intensity and color stability. Several strategies have been proposed to enhance the stability of perovskite nanocrystals, such as surface passivation, encapsulation, doping, alloying, and embedding in matrices. Another challenge is the toxicity of perovskite nanocrystals, which are mainly composed of lead, a heavy metal that can cause environmental and health hazards. Therefore, there is a need to develop lead-free or low-lead perovskite nanocrystals that can maintain the high performance and tunability of the lead-based ones. Some of the promising candidates include tin-based, bismuth-based, and antimony-based perovskite nanocrystals. A third challenge is the scalability and integration of perovskite nanocrystals, which are essential for practical applications. There is a need to develop cost-effective and large-scale synthesis methods that can produce high-quality and uniform perovskite nanocrystals. Moreover, there is a need to develop efficient and reliable fabrication techniques that can integrate perovskite nanocrystals into various devices and platforms.
+In conclusion, perovskite nanocrystals are a fascinating class of nanomaterials that have shown remarkable potential for various photonic applications. They have unique properties such as defect tolerance, high quantum yield, fast radiative decay, and narrow emission linewidth in weak confinement, which make them ideal candidates for light emission devices. They also have a wide color tunability from ultraviolet to near-infrared regions, which makes them suitable for various wavelength-dependent applications. However, there are still some challenges that need to be overcome, such as stability, toxicity, scalability, and integration. Therefore, further research and development are needed to address these issues and to explore new opportunities for perovskite nanocrystals in the field of nanophotonics.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::: solution 
+
+Print the summarized text.
+
+
+```python
+import openai
+openai.api_key = "sk-<your_api_key>"
+text_summarizer = openai.Completion.create(engine="davinci", task="summarize")
+text = " Perovskite nanocrystals are a class of semiconductor …"
+summary = text_summarizer(text)['choices'][0]['text']
+print(text)
+print(summary)
+
+
+output:
+
+```
+
+:::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::::::::::::::::::::::: solution 
+:::::::::::::::::::::::::::::::::
+
+
+
 
 
 Let’s try One-shot and Few-shot prompting examples and see how they can help us to enhance the sensitivity of the LLM to our field of study: One-shot prompting involves providing the model with a single example to follow. It’s like giving the model a hint about what you expect. We will go through an example using Hugging Face’s transformers library:
