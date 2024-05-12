@@ -472,95 +472,6 @@ A: part of the precipitate
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-::::::::::::::::::::::::::::::::::::: challenge
-
-## Chemistry Joke
-
-Q: If you aren't part of the solution, then what are you?
-
-:::::::::::::::: solution
-
-A: part of the precipitate
-
-:::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
-
-:::::::::::::::::::::::::::::::::::::::::: spoiler
-
-### What Else Might We Use A Spoiler For?
-
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
-
-::: callout
-This is a callout block. It contains at least three colons
-:::
-
-
-
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
 - Image datasets can be found online or created uniquely for your research question.
@@ -568,6 +479,7 @@ This is a callout block. It contains at least three colons
 - Image data is usually preprocessed before use in a CNN for efficiency, consistency, and robustness.
 - Input data generally consists of three sets: a training set used to fit model parameters; a validation set used to evaluate the model fit on training data; and a test set used to evaluate the final model performance.
 
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
