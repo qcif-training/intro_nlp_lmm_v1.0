@@ -756,6 +756,347 @@ words in the text.</p>
 <p>To see how Topic Modeling can help us in action to classify a text,
 let’s see the following example. We need to install the <em>Gensim</em>
 library and import the necessary modules:</p>
+<div class="codewrapper sourceCode" id="cb10">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>pip install genism</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="im">import</span> gensim</span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a><span class="im">from</span> gensim <span class="im">import</span> corpora</span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a><span class="im">from</span> gensim.models <span class="im">import</span> LdaModel</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a><span class="im">from</span> gensim.utils <span class="im">import</span> simple_preprocess</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a></span></code></pre>
+</div>
+<p>at this stage, we preprocess including the text tokenization (text
+from <a href="https://en.wikipedia.org/wiki/Australian_Securities_Exchange" class="external-link">Wikipedia</a>):</p>
+<div id="accordionSpoiler5" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler5" aria-expanded="false" aria-controls="collapseSpoiler5">
+  <h3 class="accordion-header" id="headingSpoiler5">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
+</button>
+<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
+<div class="accordion-body">
+<p>text = “Australian Shares Exchange Ltd (ASX) is an Australian public
+company that operates Australia’s primary shares exchange, the
+Australian Shares Exchange (sometimes referred to outside of Australia
+as, or confused within Australia as, The Sydney Stock Exchange, a
+separate entity). The ASX was formed on 1 April 1987, through
+incorporation under legislation of the Australian Parliament as an
+amalgamation of the six state securities exchanges and merged with the
+Sydney Futures Exchange in 2006. Today, ASX has an average daily
+turnover of A$4.685 billion and a market capitalisation of around A$1.6
+trillion, making it one of the world’s top 20 listed exchange groups,
+and the largest in the southern hemisphere. ASX Clear is the clearing
+house for all shares, structured products, warrants and ASX Equity
+Derivatives. ASX Group[3] is a market operator, clearing house and
+payments system facilitator. It also oversees compliance with its
+operating rules, promotes standards of corporate governance among
+Australia’s listed companies and helps to educate retail investors.
+Australia’s capital markets. Financial development – Australia was
+ranked 5th out of 57 of the world’s leading financial systems and
+capital markets by the World Economic Forum; Equity market – the 8th
+largest in the world (based on free-float market capitalisation) and the
+2nd largest in Asia-Pacific, with A$1.2 trillion market capitalisation
+and average daily secondary trading of over A$5 billion a day; Bond
+market – 3rd largest debt market in the Asia Pacific; Derivatives market
+– largest fixed income derivatives in the Asia-Pacific region; Foreign
+exchange market – the Australian foreign exchange market is the 7th
+largest in the world in terms of global turnover, while the Australian
+dollar is the 5th most traded currency and the AUD/USD the 4th most
+traded currency pair; Funds management – Due in large part to its
+compulsory superannuation system, Australia has the largest pool of
+funds under management in the Asia-Pacific region, and the 4th largest
+in the world. Its primary markets are the AQUA Markets. Regulation. The
+Australian Securities &amp; Investments Commission (ASIC) has
+responsibility for the supervision of real-time trading on Australia’s
+domestic licensed financial markets and the supervision of the conduct
+by participants (including the relationship between participants and
+their clients) on those markets. ASIC also supervises ASX’s own
+compliance as a public company with ASX Listing Rules. ASX Compliance is
+an ASX subsidiary company that is responsible for monitoring and
+enforcing ASX-listed companies’ compliance with the ASX operating rules.
+The Reserve Bank of Australia (RBA) has oversight of the ASX’s clearing
+and settlement facilities for financial system stability. In November
+1903 the first interstate conference was held to coincide with the
+Melbourne Cup. The exchanges then met on an informal basis until 1937
+when the Australian Associated Stock Exchanges (AASE) was established,
+with representatives from each exchange. Over time the AASE established
+uniform listing rules, broker rules, and commission rates. Trading was
+conducted by a call system, where an exchange employee called the names
+of each company and brokers bid or offered on each. In the 1960s this
+changed to a post system. Exchange employees called”chalkies” wrote bids
+and offers in chalk on blackboards continuously, and recorded
+transactions made. The ASX (Australian Stock Exchange Limited) was
+formed in 1987 by legislation of the Australian Parliament which enabled
+the amalgamation of six independent stock exchanges that formerly
+operated in the state capital cities. After demutualisation, the ASX was
+the first exchange in the world to have its shares quoted on its own
+market. The ASX was listed on 14 October 1998.[7] On 7 July 2006 the
+Australian Stock Exchange merged with SFE Corporation, holding company
+for the Sydney Futures Exchange. Trading system. ASX Group has two
+trading platforms – ASX Trade,[12] which facilitates the trading of ASX
+equity securities and ASX Trade24 for derivative securities trading. All
+ASX equity securities are traded on screen on ASX Trade. ASX Trade is a
+NASDAQ OMX ultra-low latency trading platform based on NASDAQ OMX’s
+Genium INET system, which is used by many exchanges around the world. It
+is one of the fastest and most functional multi-asset trading platforms
+in the world, delivering latency down to ~250 microseconds. ASX Trade24
+is ASX global trading platform for derivatives. It is globally
+distributed with network access points (gateways) located in Chicago,
+New York, London, Hong Kong, Singapore, Sydney and Melbourne. It also
+allows for true 24-hour trading, and simultaneously maintains two active
+trading days which enables products to be opened for trading in the new
+trading day in one time zone while products are still trading under the
+previous day. Opening times. The normal trading or business days of the
+ASX are week-days, Monday to Friday. ASX does not trade on national
+public holidays: New Year’s Day (1 January), Australia Day (26 January,
+and observed on this day or the first business day after this date),
+Good Friday (that varies each year), Easter Monday, Anzac day (25
+April), Queen’s birthday (June), Christmas Day (25 December) and Boxing
+Day (26 December). On each trading day there is a pre-market session
+from 7:00 am to 10:00 am AEST and a normal trading session from 10:00 am
+to 4:00 pm AEST. The market opens alphabetically in single-price
+auctions, phased over the first ten minutes, with a small random time
+built in to prevent exact prediction of the first trades. There is also
+a single-price auction between 4:10 pm and 4:12 pm to set the daily
+closing prices. Settlement. Security holders hold shares in one of two
+forms, both of which operate as uncertificated holdings, rather than
+through the issue of physical share certificates: Clearing House
+Electronic Sub-register System (CHESS). The investor’s controlling
+participant (normally a broker) sponsors the client into CHESS. The
+security holder is given a “holder identification number” (HIN) and
+monthly statements are sent to the security holder from the CHESS system
+when there is a movement in their holding that month. Issuer-sponsored.
+The company’s share register administers the security holder’s holding
+and issues the investor with a security-holder reference number (SRN)
+which may be quoted when selling. Holdings may be moved from
+issuer-sponsored to CHESS or between different brokers by electronic
+message initiated by the controlling participant. Short selling. Main
+article: Short (finance). Short selling of shares is permitted on the
+ASX, but only among designated stocks and with certain conditions: ASX
+trading participants (brokers) must report all daily gross short sales
+to ASX. The report will aggregate the gross short sales as reported by
+each trading participant at an individual stock level. ASX publishes
+aggregate gross short sales to ASX participants and the general
+public.[13] Many brokers do not offer short selling to small private
+investors. LEPOs can serve as an equivalent, while contracts for
+difference (CFDs) offered by third-party providers are another
+alternative. In September 2008, ASIC suspended nearly all forms of short
+selling due to concerns about market stability in the ongoing global
+financial crisis.[14][15] The ban on covered short selling was lifted in
+May 2009.[16] Also, in the biggest change for ASX in 15 years, ASTC
+Settlement Rule 10.11.12 was introduced, which requires the broker to
+provide stocks when settlement is due, otherwise the broker must buy the
+stock on the market to cover the shortfall. The rule requires that if a
+Failed Settlement Shortfall exists on the second business day after the
+day on which the Rescheduled Batch Instruction was originally scheduled
+for settlement (that is, generally on T+5), the delivering settlement
+participant must either: close out the Failed Settlement Shortfall on
+the next business day by purchasing the number of Financial Products of
+the relevant class equal to the shortfall; or acquire under a securities
+lending arrangement the number of Financial Products of the relevant
+class equal to the shortfall and deliver those Financial Products in
+Batch Settlement no more than two business days later.[17] Options.
+Options on leading shares are traded on the ASX, with standardised sets
+of strike prices and expiry dates. Liquidity is provided by market
+makers who are required to provide quotes. Each market maker is assigned
+two or more stocks. A stock can have more than one market maker, and
+they compete with one another. A market maker may choose one or both of:
+Make a market continuously, on a set of 18 options. Make a market in
+response to a quote request, in any option up to 9 months out. In both
+cases there is a minimum quantity (5 or 10 contracts depending on the
+shares) and a maximum spread permitted. Due to the higher risks in
+options, brokers must check clients’ suitability before allowing them to
+trade options. Clients may both take (i.e. buy) and write (i.e. sell)
+options. For written positions, the client must put up margin. Interest
+rate market. The ASX interest rate market is the set of corporate bonds,
+floating rate notes, and bond-like preference shares listed on the
+exchange. These securities are traded and settled in the same way as
+ordinary shares, but the ASX provides information such as their
+maturity, effective interest rate, etc., to aid comparison.[18] Futures.
+The Sydney Futures Exchange (SFE) was the 10th largest derivatives
+exchange in the world, providing derivatives in interest rates,
+equities, currencies and commodities. The SFE is now part of ASX and its
+most active products are: SPI 200 Futures – Futures contracts on an
+index representing the largest 200 stocks on the Australian Stock
+Exchange by market capitalisation. AU 90-day Bank Accepted Bill Futures
+– Australia’s equivalent of T-Bill futures. 3-Year Bond Futures –
+Futures contracts on Australian 3-year bonds. 10-Year Bond Futures –
+Futures contracts on Australian 10-year bonds. The ASX trades futures
+over the ASX 50, ASX 200 and ASX property indexes, and over grain,
+electricity and wool. Options over grain futures are also traded. Market
+indices. The ASX maintains stock indexes concerning stocks traded on the
+exchange in conjunction with Standard &amp; Poor’s. There is a hierarchy
+of index groups called the S&amp;P/ASX 20, S&amp;P/ASX 50, S&amp;P/ASX
+100, S&amp;P/ASX 200 and S&amp;P/ASX 300, notionally containing the 20,
+50, 100, 200 and 300 largest companies listed on the exchange, subject
+to some qualifications. Sharemarket Game. The ASX Sharemarket Game give
+members of the public and secondary school students the chance to learn
+about investing in the sharemarket using real market prices.
+Participants receive a hypothetical $50,000 to buy and sell shares in
+150 companies and track the progress of their investments over the
+duration of the game.[19] Merger talks with SGX. ASX was (25 October
+2010) in merger talks with Singapore Exchange (SGX). While there was an
+initial expectation that the merger would have created a bourse with a
+market value of US$14 billion,[20] this was a misconception; the final
+proposal intended that the ASX and SGX bourses would have continued
+functioning separately. The merger was blocked by Treasurer of Australia
+Wayne Swan on 8 April 2011, on advice from the Foreign Investment Review
+Board that the proposed merger was not in the best interests of
+Australia.[21]”</p>
+</div>
+</div>
+</div>
+</div>
+<div class="codewrapper sourceCode" id="cb11">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>tokens <span class="op">=</span> simple_preprocess(text)</span></code></pre>
+</div>
+<p>For Topic Modeling we need to map each word to a unique ID through
+creating a dictionary:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>dictionary <span class="op">=</span> corpora.Dictionary([tokens])</span></code></pre>
+</div>
+<p>And the created dictionary should be converted into a bag-of-words.
+We do that with doc2bow().</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>corpus <span class="op">=</span> [dictionary.doc2bow(tokens)]</span></code></pre>
+</div>
+<p>Next, we use Latent Dirichlet Allocation (LDA) which is a popular
+topic modeling technique because it assumes documents are produced from
+a mixture of topics. These topics then generate words based on their
+probability distribution. Set up the LDA model with the number of topics
+and train it on the corpus:</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>lda_model <span class="op">=</span> LdaModel(corpus<span class="op">=</span>corpus, id2word<span class="op">=</span>dictionary, num_topics<span class="op">=</span><span class="dv">1</span>)</span></code></pre>
+</div>
+<p>Finally, we can print the topics and their word distributions from
+our text:</p>
+<div class="codewrapper sourceCode" id="cb15">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>topics <span class="op">=</span> lda_model.print_topics(num_words<span class="op">=</span><span class="dv">4</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>    <span class="cf">for</span> topic <span class="kw">in</span> topics:</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="bu">print</span>(topic)</span></code></pre>
+</div>
+<div id="discussion-4" class="callout discussion">
+<div class="callout-square">
+<i class="callout-icon" data-feather="message-circle"></i>
+</div>
+<div id="discussion-4" class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-4"></a>
+</h3>
+<div class="callout-content">
+<p>Teamwork: How does the topic modeling method help researchers? What
+about the text summarization? What are some of the challenges and
+limitations of text analysis in your research field (material science)?
+Consider some of the factors that affect the quality and accuracy of
+text analysis, such as data availability, language diversity, and domain
+specificity. How do these factors pose problems or difficulties for text
+analysis in material science?</p>
+</div>
+</div>
+</div>
+<div id="chemistry-joke" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="chemistry-joke" class="callout-inner">
+<h3 class="callout-title">Chemistry Joke<a class="anchor" aria-label="anchor" href="#chemistry-joke"></a>
+</h3>
+<div class="callout-content">
+<p>Q: Use the Gensim library to perform topic modeling on the following
+text, print the original text and the list of topics and their
+keywords.</p>
+</div>
+</div>
+</div>
+<div id="accordionSpoiler6" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler6" aria-expanded="false" aria-controls="collapseSpoiler6">
+  <h3 class="accordion-header" id="headingSpoiler6">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
+</button>
+<div id="collapseSpoiler6" class="accordion-collapse collapse" aria-labelledby="headingSpoiler6" data-bs-parent="#accordionSpoiler6">
+<div class="accordion-body">
+<p>text = ” Perovskite nanocrystals have emerged as a promising class of
+materials for next-generation optoelectronic devices due to their unique
+properties. Their crystal structure allows for tunable bandgaps, which
+are the energy differences between occupied and unoccupied electronic
+states. This tunability enables the creation of materials that can
+absorb and emit light across a wide range of the electromagnetic
+spectrum, making them suitable for applications like solar cells,
+light-emitting diodes (LEDs), and lasers. Additionally, perovskite
+nanocrystals exhibit high photoluminescence efficiencies, meaning they
+can efficiently convert absorbed light into emitted light, further
+adding to their potential for various optoelectronic applications.”</p>
+</div>
+</div>
+</div>
+</div>
+<div id="chemistry-joke" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="chemistry-joke" class="callout-inner">
+<h3 class="callout-title">Chemistry Joke<em>(continued)</em><a class="anchor" aria-label="anchor" href="#chemistry-joke"></a>
+</h3>
+<div class="callout-content">
+<p>You can use the following code to load the Gensim library and the
+pre-trained model for topic modeling:</p>
+<div class="codewrapper sourceCode" id="cb16">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="im">import</span> gensim</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="im">from</span> gensim <span class="im">import</span> corpora</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="im">from</span> gensim.models <span class="im">import</span> LdaModel</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="im">from</span> gensim.utils <span class="im">import</span> simple_preprocess</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
+<p>A:</p>
+<div class="codewrapper sourceCode" id="cb17">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="im">import</span> gensim</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="im">from</span> gensim <span class="im">import</span> corpora</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="im">from</span> gensim.models <span class="im">import</span> LdaModel</span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a><span class="im">from</span> gensim.utils <span class="im">import</span> simple_preprocess</span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>tokens <span class="op">=</span> simple_preprocess(text)</span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>dictionary <span class="op">=</span> corpora.Dictionary([tokens])</span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>corpus <span class="op">=</span> [dictionary.doc2bow(tokens)]</span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>model <span class="op">=</span> LdaModel(corpus, num_topics<span class="op">=</span><span class="dv">2</span>, id2word<span class="op">=</span>dictionary)</span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a><span class="bu">print</span>(text)</span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="bu">print</span>(model.print_topics())</span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a></span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -768,37 +1109,37 @@ library and import the necessary modules:</p>
 </div>
 </div>
 </div>
-<div id="accordionSpoiler5" class="accordion spoiler-accordion accordion-flush">
+<div id="accordionSpoiler7" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler5" aria-expanded="false" aria-controls="collapseSpoiler5">
-  <h3 class="accordion-header" id="headingSpoiler5">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler7" aria-expanded="false" aria-controls="collapseSpoiler7">
+  <h3 class="accordion-header" id="headingSpoiler7">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What Else Might We Use A Spoiler For?</h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
+<div id="collapseSpoiler7" class="accordion-collapse collapse" aria-labelledby="headingSpoiler7" data-bs-parent="#accordionSpoiler7">
 <div class="accordion-body">
 
 </div>
 </div>
 </div>
 </div>
-<div id="chemistry-joke" class="callout challenge">
+<div id="chemistry-joke-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="chemistry-joke" class="callout-inner">
-<h3 class="callout-title">Chemistry Joke<a class="anchor" aria-label="anchor" href="#chemistry-joke"></a>
+<div id="chemistry-joke-1" class="callout-inner">
+<h3 class="callout-title">Chemistry Joke<a class="anchor" aria-label="anchor" href="#chemistry-joke-1"></a>
 </h3>
 <div class="callout-content">
 <p>Q: If you aren’t part of the solution, then what are you?</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>A: part of the precipitate</p>
 </div>
@@ -887,11 +1228,11 @@ function and its first parameter is the expected shape of the input:</p>
 <pre><code><span><span class="fu">keras.Input</span><span class="op">(</span>shape<span class="op">=</span><span class="va">None</span>, batch_size<span class="op">=</span><span class="va">None</span>, dtype<span class="op">=</span><span class="va">None</span>, sparse<span class="op">=</span><span class="va">None</span>, batch_shape<span class="op">=</span><span class="va">None</span>, name<span class="op">=</span><span class="va">None</span>, tensor<span class="op">=</span><span class="va">None</span><span class="op">)</span></span></code></pre>
 <p>In our case, the shape of an image is defined by its pixel dimensions
 and number of channels:</p>
-<div class="codewrapper sourceCode" id="cb11">
+<div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="co"># recall the shape of the images in our dataset</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="bu">print</span>(train_images.shape)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="co"># recall the shape of the images in our dataset</span></span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="bu">print</span>(train_images.shape)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -911,22 +1252,22 @@ network<a class="anchor" aria-label="anchor" href="#challenge-create-the-input-l
 Hint 2: The shape of our input dataset includes the total number of
 images. We want to take a slice of the shape for a single individual
 image to use an input.</p>
-<div class="codewrapper sourceCode" id="cb13">
+<div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>    <span class="co"># CNN Part 1</span></span>
-<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>    <span class="co"># Input layer of 32x32 images with three channels (RGB)</span></span>
-<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>   inputs_intro <span class="op">=</span> keras.Input(<span class="co">#blank#)</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>    <span class="co"># CNN Part 1</span></span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>    <span class="co"># Input layer of 32x32 images with three channels (RGB)</span></span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>   inputs_intro <span class="op">=</span> keras.Input(<span class="co">#blank#)</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -993,22 +1334,22 @@ our network<a class="anchor" aria-label="anchor" href="#challenge-create-a-2d-co
 <div class="callout-content">
 <p>Hint 1: The input to each layer is the output of the previous
 layer.</p>
-<div class="codewrapper sourceCode" id="cb17">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a>    <span class="co"># CNN Part 2</span></span>
-<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>    <span class="co"># Convolutional layer with 16 filters, 3x3 kernel size, and ReLU activation</span></span>
-<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Conv2D(filters<span class="op">=</span><span class="co">#blank#, kernel_size=#blank#, activation=#blank#)(#blank#)</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a>    <span class="co"># CNN Part 2</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a>    <span class="co"># Convolutional layer with 16 filters, 3x3 kernel size, and ReLU activation</span></span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Conv2D(filters<span class="op">=</span><span class="co">#blank#, kernel_size=#blank#, activation=#blank#)(#blank#)</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
-<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
-  <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
+  <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1080,12 +1421,12 @@ convolution?</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution7" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
-  <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
+  <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>There are different ways of dealing with border pixels.</p>
 <ul><li>You can ignore them, which means your output image is slightly
@@ -1125,21 +1466,21 @@ network<a class="anchor" aria-label="anchor" href="#challenge-create-a-pooling-l
 <div class="callout-content">
 <p>Hint 1: The input to each layer is the output of the previous
 layer.</p>
-<div class="codewrapper sourceCode" id="cb20">
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a>    <span class="co"># Pooling layer with input window sized 2,2</span></span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.MaxPooling2D(<span class="co">#blank#)(#blank#)</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a>    <span class="co"># Pooling layer with input window sized 2,2</span></span>
+<span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.MaxPooling2D(<span class="co">#blank#)(#blank#)</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
-<div id="accordionSolution7" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution8" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
-  <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
+  <h4 class="accordion-header" id="headingSolution8">Show me the solution</h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1193,21 +1534,21 @@ network<a class="anchor" aria-label="anchor" href="#challenge-create-a-dense-lay
 <div class="callout-content">
 <p>Hint 1: The input to each layer is the output of the previous
 layer.</p>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a>    <span class="co"># Dense layer with 64 neurons and ReLU activation</span></span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Dense(units<span class="op">=</span><span class="co">#hidden#, activation=#hidden#)(#hidden#)</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a>    <span class="co"># Dense layer with 64 neurons and ReLU activation</span></span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Dense(units<span class="op">=</span><span class="co">#hidden#, activation=#hidden#)(#hidden#)</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
-<div id="accordionSolution8" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution9" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
-  <h4 class="accordion-header" id="headingSolution8">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
+  <h4 class="accordion-header" id="headingSolution9">Show me the solution</h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1242,21 +1583,21 @@ network<a class="anchor" aria-label="anchor" href="#challenge-create-a-flatten-l
 <div class="callout-content">
 <p>Hint 1: The input to each layer is the output of the previous
 layer.</p>
-<div class="codewrapper sourceCode" id="cb26">
+<div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>    <span class="co"># Flatten layer to convert 2D feature maps into a 1D vector</span></span>
-<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Flatten()(<span class="op">=</span><span class="co">#hidden#)</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a>    <span class="co"># Flatten layer to convert 2D feature maps into a 1D vector</span></span>
+<span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Flatten()(<span class="op">=</span><span class="co">#hidden#)</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
-<div id="accordionSolution9" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution10" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
-  <h4 class="accordion-header" id="headingSolution9">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
+  <h4 class="accordion-header" id="headingSolution10">Show me the solution</h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1268,13 +1609,13 @@ layer.</p>
 </div>
 </div>
 </div>
-<div id="accordionSpoiler6" class="accordion spoiler-accordion accordion-flush">
+<div id="accordionSpoiler8" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler6" aria-expanded="false" aria-controls="collapseSpoiler6">
-  <h3 class="accordion-header" id="headingSpoiler6">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler8" aria-expanded="false" aria-controls="collapseSpoiler8">
+  <h3 class="accordion-header" id="headingSpoiler8">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What does Flatten mean exactly?</h3>
 </button>
-<div id="collapseSpoiler6" class="accordion-collapse collapse" aria-labelledby="headingSpoiler6" data-bs-parent="#accordionSpoiler6">
+<div id="collapseSpoiler8" class="accordion-collapse collapse" aria-labelledby="headingSpoiler8" data-bs-parent="#accordionSpoiler8">
 <div class="accordion-body">
 <p>A flatten layer function is typically used to transform the
 two-dimensional arrays (matrices) generated by the convolutional and
@@ -1343,12 +1684,12 @@ layer.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution10" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution11" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
-  <h4 class="accordion-header" id="headingSolution10">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution11" aria-expanded="false" aria-controls="collapseSolution11">
+  <h4 class="accordion-header" id="headingSolution11">Show me the solution</h4>
 </button>
-<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
+<div id="collapseSolution11" class="accordion-collapse collapse" aria-labelledby="headingSolution11" data-bs-parent="#accordionSolution11">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1400,22 +1741,22 @@ network using a Dense layer<a class="anchor" aria-label="anchor" href="#challeng
 <p>Hint 1: The input to each layer is the output of the previous layer.
 Hint 2: The units (neurons) should be the same as number of classes as
 our dataset. Hint 3: Use softmax activation.</p>
-<div class="codewrapper sourceCode" id="cb29">
+<div class="codewrapper sourceCode" id="cb37">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>    <span class="co"># CNN Part 3</span></span>
-<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>    <span class="co"># Output layer with 10 units (one for each class) and softmax activation</span></span>
-<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>    outputs_intro <span class="op">=</span> keras.layers.Dense(units<span class="op">=</span><span class="co">#hidden#, activation=#hidden#)(#hidden#)</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" tabindex="-1"></a>    <span class="co"># CNN Part 3</span></span>
+<span id="cb37-2"><a href="#cb37-2" tabindex="-1"></a>    <span class="co"># Output layer with 10 units (one for each class) and softmax activation</span></span>
+<span id="cb37-3"><a href="#cb37-3" tabindex="-1"></a>    outputs_intro <span class="op">=</span> keras.layers.Dense(units<span class="op">=</span><span class="co">#hidden#, activation=#hidden#)(#hidden#)</span></span></code></pre>
 </div>
 </div>
 </div>
 </div>
-<div id="accordionSolution11" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution12" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution11" aria-expanded="false" aria-controls="collapseSolution11">
-  <h4 class="accordion-header" id="headingSolution11">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution12" aria-expanded="false" aria-controls="collapseSolution12">
+  <h4 class="accordion-header" id="headingSolution12">Show me the solution</h4>
 </button>
-<div id="collapseSolution11" class="accordion-collapse collapse" aria-labelledby="headingSolution11" data-bs-parent="#accordionSolution11">
+<div id="collapseSolution12" class="accordion-collapse collapse" aria-labelledby="headingSolution12" data-bs-parent="#accordionSolution12">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1447,12 +1788,12 @@ our dataset. Hint 3: Use softmax activation.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution12" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution13" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution12" aria-expanded="false" aria-controls="collapseSolution12">
-  <h4 class="accordion-header" id="headingSolution12">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution13" aria-expanded="false" aria-controls="collapseSolution13">
+  <h4 class="accordion-header" id="headingSolution13">Show me the solution</h4>
 </button>
-<div id="collapseSolution12" class="accordion-collapse collapse" aria-labelledby="headingSolution12" data-bs-parent="#accordionSolution12">
+<div id="collapseSolution13" class="accordion-collapse collapse" aria-labelledby="headingSolution13" data-bs-parent="#accordionSolution13">
 <div class="accordion-body">
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1465,50 +1806,50 @@ our dataset. Hint 3: Use softmax activation.</p>
 </div>
 </div>
 </div>
-<div class="codewrapper sourceCode" id="cb32">
+<div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="kw">def</span> create_model_intro():</span>
-<span id="cb32-2"><a href="#cb32-2" tabindex="-1"></a>    </span>
-<span id="cb32-3"><a href="#cb32-3" tabindex="-1"></a>    <span class="co"># CNN Part 1</span></span>
-<span id="cb32-4"><a href="#cb32-4" tabindex="-1"></a>    <span class="co"># Input layer of 32x32 images with three channels (RGB)</span></span>
-<span id="cb32-5"><a href="#cb32-5" tabindex="-1"></a>    inputs_intro <span class="op">=</span> keras.Input(shape<span class="op">=</span>train_images.shape[<span class="dv">1</span>:])</span>
-<span id="cb32-6"><a href="#cb32-6" tabindex="-1"></a>    </span>
-<span id="cb32-7"><a href="#cb32-7" tabindex="-1"></a>    <span class="co"># CNN Part 2</span></span>
-<span id="cb32-8"><a href="#cb32-8" tabindex="-1"></a>    <span class="co"># Convolutional layer with 16 filters, 3x3 kernel size, and ReLU activation</span></span>
-<span id="cb32-9"><a href="#cb32-9" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Conv2D(<span class="dv">16</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>)(inputs_intro)</span>
-<span id="cb32-10"><a href="#cb32-10" tabindex="-1"></a>    <span class="co"># Pooling layer with input window sized 2,2</span></span>
-<span id="cb32-11"><a href="#cb32-11" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>))(x_intro)</span>
-<span id="cb32-12"><a href="#cb32-12" tabindex="-1"></a>    <span class="co"># Second Convolutional layer with 32 filters, 3x3 kernel size, and ReLU activation</span></span>
-<span id="cb32-13"><a href="#cb32-13" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Conv2D(<span class="dv">32</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>)(x_intro)</span>
-<span id="cb32-14"><a href="#cb32-14" tabindex="-1"></a>    <span class="co"># Second Pooling layer with input window sized 2,2</span></span>
-<span id="cb32-15"><a href="#cb32-15" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>))(x_intro)</span>
-<span id="cb32-16"><a href="#cb32-16" tabindex="-1"></a>    <span class="co"># Flatten layer to convert 2D feature maps into a 1D vector</span></span>
-<span id="cb32-17"><a href="#cb32-17" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Flatten()(x_intro)</span>
-<span id="cb32-18"><a href="#cb32-18" tabindex="-1"></a>    <span class="co"># Dense layer with 64 neurons and ReLU activation</span></span>
-<span id="cb32-19"><a href="#cb32-19" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Dense(<span class="dv">64</span>, activation<span class="op">=</span><span class="st">'relu'</span>)(x_intro)</span>
-<span id="cb32-20"><a href="#cb32-20" tabindex="-1"></a>    </span>
-<span id="cb32-21"><a href="#cb32-21" tabindex="-1"></a>    <span class="co"># CNN Part 3</span></span>
-<span id="cb32-22"><a href="#cb32-22" tabindex="-1"></a>    <span class="co"># Output layer with 10 units (one for each class) and softmax activation</span></span>
-<span id="cb32-23"><a href="#cb32-23" tabindex="-1"></a>    outputs_intro <span class="op">=</span> keras.layers.Dense(<span class="dv">10</span>, activation<span class="op">=</span><span class="st">'softmax'</span>)(x_intro)</span>
-<span id="cb32-24"><a href="#cb32-24" tabindex="-1"></a>    </span>
-<span id="cb32-25"><a href="#cb32-25" tabindex="-1"></a>    <span class="co"># create the model</span></span>
-<span id="cb32-26"><a href="#cb32-26" tabindex="-1"></a>    model_intro <span class="op">=</span> keras.Model(inputs <span class="op">=</span> inputs_intro, </span>
-<span id="cb32-27"><a href="#cb32-27" tabindex="-1"></a>                              outputs <span class="op">=</span> outputs_intro, </span>
-<span id="cb32-28"><a href="#cb32-28" tabindex="-1"></a>                              name <span class="op">=</span> <span class="st">"cifar_model_intro"</span>)</span>
-<span id="cb32-29"><a href="#cb32-29" tabindex="-1"></a>    </span>
-<span id="cb32-30"><a href="#cb32-30" tabindex="-1"></a>    <span class="cf">return</span> model_intro</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" tabindex="-1"></a><span class="kw">def</span> create_model_intro():</span>
+<span id="cb40-2"><a href="#cb40-2" tabindex="-1"></a>    </span>
+<span id="cb40-3"><a href="#cb40-3" tabindex="-1"></a>    <span class="co"># CNN Part 1</span></span>
+<span id="cb40-4"><a href="#cb40-4" tabindex="-1"></a>    <span class="co"># Input layer of 32x32 images with three channels (RGB)</span></span>
+<span id="cb40-5"><a href="#cb40-5" tabindex="-1"></a>    inputs_intro <span class="op">=</span> keras.Input(shape<span class="op">=</span>train_images.shape[<span class="dv">1</span>:])</span>
+<span id="cb40-6"><a href="#cb40-6" tabindex="-1"></a>    </span>
+<span id="cb40-7"><a href="#cb40-7" tabindex="-1"></a>    <span class="co"># CNN Part 2</span></span>
+<span id="cb40-8"><a href="#cb40-8" tabindex="-1"></a>    <span class="co"># Convolutional layer with 16 filters, 3x3 kernel size, and ReLU activation</span></span>
+<span id="cb40-9"><a href="#cb40-9" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Conv2D(<span class="dv">16</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>)(inputs_intro)</span>
+<span id="cb40-10"><a href="#cb40-10" tabindex="-1"></a>    <span class="co"># Pooling layer with input window sized 2,2</span></span>
+<span id="cb40-11"><a href="#cb40-11" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>))(x_intro)</span>
+<span id="cb40-12"><a href="#cb40-12" tabindex="-1"></a>    <span class="co"># Second Convolutional layer with 32 filters, 3x3 kernel size, and ReLU activation</span></span>
+<span id="cb40-13"><a href="#cb40-13" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Conv2D(<span class="dv">32</span>, (<span class="dv">3</span>, <span class="dv">3</span>), activation<span class="op">=</span><span class="st">'relu'</span>)(x_intro)</span>
+<span id="cb40-14"><a href="#cb40-14" tabindex="-1"></a>    <span class="co"># Second Pooling layer with input window sized 2,2</span></span>
+<span id="cb40-15"><a href="#cb40-15" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.MaxPooling2D((<span class="dv">2</span>, <span class="dv">2</span>))(x_intro)</span>
+<span id="cb40-16"><a href="#cb40-16" tabindex="-1"></a>    <span class="co"># Flatten layer to convert 2D feature maps into a 1D vector</span></span>
+<span id="cb40-17"><a href="#cb40-17" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Flatten()(x_intro)</span>
+<span id="cb40-18"><a href="#cb40-18" tabindex="-1"></a>    <span class="co"># Dense layer with 64 neurons and ReLU activation</span></span>
+<span id="cb40-19"><a href="#cb40-19" tabindex="-1"></a>    x_intro <span class="op">=</span> keras.layers.Dense(<span class="dv">64</span>, activation<span class="op">=</span><span class="st">'relu'</span>)(x_intro)</span>
+<span id="cb40-20"><a href="#cb40-20" tabindex="-1"></a>    </span>
+<span id="cb40-21"><a href="#cb40-21" tabindex="-1"></a>    <span class="co"># CNN Part 3</span></span>
+<span id="cb40-22"><a href="#cb40-22" tabindex="-1"></a>    <span class="co"># Output layer with 10 units (one for each class) and softmax activation</span></span>
+<span id="cb40-23"><a href="#cb40-23" tabindex="-1"></a>    outputs_intro <span class="op">=</span> keras.layers.Dense(<span class="dv">10</span>, activation<span class="op">=</span><span class="st">'softmax'</span>)(x_intro)</span>
+<span id="cb40-24"><a href="#cb40-24" tabindex="-1"></a>    </span>
+<span id="cb40-25"><a href="#cb40-25" tabindex="-1"></a>    <span class="co"># create the model</span></span>
+<span id="cb40-26"><a href="#cb40-26" tabindex="-1"></a>    model_intro <span class="op">=</span> keras.Model(inputs <span class="op">=</span> inputs_intro, </span>
+<span id="cb40-27"><a href="#cb40-27" tabindex="-1"></a>                              outputs <span class="op">=</span> outputs_intro, </span>
+<span id="cb40-28"><a href="#cb40-28" tabindex="-1"></a>                              name <span class="op">=</span> <span class="st">"cifar_model_intro"</span>)</span>
+<span id="cb40-29"><a href="#cb40-29" tabindex="-1"></a>    </span>
+<span id="cb40-30"><a href="#cb40-30" tabindex="-1"></a>    <span class="cf">return</span> model_intro</span></code></pre>
 </div>
 <p>Use the function you created to create the introduction model and
 view a summary of it’s structure.</p>
-<div class="codewrapper sourceCode" id="cb33">
+<div class="codewrapper sourceCode" id="cb41">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" tabindex="-1"></a><span class="co"># create the introduction model</span></span>
-<span id="cb33-2"><a href="#cb33-2" tabindex="-1"></a>model_intro <span class="op">=</span> create_model_intro()</span>
-<span id="cb33-3"><a href="#cb33-3" tabindex="-1"></a></span>
-<span id="cb33-4"><a href="#cb33-4" tabindex="-1"></a><span class="co"># view model summary</span></span>
-<span id="cb33-5"><a href="#cb33-5" tabindex="-1"></a>model_intro.summary()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" tabindex="-1"></a><span class="co"># create the introduction model</span></span>
+<span id="cb41-2"><a href="#cb41-2" tabindex="-1"></a>model_intro <span class="op">=</span> create_model_intro()</span>
+<span id="cb41-3"><a href="#cb41-3" tabindex="-1"></a></span>
+<span id="cb41-4"><a href="#cb41-4" tabindex="-1"></a><span class="co"># view model summary</span></span>
+<span id="cb41-5"><a href="#cb41-5" tabindex="-1"></a>model_intro.summary()</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
