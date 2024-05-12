@@ -25,7 +25,7 @@ exercises: 0
 
 ## 1.1. Introduction to NLP Workshop
 
-Natural Language Processing (NLP) is becoming a popular and robust tool for a wide range of research projects. In this episode we embark on a journey to explore the transformative power of NLP tools in the realm of research. 
+Natural Language Processing (NLP) is becoming a popular and robust tool for a wide range of research projects. In this episode, we embark on a journey to explore the transformative power of NLP tools in the realm of research. 
 
 It is tailored for researchers who are keen on harnessing the capabilities of NLP to enhance and expedite their work. Whether you are delving into text classification, extracting pivotal information, discerning sentiments, summarizing extensive documents, translating across languages, or developing sophisticated question-answering systems, this session will lay the foundational knowledge you need to leverage NLP effectively.
 
@@ -33,7 +33,8 @@ We will begin by delving into the **Common Applications of NLP in Research**, sh
 
 
 
-![Designer (11)](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/b23d02ec-2626-4753-8e8e-d2268d609caa)
+
+![DALL-E 3](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/1a070f87-04b4-4220-8796-eaa921d716a3)
 
 [*DALL-E 3*]
 
@@ -59,7 +60,7 @@ Teamwork: What are some examples of NLP in your everyday life? Think of some sit
 
 ## Discussion
 
-Teamwork: What are some of examples of NLP in your daily research tasks? What are challenges of NLP that make it difficult, complex, and/or inaccurate?
+Teamwork: What are some examples of NLP in your daily research tasks? What are challenges of NLP that make it difficult, complex, and/or inaccurate?
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -219,7 +220,7 @@ context = squad_dataset["train"][0]["context"]
 answer = squad_dataset["train"][0]["answer"]
 ```
 
-We can use print() function to see the output:
+We can use the *print()* function to see the output:
 
 
 ```python
