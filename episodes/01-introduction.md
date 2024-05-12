@@ -158,14 +158,6 @@ Teamwork: What are some of the basic concepts and terminology of natural languag
 
 
 
-**Named Entity Recognition (NER)**: Named Entity Recognition is a process where an algorithm takes a string of text (sentence or paragraph) and identifies relevant nouns (people, places, and organizations) that are mentioned in that string. NER is used in many fields in NLP, and it can help answer many real-world questions, such as: Which companies were mentioned in the news article? Were specified products mentioned in complaints or reviews? Does the tweet (recently rebranded to X) contain the name of a person? Does the tweet contain this person’s location?
-
-
-
-**Dependency Parsing**: Dependency parsing is the process of analyzing the grammatical structure of a sentence based on the dependencies between the words in a sentence. A dependency parser analyzes the grammatical structure of a sentence, establishing relationships between “head” words and words that modify those heads.
-
-
-
 **Chunking**: Chunking is a process of extracting phrases from unstructured text. Instead of just simple tokens that may not represent the actual meaning of the text, it’s also interested in extracting entities like noun phrases, verb phrases, etc. It’s basically a meaningful grouping of words or tokens.
 
 
