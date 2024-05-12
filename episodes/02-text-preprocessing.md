@@ -115,12 +115,66 @@ for sentence in sentences:
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Discussion
+### Discussion
 
 Teamwork: Why is text preprocessing necessary for NLP tasks? Think of some examples of NLP tasks that require text preprocessing, such as sentiment analysis, machine translation, or text summarization. How does text preprocessing improve the performance and accuracy of these tasks?
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge
+
+Q: Use the spaCy library to perform sentence segmentation and tokenization on the following text:
+
+```python
+text: "The research (Ref. [1]) focuses on developing perovskite nanocrystals with a bandgap of 1.5 eV, suitable for solar cell applications!". 
+```
+Print the number of sentences and tokens in the text, and the list of sentences and tokens. You can use the following code to load the *spaCy* library and the English language model:
+
+```python
+import spacy
+nlp = spacy.load("en_core_web_sm")
+```
+
+:::::::::::::::: solution
+
+A: 
+
+```python
+
+import spacy
+# Load the English language model:
+nlp = spacy.load("en_core_web_sm")
+
+# Define the text with marks, letters, and numbers:
+text = "The research (Ref. [1]) focuses on developing perovskite nanocrystals with a bandgap of 1.5 eV, suitable for solar cell applications.!"
+
+# Process the text with spaCy
+doc = nlp(text)
+
+# Print the original text:
+print("Original text:", text)
+
+# Sentence segmentation:
+sentences = list(doc.sents)
+
+# Print the sentences:
+print("Sentences:")
+for sentence in sentences:
+    print(sentence.text)
+
+# Tokenization:
+tokens = [token.text for token in doc]
+
+# Print the tokens:
+print("Tokens:")
+print(tokens)
+```
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 
 ## 2.2. Tokeniziation
@@ -129,7 +183,7 @@ As already mentioned, in the first episode, Tokenization breaks down text into i
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
-## Discussion
+### Discussion
 
 Teamwork: To better understand how it works let’s Match tokens from the provided paragraph about perovskite nanocrystals with similar tokens from another scientific text. This helps in understanding the common vocabulary used in the scientific literature. Using the sentences we listed in the previous section, we can see how Tokenization performs. Assuming 'sentences' is a list of sentences from the previous example, choose a sentence to tokenize:
 
@@ -306,6 +360,43 @@ print("Lemmatized Tokens:", lemmatized_tokens)
 We can see how stemming often cuts off the end of words, sometimes resulting in non-words, while lemmatization returns the base or dictionary form of the word. For example, stemming might reduce **“properties”** to **“properti”** while lemmatization would correctly identify the lemma as **“property”**. Lemmatization provides a more readable and meaningful result, which is particularly useful in NLP tasks that require understanding the context and meaning of words.
 
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge
+
+Q: Use the spaCy library to perform lemmatization on the following text: "Perovskite nanocrystals are a promising class of materials for optoelectronic applications due to their tunable bandgaps and high photoluminescence efficiencies." Print the original text and the lemmatized text. You can use the following code to load the spacy library and the English language model:
+
+```python
+
+import spacy
+nlp = spacy.load("en_core_web_sm")
+```
+
+:::::::::::::::: solution
+
+A: 
+
+```python
+
+import spacy
+# Load the English language model:
+nlp = spacy.load("en_core_web_sm")
+
+# Define the text:
+text = "Perovskite nanocrystals are a promising class of materials for optoelectronic applications due to their tunable bandgaps and high photoluminescence efficiencies."
+
+# Process the text with spaCy:
+doc = nlp(text)
+
+# Print the original text:
+print("Original text:", text)
+# Print the lemmatized text:
+lemmatized_text = " ".join([token.lemma_ for token in doc])
+print("Lemmatized text:", lemmatized_text)
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ## 2.4. Stop-words Removal
 
@@ -328,7 +419,7 @@ List comprehensions provide a convenient method for rapidly generating lists bas
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+### Challenge
 
 Q: To see how list comprehensions are created, fill in the missing parts of the code to remove stop-words from a given sentence.
 
@@ -361,8 +452,23 @@ While stop-words are often removed to improve analysis, they can be important fo
 :::
 
 
+::::::::::::::::::::::::::::::::::::: challenge
 
+### Chemistry Joke
 
+Q: Use the spaCy library to perform stop-words removal on the following text: "This is a very simple and short sentence." Print the original text and the text after removing the stop-words. You can use the following code to load the *spaCy* library and the English language model:
+
+```python
+import spacy
+nlp = spacy.load("en_core_web_sm")
+```
+
+:::::::::::::::: solution
+
+A: part of the precipitate
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 
 
