@@ -113,6 +113,7 @@ for sentence in sentences:
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ### Discussion
@@ -120,6 +121,7 @@ for sentence in sentences:
 Teamwork: Why is text preprocessing necessary for NLP tasks? Think of some examples of NLP tasks that require text preprocessing, such as sentiment analysis, machine translation, or text summarization. How does text preprocessing improve the performance and accuracy of these tasks?
 
 :::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
@@ -177,6 +179,7 @@ print(tokens)
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
 ## 2.2. Tokeniziation
 
 As already mentioned, in the first episode, Tokenization breaks down text into individual words or tokens, which is a fundamental step for many NLP tasks.
@@ -194,6 +197,7 @@ tokens = [token.perovskite_text for token in sentence_to_tokenize]
 # We can print the tokens:
 print(tokens)
 ```
+
 
 ```
 Output: ['Perovskite', 'nanocrystals', 'are', 'a', 'class', 'of', 'semiconductor', 'nanocrystals', 'with', 'unique', 'properties', 'that', 'distinguish', 'them', 'from', 'traditional', 'quantum', 'dots', '.']
@@ -262,6 +266,7 @@ Following our initial example for Tokenization, we can see how lemmatization wor
 lemmas = [token.lemma_ for token in doc]
 ```
 
+
 We can print the original text and the lemmatized text:
 
 ```python
@@ -270,12 +275,12 @@ print("Original Text:", perovskite_text)
 print("Lemmatized Text:", ' '.join(lemmas))
 ```
 
+
 Output: 
 
 **Original Text**: Perovskite nanocrystals are a class of semiconductor nanocrystals with unique properties that distinguish them from traditional quantum dots. These nanocrystals have an ABX3 composition, where 'A' can be cesium, methylammonium (MA), or formamidinium (FA); 'B' is typically lead or tin; and 'X' is a halogen ion like chloride, bromide, or iodide. Their remarkable optoelectronic properties, such as high photoluminescence quantum yields and tunable emission across the visible spectrum, make them ideal for applications in light-emitting diodes, lasers, and solar cells.
 
 **Lemmatized Text**: Perovskite nanocrystal be a class of semiconductor nanocrystal with unique property that distinguish they from traditional quantum dot . these nanocrystal have an ABX3 composition , where ' A ' can be cesium , methylammonium ( MA ) , or formamidinium ( FA ) ; ' b ' be typically lead or tin ; and ' x ' be a halogen ion like chloride , bromide , or iodide . their remarkable optoelectronic property , such as high photoluminescence quantum yield and tunable emission across the visible spectrum , make they ideal for application in light - emit diode , laser , and solar cell .
-
 
 
 
@@ -360,6 +365,7 @@ print("Lemmatized Tokens:", lemmatized_tokens)
 We can see how stemming often cuts off the end of words, sometimes resulting in non-words, while lemmatization returns the base or dictionary form of the word. For example, stemming might reduce **“properties”** to **“properti”** while lemmatization would correctly identify the lemma as **“property”**. Lemmatization provides a more readable and meaningful result, which is particularly useful in NLP tasks that require understanding the context and meaning of words.
 
 
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ### Challenge
@@ -398,6 +404,7 @@ print("Lemmatized text:", lemmatized_text)
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
 ## 2.4. Stop-words Removal
 
 Removing stop-words, which are common words that add little value to the analysis (such as ‘and’ and ‘the’), helps focus on the important content. Assuming 'doc' is the processed text from the previous example for ‘perovskite nanocrystals’, we can define a list to hold non-stop words list comprehensions:
@@ -415,6 +422,7 @@ Filtered sentence: [Perovskite, nanocrystals, class, semiconductor, nanocrystals
 
 
 List comprehensions provide a convenient method for rapidly generating lists based on a straightforward condition. 
+
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
@@ -448,7 +456,7 @@ print("Filtered sentence:", filtered_sentence)
 
 
 ::: callout
-While stop-words are often removed to improve analysis, they can be important for certain tasks like sentiment analysis, where the word ‘not’ can change the entire meaning of a sentence.
+While stopwords are often removed to improve analysis, they can be important for certain tasks like sentiment analysis, where the word ‘not’ can change the entire meaning of a sentence.
 :::
 
 
@@ -478,8 +486,6 @@ A: part of the precipitate
 - Images consist of pixels arranged in a particular order.
 - Image data is usually preprocessed before use in a CNN for efficiency, consistency, and robustness.
 - Input data generally consists of three sets: a training set used to fit model parameters; a validation set used to evaluate the model fit on training data; and a test set used to evaluate the final model performance.
-
-:::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
