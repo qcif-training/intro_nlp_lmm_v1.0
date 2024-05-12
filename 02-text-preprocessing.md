@@ -20,6 +20,7 @@ exercises: 2
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
 Text preprocessing is the method of cleaning and preparing text data for use in NLP. This step is vital because it transforms raw data into a format that can be analyzed and used effectively by NLP algorithms.
 
 
@@ -74,8 +75,11 @@ These nanocrystals have an ABX3 composition, where 'A' can be cesium, methylammo
 Their remarkable optoelectronic properties, such as high photoluminescence quantum yields and tunable emission across the visible spectrum, make them ideal for applications in light-emitting diodes, lasers, and solar cells.
 ```
 
+
+
 ::::::::::::::::::::::::::::::::::::: challenge
-## Discussion
+
+### Discussion
 
 Q: Let’s try again by completing the code below to segment sentences from a paragraph about “your field of research”:
 
@@ -91,6 +95,7 @@ sentences = list(______)
 for sentence in sentences:
   print(______)  
 ```
+
 
 :::::::::::::::: solution
 
@@ -113,12 +118,75 @@ for sentence in sentences:
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
+
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Discussion
+### Discussion
 
 Teamwork: Why is text preprocessing necessary for NLP tasks? Think of some examples of NLP tasks that require text preprocessing, such as sentiment analysis, machine translation, or text summarization. How does text preprocessing improve the performance and accuracy of these tasks?
 
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge
+
+Q: Use the spaCy library to perform sentence segmentation and tokenization on the following text:
+
+```python
+text: "The research (Ref. [1]) focuses on developing perovskite nanocrystals with a bandgap of 1.5 eV, suitable for solar cell applications!". 
+```
+Print the number of sentences and tokens in the text, and the list of sentences and tokens. You can use the following code to load the *spaCy* library and the English language model:
+
+```python
+import spacy
+nlp = spacy.load("en_core_web_sm")
+```
+
+
+
+:::::::::::::::: solution
+
+A: 
+
+```python
+
+import spacy
+# Load the English language model:
+nlp = spacy.load("en_core_web_sm")
+
+# Define the text with marks, letters, and numbers:
+text = "The research (Ref. [1]) focuses on developing perovskite nanocrystals with a bandgap of 1.5 eV, suitable for solar cell applications.!"
+
+# Process the text with spaCy
+doc = nlp(text)
+
+# Print the original text:
+print("Original text:", text)
+
+# Sentence segmentation:
+sentences = list(doc.sents)
+
+# Print the sentences:
+print("Sentences:")
+for sentence in sentences:
+    print(sentence.text)
+
+# Tokenization:
+tokens = [token.text for token in doc]
+
+# Print the tokens:
+print("Tokens:")
+print(tokens)
+```
+
+:::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 
@@ -128,8 +196,11 @@ Teamwork: Why is text preprocessing necessary for NLP tasks? Think of some examp
 As already mentioned, in the first episode, Tokenization breaks down text into individual words or tokens, which is a fundamental step for many NLP tasks.
 
 
+
+
 ::::::::::::::::::::::::::::::::::::: challenge
-## Discussion
+
+### Discussion
 
 Teamwork: To better understand how it works let’s Match tokens from the provided paragraph about perovskite nanocrystals with similar tokens from another scientific text. This helps in understanding the common vocabulary used in the scientific literature. Using the sentences we listed in the previous section, we can see how Tokenization performs. Assuming 'sentences' is a list of sentences from the previous example, choose a sentence to tokenize:
 
@@ -141,13 +212,17 @@ tokens = [token.perovskite_text for token in sentence_to_tokenize]
 print(tokens)
 ```
 
-```
+
 Output: ['Perovskite', 'nanocrystals', 'are', 'a', 'class', 'of', 'semiconductor', 'nanocrystals', 'with', 'unique', 'properties', 'that', 'distinguish', 'them', 'from', 'traditional', 'quantum', 'dots', '.']
-```
+
 
 Tokenization is not just about splitting text into words; it’s about understanding the boundaries of words and symbols in different contexts, which can vary greatly between languages and even within the same language in different settings.
 
+
 :::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
 
 
 ::: callout
@@ -181,9 +256,13 @@ Trading Tokens: ['Trading', 'strategies', 'often', 'involve', 'analyzing', 'patt
 ```
 
 
+
 The tokens from the perovskite text will be specific to materials science, while the trading tokens will include terms related to market analysis. The scientific texts may use more complex and compound words while trading texts might include more action-oriented and analytical language. This comparison helps in understanding the specialized language used in different fields. 
 
 :::
+
+
+
 
 
 ## 2.3. Stemming and Lemmatization
@@ -191,11 +270,15 @@ The tokens from the perovskite text will be specific to materials science, while
 Stemming and lemmatization are techniques used to reduce words to their base or root form, aiding in the normalization of text. As discussed in the previous episode, these two methods are different. Decide whether stemming or lemmatization would be more appropriate for analyzing a set of research texts on perovskite nanocrystals.
 
 
+
+
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ### Discussion
 
 Teamwork: From the differences between lemmatization and stemming that we learned in the last episode, which technique will you select to get more accurate text analysis results? Explain why?
+
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -208,6 +291,7 @@ Following our initial example for Tokenization, we can see how lemmatization wor
 lemmas = [token.lemma_ for token in doc]
 ```
 
+
 We can print the original text and the lemmatized text:
 
 ```python
@@ -215,6 +299,7 @@ We can print the original text and the lemmatized text:
 print("Original Text:", perovskite_text)
 print("Lemmatized Text:", ' '.join(lemmas))
 ```
+
 
 Output: 
 
@@ -225,11 +310,14 @@ Output:
 
 
 
+
 ::: callout
 
 The spaCy library does not have stemming capabilities and if we want to compare stemming and lemmatization, we also need to use another language processing library called NLTK (refer to episode 1). 
 
 :::
+
+
 
 
 
@@ -254,13 +342,19 @@ nlp = spacy.load("en_core_web_sm")
 
 We can conduct stemming and lemmatization with identical text data:
 
+
+
 :::::::::::::::::::::::::::::::::::::::::: spoiler
 
 ### text
 text = " Perovskite nanocrystals are a class of semiconductor nanocrystals with unique properties that distinguish them from traditional quantum dots. These nanocrystals have an ABX3 composition, where 'A' can be cesium, methylammonium (MA), or formamidinium (FA); 'B' is typically lead or tin; and 'X' is a halogen ion like chloride, bromide, or iodide. Their remarkable optoelectronic properties, such as high photoluminescence quantum yields and tunable emission across the visible spectrum, make them ideal for applications in light-emitting diodes, lasers, and solar cells."
 Before we can stem or lemmatize, we need to tokenize the text.
 
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
 
 
 ```python
@@ -290,6 +384,8 @@ print("Stemmed Tokens:", stemmed_tokens)
 print("Lemmatized Tokens:", lemmatized_tokens)
 ```
 
+
+
 :::::::::::::::::::::::::::::::::::::::::: spoiler
 
 ### Output
@@ -303,7 +399,56 @@ print("Lemmatized Tokens:", lemmatized_tokens)
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
+
+
 We can see how stemming often cuts off the end of words, sometimes resulting in non-words, while lemmatization returns the base or dictionary form of the word. For example, stemming might reduce **“properties”** to **“properti”** while lemmatization would correctly identify the lemma as **“property”**. Lemmatization provides a more readable and meaningful result, which is particularly useful in NLP tasks that require understanding the context and meaning of words.
+
+
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge
+
+Q: Use the spaCy library to perform lemmatization on the following text: "Perovskite nanocrystals are a promising class of materials for optoelectronic applications due to their tunable bandgaps and high photoluminescence efficiencies." Print the original text and the lemmatized text. You can use the following code to load the spacy library and the English language model:
+
+```python
+
+import spacy
+nlp = spacy.load("en_core_web_sm")
+```
+
+
+
+
+:::::::::::::::: solution
+
+A: 
+
+```python
+
+import spacy
+# Load the English language model:
+nlp = spacy.load("en_core_web_sm")
+
+# Define the text:
+text = "Perovskite nanocrystals are a promising class of materials for optoelectronic applications due to their tunable bandgaps and high photoluminescence efficiencies."
+
+# Process the text with spaCy:
+doc = nlp(text)
+
+# Print the original text:
+print("Original text:", text)
+# Print the lemmatized text:
+lemmatized_text = " ".join([token.lemma_ for token in doc])
+print("Lemmatized text:", lemmatized_text)
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 
 
@@ -326,9 +471,12 @@ Filtered sentence: [Perovskite, nanocrystals, class, semiconductor, nanocrystals
 List comprehensions provide a convenient method for rapidly generating lists based on a straightforward condition. 
 
 
+
+
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge
+### Challenge
 
 Q: To see how list comprehensions are created, fill in the missing parts of the code to remove stop-words from a given sentence.
 
@@ -339,6 +487,8 @@ doc = nlp("This is a very simple and short sentence.")
 filtered_sentence = [____ for ____ in doc if not ____]
 print("Filtered sentence:", filtered_sentence)
 ```
+
+
 
 :::::::::::::::: solution
 
@@ -356,112 +506,41 @@ print("Filtered sentence:", filtered_sentence)
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
+
 ::: callout
-While stop-words are often removed to improve analysis, they can be important for certain tasks like sentiment analysis, where the word ‘not’ can change the entire meaning of a sentence.
+
+While stopwords are often removed to improve analysis, they can be important for certain tasks like sentiment analysis, where the word ‘not’ can change the entire meaning of a sentence.
+
 :::
 
 
 
 
 
+::: callout
 
+it is important to note that tokenization is just the beginning. In modern NLP, vectorization, and embeddings play a pivotal role in capturing the context and meaning of text.
 
+Vectorization is the process of converting tokens into a numerical format that machine learning models can understand. This often involves creating a bag-of-words model, where each token is represented by a unique number in a vector. Embeddings are advanced representations where words are mapped to vectors of real numbers. They capture not just the presence of tokens but also the semantic relationships between them. This is achieved through techniques like Word2Vec, GloVe, or BERT, which we will explore in the second part of our workshop.
 
+These embeddings allow models to understand the text in a more nuanced way, leading to better performance on tasks such as sentiment analysis, machine translation, and more.
 
+*Stay tuned for our next session, where we will dive deeper into how we can use vectorization and embeddings to enhance our NLP models and truly capture the richness of language.*
 
+:::
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-::::::::::::::::::::::::::::::::::::: challenge
-
-## Chemistry Joke
-
-Q: If you aren't part of the solution, then what are you?
-
-:::::::::::::::: solution
-
-A: part of the precipitate
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 
-
-
-:::::::::::::::::::::::::::::::::::::::::: spoiler
-
-### What Else Might We Use A Spoiler For?
-
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
-
-::: callout
-This is a callout block. It contains at least three colons
-:::
-
-
-
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Image datasets can be found online or created uniquely for your research question.
-- Images consist of pixels arranged in a particular order.
-- Image data is usually preprocessed before use in a CNN for efficiency, consistency, and robustness.
-- Input data generally consists of three sets: a training set used to fit model parameters; a validation set used to evaluate the model fit on training data; and a test set used to evaluate the final model performance.
-
+- Text preprocessing is essential for cleaning and standardizing text data.
+- Techniques like sentence segmentation, tokenization, stemming, and lemmatization are fundamental to text preprocessing.
+- Removing stop-words helps in focusing on the important words in text analysis.
+- Tokenization splits sentences into tokens, which are the basic units for further processing.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
