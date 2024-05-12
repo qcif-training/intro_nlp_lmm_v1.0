@@ -164,7 +164,7 @@ Compared to these traditional models, LLMs have several key differences:
 Bidirectional Encoder Representations from Transformers (BERT) is an LLM that uses an encoder-only architecture from transformers. It is designed to understand the context of a word based on all of its surroundings (bidirectional context). Let’s guess the missing words in the text below to comprehend the workings of BERT:
 
 
-::::::::::::::::::::::::::::::::::::::::: Challenge 
+::::::::::::::::::::::::::::::::::::: challenge
 
 ### Challenge
 
@@ -201,7 +201,7 @@ Generative Pretrained Transformer (GPT) models, on the other hand, use a decoder
 
 
 
-::::::::::::::::::::::::::::::::::::::::: Challenge
+::::::::::::::::::::::::::::::::::::: challenge
 
 ### Challenge
 
@@ -223,7 +223,7 @@ Write in the gray boxes with the correct explanations.
 
 
 
-::::::::::::::::::::::::::::::::::::::::: Challenge 
+::::::::::::::::::::::::::::::::::::: challenge
 
 ### Discussion 
 
