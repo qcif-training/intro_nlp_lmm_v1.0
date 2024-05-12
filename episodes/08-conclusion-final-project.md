@@ -19,92 +19,148 @@ exercises: 1
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
-### 8.1.	Takeaway from This Workshop
+
+## 8.1.	Takeaway from This Workshop
 
 We have covered a vast landscape of NLP, starting with the basics and moving towards the intricacies of LLMs. Here is a brief recap to illustrate our journey: 
-- Text Preprocessing: Imagine cleaning a dataset of tweets for sentiment analysis. We learned how to remove noise and prepare the text for accurate classification.
-- Text Analysis: Consider the task of extracting key information from news articles. Techniques like Named Entity Recognition helped us identify and categorize entities within the text.
-- Word Embedding: We explored how words can be converted into vectors, enabling us to capture semantic relationships, as seen in the Word2Vec algorithm.
-- Transformers and LLMs: We saw how transformers like BERT and GPT can be fine-tuned for tasks such as summarizing medical research papers, showcasing their power and flexibility.
 
-To reinforce our understanding, let’s engage in the following activity:
+- **Text Preprocessing**: Imagine cleaning a dataset of tweets for sentiment analysis. We learned how to remove noise and prepare the text for accurate classification.
+- **Text Analysis**: Consider the task of extracting key information from news articles. Techniques like Named Entity Recognition helped us identify and categorize entities within the text.
+- **Word Embedding**: We explored how words can be converted into vectors, enabling us to capture semantic relationships, as seen in the Word2Vec algorithm.
+- **Transformers and LLMs**: We saw how transformers like BERT and GPT can be fine-tuned for tasks such as summarizing medical research papers and showcasing their power and flexibility.
 
-::::::::::::::::::::::::::::::::::::: Discussion
 
-## Discuss in groups. Share insights on how NLP can be applied in your field of interest  
+::::::::::::::::::::::::::::::::::::: challenge
 
-a) Stemming
-b) Word2Vec	
-c) Text Preprocessing	
-d) Part-of-Speech Tagging	
-e) Stop-words Removal	
-f) Transformers	
-g) Bag of Words	
-h) Tokenization	
-i) BERT	
-j) Lemmatization
+### Quiz
+
+
+**A)** Stemming
+
+**B)** Word2Vec	
+
+**C)** Text Preprocessing	
+
+**D)** Part-of-Speech Tagging	
+
+**E)** Stop-words Removal	
+
+**F)** Transformers	
+
+**G)** Bag of Words	
+
+**H)** Tokenization	
+
+**I)** BERT	
+
+**J)** Lemmatization
+
+
+
+```
+**1. A statistical approach to modeling the meaning of words based on their context.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**2. “A process of reducing words to their root form, enabling the analysis of word frequency.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**3. An algorithm that uses neural networks to understand the relationships and meanings in human language.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**4. A technique for identifying the parts of speech for each word in a given sentence.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**5. A method for cleaning and preparing text data before analysis.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**6. A library that provides tools for machine learning and statistical modeling.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**7. A model that predicts the next word in a sentence based on the words that come before it.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**8. A framework for building and training neural networks to understand and generate human language.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**9. A technique that groups similar words together in vector space.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**10. A method for removing commonly used words that carry little meaning.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
 
 
 ```
-1.	“A statistical approach to modeling the meaning of words based on their context.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
 
-2.	“A process of reducing words to their root form, enabling the analysis of word frequency.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+:::::::::::::::: solution
 
-3.	“An algorithm that uses neural networks to understand the relationships and meanings in human language.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+A:
+1
 
-4.	“A technique for identifying the parts of speech for each word in a given sentence.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
-5.	“A method for cleaning and preparing text data before analysis.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+Share insights on how NLP can be applied in your field of interest  
 
-6.	“A library that provides tools for machine learning and statistical modeling.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
 
-7.	“A model that predicts the next word in a sentence based on the words that come before it.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-
-8.	“A framework for building and training neural networks to understand and generate human language.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-
-9.	“A technique that groups similar words together in vector space.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-
-10.	“A method for removing commonly used words that carry little meaning.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-
-```
-
-::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: Discussion
 
-## Discuss in groups. Share insights on how NLP can be applied in your field of interest.
+### Discussion
 
 
-:::::::::::::::::::::::: spoiler 
+**Field of Interest**: Share insights on how NLP can be applied in your field of interest.
 
-#### Field of Interest: Environmental Science
-•	NLP for Climate Change Research: How can NLP help in analyzing large volumes of research papers on climate change to identify trends and gaps in the literature?
-•	Social Media Analysis for Environmental Campaigns: Discuss the use of sentiment analysis to gauge public opinion on environmental policies.
-•	Automating Environmental Compliance: Share insights on how NLP can streamline the process of checking compliance with environmental regulations in corporate documents.
 
-#### Field of Interest: Education
-•	Personalized Learning: Explore the potential of NLP in creating personalized learning experiences by analyzing student feedback and performance.
-•	Content Summarization: Discuss the benefits of using NLP to summarize educational content for quick revision.
-•	Language Learning: Share thoughts on the role of NLP in developing language learning applications that adapt to the learner’s proficiency level.
+:::::::::::::::: solution
 
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
+***Environmental Science***
+
+- NLP for Climate Change Research: How can NLP help in analyzing large volumes of research papers on climate change to identify trends and gaps in the literature?
+- Social Media Analysis for Environmental Campaigns: Discuss the use of sentiment analysis to gauge public opinion on environmental policies.
+- Automating Environmental Compliance: Share insights on how NLP can streamline the process of checking compliance with environmental regulations in corporate documents.
+
+***Education***
+
+- Personalized Learning: Explore the potential of NLP in creating personalized learning experiences by analyzing student feedback and performance.
+- Content Summarization: Discuss the benefits of using NLP to summarize educational content for quick revision.
+- Language Learning: Share thoughts on the role of NLP in developing language learning applications that adapt to the learner’s proficiency level.
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Challenge Using an LLM (Mini-Project)
+## Mini-Project: Using an LLM 
 Context Example: Environmental science and climate change
 Using Hugging Face model distilbert-base-uncased and Few-Shot Prompting: To improve the model’s performance in answering field-specific questions, we will use few-shot prompting by providing examples of questions and answers related to environmental topics.
 
@@ -146,10 +202,12 @@ In this challenge, we used the **distilbert-base-uncased** model from Hugging Fa
 
 This mini-project showcases how LLMs can be fine-tuned to specific fields of interest, providing valuable assistance in answering domain-specific queries.
 
-:::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
 
-### 8.2.	Further Resources
+
+
+## 8.2.	Further Resources
 
 For continued learning, here are detailed resources:
 - Natural Language Processing Specialization (Coursera): A series of courses that cover NLP foundations, algorithms, and how to build NLP applications.
@@ -160,31 +218,37 @@ For continued learning, here are detailed resources:
 Each resource is a gateway to further knowledge, community engagement, and hands-on experience.
 
 
-### 8.3.	Feedback
+## 8.3.	Feedback
 
 Please help us improve by answering the following survey questions:
-1.	How would you rate the overall quality of the workshop?
+
+**1.	How would you rate the overall quality of the workshop?**
    
 [ ] Excellent,  [ ] Good,  [ ] Average,  [ ] Below Average,  [ ] Poor
 
 
-2.	Was the pace of the workshop appropriate?
+
+**2.	Was the pace of the workshop appropriate?**
    
 [ ] Too fast,     [ ] Just right,     [ ] Too slow
 
 
-3.	How clear were the instructions and explanations?
+
+**3.	How clear were the instructions and explanations?**
    
 [ ] Very clear,     [ ] Clear,     [ ] Somewhat clear,      [ ] Not clear
 
 
-4.	What was the most valuable part of the workshop for you?
+
+**4.	What was the most valuable part of the workshop for you?**
+
    
 
-5.	How can we improve the workshop for future participants?
+**5.	How can we improve the workshop for future participants?**
 
 
-Your feedback is crucial for us to evolve and enhance the learning experience.
+
+*Your feedback is crucial for us to evolve and enhance the learning experience.*
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
