@@ -239,9 +239,8 @@ for entity in named_entities:
 
 
 :::::::::::::::::::::::::::::::::::::::::: spoiler
-###Output:
+### Output
 
-```
 Original Text:
 Perovskite nanocrystals have emerged as a promising class of materials for next-generation optoelectronic devices due to their unique properties. Their crystal structure allows for tunable bandgaps, which are the energy differences between occupied and unoccupied electronic states. This tunability enables the creation of materials that can absorb and emit light across a wide range of the electromagnetic spectrum, making them suitable for applications like solar cells, light-emitting diodes (LEDs), and lasers. Additionally, perovskite nanocrystals exhibit high photoluminescence efficiencies, meaning they can efficiently convert absorbed light into emitted light, further adding to their potential for various optoelectronic applications.
 
@@ -251,7 +250,6 @@ Perovskite nanocrystals have emerged as a promising class of materials for next-
 
 [(('Perovskite', 'NNP'), 'ORGANIZATION'), ('nanocrystals', 'NNP'), ('have', 'VBP'), ('emerged', 'VBD'), ('as', 'IN'), ('a', 'DT'), ('promising', 'JJ'), ('class', 'NN'), ('of', 'IN'), ('materials', 'NNS'), ('for', 'IN'), ('next-generation', 'JJ'), ('optoelectronic', 'JJ'), ('devices', 'NNS'), ('due', 'IN'), ('to', 'TO'), ('their', 'PRP$'), ('unique', 'JJ'), ('properties', 'NNS'), ('.', '.'), ('Their', 'PRP$'), ('crystal', 'NN'), ('structure', 'NN'), ('allows', 'VBZ'), ('for', 'IN'), ('tunable', 'JJ'), ('bandgaps', 'NNS'), (',', ','), ('which', 'WDT'), ('are', 'VBP'), ('the', 'DT'), ('energy', 'NN'), ('differences', 'NNS'), ('between', 'IN'), ('occupied', 'VBN'), ('and', 'CC'), ('unoccupied', 'VBN'), ('electronic', 'JJ'), ('states', 'NNS'), ('.', '.'), ('This', 'DT'), ('tunability', 'NN'), ('enables', 'VBZ'), ('the', 'DT'), ('creation', 'NN'), ('of', 'IN'), ('materials', 'NNS'), ('that', 'WDT'), ('can', 'MD'), ('absorb', 'VB'), ('and', 'CC'), ('emit', 'VB'), ('light', 'NN'), ('across', 'IN'), ('a', 'DT'), ('wide', 'JJ'), ('range', 'NN'), ('of', 'IN'), ('the', 'DT'), ('electromagnetic', 'JJ'), ('spectrum', 'NN'), (',', ','), ('making', 'VBG'), ('them', 'PRP'), ('suitable', 'JJ'), ('for', 'IN'), ('applications', 'NNS'), ('like', 'IN'), ('solar', 'JJ'), ('cells', 'NNS'), (',', ','), ('light-emitting', 'JJ'), ('diodes', 'NNS'), ('(', '(', 'LEDs', 'NNPS'), ')', ')'), ('and', 'CC'), ('lasers', 'NNS'), ('.', '.'), ('Additionally', 'RB'), (',', ','), ('perovskite', 'NNP'), ('nanocrystals', 'NNP'), ('exhibit', 'VBP'), ('high', 'JJ'), ('photoluminescence', 'NN'), ('efficiencies', 'NNS'), (',', ','), ('meaning', 'VBG'), ('they', 'PRP'), ('can', 'MD'), ('efficiently', 'RB'), ('convert', 'VB'), ('absorbed', 'VBN'), ('light', 'NN'), ('into', 'IN'), ('emitted', 'VBN'), ('light', 'NN'), (',', ','), ('further', 'RB'), ('adding', 'VBG'), ('to', 'TO'), ('their', 'PRP$'), ('potential', 'NN'), ('for', 'IN'), ('various', 'JJ'), ('optoelectronic', 'JJ'), ('applications', 'NNS'), ('.', '.')]
 
-```
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::
