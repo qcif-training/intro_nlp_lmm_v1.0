@@ -344,8 +344,21 @@ prompts strategically.</p>
 where the LLM is given a task or question without any context or
 examples. It relies on the LLM’s pre-existing knowledge to generate a
 response.</p>
+<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
+  <h3 class="accordion-header" id="headingSpoiler1">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Show details</h3>
+</button>
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div class="accordion-body">
+<p><strong>Example</strong></p>
 <p>Example: “What is the capital of France?” The LLM would respond with
 “Paris” based on its internal knowledge.</p>
+</div>
+</div>
+</div>
+</div>
 <p><em>Few-shot Prompting</em>: In this technique, the LLM is provided
 with a few examples to demonstrate the expected response format or
 content.</p>
@@ -443,13 +456,13 @@ sources:</p>
 <span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="cf">for</span> label, score <span class="kw">in</span> <span class="bu">zip</span>(result[<span class="st">'labels'</span>], result[<span class="st">'scores'</span>]):</span>
 <span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>label<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>score<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre>
 </div>
-<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
-  <h3 class="accordion-header" id="headingSpoiler1">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Be careful when fine-tuning a model</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>When fine-tuning a BERT model from Hugging Face, for instance, it is
 essential to approach the process with precision and care.</p>
@@ -620,7 +633,7 @@ followed the <strong>—</strong> correctly.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Choose a Model: Select a <strong>pre-trained</strong> model from
 Hugging Face that suits your task.</p></li>
@@ -639,13 +652,13 @@ followed the <strong>examples</strong> correctly.</p></li>
 </div>
 </div>
 </div>
-<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
-  <h3 class="accordion-header" id="headingSpoiler2">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
+  <h3 class="accordion-header" id="headingSpoiler3">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Prompting Quality</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>Remember, the quality of the output heavily depends on the quality
 and relevance of the examples you provide. It’s also important to note
