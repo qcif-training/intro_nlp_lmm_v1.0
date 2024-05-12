@@ -249,7 +249,9 @@ Perovskite nanocrystals have emerged as a promising class of materials for next-
 - Entity: Perovskite, Type: ORGANIZATION
 - Entity: light-emitting diodes (LEDs), Type: ORGANIZATION
 
-[(('Perovskite', 'NNP'), 'ORGANIZATION'), ('nanocrystals', 'NNP'), ('have', 'VBP'), ('emerged', 'VBD'), ('as', 'IN'), ('a', 'DT'), ('promising', 'JJ'), ('class', 'NN'), ('of', 'IN'), ('materials', 'NNS'), ('for', 'IN'), ('next-generation', 'JJ'), ('optoelectronic', 'JJ'), ('devices', 'NNS'), ('due', 'IN'), ('to', 'TO'), ('their', 'PRP$'), ('unique', 'JJ'), ('properties', 'NNS'), ('.', '.'), ('Their', 'PRP$'), ('crystal', 'NN'), ('structure', 'NN'), ('allows', 'VBZ'), ('for', 'IN'), ('tunable', 'JJ'), ('bandgaps', 'NNS'), (',', ','), ('which', 'WDT'), ('are', 'VBP'), ('the', 'DT'), ('energy', 'NN'), ('differences', 'NNS'), ('between', 'IN'), ('occupied', 'VBN'), ('and', 'CC'), ('unoccupied', 'VBN'), ('electronic', 'JJ'), ('states', 'NNS'), ('.', '.'), ('This', 'DT'), ('tunability', 'NN'), ('enables', 'VBZ'), ('the', 'DT'), ('creation', 'NN'), ('of', 'IN'), ('materials', 'NNS'), ('that', 'WDT'), ('can', 'MD'), ('absorb', 'VB'), ('and', 'CC'), ('emit', 'VB'), ('light', 'NN'), ('across', 'IN'), ('a', 'DT'), ('wide', 'JJ'), ('range', 'NN'), ('of', 'IN'), ('the', 'DT'), ('electromagnetic', 'JJ'), ('spectrum', 'NN'), (',', ','), ('making', 'VBG'), ('them', 'PRP'), ('suitable', 'JJ'), ('for', 'IN'), ('applications', 'NNS'), ('like', 'IN'), ('solar', 'JJ'), ('cells', 'NNS'), (',', ','), ('light-emitting', 'JJ'), ('diodes', 'NNS'), ('(', '(', 'LEDs', 'NNPS'), ')', ')'), ('and', 'CC'), ('lasers', 'NNS'), ('.', '.'), ('Additionally', 'RB'), (',', ','), ('perovskite', 'NNP'), ('nanocrystals', 'NNP'), ('exhibit', 'VBP'), ('high', 'JJ'), ('photoluminescence', 'NN'), ('efficiencies', 'NNS'), (',', ','), ('meaning', 'VBG'), ('they', 'PRP'), ('can', 'MD'), ('efficiently', 'RB'), ('convert', 'VB'), ('absorbed', 'VBN'), ('light', 'NN'), ('into', 'IN'), ('emitted', 'VBN'), ('light', 'NN'), (',', ','), ('further', 'RB'), ('adding', 'VBG'), ('to', 'TO'), ('their', 'PRP$'), ('potential', 'NN'), ('for', 'IN'), ('various', 'JJ'), ('optoelectronic', 'JJ'), ('applications', 'NNS'), ('.', '.')]```
+[(('Perovskite', 'NNP'), 'ORGANIZATION'), ('nanocrystals', 'NNP'), ('have', 'VBP'), ('emerged', 'VBD'), ('as', 'IN'), ('a', 'DT'), ('promising', 'JJ'), ('class', 'NN'), ('of', 'IN'), ('materials', 'NNS'), ('for', 'IN'), ('next-generation', 'JJ'), ('optoelectronic', 'JJ'), ('devices', 'NNS'), ('due', 'IN'), ('to', 'TO'), ('their', 'PRP$'), ('unique', 'JJ'), ('properties', 'NNS'), ('.', '.'), ('Their', 'PRP$'), ('crystal', 'NN'), ('structure', 'NN'), ('allows', 'VBZ'), ('for', 'IN'), ('tunable', 'JJ'), ('bandgaps', 'NNS'), (',', ','), ('which', 'WDT'), ('are', 'VBP'), ('the', 'DT'), ('energy', 'NN'), ('differences', 'NNS'), ('between', 'IN'), ('occupied', 'VBN'), ('and', 'CC'), ('unoccupied', 'VBN'), ('electronic', 'JJ'), ('states', 'NNS'), ('.', '.'), ('This', 'DT'), ('tunability', 'NN'), ('enables', 'VBZ'), ('the', 'DT'), ('creation', 'NN'), ('of', 'IN'), ('materials', 'NNS'), ('that', 'WDT'), ('can', 'MD'), ('absorb', 'VB'), ('and', 'CC'), ('emit', 'VB'), ('light', 'NN'), ('across', 'IN'), ('a', 'DT'), ('wide', 'JJ'), ('range', 'NN'), ('of', 'IN'), ('the', 'DT'), ('electromagnetic', 'JJ'), ('spectrum', 'NN'), (',', ','), ('making', 'VBG'), ('them', 'PRP'), ('suitable', 'JJ'), ('for', 'IN'), ('applications', 'NNS'), ('like', 'IN'), ('solar', 'JJ'), ('cells', 'NNS'), (',', ','), ('light-emitting', 'JJ'), ('diodes', 'NNS'), ('(', '(', 'LEDs', 'NNPS'), ')', ')'), ('and', 'CC'), ('lasers', 'NNS'), ('.', '.'), ('Additionally', 'RB'), (',', ','), ('perovskite', 'NNP'), ('nanocrystals', 'NNP'), ('exhibit', 'VBP'), ('high', 'JJ'), ('photoluminescence', 'NN'), ('efficiencies', 'NNS'), (',', ','), ('meaning', 'VBG'), ('they', 'PRP'), ('can', 'MD'), ('efficiently', 'RB'), ('convert', 'VB'), ('absorbed', 'VBN'), ('light', 'NN'), ('into', 'IN'), ('emitted', 'VBN'), ('light', 'NN'), (',', ','), ('further', 'RB'), ('adding', 'VBG'), ('to', 'TO'), ('their', 'PRP$'), ('potential', 'NN'), ('for', 'IN'), ('various', 'JJ'), ('optoelectronic', 'JJ'), ('applications', 'NNS'), ('.', '.')]
+
+```
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::
@@ -257,6 +259,44 @@ Perovskite nanocrystals have emerged as a promising class of materials for next-
 
 
 
+::: callout
+
+### Why NER?
+
+When do we need to perform NER for your research? 
+
+
+NER helps in quickly finding specific information in large datasets, which is particularly useful in research fields for categorizing the text based on the entities. NER is also called entity chunking and entity extraction.
+
+:::
+
+
+## 3.2. Topic Modeling
+
+Topic Modeling is an unsupervised model for discovering the abstract “topics” that occur in a collection of documents. It is useful in understanding the main themes of a large corpus of text. To better understand this and to find the connection between concepts we have learned so far, let’s match the following terms to their brief definitions:
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Discussion
+
+Teamwork: To better understand this and to find the connection between concepts we have learned so far, let’s match the following terms to their brief definitions:
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/2be22cfb-4ed8-4f65-85bf-31962a40835f)
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+::: callout
+
+There are some new concepts in this section that are new to you. Although a detailed explanation of these concepts is out of the scope of this workshop we learn their basic definitions. You already learned a few of them in the earlier activity. Another one is Bag-of-words. We will learn more about Bag-of-words (BoW) in episode 5. BoW is defined as a representation of text that describes the occurrence of words within a document. It is needed in the topic modeling analysis to view the frequency of the words in a document regardless of the order of the words in the text.
+
+:::
+
+
+To see how Topic Modeling can help us in action to classify a text, let’s see the following example. We need to install the *Gensim* library and import the necessary modules:
 
 
 
@@ -290,6 +330,29 @@ Perovskite nanocrystals have emerged as a promising class of materials for next-
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::: callout
+This is a callout block. It contains at least three colons
+:::
 
 
 
