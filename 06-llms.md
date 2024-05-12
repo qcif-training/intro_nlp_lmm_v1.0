@@ -86,18 +86,6 @@ Thus, the completed graph will be:
 
 
 
-
-::::::::::::::::::::::::::::::::::::: challenge
-
-### Discussion 
-
-Teamwork: What is DSL and why are they useful for research tasks? Think of some examples of NLP tasks that require domain-specific LLMs, such as literature review, patent analysis, or material discovery. How do domain-specific LLMs improve the performance and accuracy of these tasks?
-
-![](fig/llms_3.png)
-
-::::::::::::::::::::::::::::::::::::::::::::::::
-
-
 We can categorize LLMs based on the transformer architecture. Let’s have another look into the transformer architecture, this time we categorize them based on the two main components: **Encoder and Decoder**. LLMs can be designed to handle different tasks based on their underlying transformer blocks and whether they have encoder-only, decoder-only, or encoder-decoder layers. 
 
 ![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/db7f7677-67eb-475d-bb3e-3b703b2fbb0f)
