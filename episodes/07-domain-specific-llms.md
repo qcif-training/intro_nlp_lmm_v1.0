@@ -33,8 +33,13 @@ To elicit specific and accurate responses from LLMs by designing prompts strateg
 
 *Zero-shot Prompting*: This is the simplest form of prompting where the LLM is given a task or question without any context or examples. It relies on the LLM’s pre-existing knowledge to generate a response. 
 
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+**Example**
+
 Example: “What is the capital of France?” The LLM would respond with “Paris” based on its internal knowledge. 
 
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 *Few-shot Prompting*: In this technique, the LLM is provided with a few examples to demonstrate the expected response format or content. 
 
