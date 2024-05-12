@@ -340,55 +340,120 @@ Generally, there are four ways to enhance the performance of LLMs:</p>
 <p><strong>1. Prompt Optimization:</strong></p>
 <p>To elicit specific and accurate responses from LLMs by designing
 prompts strategically.</p>
-<p><em>Zero-shot Prompting</em>: This is the simplest form of prompting
+<ul><li>
+<em>Zero-shot Prompting</em>: This is the simplest form of prompting
 where the LLM is given a task or question without any context or
 examples. It relies on the LLM’s pre-existing knowledge to generate a
-response.</p>
-<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
+response.</li>
+</ul><div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
 <button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
   <h3 class="accordion-header" id="headingSpoiler1">
-<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Show details</h3>
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Example</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
-<p><strong>Example</strong></p>
-<p>Example: “What is the capital of France?” The LLM would respond with
-“Paris” based on its internal knowledge.</p>
+<p>“What is the capital of France?” The LLM would respond with “Paris”
+based on its internal knowledge.</p>
 </div>
 </div>
 </div>
 </div>
-<p><em>Few-shot Prompting</em>: In this technique, the LLM is provided
+<ul><li>
+<em>Few-shot Prompting</em>: In this technique, the LLM is provided
 with a few examples to demonstrate the expected response format or
-content.</p>
-<p>Example: To determine sentiment, you might provide examples like “I
-love sunny days. (+1)” and “I hate traffic. (-1)” before asking the LLM
-to analyze a new sentence.</p>
+content.</li>
+</ul><div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
+  <h3 class="accordion-header" id="headingSpoiler2">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Example</h3>
+</button>
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div class="accordion-body">
+<p>To determine sentiment, you might provide examples like “I love sunny
+days. (+1)” and “I hate traffic. (-1)” before asking the LLM to analyze
+a new sentence.</p>
+</div>
+</div>
+</div>
+</div>
 <p><strong>2. Retrieval Augmented Generation (RAG):</strong></p>
 <p>To supplement the LLM’s generative capabilities with information
 retrieved from external databases or documents.</p>
-<p><em>Retrieval</em>: The LLM queries a database to find relevant
-information that can inform its response.</p>
-<p>Example: If asked about recent scientific discoveries, the LLM might
-retrieve articles or papers on the topic.</p>
-<p><em>Generation</em>: After retrieving the information, the LLM
-integrates it into a coherent response.</p>
-<p>Example: Using the retrieved scientific articles, the LLM could
-generate a summary of the latest findings in a particular field.</p>
+<ul><li>
+<em>Retrieval</em>: The LLM queries a database to find relevant
+information that can inform its response.</li>
+</ul><div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
+  <h3 class="accordion-header" id="headingSpoiler3">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Example</h3>
+</button>
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div class="accordion-body">
+<p>If asked about recent scientific discoveries, the LLM might retrieve
+articles or papers on the topic.</p>
+</div>
+</div>
+</div>
+</div>
+<ul><li>
+<em>Generation</em>: After retrieving the information, the LLM
+integrates it into a coherent response.</li>
+</ul><div id="accordionSpoiler4" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler4" aria-expanded="false" aria-controls="collapseSpoiler4">
+  <h3 class="accordion-header" id="headingSpoiler4">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Example</h3>
+</button>
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
+<div class="accordion-body">
+<p>Using the retrieved scientific articles, the LLM could generate a
+summary of the latest findings in a particular field.</p>
+</div>
+</div>
+</div>
+</div>
 <p><strong>3. Fine-Tuning:</strong></p>
 <p>To adapt a general-purpose LLM to excel at a specific task or within
 a particular domain.</p>
-<p><em>Language Modeling Task Fine-Tuning</em>: This involves training
+<ul><li>
+<em>Language Modeling Task Fine-Tuning</em>: This involves training
 the LLM on a large corpus of text to improve its ability to predict the
-next word or phrase in a sentence.</p>
-<p>Example: An LLM fine-tuned on legal documents would become better at
+next word or phrase in a sentence.</li>
+</ul><div id="accordionSpoiler5" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler5" aria-expanded="false" aria-controls="collapseSpoiler5">
+  <h3 class="accordion-header" id="headingSpoiler5">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Example</h3>
+</button>
+<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
+<div class="accordion-body">
+<p>An LLM fine-tuned on legal documents would become better at
 generating text that resembles legal writing.</p>
-<p><em>Supervised Q&amp;A Fine-Tuning</em>: Here, the LLM is trained on
+</div>
+</div>
+</div>
+</div>
+<ul><li>
+<em>Supervised Q&amp;A Fine-Tuning</em>: Here, the LLM is trained on
 a dataset of question-answer pairs to enhance its performance on Q&amp;A
-tasks.</p>
-<p>Example: An LLM fine-tuned with medical Q&amp;A pairs would provide
-more accurate responses to health-related inquiries.</p>
+tasks.</li>
+</ul><div id="accordionSpoiler6" class="accordion spoiler-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler6" aria-expanded="false" aria-controls="collapseSpoiler6">
+  <h3 class="accordion-header" id="headingSpoiler6">
+<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Example</h3>
+</button>
+<div id="collapseSpoiler6" class="accordion-collapse collapse" aria-labelledby="headingSpoiler6" data-bs-parent="#accordionSpoiler6">
+<div class="accordion-body">
+<p>An LLM fine-tuned with medical Q&amp;A pairs would provide more
+accurate responses to health-related inquiries.</p>
+</div>
+</div>
+</div>
+</div>
 <p><strong>4. Training from Scratch:</strong></p>
 <p>Builds a model specifically for a domain, using relevant data from
 the ground up.</p>
@@ -456,13 +521,13 @@ sources:</p>
 <span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a><span class="cf">for</span> label, score <span class="kw">in</span> <span class="bu">zip</span>(result[<span class="st">'labels'</span>], result[<span class="st">'scores'</span>]):</span>
 <span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>label<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>score<span class="sc">:.4f}</span><span class="ss">"</span>)</span></code></pre>
 </div>
-<div id="accordionSpoiler2" class="accordion spoiler-accordion accordion-flush">
+<div id="accordionSpoiler7" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler2" aria-expanded="false" aria-controls="collapseSpoiler2">
-  <h3 class="accordion-header" id="headingSpoiler2">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler7" aria-expanded="false" aria-controls="collapseSpoiler7">
+  <h3 class="accordion-header" id="headingSpoiler7">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Be careful when fine-tuning a model</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler7" class="accordion-collapse collapse" aria-labelledby="headingSpoiler7" data-bs-parent="#accordionSpoiler7">
 <div class="accordion-body">
 <p>When fine-tuning a BERT model from Hugging Face, for instance, it is
 essential to approach the process with precision and care.</p>
@@ -633,7 +698,7 @@ followed the <strong>—</strong> correctly.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <ol style="list-style-type: decimal"><li><p>Choose a Model: Select a <strong>pre-trained</strong> model from
 Hugging Face that suits your task.</p></li>
@@ -652,13 +717,13 @@ followed the <strong>examples</strong> correctly.</p></li>
 </div>
 </div>
 </div>
-<div id="accordionSpoiler3" class="accordion spoiler-accordion accordion-flush">
+<div id="accordionSpoiler8" class="accordion spoiler-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler3" aria-expanded="false" aria-controls="collapseSpoiler3">
-  <h3 class="accordion-header" id="headingSpoiler3">
+<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler8" aria-expanded="false" aria-controls="collapseSpoiler8">
+  <h3 class="accordion-header" id="headingSpoiler8">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Prompting Quality</h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler8" class="accordion-collapse collapse" aria-labelledby="headingSpoiler8" data-bs-parent="#accordionSpoiler8">
 <div class="accordion-body">
 <p>Remember, the quality of the output heavily depends on the quality
 and relevance of the examples you provide. It’s also important to note
