@@ -198,8 +198,8 @@ Use load_dataset with the dataset identifier in quotes. For example, to load the
 
 ```python
 squad_dataset = load_dataset("squad")
-# Use the info attribute to view the dataset description:
-print(squad_dataset.info)
+# Use the info attribute to view the trainset information:
+print(squad_dataset["train"].info)
 ```
 
 Each data point is a dictionary with keys corresponding to data elements (e.g., question, context, answer). Access them using those keys within square brackets:
