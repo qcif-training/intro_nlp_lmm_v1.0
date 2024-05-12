@@ -81,6 +81,9 @@ Using the retrieved scientific articles, the LLM could generate a summary of the
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/b35c25f0-6176-490c-b726-662025f47075)
+[source](https://www.maartengrootendorst.com/blog/improving-llms/)
+
 
 **3. Fine-Tuning:** 
 
@@ -122,8 +125,13 @@ Builds a model specifically for a domain, using relevant data from the ground up
 
 Teamwork: Which approach do you think is more computation-intensive? Which is more accurate? How are these qualities related? Evaluate the trade-offs between fine-tuning and other approaches.
 
-![](fig/dsllms_1.png)
+:::::::::::::::: solution
 
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/c4f63e42-dcf9-4cfa-86fb-cf68357df229)
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/cffb0c09-6578-4206-94c3-ba90eca87515)
+[source](https://medium.com/@pandey.vikesh/should-you-prompt-rag-tune-or-train-a-guide-to-choose-the-right-generative-ai-approach-5e264043bd7d)
+
+:::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
@@ -198,14 +206,19 @@ When fine-tuning a BERT model from Hugging Face, for instance, it is essential t
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-### Discussion 
+### Challenge
 
-Teamwork: Guess the following architecture belongs to which optimization strategy:
+Check the following structure. Guess which optimization strategy is represented in these architectures.
 
-![](fig/dsllms_3.png)
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/cfec9a3a-e334-4a87-8318-5c7495e0f6b7)
+[source](https://www.linkedin.com/pulse/fine-tuning-prompt-engineering-rag-lokesh--kjaie/)
 
-Figure. LLMs optimization (source)
 
+:::::::::::::::: solution
+
+RAG addresses the challenge of **real-time** data fetching by merging the generative talents of these models with the ability to consult a broad document corpus, enhancing their responses. The potential for live-RAG in chatbots suggests a future where AI can conduct on-the-spot searches, access up-to-date information, and rival search engines in answering timely questions.
+
+:::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
