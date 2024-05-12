@@ -616,7 +616,7 @@ from a paragraph about “your field of research”:</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="im">import</span> spacy</span>
 <span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="co"># Add the paragraph about your field of research here</span></span>
-<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"***"</span> </span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"***"</span> <span class="co"># varies based on your field of research</span></span>
 <span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>doc <span class="op">=</span> nlp(text)</span>
 <span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a><span class="co"># Fill in the blank to extract sentences:</span></span>
 <span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>sentences <span class="op">=</span> <span class="bu">list</span>(doc.sents) </span>
@@ -666,6 +666,53 @@ language in different settings.</p>
 </div>
 </div>
 </div>
+<div id="callout1" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<div class="callout-inner">
+<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
+</h3>
+<div class="callout-content">
+<p>Tokenization is very important for text analysis tasks such as
+sentiment analysis. Here we can compare two different texts from
+different fields and see how their associated tokens are different:</p>
+<div class="codewrapper sourceCode" id="cb12">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>perovskite_tokens <span class="op">=</span> [token.text <span class="cf">for</span> token <span class="kw">in</span> nlp(perovskite_text)]</span></code></pre>
+</div>
+<p>Now, we can add a new text from the trading context for comparison.
+Tokenization of a trading text can be performed similarly to the
+previous text.</p>
+<div class="codewrapper sourceCode" id="cb13">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>trading_text <span class="op">=</span> <span class="st">"Trading strategies often involve analyzing patterns and executing trades based on predicted market movements. Successful traders analyze trends and volatility to make informed decisions."</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>trading_tokens <span class="op">=</span> [token.text <span class="cf">for</span> token <span class="kw">in</span> nlp(trading_text)]</span></code></pre>
+</div>
+<p>We can see the results by using <em>print()</em> function. The tokens
+from both texts:</p>
+<div class="codewrapper sourceCode" id="cb14">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Perovskite Tokens:"</span>, perovskite_tokens)</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Trading Tokens:"</span>, trading_tokens)</span></code></pre>
+</div>
+<pre><code>Output: 
+Perovskite Tokens: ['Perovskite', 'nanocrystals', 'are', 'a', 'class', 'of', 'semiconductor', 'nanocrystals', 'with', 'unique', 'properties', 'that', 'distinguish', 'them', 'from', 'traditional', 'quantum', 'dots', '.']
+Trading Tokens: ['Trading', 'strategies', 'often', 'involve', 'analyzing', 'patterns', 'and', 'executing', 'trades', 'based', 'on', 'predicted', 'market', 'movements', '.', 'Successful', 'traders', 'analyze', 'trends', 'and', 'volatility', 'to', 'make', 'informed', 'decisions', '.']</code></pre>
+<p>The tokens from the perovskite text will be specific to materials
+science, while the trading tokens will include terms related to market
+analysis. The scientific texts may use more complex and compound words,
+while trading texts might include more action-oriented and analytical
+language. This comparison helps in understanding the specialized
+language used in different fields.</p>
+</div>
+</div>
+</div>
 <div id="chemistry-joke" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -704,12 +751,12 @@ language in different settings.</p>
 </div>
 </div>
 </div>
-<div id="callout1" class="callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout2"></a>
 </h3>
 <div class="callout-content">
 <p>This is a callout block. It contains at least three colons</p>
@@ -863,22 +910,22 @@ where each element corresponds to a pixel value in the image. In the
 context of images, these arrays often have dimensions for height, width,
 and colour channels (if applicable).</p>
 <p>Let us start with the Jabiru image.</p>
-<div class="codewrapper sourceCode" id="cb12">
+<div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="co"># load the required packages</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="im">from</span> keras.utils <span class="im">import</span> img_to_array</span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="im">from</span> keras.utils <span class="im">import</span> load_img</span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a></span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="co"># specify the image path</span></span>
-<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>new_img_path <span class="op">=</span> <span class="st">"../data/Jabiru_TGS.JPG"</span></span>
-<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a></span>
-<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="co"># read in the image with default arguments</span></span>
-<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>new_img_pil <span class="op">=</span> load_img(new_img_path)</span>
-<span id="cb12-10"><a href="#cb12-10" tabindex="-1"></a></span>
-<span id="cb12-11"><a href="#cb12-11" tabindex="-1"></a><span class="co"># check the image class and size</span></span>
-<span id="cb12-12"><a href="#cb12-12" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Image class :'</span>, new_img_pil.__class__)</span>
-<span id="cb12-13"><a href="#cb12-13" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Image size'</span>, new_img_pil.size)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># load the required packages</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="im">from</span> keras.utils <span class="im">import</span> img_to_array</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="im">from</span> keras.utils <span class="im">import</span> load_img</span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="co"># specify the image path</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>new_img_path <span class="op">=</span> <span class="st">"../data/Jabiru_TGS.JPG"</span></span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a><span class="co"># read in the image with default arguments</span></span>
+<span id="cb16-9"><a href="#cb16-9" tabindex="-1"></a>new_img_pil <span class="op">=</span> load_img(new_img_path)</span>
+<span id="cb16-10"><a href="#cb16-10" tabindex="-1"></a></span>
+<span id="cb16-11"><a href="#cb16-11" tabindex="-1"></a><span class="co"># check the image class and size</span></span>
+<span id="cb16-12"><a href="#cb16-12" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Image class :'</span>, new_img_pil.__class__)</span>
+<span id="cb16-13"><a href="#cb16-13" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Image size'</span>, new_img_pil.size)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -902,15 +949,15 @@ consistent.</p>
 <p>There are a couple of ways to do this in python but one way is to
 specify the size you want using an argument to the
 <code>load_img()</code> function from <code>keras.utils</code>.</p>
-<div class="codewrapper sourceCode" id="cb14">
+<div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="co"># read in the image and specify the target size</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>new_img_pil_small <span class="op">=</span> load_img(new_img_path, target_size<span class="op">=</span>(<span class="dv">32</span>,<span class="dv">32</span>))</span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="co"># confirm the image class and size</span></span>
-<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Resized image class :'</span>, new_img_pil_small.__class__)</span>
-<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Resized image size'</span>, new_img_pil_small.size) </span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># read in the image and specify the target size</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>new_img_pil_small <span class="op">=</span> load_img(new_img_path, target_size<span class="op">=</span>(<span class="dv">32</span>,<span class="dv">32</span>))</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="co"># confirm the image class and size</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Resized image class :'</span>, new_img_pil_small.__class__)</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Resized image size'</span>, new_img_pil_small.size) </span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1014,15 +1061,15 @@ an numpy array.</p>
 but what you may not have noticed is that the
 <code>keras.datasets.cifar10.load_data</code> function did the
 conversion for us whereas now we will do it ourselves.</p>
-<div class="codewrapper sourceCode" id="cb16">
+<div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="co"># first convert the image into an array for normalization</span></span>
-<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>new_img_arr <span class="op">=</span> img_to_array(new_img_pil_small)</span>
-<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a></span>
-<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="co"># confirm the image class and shape</span></span>
-<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Converted image class  :'</span>, new_img_arr.__class__)</span>
-<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Converted image shape'</span>, new_img_arr.shape)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co"># first convert the image into an array for normalization</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a>new_img_arr <span class="op">=</span> img_to_array(new_img_pil_small)</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a><span class="co"># confirm the image class and shape</span></span>
+<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Converted image class  :'</span>, new_img_arr.__class__)</span>
+<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Converted image shape'</span>, new_img_arr.shape)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1033,25 +1080,25 @@ Converted image shape (32, 32, 3)</code></pre>
 <p>Now that the image is an array, we can normalize the values. Let us
 also investigate the image values before and after we normalize
 them.</p>
-<div class="codewrapper sourceCode" id="cb18">
+<div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="co"># inspect pixel values before and after normalisation</span></span>
-<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="co"># extract the min, max, and mean pixel values BEFORE</span></span>
-<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'BEFORE normalization'</span>)</span>
-<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Min pixel value '</span>, new_img_arr.<span class="bu">min</span>()) </span>
-<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Max pixel value '</span>, new_img_arr.<span class="bu">max</span>())</span>
-<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Mean pixel value '</span>, new_img_arr.mean().<span class="bu">round</span>())</span>
-<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a></span>
-<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a><span class="co"># normalize the RGB values to be between 0 and 1</span></span>
-<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a>new_img_arr_norm <span class="op">=</span> new_img_arr <span class="op">/</span> <span class="fl">255.0</span></span>
-<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a></span>
-<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a><span class="co"># extract the min, max, and mean pixel values AFTER</span></span>
-<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'AFTER normalization'</span>) </span>
-<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Min pixel value '</span>, new_img_arr_norm.<span class="bu">min</span>()) </span>
-<span id="cb18-15"><a href="#cb18-15" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Max pixel value '</span>, new_img_arr_norm.<span class="bu">max</span>())</span>
-<span id="cb18-16"><a href="#cb18-16" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Mean pixel value '</span>, new_img_arr_norm.mean().<span class="bu">round</span>())</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="co"># inspect pixel values before and after normalisation</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="co"># extract the min, max, and mean pixel values BEFORE</span></span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'BEFORE normalization'</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Min pixel value '</span>, new_img_arr.<span class="bu">min</span>()) </span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Max pixel value '</span>, new_img_arr.<span class="bu">max</span>())</span>
+<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Mean pixel value '</span>, new_img_arr.mean().<span class="bu">round</span>())</span>
+<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a><span class="co"># normalize the RGB values to be between 0 and 1</span></span>
+<span id="cb22-10"><a href="#cb22-10" tabindex="-1"></a>new_img_arr_norm <span class="op">=</span> new_img_arr <span class="op">/</span> <span class="fl">255.0</span></span>
+<span id="cb22-11"><a href="#cb22-11" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="#cb22-12" tabindex="-1"></a><span class="co"># extract the min, max, and mean pixel values AFTER</span></span>
+<span id="cb22-13"><a href="#cb22-13" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'AFTER normalization'</span>) </span>
+<span id="cb22-14"><a href="#cb22-14" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Min pixel value '</span>, new_img_arr_norm.<span class="bu">min</span>()) </span>
+<span id="cb22-15"><a href="#cb22-15" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Max pixel value '</span>, new_img_arr_norm.<span class="bu">max</span>())</span>
+<span id="cb22-16"><a href="#cb22-16" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Mean pixel value '</span>, new_img_arr_norm.mean().<span class="bu">round</span>())</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1270,17 +1317,17 @@ keypoint analysis, and captioning</li>
 <p>Where labelled data exists, in most cases the data provider or other
 users will have created data-specific functions you can use to load the
 data. We already did this in the introduction:</p>
-<div class="codewrapper sourceCode" id="cb20">
+<div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="im">from</span> tensorflow <span class="im">import</span> keras</span>
-<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a></span>
-<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="co"># load the CIFAR-10 dataset included with the keras library</span></span>
-<span id="cb20-4"><a href="#cb20-4" tabindex="-1"></a>(train_images, train_labels), (test_images, test_labels) <span class="op">=</span> keras.datasets.cifar10.load_data()</span>
-<span id="cb20-5"><a href="#cb20-5" tabindex="-1"></a></span>
-<span id="cb20-6"><a href="#cb20-6" tabindex="-1"></a></span>
-<span id="cb20-7"><a href="#cb20-7" tabindex="-1"></a><span class="co"># create a list of classnames associated with each CIFAR-10 label</span></span>
-<span id="cb20-8"><a href="#cb20-8" tabindex="-1"></a>class_names <span class="op">=</span> [<span class="st">'airplane'</span>, <span class="st">'automobile'</span>, <span class="st">'bird'</span>, <span class="st">'cat'</span>, <span class="st">'deer'</span>, <span class="st">'dog'</span>, <span class="st">'frog'</span>, <span class="st">'horse'</span>, <span class="st">'ship'</span>, <span class="st">'truck'</span>]</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="im">from</span> tensorflow <span class="im">import</span> keras</span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" tabindex="-1"></a><span class="co"># load the CIFAR-10 dataset included with the keras library</span></span>
+<span id="cb24-4"><a href="#cb24-4" tabindex="-1"></a>(train_images, train_labels), (test_images, test_labels) <span class="op">=</span> keras.datasets.cifar10.load_data()</span>
+<span id="cb24-5"><a href="#cb24-5" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="#cb24-6" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" tabindex="-1"></a><span class="co"># create a list of classnames associated with each CIFAR-10 label</span></span>
+<span id="cb24-8"><a href="#cb24-8" tabindex="-1"></a>class_names <span class="op">=</span> [<span class="st">'airplane'</span>, <span class="st">'automobile'</span>, <span class="st">'bird'</span>, <span class="st">'cat'</span>, <span class="st">'deer'</span>, <span class="st">'dog'</span>, <span class="st">'frog'</span>, <span class="st">'horse'</span>, <span class="st">'ship'</span>, <span class="st">'truck'</span>]</span></code></pre>
 </div>
 <p>In this instance the data is likely already prepared for use in a
 CNN. However, it is always a good idea to first read any associated
@@ -1306,25 +1353,25 @@ prepare the dataset again knowing what we know now.</p>
 dataset<a class="anchor" aria-label="anchor" href="#challenge-create-a-function-to-prepare-the-dataset"></a>
 </h3>
 <div class="callout-content">
-<div class="codewrapper sourceCode" id="cb21">
+<div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="co"># create a function to prepare the dataset</span></span>
-<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a><span class="kw">def</span> prepare_dataset(<span class="co">#blank#, #blank#):</span></span>
-<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a>    </span>
-<span id="cb21-5"><a href="#cb21-5" tabindex="-1"></a>    <span class="co"># normalize the RGB values to be between 0 and 1</span></span>
-<span id="cb21-6"><a href="#cb21-6" tabindex="-1"></a>    <span class="co">#blank#</span></span>
-<span id="cb21-7"><a href="#cb21-7" tabindex="-1"></a>    <span class="co">#blank#</span></span>
-<span id="cb21-8"><a href="#cb21-8" tabindex="-1"></a>    </span>
-<span id="cb21-9"><a href="#cb21-9" tabindex="-1"></a>    <span class="co"># one hot encode the training labels</span></span>
-<span id="cb21-10"><a href="#cb21-10" tabindex="-1"></a>    <span class="co">#blank#</span></span>
-<span id="cb21-11"><a href="#cb21-11" tabindex="-1"></a>    </span>
-<span id="cb21-12"><a href="#cb21-12" tabindex="-1"></a>    <span class="co"># split the training data into training and validation set</span></span>
-<span id="cb21-13"><a href="#cb21-13" tabindex="-1"></a>    <span class="co">#blank#</span></span>
-<span id="cb21-14"><a href="#cb21-14" tabindex="-1"></a>    <span class="co">#blank#</span></span>
-<span id="cb21-15"><a href="#cb21-15" tabindex="-1"></a></span>
-<span id="cb21-16"><a href="#cb21-16" tabindex="-1"></a>    <span class="cf">return</span> <span class="co">#blank#</span></span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="co"># create a function to prepare the dataset</span></span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="kw">def</span> prepare_dataset(<span class="co">#blank#, #blank#):</span></span>
+<span id="cb25-4"><a href="#cb25-4" tabindex="-1"></a>    </span>
+<span id="cb25-5"><a href="#cb25-5" tabindex="-1"></a>    <span class="co"># normalize the RGB values to be between 0 and 1</span></span>
+<span id="cb25-6"><a href="#cb25-6" tabindex="-1"></a>    <span class="co">#blank#</span></span>
+<span id="cb25-7"><a href="#cb25-7" tabindex="-1"></a>    <span class="co">#blank#</span></span>
+<span id="cb25-8"><a href="#cb25-8" tabindex="-1"></a>    </span>
+<span id="cb25-9"><a href="#cb25-9" tabindex="-1"></a>    <span class="co"># one hot encode the training labels</span></span>
+<span id="cb25-10"><a href="#cb25-10" tabindex="-1"></a>    <span class="co">#blank#</span></span>
+<span id="cb25-11"><a href="#cb25-11" tabindex="-1"></a>    </span>
+<span id="cb25-12"><a href="#cb25-12" tabindex="-1"></a>    <span class="co"># split the training data into training and validation set</span></span>
+<span id="cb25-13"><a href="#cb25-13" tabindex="-1"></a>    <span class="co">#blank#</span></span>
+<span id="cb25-14"><a href="#cb25-14" tabindex="-1"></a>    <span class="co">#blank#</span></span>
+<span id="cb25-15"><a href="#cb25-15" tabindex="-1"></a></span>
+<span id="cb25-16"><a href="#cb25-16" tabindex="-1"></a>    <span class="cf">return</span> <span class="co">#blank#</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -1336,43 +1383,43 @@ dataset<a class="anchor" aria-label="anchor" href="#challenge-create-a-function-
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb22">
+<div class="codewrapper sourceCode" id="cb26">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a></span>
-<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="kw">def</span> prepare_dataset(train_images, train_labels):</span>
-<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>    </span>
-<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a>    <span class="co"># normalize the RGB values to be between 0 and 1</span></span>
-<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a>    train_images <span class="op">=</span> train_images <span class="op">/</span> <span class="dv">255</span></span>
-<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a>    test_images <span class="op">=</span> train_labels <span class="op">/</span> <span class="dv">255</span></span>
-<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a>    </span>
-<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a>    <span class="co"># one hot encode the training labels</span></span>
-<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a>    train_labels <span class="op">=</span> keras.utils.to_categorical(train_labels, <span class="bu">len</span>(class_names))</span>
-<span id="cb22-10"><a href="#cb22-10" tabindex="-1"></a>    </span>
-<span id="cb22-11"><a href="#cb22-11" tabindex="-1"></a>    <span class="co"># split the training data into training and validation set</span></span>
-<span id="cb22-12"><a href="#cb22-12" tabindex="-1"></a>    train_images, val_images, train_labels, val_labels <span class="op">=</span> train_test_split(</span>
-<span id="cb22-13"><a href="#cb22-13" tabindex="-1"></a>    train_images, train_labels, test_size <span class="op">=</span> <span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
-<span id="cb22-14"><a href="#cb22-14" tabindex="-1"></a></span>
-<span id="cb22-15"><a href="#cb22-15" tabindex="-1"></a>    <span class="cf">return</span> train_images, val_images, train_labels, val_labels</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a></span>
+<span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a><span class="kw">def</span> prepare_dataset(train_images, train_labels):</span>
+<span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>    </span>
+<span id="cb26-4"><a href="#cb26-4" tabindex="-1"></a>    <span class="co"># normalize the RGB values to be between 0 and 1</span></span>
+<span id="cb26-5"><a href="#cb26-5" tabindex="-1"></a>    train_images <span class="op">=</span> train_images <span class="op">/</span> <span class="dv">255</span></span>
+<span id="cb26-6"><a href="#cb26-6" tabindex="-1"></a>    test_images <span class="op">=</span> train_labels <span class="op">/</span> <span class="dv">255</span></span>
+<span id="cb26-7"><a href="#cb26-7" tabindex="-1"></a>    </span>
+<span id="cb26-8"><a href="#cb26-8" tabindex="-1"></a>    <span class="co"># one hot encode the training labels</span></span>
+<span id="cb26-9"><a href="#cb26-9" tabindex="-1"></a>    train_labels <span class="op">=</span> keras.utils.to_categorical(train_labels, <span class="bu">len</span>(class_names))</span>
+<span id="cb26-10"><a href="#cb26-10" tabindex="-1"></a>    </span>
+<span id="cb26-11"><a href="#cb26-11" tabindex="-1"></a>    <span class="co"># split the training data into training and validation set</span></span>
+<span id="cb26-12"><a href="#cb26-12" tabindex="-1"></a>    train_images, val_images, train_labels, val_labels <span class="op">=</span> train_test_split(</span>
+<span id="cb26-13"><a href="#cb26-13" tabindex="-1"></a>    train_images, train_labels, test_size <span class="op">=</span> <span class="fl">0.2</span>, random_state<span class="op">=</span><span class="dv">42</span>)</span>
+<span id="cb26-14"><a href="#cb26-14" tabindex="-1"></a></span>
+<span id="cb26-15"><a href="#cb26-15" tabindex="-1"></a>    <span class="cf">return</span> train_images, val_images, train_labels, val_labels</span></code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <p>Inspect the labels before and after one-hot encoding.</p>
-<div class="codewrapper sourceCode" id="cb23">
+<div class="codewrapper sourceCode" id="cb27">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'train_labels before one hot encoding'</span>)</span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="bu">print</span>(train_labels)</span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a></span>
-<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a><span class="co"># one-hot encode labels</span></span>
-<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a>train_labels <span class="op">=</span> keras.utils.to_categorical(train_labels, <span class="bu">len</span>(class_names))</span>
-<span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a></span>
-<span id="cb23-8"><a href="#cb23-8" tabindex="-1"></a><span class="bu">print</span>()</span>
-<span id="cb23-9"><a href="#cb23-9" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'train_labels after one hot encoding'</span>)</span>
-<span id="cb23-10"><a href="#cb23-10" tabindex="-1"></a><span class="bu">print</span>(train_labels)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'train_labels before one hot encoding'</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a><span class="bu">print</span>(train_labels)</span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a><span class="co"># one-hot encode labels</span></span>
+<span id="cb27-6"><a href="#cb27-6" tabindex="-1"></a>train_labels <span class="op">=</span> keras.utils.to_categorical(train_labels, <span class="bu">len</span>(class_names))</span>
+<span id="cb27-7"><a href="#cb27-7" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" tabindex="-1"></a><span class="bu">print</span>()</span>
+<span id="cb27-9"><a href="#cb27-9" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'train_labels after one hot encoding'</span>)</span>
+<span id="cb27-10"><a href="#cb27-10" tabindex="-1"></a><span class="bu">print</span>(train_labels)</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1395,12 +1442,12 @@ train_labels after one hot encoding
  [0. 1. 0. ... 0. 0. 0.]
  [0. 1. 0. ... 0. 0. 0.]]</code></pre>
 </div>
-<div id="callout2" class="callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout3"></a>
 </h3>
 <div class="callout-content">
 <p>WAIT I thought there were TEN classes!? Where is the rest of the
@@ -1438,11 +1485,11 @@ classes are well balanced.</p>
 <div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>A. Training Set</p>
-<div class="codewrapper sourceCode" id="cb25">
+<div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of training set images'</span>, train_images.shape[<span class="dv">0</span>])</span>
-<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of images in each class:</span><span class="ch">\n</span><span class="st">'</span>, train_labels.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of training set images'</span>, train_images.shape[<span class="dv">0</span>])</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of images in each class:</span><span class="ch">\n</span><span class="st">'</span>, train_labels.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1452,11 +1499,11 @@ Number of images in each class:
  [4027. 4021. 3970. 3977. 4067. 3985. 4004. 4006. 3983. 3960.]</code></pre>
 </div>
 <p>B. Validation Set (we can use the same code as the training set)</p>
-<div class="codewrapper sourceCode" id="cb27">
+<div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of validation set images'</span>, val_images.shape[<span class="dv">0</span>])</span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Nmber of images in each class:</span><span class="ch">\n</span><span class="st">'</span>, val_labels.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>))</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Number of validation set images'</span>, val_images.shape[<span class="dv">0</span>])</span>
+<span id="cb31-2"><a href="#cb31-2" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Nmber of images in each class:</span><span class="ch">\n</span><span class="st">'</span>, val_labels.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>))</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2834,7 +2881,7 @@ in vector space models. Consider the impact of ignoring common words
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p><img src="../fig/embedding_3.png" class="figure"><a href="https://medium.com/@saschametzger/what-are-tokens-vectors-and-embeddings-how-do-you-create-them-e2a3e698e037" class="external-link">source</a></p>
 <p>A: Ignoring stop words might lead to loss of some contextual
@@ -2851,7 +2898,7 @@ flexible syntax.</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Tell me MORE!</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Tokenization is a fundamental step in the processing of text for
 vector space models. It involves breaking down a string of text into
@@ -2952,7 +2999,7 @@ impact of commonly used words like “the” or “a.”</p>
   <h3 class="accordion-header" id="headingInstructor1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div>Instructor Note</h3>
 </button>
-<div id="collapseInstructor1" class="accordion-collapse collapse" aria-labelledby="headingInstructor1" data-bs-parent="#accordionInstructor1">
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
 <div class="accordion-body">
 <ul>
 <li>
@@ -2987,7 +3034,7 @@ and the potential impact on sentiment analysis.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>A: To compare the Bag of Words (BoW) and Term Frequency-Inverse
 Document Frequency (TF-IDF) methods in representing text data and their
@@ -3029,7 +3076,7 @@ the strengths and weaknesses of each method.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3147,7 +3194,7 @@ more accurately interpret human language.</p>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What is GLoVE?</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>Global Vectors for Word Representation (GLoVE)</p>
 <p>GLoVE is a model for learning word embeddings, which are
@@ -4306,7 +4353,7 @@ experience.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <figure><img src="../fig/llms_4.png" class="figure mx-auto d-block"></figure><ol style="list-style-type: decimal">
 <li><p>Transformer Architecture: A neural network design that uses
@@ -4363,7 +4410,7 @@ transformers to the correct color?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/9d4afc99-d8f4-4a17-9af9-5fab4fac5dfd" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
 </figure>
@@ -4462,7 +4509,7 @@ nuanced meanings of words.”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>“BERT is a revolutionary language model that uses an
 <strong>encoder</strong> to process words in a sentence. Unlike
@@ -4482,7 +4529,7 @@ nuanced meanings of words.”</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: MLM &amp; NSP</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>Pre-training of language models involves a process where models like
 BERT and GPT learn to predict words in sentences without specific task
@@ -4523,7 +4570,7 @@ explain the differences in the end.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/c01d8b7f-b237-499b-b169-d40c785e30d0" alt="image" class="figure"><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/1153ca29-aafd-4de6-8013-525b21ded916" alt="image" class="figure"><a href="https://medium.com/@reyhaneh.esmailbeigi/bert-gpt-and-bart-a-short-comparison-5d6a57175fca" class="external-link">source</a></p>
 </div>
@@ -4571,7 +4618,7 @@ following schematics demonstrate their performing differences:</em></p>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>How LLMs can be Compared? What is HELM?</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>Models are often benchmarked using standardized datasets and metrics.
 The Holistic Evaluation of Language Models (HELM) by Stanford provides a
@@ -4618,7 +4665,7 @@ classification, text generation, or question answering?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>A: Comparing Performance (Benchmarking): 1. Performance can be
 compared based on the model’s architecture, computational efficiency,
@@ -4807,7 +4854,7 @@ and the pre-trained model and tokenizer for text summarization:</p>
   <h3 class="accordion-header" id="headingSpoiler3">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>“Perovskite nanocrystals are a class of semiconductor nanocrystals,
 which exhibit unique characteristics that separate them from traditional
@@ -4907,7 +4954,7 @@ nanophotonics.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>Print the summarized text.</p>
 <div class="codewrapper sourceCode" id="cb9">
@@ -4965,7 +5012,7 @@ text and the predicted category and score.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>A:</p>
 <div class="codewrapper sourceCode" id="cb12">
@@ -5014,7 +5061,7 @@ are”. Print the prompt and the generated text.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8">Show me the solution</h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5713,7 +5760,7 @@ little meaning.</strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>A: 1</p>
 </div>
@@ -5739,7 +5786,7 @@ interest.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p><strong><em>Environmental Science</em></strong></p>
 <ul>
@@ -5821,7 +5868,7 @@ answers related to environmental topics.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The model should provide a relevant answer based on the few-shot
 examples provided. For instance, it might say: “Individuals can combat
