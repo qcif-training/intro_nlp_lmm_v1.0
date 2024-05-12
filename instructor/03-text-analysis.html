@@ -409,7 +409,7 @@ model from spaCy that is suitable for general tasks.</p>
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a></span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>nlp <span class="op">=</span> spacy.download(<span class="st">"en_core_web_sm"</span>)</span></code></pre>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span></code></pre>
 </div>
 <p>Create a variable to store your text and then apply the model to
 process your text (text from <a href="https://en.wikipedia.org/wiki/Australian_Securities_Exchange" class="external-link">Wikipedia</a>):</p>
@@ -445,8 +445,8 @@ Derivatives.”</p>
 <pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a></span>
 <span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>doc <span class="op">=</span> nlp(text)</span>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>For ent <span class="kw">in</span> doc.ents</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>	Print(ent.text, ent.label_)</span></code></pre>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>For ent <span class="kw">in</span> doc.ents:</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>    Print(ent.text, ent.label_)</span></code></pre>
 </div>
 <p>The results will be:</p>
 <pre><code>
@@ -573,7 +573,7 @@ pre-trained model for named entity recognition:</p>
 </button>
 <div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
-<p>A: Download necessary NLTK resources and import the required
+<p>A: Download the necessary NLTK resources and import the required
 toolkit:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1096,12 +1096,12 @@ pre-trained model for topic modeling:</p>
 </div>
 </div>
 </div>
-<div id="chemistry-joke-1" class="callout challenge">
+<div id="challenge-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="chemistry-joke-1" class="callout-inner">
-<h3 class="callout-title">Chemistry Joke<a class="anchor" aria-label="anchor" href="#chemistry-joke-1"></a>
+<div id="challenge-2" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
 </h3>
 <div class="callout-content">
 <p>Q: Use the genism to perform topic modeling on the following two
@@ -1251,12 +1251,12 @@ applications of these materials.</p>
 </div>
 </div>
 </div>
-<div id="challenge-2" class="callout challenge">
+<div id="challenge-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+<div id="challenge-3" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
 </h3>
 <div class="callout-content">
 <p>Q: Use the Gensim library to perform topic modeling on the following
@@ -1284,12 +1284,12 @@ understanding, and natural language generation.”</p>
 </div>
 </div>
 </div>
-<div id="challenge-2" class="callout challenge">
+<div id="challenge-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge<em>(continued)</em><a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+<div id="challenge-3" class="callout-inner">
+<h3 class="callout-title">Challenge<em>(continued)</em><a class="anchor" aria-label="anchor" href="#challenge-3"></a>
 </h3>
 <div class="callout-content">
 <p>You can use the following code to load the Gensim library and the
@@ -1377,12 +1377,12 @@ transformers, which can generate summaries that are more coherent and
 closer to what a human might write. Transformers use models like BERT
 and GPT to understand the context and semantics of the text, allowing
 for more sophisticated abstractive summaries.</p>
-<div id="challenge-3" class="callout challenge">
+<div id="challenge-4" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+<div id="challenge-4" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
 </h3>
 <div class="callout-content">
 <p>Q: Fill in the blanks with the correct terms related to text
