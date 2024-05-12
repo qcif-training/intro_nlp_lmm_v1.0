@@ -78,7 +78,7 @@ Create an NLP model (*nlp*) and download the small English model from spaCy that
 
 ```python
 
-nlp = spacy.download("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm")
 
 ```
 
@@ -100,8 +100,8 @@ Use for loop to print all the named entities in the document:
 
 doc = nlp(text)
 
-For ent in doc.ents
-	Print(ent.text, ent.label_)
+For ent in doc.ents:
+    Print(ent.text, ent.label_)
 
 ```
 
@@ -194,7 +194,7 @@ nltk.download('words')
 :::::::::::::::: solution
 
 A: 
-Download necessary NLTK resources and import the required toolkit:
+Download the necessary NLTK resources and import the required toolkit:
 
 
 ```python
@@ -428,7 +428,7 @@ print(model.print_topics())
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-### Chemistry Joke
+### Challenge
 
 Q: Use the genism to perform topic modeling on the following two different texts and provide a comparison.
 
