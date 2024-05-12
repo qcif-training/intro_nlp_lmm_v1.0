@@ -35,6 +35,7 @@ Teamwork: What are some of the goals of text analysis for NLP tasks in your rese
 
 
 
+
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ### Discussion
@@ -295,6 +296,178 @@ There are some new concepts in this section that are new to you. Although a deta
 
 
 To see how Topic Modeling can help us in action to classify a text, let’s see the following example. We need to install the *Gensim* library and import the necessary modules:
+
+
+```python
+
+pip install genism
+import gensim
+from gensim import corpora
+from gensim.models import LdaModel
+from gensim.utils import simple_preprocess
+
+
+```
+
+at this stage, we preprocess including the text tokenization (text from [Wikipedia](https://en.wikipedia.org/wiki/Australian_Securities_Exchange)):
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+### Text
+
+text = "Australian Shares Exchange Ltd (ASX) is an Australian public company that operates Australia's primary shares exchange, the Australian Shares Exchange (sometimes referred to outside of Australia as, or confused within Australia as, The Sydney Stock Exchange, a separate entity). The ASX was formed on 1 April 1987, through incorporation under legislation of the Australian Parliament as an amalgamation of the six state securities exchanges and merged with the Sydney Futures Exchange in 2006. Today, ASX has an average daily turnover of A$4.685 billion and a market capitalisation of around A$1.6 trillion, making it one of the world's top 20 listed exchange groups, and the largest in the southern hemisphere. ASX Clear is the clearing house for all shares, structured products, warrants and ASX Equity Derivatives.
+ASX Group[3] is a market operator, clearing house and payments system facilitator. It also oversees compliance with its operating rules, promotes standards of corporate governance among Australia's listed companies and helps to educate retail investors. Australia's capital markets. Financial development – Australia was ranked 5th out of 57 of the world's leading financial systems and capital markets by the World Economic Forum; Equity market – the 8th largest in the world (based on free-float market capitalisation) and the 2nd largest in Asia-Pacific, with A$1.2 trillion market capitalisation and average daily secondary trading of over A$5 billion a day; Bond market – 3rd largest debt market in the Asia Pacific; Derivatives market – largest fixed income derivatives in the Asia-Pacific region; Foreign exchange market – the Australian foreign exchange market is the 7th largest in the world in terms of global turnover, while the Australian dollar is the 5th most traded currency and the AUD/USD the 4th most traded currency pair; Funds management – Due in large part to its compulsory superannuation system, Australia has the largest pool of funds under management in the Asia-Pacific region, and the 4th largest in the world. Its primary markets are the AQUA Markets. Regulation. The Australian Securities & Investments Commission (ASIC) has responsibility for the supervision of real-time trading on Australia's domestic licensed financial markets and the supervision of the conduct by participants (including the relationship between participants and their clients) on those markets. ASIC also supervises ASX's own compliance as a public company with ASX Listing Rules. ASX Compliance is an ASX subsidiary company that is responsible for monitoring and enforcing ASX-listed companies' compliance with the ASX operating rules. The Reserve Bank of Australia (RBA) has oversight of the ASX's clearing and settlement facilities for financial system stability. In November 1903 the first interstate conference was held to coincide with the Melbourne Cup. The exchanges then met on an informal basis until 1937 when the Australian Associated Stock Exchanges (AASE) was established, with representatives from each exchange. Over time the AASE established uniform listing rules, broker rules, and commission rates. Trading was conducted by a call system, where an exchange employee called the names of each company and brokers bid or offered on each. In the 1960s this changed to a post system. Exchange employees called "chalkies" wrote bids and offers in chalk on blackboards continuously, and recorded transactions made. The ASX (Australian Stock Exchange Limited) was formed in 1987 by legislation of the Australian Parliament which enabled the amalgamation of six independent stock exchanges that formerly operated in the state capital cities. After demutualisation, the ASX was the first exchange in the world to have its shares quoted on its own market. The ASX was listed on 14 October 1998.[7] On 7 July 2006 the Australian Stock Exchange merged with SFE Corporation, holding company for the Sydney Futures Exchange. Trading system. ASX Group has two trading platforms – ASX Trade,[12] which facilitates the trading of ASX equity securities and ASX Trade24 for derivative securities trading. All ASX equity securities are traded on screen on ASX Trade. ASX Trade is a NASDAQ OMX ultra-low latency trading platform based on NASDAQ OMX's Genium INET system, which is used by many exchanges around the world. It is one of the fastest and most functional multi-asset trading platforms in the world, delivering latency down to ~250 microseconds. ASX Trade24 is ASX global trading platform for derivatives. It is globally distributed with network access points (gateways) located in Chicago, New York, London, Hong Kong, Singapore, Sydney and Melbourne. It also allows for true 24-hour trading, and simultaneously maintains two active trading days which enables products to be opened for trading in the new trading day in one time zone while products are still trading under the previous day. Opening times. The normal trading or business days of the ASX are week-days, Monday to Friday. ASX does not trade on national public holidays: New Year's Day (1 January), Australia Day (26 January, and observed on this day or the first business day after this date), Good Friday (that varies each year), Easter Monday, Anzac day (25 April), Queen's birthday (June), Christmas Day (25 December) and Boxing Day (26 December). On each trading day there is a pre-market session from 7:00 am to 10:00 am AEST and a normal trading session from 10:00 am to 4:00 pm AEST. The market opens alphabetically in single-price auctions, phased over the first ten minutes, with a small random time built in to prevent exact prediction of the first trades. There is also a single-price auction between 4:10 pm and 4:12 pm to set the daily closing prices. Settlement. Security holders hold shares in one of two forms, both of which operate as uncertificated holdings, rather than through the issue of physical share certificates: Clearing House Electronic Sub-register System (CHESS). The investor's controlling participant (normally a broker) sponsors the client into CHESS. The security holder is given a "holder identification number" (HIN) and monthly statements are sent to the security holder from the CHESS system when there is a movement in their holding that month. Issuer-sponsored. The company's share register administers the security holder's holding and issues the investor with a security-holder reference number (SRN) which may be quoted when selling. Holdings may be moved from issuer-sponsored to CHESS or between different brokers by electronic message initiated by the controlling participant. Short selling. Main article: Short (finance). Short selling of shares is permitted on the ASX, but only among designated stocks and with certain conditions: ASX trading participants (brokers) must report all daily gross short sales to ASX. The report will aggregate the gross short sales as reported by each trading participant at an individual stock level. ASX publishes aggregate gross short sales to ASX participants and the general public.[13]
+Many brokers do not offer short selling to small private investors. LEPOs can serve as an equivalent, while contracts for difference (CFDs) offered by third-party providers are another alternative. In September 2008, ASIC suspended nearly all forms of short selling due to concerns about market stability in the ongoing global financial crisis.[14][15] The ban on covered short selling was lifted in May 2009.[16] Also, in the biggest change for ASX in 15 years, ASTC Settlement Rule 10.11.12 was introduced, which requires the broker to provide stocks when settlement is due, otherwise the broker must buy the stock on the market to cover the shortfall. The rule requires that if a Failed Settlement Shortfall exists on the second business day after the day on which the Rescheduled Batch Instruction was originally scheduled for settlement (that is, generally on T+5), the delivering settlement participant must either: close out the Failed Settlement Shortfall on the next business day by purchasing the number of Financial Products of the relevant class equal to the shortfall; or
+acquire under a securities lending arrangement the number of Financial Products of the relevant class equal to the shortfall and deliver those Financial Products in Batch Settlement no more than two business days later.[17] Options. Options on leading shares are traded on the ASX, with standardised sets of strike prices and expiry dates. Liquidity is provided by market makers who are required to provide quotes. Each market maker is assigned two or more stocks. A stock can have more than one market maker, and they compete with one another. A market maker may choose one or both of: Make a market continuously, on a set of 18 options. Make a market in response to a quote request, in any option up to 9 months out. In both cases there is a minimum quantity (5 or 10 contracts depending on the shares) and a maximum spread permitted. Due to the higher risks in options, brokers must check clients' suitability before allowing them to trade options. Clients may both take (i.e. buy) and write (i.e. sell) options. For written positions, the client must put up margin. Interest rate market. The ASX interest rate market is the set of corporate bonds, floating rate notes, and bond-like preference shares listed on the exchange. These securities are traded and settled in the same way as ordinary shares, but the ASX provides information such as their maturity, effective interest rate, etc., to aid comparison.[18] Futures. The Sydney Futures Exchange (SFE) was the 10th largest derivatives exchange in the world, providing derivatives in interest rates, equities, currencies and commodities. The SFE is now part of ASX and its most active products are: SPI 200 Futures – Futures contracts on an index representing the largest 200 stocks on the Australian Stock Exchange by market capitalisation. AU 90-day Bank Accepted Bill Futures – Australia's equivalent of T-Bill futures. 3-Year Bond Futures – Futures contracts on Australian 3-year bonds. 10-Year Bond Futures – Futures contracts on Australian 10-year bonds.
+The ASX trades futures over the ASX 50, ASX 200 and ASX property indexes, and over grain, electricity and wool. Options over grain futures are also traded. Market indices. The ASX maintains stock indexes concerning stocks traded on the exchange in conjunction with Standard & Poor's. There is a hierarchy of index groups called the S&P/ASX 20, S&P/ASX 50, S&P/ASX 100, S&P/ASX 200 and S&P/ASX 300, notionally containing the 20, 50, 100, 200 and 300 largest companies listed on the exchange, subject to some qualifications. Sharemarket Game. The ASX Sharemarket Game give members of the public and secondary school students the chance to learn about investing in the sharemarket using real market prices. Participants receive a hypothetical $50,000 to buy and sell shares in 150 companies and track the progress of their investments over the duration of the game.[19] Merger talks with SGX. ASX was (25 October 2010) in merger talks with Singapore Exchange (SGX). While there was an initial expectation that the merger would have created a bourse with a market value of US$14 billion,[20] this was a misconception; the final proposal intended that the ASX and SGX bourses would have continued functioning separately. The merger was blocked by Treasurer of Australia Wayne Swan on 8 April 2011, on advice from the Foreign Investment Review Board that the proposed merger was not in the best interests of Australia.[21]”
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+```python
+
+tokens = simple_preprocess(text)
+```
+
+For Topic Modeling we need to map each word to a unique ID through creating a dictionary:
+
+```python
+
+dictionary = corpora.Dictionary([tokens])
+```
+
+And the created dictionary should be converted into a bag-of-words. We do that with doc2bow().
+
+```python
+
+corpus = [dictionary.doc2bow(tokens)]
+```
+
+Next, we use Latent Dirichlet Allocation (LDA) which is a popular topic modeling technique because it assumes documents are produced from a mixture of topics. These topics then generate words based on their probability distribution. Set up the LDA model with the number of topics and train it on the corpus: 
+
+```python
+
+lda_model = LdaModel(corpus=corpus, id2word=dictionary, num_topics=1)
+```
+
+Finally, we can print the topics and their word distributions from our text:
+
+```python
+
+topics = lda_model.print_topics(num_words=4)
+    for topic in topics:
+    print(topic)
+```
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Discussion
+
+Teamwork: How does the topic modeling method help researchers? What about the text summarization? 
+What are some of the challenges and limitations of text analysis in your research field (material science)? Consider some of the factors that affect the quality and accuracy of text analysis, such as data availability, language diversity, and domain specificity. How do these factors pose problems or difficulties for text analysis in material science?
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Chemistry Joke
+
+Q: Use the Gensim library to perform topic modeling on the following text, print the original text and the list of topics and their keywords. 
+
+
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+### Text
+
+text = " Perovskite nanocrystals have emerged as a promising class of materials for next-generation optoelectronic devices due to their unique properties. Their crystal structure allows for tunable bandgaps, which are the energy differences between occupied and unoccupied electronic states. This tunability enables the creation of materials that can absorb and emit light across a wide range of the electromagnetic spectrum, making them suitable for applications like solar cells, light-emitting diodes (LEDs), and lasers. Additionally, perovskite nanocrystals exhibit high photoluminescence efficiencies, meaning they can efficiently convert absorbed light into emitted light, further adding to their potential for various optoelectronic applications." 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+You can use the following code to load the Gensim library and the pre-trained model for topic modeling:
+
+
+```python
+
+import gensim
+from gensim import corpora
+from gensim.models import LdaModel
+from gensim.utils import simple_preprocess
+```
+
+:::::::::::::::: solution
+
+A: 
+
+```python
+
+import gensim
+from gensim import corpora
+from gensim.models import LdaModel
+from gensim.utils import simple_preprocess
+tokens = simple_preprocess(text)
+dictionary = corpora.Dictionary([tokens])
+corpus = [dictionary.doc2bow(tokens)]
+model = LdaModel(corpus, num_topics=2, id2word=dictionary)
+print(text)
+print(model.print_topics())
+
+
+```
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
