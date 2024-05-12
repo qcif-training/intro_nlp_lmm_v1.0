@@ -216,12 +216,21 @@
 <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         8. Wrap-up and Final Project
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+        
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#takeaway-from-this-workshop">8.1. Takeaway from This Workshop</a></li>
+<li><a href="#further-resources">8.2. Further Resources</a></li>
+<li><a href="#feedback">8.3. Feedback</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
         
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -284,7 +293,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Wrap-up and Final Project</h1>
-        <p>Last updated on 2024-05-10 |
+        <p>Last updated on 2024-05-12 |
         
         <a href="https://github.com/qcif-training/intro_nlp_lmm_v1.0/edit/main/episodes/08-conclusion-final-project.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -325,106 +334,162 @@ LLMs.</li>
 </div>
 </div>
 </div>
-<div class="section level3">
-<h3 id="takeaway-from-this-workshop">8.1. Takeaway from This Workshop<a class="anchor" aria-label="anchor" href="#takeaway-from-this-workshop"></a></h3>
-<p>We have covered a vast landscape of NLP, starting with the basics and
+<section id="takeaway-from-this-workshop"><h2 class="section-heading">8.1. Takeaway from This Workshop<a class="anchor" aria-label="anchor" href="#takeaway-from-this-workshop"></a>
+</h2>
+<hr class="half-width"><p>We have covered a vast landscape of NLP, starting with the basics and
 moving towards the intricacies of LLMs. Here is a brief recap to
-illustrate our journey: - Text Preprocessing: Imagine cleaning a dataset
-of tweets for sentiment analysis. We learned how to remove noise and
-prepare the text for accurate classification. - Text Analysis: Consider
-the task of extracting key information from news articles. Techniques
-like Named Entity Recognition helped us identify and categorize entities
-within the text. - Word Embedding: We explored how words can be
+illustrate our journey:</p>
+<ul><li>
+<strong>Text Preprocessing</strong>: Imagine cleaning a dataset of
+tweets for sentiment analysis. We learned how to remove noise and
+prepare the text for accurate classification.</li>
+<li>
+<strong>Text Analysis</strong>: Consider the task of extracting key
+information from news articles. Techniques like Named Entity Recognition
+helped us identify and categorize entities within the text.</li>
+<li>
+<strong>Word Embedding</strong>: We explored how words can be
 converted into vectors, enabling us to capture semantic relationships,
-as seen in the Word2Vec algorithm. - Transformers and LLMs: We saw how
-transformers like BERT and GPT can be fine-tuned for tasks such as
-summarizing medical research papers, showcasing their power and
-flexibility.</p>
-<p>To reinforce our understanding, let’s engage in the following
-activity:</p>
-</div>
-<div class="section level2 Discussion">
-<h2 id="discuss-in-groups--share-insights-on-how-nlp-can-be-applied-in-your-field-of-interest">Discuss in groups. Share insights on how NLP can be applied in your
-field of interest<a class="anchor" aria-label="anchor" href="#discuss-in-groups--share-insights-on-how-nlp-can-be-applied-in-your-field-of-interest"></a></h2>
-<ol style="list-style-type: lower-alpha"><li>Stemming</li>
-<li>Word2Vec</li>
-<li>Text Preprocessing</li>
-<li>Part-of-Speech Tagging</li>
-<li>Stop-words Removal</li>
-<li>Transformers</li>
-<li>Bag of Words</li>
-<li>Tokenization</li>
-<li>BERT</li>
-<li>Lemmatization</li>
-</ol><pre><code>1.	“A statistical approach to modeling the meaning of words based on their context.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-
-2.	“A process of reducing words to their root form, enabling the analysis of word frequency.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-
-3.	“An algorithm that uses neural networks to understand the relationships and meanings in human language.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-
-4.	“A technique for identifying the parts of speech for each word in a given sentence.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-
-5.	“A method for cleaning and preparing text data before analysis.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-
-6.	“A library that provides tools for machine learning and statistical modeling.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-
-7.	“A model that predicts the next word in a sentence based on the words that come before it.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-
-8.	“A framework for building and training neural networks to understand and generate human language.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-
-9.	“A technique that groups similar words together in vector space.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-
-10.	“A method for removing commonly used words that carry little meaning.”
-[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
-</code></pre>
-</div>
-<div class="section level2 Discussion">
-<h2 id="discuss-in-groups--share-insights-on-how-nlp-can-be-applied-in-your-field-of-interest-">Discuss in groups. Share insights on how NLP can be applied in your
-field of interest.<a class="anchor" aria-label="anchor" href="#discuss-in-groups--share-insights-on-how-nlp-can-be-applied-in-your-field-of-interest-"></a></h2>
-<div id="accordionSpoiler1" class="accordion spoiler-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button spoiler-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpoiler1" aria-expanded="false" aria-controls="collapseSpoiler1">
-  <h3 class="accordion-header" id="headingSpoiler1">
-<div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Field of Interest: Environmental Science</h3>
-</button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
-<div class="accordion-body">
-<p>• NLP for Climate Change Research: How can NLP help in analyzing
-large volumes of research papers on climate change to identify trends
-and gaps in the literature? • Social Media Analysis for Environmental
-Campaigns: Discuss the use of sentiment analysis to gauge public opinion
-on environmental policies. • Automating Environmental Compliance: Share
-insights on how NLP can streamline the process of checking compliance
-with environmental regulations in corporate documents.</p>
-<div class="section level4">
-<h4 id="field-of-interest-education">Field of Interest: Education<a class="anchor" aria-label="anchor" href="#field-of-interest-education"></a></h4>
-<p>• Personalized Learning: Explore the potential of NLP in creating
-personalized learning experiences by analyzing student feedback and
-performance. • Content Summarization: Discuss the benefits of using NLP
-to summarize educational content for quick revision. • Language
-Learning: Share thoughts on the role of NLP in developing language
-learning applications that adapt to the learner’s proficiency level.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div id="challenge-using-an-llm-mini-project" class="callout challenge">
+as seen in the Word2Vec algorithm.</li>
+<li>
+<strong>Transformers and LLMs</strong>: We saw how transformers like
+BERT and GPT can be fine-tuned for tasks such as summarizing medical
+research papers and showcasing their power and flexibility.</li>
+</ul><div id="quiz" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-using-an-llm-mini-project" class="callout-inner">
-<h3 class="callout-title">Challenge Using an LLM (Mini-Project)<a class="anchor" aria-label="anchor" href="#challenge-using-an-llm-mini-project"></a>
+<div id="quiz" class="callout-inner">
+<h3 class="callout-title">Quiz<a class="anchor" aria-label="anchor" href="#quiz"></a>
+</h3>
+<div class="callout-content">
+<p><strong>A)</strong> Stemming</p>
+<p><strong>B)</strong> Word2Vec</p>
+<p><strong>C)</strong> Text Preprocessing</p>
+<p><strong>D)</strong> Part-of-Speech Tagging</p>
+<p><strong>E)</strong> Stop-words Removal</p>
+<p><strong>F)</strong> Transformers</p>
+<p><strong>G)</strong> Bag of Words</p>
+<p><strong>H)</strong> Tokenization</p>
+<p><strong>I)</strong> BERT</p>
+<p><strong>J)</strong> Lemmatization</p>
+<pre><code>**1. A statistical approach to modeling the meaning of words based on their context.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**2. “A process of reducing words to their root form, enabling the analysis of word frequency.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**3. An algorithm that uses neural networks to understand the relationships and meanings in human language.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**4. A technique for identifying the parts of speech for each word in a given sentence.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**5. A method for cleaning and preparing text data before analysis.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**6. A library that provides tools for machine learning and statistical modeling.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**7. A model that predicts the next word in a sentence based on the words that come before it.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**8. A framework for building and training neural networks to understand and generate human language.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**9. A technique that groups similar words together in vector space.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**10. A method for removing commonly used words that carry little meaning.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+</code></pre>
+</div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<p>A: 1</p>
+</div>
+</div>
+</div>
+</div>
+<p>Share insights on how NLP can be applied in your field of
+interest</p>
+<div class="section level3 Discussion">
+<h3 id="discussion">Discussion<a class="anchor" aria-label="anchor" href="#discussion"></a></h3>
+<p><strong>Field of Interest</strong>: Share insights on how NLP can be
+applied in your field of interest.</p>
+<div id="accordionSolution2" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
+  <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
+</button>
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div class="accordion-body">
+<p><strong><em>Environmental Science</em></strong></p>
+<ul><li>NLP for Climate Change Research: How can NLP help in analyzing large
+volumes of research papers on climate change to identify trends and gaps
+in the literature?</li>
+<li>Social Media Analysis for Environmental Campaigns: Discuss the use
+of sentiment analysis to gauge public opinion on environmental
+policies.</li>
+<li>Automating Environmental Compliance: Share insights on how NLP can
+streamline the process of checking compliance with environmental
+regulations in corporate documents.</li>
+</ul><p><strong><em>Education</em></strong></p>
+<ul><li>Personalized Learning: Explore the potential of NLP in creating
+personalized learning experiences by analyzing student feedback and
+performance.</li>
+<li>Content Summarization: Discuss the benefits of using NLP to
+summarize educational content for quick revision.</li>
+<li>Language Learning: Share thoughts on the role of NLP in developing
+language learning applications that adapt to the learner’s proficiency
+level.</li>
+</ul></div>
+</div>
+</div>
+</div>
+</div>
+<div id="mini-project-using-an-llm" class="callout challenge">
+<div class="callout-square">
+<i class="callout-icon" data-feather="zap"></i>
+</div>
+<div id="mini-project-using-an-llm" class="callout-inner">
+<h3 class="callout-title">Mini-Project: Using an LLM<a class="anchor" aria-label="anchor" href="#mini-project-using-an-llm"></a>
 </h3>
 <div class="callout-content">
 <p>Context Example: Environmental science and climate change Using
@@ -467,12 +532,12 @@ answers related to environmental topics.</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
-  <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>The model should provide a relevant answer based on the few-shot
 examples provided. For instance, it might say: “Individuals can combat
@@ -493,9 +558,9 @@ domain-specific queries.</p>
 </div>
 </div>
 </div>
-<div class="section level3">
-<h3 id="further-resources">8.2. Further Resources<a class="anchor" aria-label="anchor" href="#further-resources"></a></h3>
-<p>For continued learning, here are detailed resources: - Natural
+</section><section id="further-resources"><h2 class="section-heading">8.2. Further Resources<a class="anchor" aria-label="anchor" href="#further-resources"></a>
+</h2>
+<hr class="half-width"><p>For continued learning, here are detailed resources: - Natural
 Language Processing Specialization (Coursera): A series of courses that
 cover NLP foundations, algorithms, and how to build NLP applications. -
 Stanford NLP Group: Access to pioneering NLP research, datasets, and
@@ -506,20 +571,24 @@ scientists, offering datasets, notebooks, and competitions to practice
 and improve your NLP skills.</p>
 <p>Each resource is a gateway to further knowledge, community
 engagement, and hands-on experience.</p>
-</div>
-<div class="section level3">
-<h3 id="feedback">8.3. Feedback<a class="anchor" aria-label="anchor" href="#feedback"></a></h3>
-<p>Please help us improve by answering the following survey questions:
-1. How would you rate the overall quality of the workshop?</p>
+</section><section id="feedback"><h2 class="section-heading">8.3. Feedback<a class="anchor" aria-label="anchor" href="#feedback"></a>
+</h2>
+<hr class="half-width"><p>Please help us improve by answering the following survey
+questions:</p>
+<p><strong>1. How would you rate the overall quality of the
+workshop?</strong></p>
 <p>[ ] Excellent, [ ] Good, [ ] Average, [ ] Below Average, [ ] Poor</p>
-<ol start="2" style="list-style-type: decimal"><li>Was the pace of the workshop appropriate?</li>
-</ol><p>[ ] Too fast, [ ] Just right, [ ] Too slow</p>
-<ol start="3" style="list-style-type: decimal"><li>How clear were the instructions and explanations?</li>
-</ol><p>[ ] Very clear, [ ] Clear, [ ] Somewhat clear, [ ] Not clear</p>
-<ol start="4" style="list-style-type: decimal"><li><p>What was the most valuable part of the workshop for you?</p></li>
-<li><p>How can we improve the workshop for future participants?</p></li>
-</ol><p>Your feedback is crucial for us to evolve and enhance the learning
-experience.</p>
+<p><strong>2. Was the pace of the workshop appropriate?</strong></p>
+<p>[ ] Too fast, [ ] Just right, [ ] Too slow</p>
+<p><strong>3. How clear were the instructions and
+explanations?</strong></p>
+<p>[ ] Very clear, [ ] Clear, [ ] Somewhat clear, [ ] Not clear</p>
+<p><strong>4. What was the most valuable part of the workshop for
+you?</strong></p>
+<p><strong>5. How can we improve the workshop for future
+participants?</strong></p>
+<p><em>Your feedback is crucial for us to evolve and enhance the
+learning experience.</em></p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -541,11 +610,7 @@ NLP.</p>
 Place links that you need to refer to multiple times across pages here. Delete
 any links that you are not going to use. 
  -->
-</div>
-
-
-
-      </div> <!-- / div.lesson-content -->
+</section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link" href="../instructor/07-domain-specific-llms.html"><i aria-hidden="true" class="small-arrow" data-feather="arrow-left"></i>Previous</a>
         <a class="chapter-link float-end" href="../instructor/index.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
@@ -603,7 +668,7 @@ any links that you are not going to use.
   "url": "https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/08-conclusion-final-project.html",
   "identifier": "https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/08-conclusion-final-project.html",
   "dateCreated": "2024-05-10",
-  "dateModified": "2024-05-10",
+  "dateModified": "2024-05-12",
   "datePublished": "2024-05-12"
 }
 
