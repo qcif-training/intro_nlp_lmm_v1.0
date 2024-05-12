@@ -198,7 +198,6 @@ As already mentioned, in the first episode, Tokenization breaks down text into i
 
 
 
-
 ::::::::::::::::::::::::::::::::::::: challenge
 
 ### Discussion
@@ -214,11 +213,11 @@ print(tokens)
 ```
 
 
-```
 Output: ['Perovskite', 'nanocrystals', 'are', 'a', 'class', 'of', 'semiconductor', 'nanocrystals', 'with', 'unique', 'properties', 'that', 'distinguish', 'them', 'from', 'traditional', 'quantum', 'dots', '.']
-```
+
 
 Tokenization is not just about splitting text into words; it’s about understanding the boundaries of words and symbols in different contexts, which can vary greatly between languages and even within the same language in different settings.
+
 
 :::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -280,9 +279,8 @@ Stemming and lemmatization are techniques used to reduce words to their base or 
 
 Teamwork: From the differences between lemmatization and stemming that we learned in the last episode, which technique will you select to get more accurate text analysis results? Explain why?
 
+
 :::::::::::::::::::::::::::::::::::::::::::::::
-
-
 
 
 
@@ -352,7 +350,10 @@ We can conduct stemming and lemmatization with identical text data:
 text = " Perovskite nanocrystals are a class of semiconductor nanocrystals with unique properties that distinguish them from traditional quantum dots. These nanocrystals have an ABX3 composition, where 'A' can be cesium, methylammonium (MA), or formamidinium (FA); 'B' is typically lead or tin; and 'X' is a halogen ion like chloride, bromide, or iodide. Their remarkable optoelectronic properties, such as high photoluminescence quantum yields and tunable emission across the visible spectrum, make them ideal for applications in light-emitting diodes, lasers, and solar cells."
 Before we can stem or lemmatize, we need to tokenize the text.
 
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
 
 
 
@@ -396,6 +397,7 @@ print("Lemmatized Tokens:", lemmatized_tokens)
 - Lemmatized Tokens: ['Perovskite', 'nanocrystal', 'be', 'a', 'class', 'of', 'semiconductor', 'nanocrystal', 'with', 'unique', 'property', 'that', 'distinguish', 'they', 'from', 'traditional', 'quantum', 'dot', '.', 'these', 'nanocrystal', 'have', 'an', 'ABX3', 'composition', ',', 'where', "'", 'A', "'", 'can', 'be', 'cesium', ',', 'methylammonium', '(', 'MA', ')', ',', 'or', 'formamidinium', '(', 'FA', ')', ';', "'", 'b', "'", 'be', 'typically', 'lead', 'or', 'tin', ';', 'and', "'", 'x', "'", 'be', 'a', 'halogen', 'ion', 'like', 'chloride', ',', 'bromide', ',', 'or', 'iodide', '.', 'their', 'remarkable', 'optoelectronic', 'property', ',', 'such', 'as', 'high', 'photoluminescence', 'quantum', 'yield', 'and', 'tunable', 'emission', 'across', 'the', 'visible', 'spectrum', ',', 'make', 'they', 'ideal', 'for', 'application', 'in', 'light', '-', 'emit', 'diode', ',', 'laser', ',', 'and', 'solar', 'cell', '.'] 
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 
 
@@ -507,7 +509,9 @@ print("Filtered sentence:", filtered_sentence)
 
 
 ::: callout
+
 While stopwords are often removed to improve analysis, they can be important for certain tasks like sentiment analysis, where the word ‘not’ can change the entire meaning of a sentence.
+
 :::
 
 
@@ -515,6 +519,7 @@ While stopwords are often removed to improve analysis, they can be important for
 
 
 ::: callout
+
 it is important to note that tokenization is just the beginning. In modern NLP, vectorization, and embeddings play a pivotal role in capturing the context and meaning of text.
 
 Vectorization is the process of converting tokens into a numerical format that machine learning models can understand. This often involves creating a bag-of-words model, where each token is represented by a unique number in a vector. Embeddings are advanced representations where words are mapped to vectors of real numbers. They capture not just the presence of tokens but also the semantic relationships between them. This is achieved through techniques like Word2Vec, GloVe, or BERT, which we will explore in the second part of our workshop.
@@ -522,6 +527,7 @@ Vectorization is the process of converting tokens into a numerical format that m
 These embeddings allow models to understand the text in a more nuanced way, leading to better performance on tasks such as sentiment analysis, machine translation, and more.
 
 *Stay tuned for our next session, where we will dive deeper into how we can use vectorization and embeddings to enhance our NLP models and truly capture the richness of language.*
+
 :::
 
 
