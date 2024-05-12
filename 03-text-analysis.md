@@ -163,6 +163,140 @@ Output: ‘Countries, cities, states’
 
 
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge
+
+Q: Can we also use other libraries for NER analysis? Use the NLTK library to perform named entity recognition on the following text:
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+### Text
+
+text = " Perovskite nanocrystals have emerged as a promising class of materials for next-generation optoelectronic devices due to their unique properties. Their crystal structure allows for tunable bandgaps, which are the energy differences between occupied and unoccupied electronic states. This tunability enables the creation of materials that can absorb and emit light across a wide range of the electromagnetic spectrum, making them suitable for applications like solar cells, light-emitting diodes (LEDs), and lasers. Additionally, perovskite nanocrystals exhibit high photoluminescence efficiencies, meaning they can efficiently convert absorbed light into emitted light, further adding to their potential for various optoelectronic applications.” 
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Print the original text and the list of named entities and their types. You can use the following code to load the NLTK library and the pre-trained model for named entity recognition:
+
+```python
+
+import nltk
+nltk.download('maxent_ne_chunker')
+nltk.download('words')
+...
+
+```
+
+
+:::::::::::::::: solution
+
+A: 
+Download necessary NLTK resources and import the required toolkit:
+
+
+```python
+
+import nltk
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('maxent_ne_chunker')
+
+```
+
+Store the text:
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+### Text
+
+text = "Perovskite nanocrystals have emerged as a promising class of materials for next-generation optoelectronic devices due to their unique properties. Their crystal structure allows for tunable bandgaps, which are the energy differences between occupied and unoccupied electronic states. This tunability enables the creation of materials that can absorb and emit light across a wide range of the electromagnetic spectrum, making them suitable for applications like solar cells, light-emitting diodes (LEDs), and lasers. Additionally, perovskite nanocrystals exhibit high photoluminescence efficiencies, meaning they can efficiently convert absorbed light into emitted light, further adding to their potential for various optoelectronic applications."
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+```python
+
+# Tokenize the text:
+tokens = nltk.word_tokenize(text)
+
+# Assign part-of-speech tags:
+pos_tags = nltk.pos_tag(tokens)
+
+# Perform named entity recognition:
+named_entities = nltk.ne_chunk(pos_tags)
+
+# Print the original text:
+print("Original Text:")
+print(text)
+
+# Print named entities and their types:
+print("\nNamed Entities:")
+for entity in named_entities:
+   if type(entity) == nltk.Tree:
+   print(f"Entity: {''.join(word for word, _ in entity.leaves())}, Type: {entity.label()}")
+
+```
+
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+###Output:
+
+```
+Original Text:
+Perovskite nanocrystals have emerged as a promising class of materials for next-generation optoelectronic devices due to their unique properties. Their crystal structure allows for tunable bandgaps, which are the energy differences between occupied and unoccupied electronic states. This tunability enables the creation of materials that can absorb and emit light across a wide range of the electromagnetic spectrum, making them suitable for applications like solar cells, light-emitting diodes (LEDs), and lasers. Additionally, perovskite nanocrystals exhibit high photoluminescence efficiencies, meaning they can efficiently convert absorbed light into emitted light, further adding to their potential for various optoelectronic applications.
+
+- Named Entities:
+- Entity: Perovskite, Type: ORGANIZATION
+- Entity: light-emitting diodes (LEDs), Type: ORGANIZATION
+
+[(('Perovskite', 'NNP'), 'ORGANIZATION'), ('nanocrystals', 'NNP'), ('have', 'VBP'), ('emerged', 'VBD'), ('as', 'IN'), ('a', 'DT'), ('promising', 'JJ'), ('class', 'NN'), ('of', 'IN'), ('materials', 'NNS'), ('for', 'IN'), ('next-generation', 'JJ'), ('optoelectronic', 'JJ'), ('devices', 'NNS'), ('due', 'IN'), ('to', 'TO'), ('their', 'PRP$'), ('unique', 'JJ'), ('properties', 'NNS'), ('.', '.'), ('Their', 'PRP$'), ('crystal', 'NN'), ('structure', 'NN'), ('allows', 'VBZ'), ('for', 'IN'), ('tunable', 'JJ'), ('bandgaps', 'NNS'), (',', ','), ('which', 'WDT'), ('are', 'VBP'), ('the', 'DT'), ('energy', 'NN'), ('differences', 'NNS'), ('between', 'IN'), ('occupied', 'VBN'), ('and', 'CC'), ('unoccupied', 'VBN'), ('electronic', 'JJ'), ('states', 'NNS'), ('.', '.'), ('This', 'DT'), ('tunability', 'NN'), ('enables', 'VBZ'), ('the', 'DT'), ('creation', 'NN'), ('of', 'IN'), ('materials', 'NNS'), ('that', 'WDT'), ('can', 'MD'), ('absorb', 'VB'), ('and', 'CC'), ('emit', 'VB'), ('light', 'NN'), ('across', 'IN'), ('a', 'DT'), ('wide', 'JJ'), ('range', 'NN'), ('of', 'IN'), ('the', 'DT'), ('electromagnetic', 'JJ'), ('spectrum', 'NN'), (',', ','), ('making', 'VBG'), ('them', 'PRP'), ('suitable', 'JJ'), ('for', 'IN'), ('applications', 'NNS'), ('like', 'IN'), ('solar', 'JJ'), ('cells', 'NNS'), (',', ','), ('light-emitting', 'JJ'), ('diodes', 'NNS'), ('(', '(', 'LEDs', 'NNPS'), ')', ')'), ('and', 'CC'), ('lasers', 'NNS'), ('.', '.'), ('Additionally', 'RB'), (',', ','), ('perovskite', 'NNP'), ('nanocrystals', 'NNP'), ('exhibit', 'VBP'), ('high', 'JJ'), ('photoluminescence', 'NN'), ('efficiencies', 'NNS'), (',', ','), ('meaning', 'VBG'), ('they', 'PRP'), ('can', 'MD'), ('efficiently', 'RB'), ('convert', 'VB'), ('absorbed', 'VBN'), ('light', 'NN'), ('into', 'IN'), ('emitted', 'VBN'), ('light', 'NN'), (',', ','), ('further', 'RB'), ('adding', 'VBG'), ('to', 'TO'), ('their', 'PRP$'), ('potential', 'NN'), ('for', 'IN'), ('various', 'JJ'), ('optoelectronic', 'JJ'), ('applications', 'NNS'), ('.', '.')]
+
+```
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+::: callout
+
+### Why NER?
+
+When do we need to perform NER for your research? 
+
+
+NER helps in quickly finding specific information in large datasets, which is particularly useful in research fields for categorizing the text based on the entities. NER is also called entity chunking and entity extraction.
+
+:::
+
+
+## 3.2. Topic Modeling
+
+Topic Modeling is an unsupervised model for discovering the abstract “topics” that occur in a collection of documents. It is useful in understanding the main themes of a large corpus of text. To better understand this and to find the connection between concepts we have learned so far, let’s match the following terms to their brief definitions:
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Discussion
+
+Teamwork: To better understand this and to find the connection between concepts we have learned so far, let’s match the following terms to their brief definitions:
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/2be22cfb-4ed8-4f65-85bf-31962a40835f)
+
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+::: callout
+
+There are some new concepts in this section that are new to you. Although a detailed explanation of these concepts is out of the scope of this workshop we learn their basic definitions. You already learned a few of them in the earlier activity. Another one is Bag-of-words. We will learn more about Bag-of-words (BoW) in episode 5. BoW is defined as a representation of text that describes the occurrence of words within a document. It is needed in the topic modeling analysis to view the frequency of the words in a document regardless of the order of the words in the text.
+
+:::
+
+
+To see how Topic Modeling can help us in action to classify a text, let’s see the following example. We need to install the *Gensim* library and import the necessary modules:
 
 
 
@@ -181,6 +315,44 @@ Output: ‘Countries, cities, states’
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+::: callout
+This is a callout block. It contains at least three colons
+:::
 
 
 
