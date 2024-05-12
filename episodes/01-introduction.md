@@ -202,13 +202,12 @@ squad_dataset = load_dataset("squad")
 print(squad_dataset["train"].info)
 ```
 
-Each data point is a dictionary with keys corresponding to data elements (e.g., question, context, answer). Access them using those keys within square brackets:
+Each data point is a dictionary with keys corresponding to data elements (e.g., question, context). Access them using those keys within square brackets:
 
 
 ```python
 question = squad_dataset["train"][0]["question"]
 context = squad_dataset["train"][0]["context"]
-answer = squad_dataset["train"][0]["answer"]
 ```
 
 We can use the *print()* function to see the output:
@@ -217,7 +216,6 @@ We can use the *print()* function to see the output:
 ```python
 print(f"Question: {question}")
 print(f"Context: {context}")
-print(f"Answer: {answer}")
 ```
 
 
