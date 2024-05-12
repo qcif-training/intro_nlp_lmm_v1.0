@@ -20,6 +20,7 @@ exercises: 2
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 
+
 Text preprocessing is the method of cleaning and preparing text data for use in NLP. This step is vital because it transforms raw data into a format that can be analyzed and used effectively by NLP algorithms.
 
 
@@ -74,8 +75,11 @@ These nanocrystals have an ABX3 composition, where 'A' can be cesium, methylammo
 Their remarkable optoelectronic properties, such as high photoluminescence quantum yields and tunable emission across the visible spectrum, make them ideal for applications in light-emitting diodes, lasers, and solar cells.
 ```
 
+
+
 ::::::::::::::::::::::::::::::::::::: challenge
-## Discussion
+
+### Discussion
 
 Q: Let’s try again by completing the code below to segment sentences from a paragraph about “your field of research”:
 
@@ -185,7 +189,9 @@ print(tokens)
 As already mentioned, in the first episode, Tokenization breaks down text into individual words or tokens, which is a fundamental step for many NLP tasks.
 
 
+
 ::::::::::::::::::::::::::::::::::::: challenge
+
 ### Discussion
 
 Teamwork: To better understand how it works let’s Match tokens from the provided paragraph about perovskite nanocrystals with similar tokens from another scientific text. This helps in understanding the common vocabulary used in the scientific literature. Using the sentences we listed in the previous section, we can see how Tokenization performs. Assuming 'sentences' is a list of sentences from the previous example, choose a sentence to tokenize:
@@ -460,32 +466,25 @@ While stopwords are often removed to improve analysis, they can be important for
 :::
 
 
-::::::::::::::::::::::::::::::::::::: challenge
 
-### Chemistry Joke
+::: callout
+it is important to note that tokenization is just the beginning. In modern NLP, vectorization, and embeddings play a pivotal role in capturing the context and meaning of text.
 
-Q: Use the spaCy library to perform stop-words removal on the following text: "This is a very simple and short sentence." Print the original text and the text after removing the stop-words. You can use the following code to load the *spaCy* library and the English language model:
+Vectorization is the process of converting tokens into a numerical format that machine learning models can understand. This often involves creating a bag-of-words model, where each token is represented by a unique number in a vector. Embeddings are advanced representations where words are mapped to vectors of real numbers. They capture not just the presence of tokens but also the semantic relationships between them. This is achieved through techniques like Word2Vec, GloVe, or BERT, which we will explore in the second part of our workshop.
 
-```python
-import spacy
-nlp = spacy.load("en_core_web_sm")
-```
+These embeddings allow models to understand the text in a more nuanced way, leading to better performance on tasks such as sentiment analysis, machine translation, and more.
 
-:::::::::::::::: solution
-
-A: part of the precipitate
-
-:::::::::::::::::::::::::
-:::::::::::::::::::::::::::::::::::::::::::::::
+*Stay tuned for our next session, where we will dive deeper into how we can use vectorization and embeddings to enhance our NLP models and truly capture the richness of language.*
+:::
 
 
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Image datasets can be found online or created uniquely for your research question.
-- Images consist of pixels arranged in a particular order.
-- Image data is usually preprocessed before use in a CNN for efficiency, consistency, and robustness.
-- Input data generally consists of three sets: a training set used to fit model parameters; a validation set used to evaluate the model fit on training data; and a test set used to evaluate the final model performance.
+- Text preprocessing is essential for cleaning and standardizing text data.
+- Techniques like sentence segmentation, tokenization, stemming, and lemmatization are fundamental to text preprocessing.
+- Removing stop-words helps in focusing on the important words in text analysis.
+- Tokenization splits sentences into tokens, which are the basic units for further processing.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
