@@ -603,7 +603,7 @@ from a paragraph about “your field of research”:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>A:</p>
 <div class="codewrapper sourceCode" id="cb9">
@@ -672,7 +672,7 @@ sentences and tokens. You can use the following code to load the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>A:</p>
 <div class="codewrapper sourceCode" id="cb12">
@@ -901,7 +901,7 @@ data:</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>text</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>text = ” Perovskite nanocrystals are a class of semiconductor
 nanocrystals with unique properties that distinguish them from
@@ -950,7 +950,7 @@ lemma for each token:</p>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Output</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <ul>
 <li><p>Original Tokens: [‘Perovskite’, ‘nanocrystals’, ‘are’, ‘a’,
@@ -1031,12 +1031,12 @@ library and the English language model:</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>A:</p>
 <div class="codewrapper sourceCode" id="cb26">
@@ -1057,25 +1057,27 @@ library and the English language model:</p>
 <span id="cb26-13"><a href="#cb26-13" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Original text:"</span>, text)</span>
 <span id="cb26-14"><a href="#cb26-14" tabindex="-1"></a><span class="co"># Print the lemmatized text:</span></span>
 <span id="cb26-15"><a href="#cb26-15" tabindex="-1"></a>lemmatized_text <span class="op">=</span> <span class="st">" "</span>.join([token.lemma_ <span class="cf">for</span> token <span class="kw">in</span> doc])</span>
-<span id="cb26-16"><a href="#cb26-16" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Lemmatized text:"</span>, lemmatized_text)</span>
-<span id="cb26-17"><a href="#cb26-17" tabindex="-1"></a></span>
-<span id="cb26-18"><a href="#cb26-18" tabindex="-1"></a>:::::::::::::::::::::::::</span>
-<span id="cb26-19"><a href="#cb26-19" tabindex="-1"></a>:::::::::::::::::::::::::::::::::::::::::::::::</span>
-<span id="cb26-20"><a href="#cb26-20" tabindex="-1"></a></span>
-<span id="cb26-21"><a href="#cb26-21" tabindex="-1"></a></span>
-<span id="cb26-22"><a href="#cb26-22" tabindex="-1"></a></span>
-<span id="cb26-23"><a href="#cb26-23" tabindex="-1"></a></span>
-<span id="cb26-24"><a href="#cb26-24" tabindex="-1"></a></span>
-<span id="cb26-25"><a href="#cb26-25" tabindex="-1"></a><span class="co">## 2.4. Stop-words Removal</span></span>
-<span id="cb26-26"><a href="#cb26-26" tabindex="-1"></a></span>
-<span id="cb26-27"><a href="#cb26-27" tabindex="-1"></a>Removing stop<span class="op">-</span>words, which are common words that add little value to the analysis (such <span class="im">as</span> ‘and’ <span class="kw">and</span> ‘the’), helps focus on the important content. Assuming <span class="st">'doc'</span> <span class="kw">is</span> the processed text <span class="im">from</span> the previous example <span class="cf">for</span> ‘perovskite nanocrystals’, we can define a <span class="bu">list</span> to hold non<span class="op">-</span>stop words <span class="bu">list</span> comprehensions:</span>
-<span id="cb26-28"><a href="#cb26-28" tabindex="-1"></a></span>
-<span id="cb26-29"><a href="#cb26-29" tabindex="-1"></a></span>
-<span id="cb26-30"><a href="#cb26-30" tabindex="-1"></a>```python</span>
-<span id="cb26-31"><a href="#cb26-31" tabindex="-1"></a></span>
-<span id="cb26-32"><a href="#cb26-32" tabindex="-1"></a>filtered_sentence <span class="op">=</span> [word <span class="cf">for</span> word <span class="kw">in</span> doc <span class="cf">if</span> <span class="kw">not</span> word.is_stop]</span>
-<span id="cb26-33"><a href="#cb26-33" tabindex="-1"></a><span class="co"># print the filtered sentence and see how it is changed:</span></span>
-<span id="cb26-34"><a href="#cb26-34" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered sentence:"</span>, filtered_sentence)</span></code></pre>
+<span id="cb26-16"><a href="#cb26-16" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Lemmatized text:"</span>, lemmatized_text)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><section id="stop-words-removal"><h2 class="section-heading">2.4. Stop-words Removal<a class="anchor" aria-label="anchor" href="#stop-words-removal"></a>
+</h2>
+<hr class="half-width">
+<p>Removing stop-words, which are common words that add little value to
+the analysis (such as ‘and’ and ‘the’), helps focus on the important
+content. Assuming ‘doc’ is the processed text from the previous example
+for ‘perovskite nanocrystals’, we can define a list to hold non-stop
+words list comprehensions:</p>
+<div class="codewrapper sourceCode" id="cb27">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a></span>
+<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>filtered_sentence <span class="op">=</span> [word <span class="cf">for</span> word <span class="kw">in</span> doc <span class="cf">if</span> <span class="kw">not</span> word.is_stop]</span>
+<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a><span class="co"># print the filtered sentence and see how it is changed:</span></span>
+<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered sentence:"</span>, filtered_sentence)</span></code></pre>
 </div>
 <p>Output: Filtered sentence: [Perovskite, nanocrystals, class,
 semiconductor, nanocrystals, unique, properties, distinguish,
@@ -1098,34 +1100,34 @@ generating lists based on a straightforward condition.</p>
 <div class="callout-content">
 <p>Q: To see how list comprehensions are created, fill in the missing
 parts of the code to remove stop-words from a given sentence.</p>
-<div class="codewrapper sourceCode" id="cb27">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" tabindex="-1"></a><span class="im">import</span> _____</span>
-<span id="cb27-2"><a href="#cb27-2" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
-<span id="cb27-3"><a href="#cb27-3" tabindex="-1"></a>doc <span class="op">=</span> nlp(<span class="st">"This is a very simple and short sentence."</span>)</span>
-<span id="cb27-4"><a href="#cb27-4" tabindex="-1"></a>filtered_sentence <span class="op">=</span> [____ <span class="cf">for</span> ____ <span class="kw">in</span> doc <span class="cf">if</span> <span class="kw">not</span> ____]</span>
-<span id="cb27-5"><a href="#cb27-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered sentence:"</span>, filtered_sentence)</span></code></pre>
-</div>
-</div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
-<div class="accordion-body">
-<p>A:</p>
 <div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" tabindex="-1"></a><span class="im">import</span> _____</span>
 <span id="cb28-2"><a href="#cb28-2" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
 <span id="cb28-3"><a href="#cb28-3" tabindex="-1"></a>doc <span class="op">=</span> nlp(<span class="st">"This is a very simple and short sentence."</span>)</span>
-<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>filtered_sentence <span class="op">=</span> [word <span class="cf">for</span> words <span class="kw">in</span> doc <span class="cf">if</span> <span class="kw">not</span> word.is_stop]</span>
+<span id="cb28-4"><a href="#cb28-4" tabindex="-1"></a>filtered_sentence <span class="op">=</span> [____ <span class="cf">for</span> ____ <span class="kw">in</span> doc <span class="cf">if</span> <span class="kw">not</span> ____]</span>
 <span id="cb28-5"><a href="#cb28-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered sentence:"</span>, filtered_sentence)</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
+</button>
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div class="accordion-body">
+<p>A:</p>
+<div class="codewrapper sourceCode" id="cb29">
+<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a><span class="im">import</span> spacy</span>
+<span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>nlp <span class="op">=</span> spacy.load(<span class="st">"en_core_web_sm"</span>)</span>
+<span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>doc <span class="op">=</span> nlp(<span class="st">"This is a very simple and short sentence."</span>)</span>
+<span id="cb29-4"><a href="#cb29-4" tabindex="-1"></a>filtered_sentence <span class="op">=</span> [word <span class="cf">for</span> words <span class="kw">in</span> doc <span class="cf">if</span> <span class="kw">not</span> word.is_stop]</span>
+<span id="cb29-5"><a href="#cb29-5" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Filtered sentence:"</span>, filtered_sentence)</span></code></pre>
 </div>
 </div>
 </div>
@@ -1170,10 +1172,6 @@ analysis, machine translation, and more.</p>
 <p><em>Stay tuned for our next session, where we will dive deeper into
 how we can use vectorization and embeddings to enhance our NLP models
 and truly capture the richness of language.</em></p>
-</div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
@@ -1328,7 +1326,7 @@ process your text (text from <a href="https://en.wikipedia.org/wiki/Australian_S
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>text = “Australian Shares Exchange Ltd (ASX) is an Australian public
 company that operates Australia’s primary shares exchange, the
@@ -1398,7 +1396,7 @@ around A$1.6 trillion MONEY
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>A: You can use the following code to get information about each one
 of the labels. For example, from we want to know what GPE represents
@@ -1435,7 +1433,7 @@ library to perform named entity recognition on the following text:</p>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>text = ” Perovskite nanocrystals have emerged as a promising class of
 materials for next-generation optoelectronic devices due to their unique
@@ -1480,7 +1478,7 @@ pre-trained model for named entity recognition:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>A: Download necessary NLTK resources and import the required
 toolkit:</p>
@@ -1500,7 +1498,7 @@ toolkit:</p>
   <h3 class="accordion-header" id="headingSpoiler3">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>text = “Perovskite nanocrystals have emerged as a promising class of
 materials for next-generation optoelectronic devices due to their unique
@@ -1546,7 +1544,7 @@ adding to their potential for various optoelectronic applications.”</p>
   <h3 class="accordion-header" id="headingSpoiler4">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Output</h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <p>Original Text: Perovskite nanocrystals have emerged as a promising
 class of materials for next-generation optoelectronic devices due to
@@ -1687,7 +1685,7 @@ from <a href="https://en.wikipedia.org/wiki/Australian_Securities_Exchange" clas
   <h3 class="accordion-header" id="headingSpoiler5">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
 <div class="accordion-body">
 <p>text = “Australian Shares Exchange Ltd (ASX) is an Australian public
 company that operates Australia’s primary shares exchange, the
@@ -1942,7 +1940,7 @@ keywords.</p>
   <h3 class="accordion-header" id="headingSpoiler6">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler6" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler6" aria-labelledby="headingSpoiler6">
+<div id="collapseSpoiler6" class="accordion-collapse collapse" aria-labelledby="headingSpoiler6" data-bs-parent="#accordionSpoiler6">
 <div class="accordion-body">
 <p>text = ” Perovskite nanocrystals have emerged as a promising class of
 materials for next-generation optoelectronic devices due to their unique
@@ -1986,7 +1984,7 @@ pre-trained model for topic modeling:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>A:</p>
 <div class="codewrapper sourceCode" id="cb17">
@@ -2028,7 +2026,7 @@ different texts and provide a comparison.</p>
   <h3 class="accordion-header" id="headingSpoiler7">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler7" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler7" aria-labelledby="headingSpoiler7">
+<div id="collapseSpoiler7" class="accordion-collapse collapse" aria-labelledby="headingSpoiler7" data-bs-parent="#accordionSpoiler7">
 <div class="accordion-body">
 <p>text1 = “Perovskite nanocrystals have emerged as a promising class of
 materials for next-generation optoelectronic devices due to their unique
@@ -2060,7 +2058,7 @@ dissipation applications.”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>A: After storing the two texts in text1 and text2, preprocess the
 text (e.g., tokenization, stop word removal, stemming/lemmatization).
@@ -2105,7 +2103,7 @@ Split the texts into documents:</p>
   <h3 class="accordion-header" id="headingSpoiler8">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Output</h3>
 </button>
-<div id="collapseSpoiler8" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler8" aria-labelledby="headingSpoiler8">
+<div id="collapseSpoiler8" class="accordion-collapse collapse" aria-labelledby="headingSpoiler8" data-bs-parent="#accordionSpoiler8">
 <div class="accordion-body">
 <p>Original Texts:</p>
 <p>Text 1: Perovskite nanocrystals have emerged as a promising class of
@@ -2184,7 +2182,7 @@ keywords.</p>
   <h3 class="accordion-header" id="headingSpoiler9">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler9" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler9" aria-labelledby="headingSpoiler9">
+<div id="collapseSpoiler9" class="accordion-collapse collapse" aria-labelledby="headingSpoiler9" data-bs-parent="#accordionSpoiler9">
 <div class="accordion-body">
 <p>text = “Natural language processing (NLP) is a subfield of computer
 science, information engineering, and artificial intelligence concerned
@@ -2224,7 +2222,7 @@ pre-trained model for topic modeling:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>A:</p>
 <div class="codewrapper sourceCode" id="cb21">
@@ -2323,7 +2321,7 @@ text.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>A:</p>
 <ul>
@@ -3915,7 +3913,7 @@ experience.</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <figure><img src="fig/llms_4.png" class="figure mx-auto d-block"></figure><ol style="list-style-type: decimal">
 <li><p>Transformer Architecture: A neural network design that uses
@@ -3972,7 +3970,7 @@ transformers to the correct color?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/9d4afc99-d8f4-4a17-9af9-5fab4fac5dfd" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
 </figure>
@@ -4071,7 +4069,7 @@ nuanced meanings of words.”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <p>“BERT is a revolutionary language model that uses an
 <strong>encoder</strong> to process words in a sentence. Unlike
@@ -4091,7 +4089,7 @@ nuanced meanings of words.”</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Heads-up: MLM &amp; NSP</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>Pre-training of language models involves a process where models like
 BERT and GPT learn to predict words in sentences without specific task
@@ -4132,7 +4130,7 @@ explain the differences in the end.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/c01d8b7f-b237-499b-b169-d40c785e30d0" alt="image" class="figure"><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/1153ca29-aafd-4de6-8013-525b21ded916" alt="image" class="figure"><a href="https://medium.com/@reyhaneh.esmailbeigi/bert-gpt-and-bart-a-short-comparison-5d6a57175fca" class="external-link">source</a></p>
 </div>
@@ -4180,7 +4178,7 @@ following schematics demonstrate their performing differences:</em></p>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>How LLMs can be Compared? What is HELM?</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>Models are often benchmarked using standardized datasets and metrics.
 The Holistic Evaluation of Language Models (HELM) by Stanford provides a
@@ -4227,7 +4225,7 @@ classification, text generation, or question answering?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>A: Comparing Performance (Benchmarking): 1. Performance can be
 compared based on the model’s architecture, computational efficiency,
@@ -4416,7 +4414,7 @@ and the pre-trained model and tokenizer for text summarization:</p>
   <h3 class="accordion-header" id="headingSpoiler3">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>“Perovskite nanocrystals are a class of semiconductor nanocrystals,
 which exhibit unique characteristics that separate them from traditional
@@ -4516,7 +4514,7 @@ nanophotonics.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>Print the summarized text.</p>
 <div class="codewrapper sourceCode" id="cb9">
@@ -4574,7 +4572,7 @@ text and the predicted category and score.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>A:</p>
 <div class="codewrapper sourceCode" id="cb12">
@@ -4623,7 +4621,7 @@ are”. Print the prompt and the generated text.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8">Show me the solution</h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -5320,7 +5318,7 @@ little meaning.</strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>A: 1</p>
 </div>
@@ -5346,7 +5344,7 @@ interest.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p><strong><em>Environmental Science</em></strong></p>
 <ul>
@@ -5428,7 +5426,7 @@ answers related to environmental topics.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>The model should provide a relevant answer based on the few-shot
 examples provided. For instance, it might say: “Individuals can combat
