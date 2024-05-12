@@ -68,6 +68,14 @@ By the end of this episode, you will not only understand the significance of NLP
 For example, in historical research, topic modeling can reveal prevalent themes in primary source documents from a particular era. A historian might use NLP to analyze newspapers from the early 20th century to study public discourse around significant events like World War I.
 
 
+**Named Entity Recognition** is a process where an algorithm takes a string of text (sentence or paragraph) and identifies relevant nouns (people, places, and organizations) that are mentioned in that string. NER is used in many fields in NLP, and it can help answer many real-world questions, such as: Which companies were mentioned in the news article? Were specified products mentioned in complaints or reviews? Does the tweet (recently rebranded to X) contain the name of a person? Does the tweet contain this person’s location?
+
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/27b2f4a2-f0a8-4061-8f52-223f2a0f8e31)
+[source](https://www.turing.com/kb/a-comprehensive-guide-to-named-entity-recognition)
+
+
+
 
 ::: callout
 ### Challenges of NLP
@@ -99,7 +107,7 @@ One of the significant challenges in NLP is dealing with the ambiguity of langua
 
 
 
-
+## 1.3. Basic Concepts and Terminology of NLP
 
 
 
