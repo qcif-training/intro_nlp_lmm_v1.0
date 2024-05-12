@@ -6,19 +6,214 @@ exercises: 2
 
 :::::::::::::::::::::::::::::::::::::: questions
 
-- What is a (artificial) neural network (ANN)?
-- How is a convolutional neural network (CNN) different from an ANN?
-- What are the types of layers used to build a CNN?
+- What are text analysis methods?
+- How can I perform text analysis?
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: objectives
 
-- Understand how a convolutional neural network (CNN) differs from an artificial neural network (ANN).
-- Explain the terms: kernel, filter.
-- Know the different layers: convolutional, pooling, flatten, dense.
+- Define objectives associated with each one of the text analysis techniques.
+- Implement named entity recognition, and topic modeling using Python libraries and frameworks, such as NLTK, and Gensim.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+## 3.1. Introduction to Text-Analysis
+
+In this episode, we will learn how to analyze text data for NLP tasks. We will explore some common techniques and methods for text analysis, such as named entity recognition, topic modeling, and text summarization. We will use some popular libraries and frameworks, such as spaCy, NLTK, and Gensim, to implement these techniques and methods.
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Discussion
+
+Teamwork: What are some of the goals of text analysis for NLP tasks in your research field (e.g. material science)? Think of some examples of NLP tasks that require text analysis, such as literature review, patent analysis, or material discovery. How does text analysis help to achieve these goals?
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Discussion
+
+Teamwork: Name some of the common techniques in text analysis and associating libraries. Briefly explain how they differ from each other in terms of their objectives and required libraries.
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+## 3.1. Named Entity Recognition
+
+Named Entity Recognition is a process of identifying and classifying key elements in text into predefined categories. The categories could be names of persons, organizations, locations, expressions of times, quantities, monetary values, percentages, etc. Next, let’s discuss how it works. 
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Discussion
+
+Teamwork: Discuss what tasks can be done with NER.
+
+A: *NER can help with 1) categorizing resumes, 2) categorizing customer feedback, 3) categorizing research papers, etc.*
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Using a text example from Wikipedia can help us to see how NER works. Note that the spaCy library is a common framework here as well. Thus, first, we make sure that the library is installed and imported:
+
+```python
+
+pip install spacy
+import spacy
+
+
+```
+
+Create an NLP model (*nlp*) and download the small English model from spaCy that is suitable for general tasks.
+
+
+
+```python
+
+nlp = spacy.download("en_core_web_sm")
+
+```
+
+Create a variable to store your text and then apply the model to process your text (text from [Wikipedia](https://en.wikipedia.org/wiki/Australian_Securities_Exchange)):
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+### Text
+
+text = “Australian Shares Exchange Ltd (ASX) is an Australian public company that operates Australia's primary shares exchange, the Australian Shares Exchange (sometimes referred to outside of Australia as, or confused within Australia as, The Sydney Stock Exchange, a separate entity). The ASX was formed on 1 April 1987, through incorporation under legislation of the Australian Parliament as an amalgamation of the six state securities exchanges, and merged with the Sydney Futures Exchange in 2006. Today, ASX has an average daily turnover of A$4.685 billion and a market capitalization of around A$1.6 trillion, making it one of the world's top 20 listed exchange groups, and the largest in the southern hemisphere. ASX Clear is the clearing house for all shares, structured products, warrants and, ASX Equity Derivatives.”
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+Use for loop to print all the named entities in the document:
+
+
+```python
+
+doc = nlp(text)
+
+For ent in doc.ents
+	Print(ent.text, ent.label_)
+
+```
+
+The results will be:
+
+```
+
+output:
+
+Australian Shares Exchange Ltd ORG
+ASX ORG
+Australian NORP
+Australia GPE
+the Australian Shares Exchange ORG
+Australia GPE
+Australia GPE
+The Sydney Stock Exchange ORG
+ASX ORG
+1 April 1987 DATE
+the Australian Parliament ORG
+six CARDINAL
+the Sydney Futures Exchange ORG
+2006 DATE
+Today DATE
+ASX ORG
+A$4.685 billion MONEY
+around A$1.6 trillion MONEY
+20 CARDINAL
+
+```
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Challenge
+
+Q: How can you interpret the labels in the output?
+
+:::::::::::::::: solution
+
+A: You can use the following code to get information about each one of the labels. For example, from we want to know what GPE represents here. We can use *explain()* to get the required information:
+spacy.explain(‘GPE’)
+
+```python
+
+spacy.explain(‘GPE’)
+
+```
+
+```
+Output: ‘Countries, cities, states’
+
+```
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:::::::::::::::::::::::::::::::::::::::::: spoiler
+
+### What Else Might We Use A Spoiler For?
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+### Chemistry Joke
+
+Q: If you aren't part of the solution, then what are you?
+
+:::::::::::::::: solution
+
+A: part of the precipitate
+
+:::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+
+
+
+
+
 
 ## Neural Networks
 
