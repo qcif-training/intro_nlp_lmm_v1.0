@@ -45,6 +45,24 @@ Finally, we’ll guide you through Data Acquisition: Dataset Libraries, where yo
 By the end of this episode, you will not only understand the significance of NLP in research but also be equipped with the knowledge to start applying these tools to your own projects. Prepare to unlock new potentials and streamline your research process with the power of NLP!
 
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Discussion
+
+Teamwork: What are some examples of NLP in your everyday life? Think of some situations where you interact with or use NLPs, such as online search, voice assistants, social media, etc. How do these examples demonstrate the usefulness of NLP in research projects?
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Discussion
+
+Teamwork: What are some of examples of NLP in your daily research tasks? What are challenges of NLP that make it difficult, complex, and/or inaccurate?
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
 ## 1.2.	Common Applications of NLP in Research
 
 **Sentiment Analysis** is a powerful tool for researchers, especially in fields like market research, political science, and public health. It involves the computational identification of opinions expressed in text, categorizing them as positive, negative, or neutral. In market research, for instance, sentiment analysis can be applied to product reviews to gauge consumer satisfaction: a study could analyze thousands of online reviews for a new smartphone model to determine the overall public sentiment. This can help companies identify areas of improvement or features that are well-received by consumers. 
@@ -110,81 +128,148 @@ One of the significant challenges in NLP is dealing with the ambiguity of langua
 ## 1.3. Basic Concepts and Terminology of NLP
 
 
+::::::::::::::::::::::::::::::::::::: challenge
+
+## Discussion
+
+Teamwork: What are some of the basic concepts and terminology of natural language processing that you are familiar with or want to learn more about? Share your knowledge or questions with a partner or a small group, and try to explain or understand some of the key terms of natural language processing, such as tokens, lemmas, n-grams, etc.
+
+:::::::::::::::::::::::::::::::::::::::::::::::
+
+
+**Corpus**: A corpus is a collection of written texts, especially the entire works of a particular author or a body of writing on a particular subject. In NLP, a corpus is used as a large and structured set of texts that can be used to perform statistical analysis and hypothesis testing, check occurrences, or validate linguistic rules within a specific language territory.
+
+**Token and Tokenization**: Tokenization is the process of breaking a stream of text up into words, phrases, symbols, or other meaningful elements called tokens. The list of tokens becomes input for further processing such as parsing or text mining. Tokenization is useful in situations where certain characters or words need to be treated as a single entity, despite any spaces or punctuation that might separate them.
+
+**Stemming**: Stemming is the process of reducing inflected (or sometimes derived) words to their word stem, base, or root form—generally a written word form. The idea is to remove affixes to get to the root form of the word. Stemming is often used in search engines for indexing words. Instead of storing all forms of a word, a search engine can store only the stems, greatly reducing the size of the index while increasing retrieval accuracy.
+
+
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/42718630-80a0-483f-81a7-61be10f5aa99)
+[source](https://nirajbhoi.medium.com/stemming-vs-lemmatization-in-nlp-efc280d4e845)
+
+
+**Lemmatization**: Lemmatization, unlike Stemming, reduces the inflected words properly ensuring that the root word belongs to the language. In Lemmatization, the root word is called Lemma. A lemma is the canonical form, dictionary form, or citation form of a set of words. For example, runs, running, and running are all forms of the word run, therefore run is the lemma of all these words.
+
+
+
+**Part-of-Speech (PoS) Tagging**: Part-of-speech tagging is the process of marking up a word in a text as corresponding to a particular part of speech, based on both its definition and its context. It is a necessary step before performing more complex NLP tasks like parsing or grammar checking.
+
+
+
+**Named Entity Recognition (NER)**: Named Entity Recognition is a process where an algorithm takes a string of text (sentence or paragraph) and identifies relevant nouns (people, places, and organizations) that are mentioned in that string. NER is used in many fields in NLP, and it can help answer many real-world questions, such as: Which companies were mentioned in the news article? Were specified products mentioned in complaints or reviews? Does the tweet (recently rebranded to X) contain the name of a person? Does the tweet contain this person’s location?
+
+
+
+**Dependency Parsing**: Dependency parsing is the process of analyzing the grammatical structure of a sentence based on the dependencies between the words in a sentence. A dependency parser analyzes the grammatical structure of a sentence, establishing relationships between “head” words and words that modify those heads.
+
+
+
+**Chunking**: Chunking is a process of extracting phrases from unstructured text. Instead of just simple tokens that may not represent the actual meaning of the text, it’s also interested in extracting entities like noun phrases, verb phrases, etc. It’s basically a meaningful grouping of words or tokens.
+
+
+
+**Word Embeddings**: Word embeddings are a type of word representation that allows words with similar meanings to have a similar representation. They are a distributed representation of text that is perhaps one of the key breakthroughs for the impressive performance of deep learning methods on challenging natural language processing problems.
+
+
+
+**Transformers**: Transformers are models that handle the ordering of words and other elements in a language. They are designed to handle sequential data, such as natural language, for tasks such as translation and text summarization. They are the foundation of most recent advances in NLP, including models like BERT and GPT.
 
 
 
 
+## 1.4. Data Acquisition: Dataset Libraries:
 
 
+Different data libraries offer various datasets that are useful for training and testing NLP models. These libraries provide access to a wide range of text data, from literary works to social media posts, which can be used for tasks such as sentiment analysis, topic modeling, and more.
+
+**Natural Language Toolkit (NLTK)**: NLTK is a leading platform for building Python programs to work with human language data. It provides easy-to-use interfaces to over 50 corpora and lexical resources such as WordNet, along with a suite of text-processing libraries for classification, tokenization, stemming, tagging, parsing, and semantic reasoning.
+
+**spaCy**: spaCy is a free, open-source library for advanced Natural Language Processing in Python. It’s designed specifically for production use and helps you build applications that process and “understand” large volumes of text. It can be used to build information extraction or natural language understanding systems or to pre-process text for deep learning.
+
+**Gensim**: Gensim is a Python library for topic modeling, document indexing, and similarity retrieval with large corpora. Targeted at the NLP and information retrieval communities, Gensim is designed to handle large text collections using data streaming and incremental online algorithms, which differentiates it from most other machine learning software packages that only target batch and in-memory processing.
+
+**Hugging Face’s datasets**: This library provides a simple command-line interface to download and pre-process any of the major public datasets (text datasets in 467 languages and dialects, etc.) provided on the HuggingFace Datasets Hub. It’s designed to let the community easily add and share new datasets. Hugging Face Datasets simplifies working with data for machine learning, especially NLP tasks. It provides a central hub to find and load pre-processed datasets, saving you time on data preparation. You can explore a vast collection of datasets for various tasks and easily integrate them with other Hugging Face libraries.
 
 
+Data acquisition using Hugging Face datasets library. First, we start with installing the library:
+
+```python
+pip install datasets
+
+# To import the dataset, we can write:
+from datasets import load_dataset
+```
+
+Use load_dataset with the dataset identifier in quotes. For example, to load the SQuAD question answering dataset:
 
 
+```python
+squad_dataset = load_dataset("squad")
+# Use the info attribute to view the dataset description:
+print(squad_dataset.info)
+```
+
+Each data point is a dictionary with keys corresponding to data elements (e.g., question, context, answer). Access them using those keys within square brackets:
 
 
+```python
+question = squad_dataset["train"][0]["question"]
+context = squad_dataset["train"][0]["context"]
+answer = squad_dataset["train"][0]["answer"]
+```
+
+We can use print() function to see the output:
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```python
+print(f"Question: {question}")
+print(f"Context: {context}")
+print(f"Answer: {answer}")
+```
 
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Chemistry Joke
+## Challenge:
 
-Q: If you aren't part of the solution, then what are you?
+Q: Use the nltk library to acquire data for natural language processing tasks. You can use the following code to load the nltk library and download some popular datasets:
+
+
+```python
+
+import nltk
+nltk.download()
+```
+
+Choose one of the datasets from the nltk downloader, such as brown, reuters, or gutenberg, and load it using the nltk.corpus module. Then, print the name, size, and description of the dataset. 
+
 
 :::::::::::::::: solution
 
-A: part of the precipitate
+
+A: You can use the following code to access the dataset information:
+Use the nltk library to acquire data for NLP tasks. Import the necessary libraries:
+
+
+```python
+
+import nltk
+from nltk.corpus import gutenberg, brown
+
+# Download the required data:
+nltk.download('gutenberg')
+nltk.download('brown')
+
+print(gutenberg.readme())
+
+# Access the downloaded data:
+gutenberg_text = gutenberg.raw('austen-emma.txt')
+brown_text = brown.words()
+```
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
-
-:::::::::::::::::::::::::::::::::::::::::: spoiler
-
-### What Else Might We Use A Spoiler For?
-
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
-
-
-::: callout
-This is a callout block. It contains at least three colons
-:::
-
 
 
 
