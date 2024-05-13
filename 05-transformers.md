@@ -244,7 +244,7 @@ Transformers are essential for NLP tasks because they overcome the limitations o
 
 
 
-## 5.3. Semantic Analysis
+## 5.3. Sentiment Analysis
 
 Sentiment analysis is a powerful tool in NLP that helps determine the emotional tone behind the text. It is used to understand opinions, sentiments, emotions, and attitudes from various entities and classify them according to their polarity. 
 
