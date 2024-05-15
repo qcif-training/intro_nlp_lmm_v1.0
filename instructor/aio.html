@@ -455,7 +455,7 @@ or neutral.</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Example</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>In market research, for instance, sentiment analysis can be applied
 to product reviews to gauge consumer satisfaction: a study could analyze
@@ -476,7 +476,7 @@ to extract entities and relationships from texts.</p>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Example</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>In legal research, for example, information extraction can be used to
 sift through case law to find precedents related to a particular legal
@@ -497,7 +497,7 @@ reading the entire text.</p>
   <h3 class="accordion-header" id="headingSpoiler3">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Example</h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>In biomedical research, text summarization can assist in literature
 reviews by providing summaries of research articles. For example, a
@@ -519,7 +519,7 @@ documents or social media data.</p>
   <h3 class="accordion-header" id="headingSpoiler4">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Example</h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <p>For example, in historical research, topic modeling can reveal
 prevalent themes in primary source documents from a particular era. A
@@ -540,7 +540,7 @@ that string.</p>
   <h3 class="accordion-header" id="headingSpoiler5">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Example</h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
 <div class="accordion-body">
 <p>NER is used in many fields in NLP, and it can help answer many
 real-world questions, such as: Which companies were mentioned in the
@@ -582,7 +582,7 @@ paper’s contributions.</p>
   <h3 class="accordion-header" id="headingSpoiler6">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Suggested Resources:</h3>
 </button>
-<div id="collapseSpoiler6" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler6" aria-labelledby="headingSpoiler6">
+<div id="collapseSpoiler6" class="accordion-collapse collapse" aria-labelledby="headingSpoiler6" data-bs-parent="#accordionSpoiler6">
 <div class="accordion-body">
 <ul>
 <li>Python’s Natural Language Toolkit (NLTK) for sentiment analysis</li>
@@ -768,7 +768,7 @@ print the name, size, and description of the dataset.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>A: You can use the following code to access the dataset information:
 Use the nltk library to acquire data for NLP tasks. Import the necessary
@@ -2705,20 +2705,17 @@ language processing to interpret and condense text.</p></li>
 <h3 class="callout-title">Callout<a class="anchor" aria-label="anchor" href="#callout4"></a>
 </h3>
 <div class="callout-content">
-<p>With that being said we still can use libraries such as Gensim for
-text summarization. We need to import the summarize module first:</p>
-<div class="codewrapper sourceCode" id="cb23">
-<h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a></span>
-<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="im">from</span> gensim.summarization <span class="im">import</span> summarize</span>
-<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="co"># next we need to load our text data into a variable:</span></span>
-<span id="cb23-4"><a href="#cb23-4" tabindex="-1"></a>text <span class="op">=</span> <span class="st">"Perovskite nanocrystals have unique properties that make them excellent for optoelectronic devices."</span></span>
-<span id="cb23-5"><a href="#cb23-5" tabindex="-1"></a><span class="co"># Now we can generate the Summary.</span></span>
-<span id="cb23-6"><a href="#cb23-6" tabindex="-1"></a><span class="co"># Use the summarize function to create a summary:</span></span>
-<span id="cb23-7"><a href="#cb23-7" tabindex="-1"></a>summary <span class="op">=</span> summarize(text, ratio<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb23-8"><a href="#cb23-8" tabindex="-1"></a><span class="bu">print</span>(summary)</span></code></pre>
-</div>
+<p>In the rapidly evolving field of NLP, summarization tasks are
+increasingly being carried out using transformer-based models due to
+their advanced capabilities in understanding context and generating
+coherent summaries. Tools like Gensim’s summarization module</p>
+<pre><code>from gensim.summarization import summarize</code></pre>
+<p>have become outdated and were removed in its 4.0 release <a href="">source</a>, as they relied on extractive methods that simply
+selected parts of the existing text, which is less effective compared to
+the abstractive approach of transformers. These cutting-edge transformer
+models, which can create concise and fluent summaries by generating new
+sentences, are leading to the gradual disappearance of older, less
+efficient summarization methods.</p>
 </div>
 </div>
 </div>
@@ -3269,7 +3266,7 @@ correct name label to each one.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/523924b5-055b-4125-8bce-aa2be2b38ca8" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
 </figure>
@@ -3283,7 +3280,7 @@ correct name label to each one.</p>
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What is Multilayer Perceptron then?</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
 <div class="accordion-body">
 <p>In the context of machine learning, a multilayer perceptron (MLP) is
 indeed a fully connected multi-layer neural network and is a classic
@@ -3323,7 +3320,7 @@ allows the network to process complex patterns and data.</p>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What happens next? How to optimize an ANN?</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
 <div class="accordion-body">
 <p>Backpropagation is an algorithmic cornerstone in the training of
 ANNs, serving as a method for optimizing weights and biases through
@@ -3373,7 +3370,7 @@ do we have?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/144a8f7d-c1ac-4b57-8688-b5280cabd59c" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
 </figure><ul>
@@ -3403,7 +3400,7 @@ calculate the number of parameters.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/39820eb0-7959-4ed1-bdfc-69131ab1a834" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
 </figure><p>We would add: - (4 * 4) weights from the first to the second hidden
@@ -3445,7 +3442,7 @@ allocated textbox:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>A: <img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/25823a7c-6059-4c83-b592-a273fa59b9ec" alt="image" class="figure"></p>
 <p>Briefly, we can say:</p>
@@ -3540,7 +3537,7 @@ groups.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <p>A: Transformers, initially popular in NLP, have found applications
 beyond text analysis. They excel in computer vision, speech recognition,
@@ -3580,7 +3577,7 @@ es?”</strong></p>
   <h3 class="accordion-header" id="headingSpoiler3">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>What are other sequential learning models?</h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
 <div class="accordion-body">
 <p>Transformers are essential for NLP tasks because they overcome the
 limitations of earlier models like recurrent neural networks (RNNs) and
@@ -3731,7 +3728,7 @@ other team members.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>A: Transformers use deep learning models that can understand context
 and nuances of language, making them suitable for complex and lengthy
@@ -3781,7 +3778,7 @@ pre-trained model and tokenizer for sentiment analysis:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>A:</p>
 <div class="codewrapper sourceCode" id="cb6">
@@ -3824,7 +3821,7 @@ Huggingface library database.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8">Show me the solution</h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <p>A:</p>
 <div class="codewrapper sourceCode" id="cb8">
@@ -3864,7 +3861,7 @@ results with other group members.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
   <h4 class="accordion-header" id="headingSolution9">Show me the solution</h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <p>A: <img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/166c2025-14b0-4f1b-aee5-3f46d4f3c8b4" alt="image" class="figure"></p>
 </div>
@@ -3888,7 +3885,7 @@ pipeline:</p>
   <h3 class="accordion-header" id="headingSpoiler4">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Input Text</h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
 <div class="accordion-body">
 <p>text = “A groundbreaking research breakthrough in solar energy has
 propelled the development of the world’s most efficient quantum dot (QD)
@@ -4034,7 +4031,7 @@ summarizations in your field of research? Explain why?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
   <h4 class="accordion-header" id="headingSolution10">Show me the solution</h4>
 </button>
-<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
+<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
 <div class="accordion-body">
 <p>A: Transformers are particularly useful for summarizing research
 papers and documents where understanding the context and generating a
@@ -4066,7 +4063,7 @@ following text [generated by Copilot]:</p>
   <h3 class="accordion-header" id="headingSpoiler5">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Input Text</h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
 <div class="accordion-body">
 <p>text: “Perovskite nanocrystals are a class of semiconductor
 nanocrystals that have attracted a lot of attention in recent years due
@@ -4159,7 +4156,7 @@ functionalities of these fascinating nanomaterials.”</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution11" aria-expanded="false" aria-controls="collapseSolution11">
   <h4 class="accordion-header" id="headingSolution11">Show me the solution</h4>
 </button>
-<div id="collapseSolution11" class="accordion-collapse collapse" aria-labelledby="headingSolution11" data-bs-parent="#accordionSolution11">
+<div id="collapseSolution11" class="accordion-collapse collapse" data-bs-parent="#accordionSolution11" aria-labelledby="headingSolution11">
 <div class="accordion-body">
 <p>A: You can use the following code to load the transformers library
 and the pre-trained model and tokenizer for text summarization:</p>
