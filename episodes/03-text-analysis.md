@@ -143,7 +143,7 @@ Q: How can you interpret the labels in the output?
 
 :::::::::::::::: solution
 
-A: You can use the following code to get information about each one of the labels. For example, from we want to know what GPE represents here. We can use *explain()* to get the required information:
+A: You can use the following code to get information about each one of the labels. For example, we want to know what GPE represents here. We can use *explain()* to get the required information:
 spacy.explain(‘GPE’)
 
 ```python
@@ -278,13 +278,17 @@ Topic Modeling is an unsupervised model for discovering the abstract “topics�
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-### Discussion
+### Challenge
 
 Teamwork: To better understand this and to find the connection between concepts we have learned so far, let’s match the following terms to their brief definitions:
 
 ![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/2be22cfb-4ed8-4f65-85bf-31962a40835f)
 
+:::::::::::::::: solution
 
+![image](https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/d7d9a9a4-c2cb-4f37-bc6c-7b2f99133fe3)
+
+:::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
 
 
