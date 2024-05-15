@@ -294,7 +294,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Text Analysis</h1>
-        <p>Last updated on 2024-05-12 |
+        <p>Last updated on 2024-05-15 |
         
         <a href="https://github.com/qcif-training/intro_nlp_lmm_v1.0/edit/main/episodes/03-text-analysis.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -419,7 +419,7 @@ process your text (text from <a href="https://en.wikipedia.org/wiki/Australian_S
   <h3 class="accordion-header" id="headingSpoiler1">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler1" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler1" aria-labelledby="headingSpoiler1">
+<div id="collapseSpoiler1" class="accordion-collapse collapse" aria-labelledby="headingSpoiler1" data-bs-parent="#accordionSpoiler1">
 <div class="accordion-body">
 <p>text = “Australian Shares Exchange Ltd (ASX) is an Australian public
 company that operates Australia’s primary shares exchange, the
@@ -489,11 +489,11 @@ around A$1.6 trillion MONEY
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>A: You can use the following code to get information about each one
-of the labels. For example, from we want to know what GPE represents
-here. We can use <em>explain()</em> to get the required information:
+of the labels. For example, we want to know what GPE represents here. We
+can use <em>explain()</em> to get the required information:
 spacy.explain(‘GPE’)</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -526,7 +526,7 @@ library to perform named entity recognition on the following text:</p>
   <h3 class="accordion-header" id="headingSpoiler2">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler2" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler2" aria-labelledby="headingSpoiler2">
+<div id="collapseSpoiler2" class="accordion-collapse collapse" aria-labelledby="headingSpoiler2" data-bs-parent="#accordionSpoiler2">
 <div class="accordion-body">
 <p>text = ” Perovskite nanocrystals have emerged as a promising class of
 materials for next-generation optoelectronic devices due to their unique
@@ -571,7 +571,7 @@ pre-trained model for named entity recognition:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>A: Download the necessary NLTK resources and import the required
 toolkit:</p>
@@ -591,7 +591,7 @@ toolkit:</p>
   <h3 class="accordion-header" id="headingSpoiler3">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler3" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler3" aria-labelledby="headingSpoiler3">
+<div id="collapseSpoiler3" class="accordion-collapse collapse" aria-labelledby="headingSpoiler3" data-bs-parent="#accordionSpoiler3">
 <div class="accordion-body">
 <p>text = “Perovskite nanocrystals have emerged as a promising class of
 materials for next-generation optoelectronic devices due to their unique
@@ -637,7 +637,7 @@ adding to their potential for various optoelectronic applications.”</p>
   <h3 class="accordion-header" id="headingSpoiler4">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Output</h3>
 </button>
-<div id="collapseSpoiler4" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler4" aria-labelledby="headingSpoiler4">
+<div id="collapseSpoiler4" class="accordion-collapse collapse" aria-labelledby="headingSpoiler4" data-bs-parent="#accordionSpoiler4">
 <div class="accordion-body">
 <p>Original Text: Perovskite nanocrystals have emerged as a promising
 class of materials for next-generation optoelectronic devices due to
@@ -717,12 +717,12 @@ understanding the main themes of a large corpus of text. To better
 understand this and to find the connection between concepts we have
 learned so far, let’s match the following terms to their brief
 definitions:</p>
-<div id="discussion-3" class="callout discussion">
+<div id="challenge-2" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="discussion-3" class="callout-inner">
-<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-3"></a>
+<div id="challenge-2" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
 </h3>
 <div class="callout-content">
 <p>Teamwork: To better understand this and to find the connection
@@ -730,6 +730,18 @@ between concepts we have learned so far, let’s match the following terms
 to their brief definitions:</p>
 <figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/2be22cfb-4ed8-4f65-85bf-31962a40835f" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
 </figure></div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
+<figure><img src="https://github.com/qcif-training/intro_nlp_lmm_v1.0/assets/45458783/d7d9a9a4-c2cb-4f37-bc6c-7b2f99133fe3" alt="image" class="figure mx-auto d-block"><div class="figcaption">image</div>
+</figure></div>
+</div>
 </div>
 </div>
 <div id="callout2" class="callout">
@@ -774,7 +786,7 @@ from <a href="https://en.wikipedia.org/wiki/Australian_Securities_Exchange" clas
   <h3 class="accordion-header" id="headingSpoiler5">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler5" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler5" aria-labelledby="headingSpoiler5">
+<div id="collapseSpoiler5" class="accordion-collapse collapse" aria-labelledby="headingSpoiler5" data-bs-parent="#accordionSpoiler5">
 <div class="accordion-body">
 <p>text = “Australian Shares Exchange Ltd (ASX) is an Australian public
 company that operates Australia’s primary shares exchange, the
@@ -991,12 +1003,12 @@ our text:</p>
 <span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>    <span class="cf">for</span> topic <span class="kw">in</span> topics:</span>
 <span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>    <span class="bu">print</span>(topic)</span></code></pre>
 </div>
-<div id="discussion-4" class="callout discussion">
+<div id="discussion-3" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
-<div id="discussion-4" class="callout-inner">
-<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-4"></a>
+<div id="discussion-3" class="callout-inner">
+<h3 class="callout-title">Discussion<a class="anchor" aria-label="anchor" href="#discussion-3"></a>
 </h3>
 <div class="callout-content">
 <p>Teamwork: How does the topic modeling method help researchers? What
@@ -1009,12 +1021,12 @@ analysis in material science?</p>
 </div>
 </div>
 </div>
-<div id="challenge-2" class="callout challenge">
+<div id="challenge-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+<div id="challenge-3" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
 </h3>
 <div class="callout-content">
 <p>Q: Use the Gensim library to perform topic modeling on the following
@@ -1029,7 +1041,7 @@ keywords.</p>
   <h3 class="accordion-header" id="headingSpoiler6">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler6" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler6" aria-labelledby="headingSpoiler6">
+<div id="collapseSpoiler6" class="accordion-collapse collapse" aria-labelledby="headingSpoiler6" data-bs-parent="#accordionSpoiler6">
 <div class="accordion-body">
 <p>text = ” Perovskite nanocrystals have emerged as a promising class of
 materials for next-generation optoelectronic devices due to their unique
@@ -1046,12 +1058,12 @@ adding to their potential for various optoelectronic applications.”</p>
 </div>
 </div>
 </div>
-<div id="challenge-2" class="callout challenge">
+<div id="challenge-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge<em>(continued)</em><a class="anchor" aria-label="anchor" href="#challenge-2"></a>
+<div id="challenge-3" class="callout-inner">
+<h3 class="callout-title">Challenge<em>(continued)</em><a class="anchor" aria-label="anchor" href="#challenge-3"></a>
 </h3>
 <div class="callout-content">
 <p>You can use the following code to load the Gensim library and the
@@ -1068,12 +1080,12 @@ pre-trained model for topic modeling:</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
+  <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <p>A:</p>
 <div class="codewrapper sourceCode" id="cb17">
@@ -1096,12 +1108,12 @@ pre-trained model for topic modeling:</p>
 </div>
 </div>
 </div>
-<div id="challenge-3" class="callout challenge">
+<div id="challenge-4" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
+<div id="challenge-4" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
 </h3>
 <div class="callout-content">
 <p>Q: Use the genism to perform topic modeling on the following two
@@ -1115,7 +1127,7 @@ different texts and provide a comparison.</p>
   <h3 class="accordion-header" id="headingSpoiler7">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler7" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler7" aria-labelledby="headingSpoiler7">
+<div id="collapseSpoiler7" class="accordion-collapse collapse" aria-labelledby="headingSpoiler7" data-bs-parent="#accordionSpoiler7">
 <div class="accordion-body">
 <p>text1 = “Perovskite nanocrystals have emerged as a promising class of
 materials for next-generation optoelectronic devices due to their unique
@@ -1142,12 +1154,12 @@ dissipation applications.”</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution4" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
-  <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
+  <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>A: After storing the two texts in text1 and text2, preprocess the
 text (e.g., tokenization, stop word removal, stemming/lemmatization).
@@ -1192,7 +1204,7 @@ Split the texts into documents:</p>
   <h3 class="accordion-header" id="headingSpoiler8">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Output</h3>
 </button>
-<div id="collapseSpoiler8" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler8" aria-labelledby="headingSpoiler8">
+<div id="collapseSpoiler8" class="accordion-collapse collapse" aria-labelledby="headingSpoiler8" data-bs-parent="#accordionSpoiler8">
 <div class="accordion-body">
 <p>Original Texts:</p>
 <p>Text 1: Perovskite nanocrystals have emerged as a promising class of
@@ -1251,12 +1263,12 @@ applications of these materials.</p>
 </div>
 </div>
 </div>
-<div id="challenge-4" class="callout challenge">
+<div id="challenge-5" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+<div id="challenge-5" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
 </h3>
 <div class="callout-content">
 <p>Q: Use the Gensim library to perform topic modeling on the following
@@ -1271,7 +1283,7 @@ keywords.</p>
   <h3 class="accordion-header" id="headingSpoiler9">
 <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="eye"></i></div>Text</h3>
 </button>
-<div id="collapseSpoiler9" class="accordion-collapse collapse" data-bs-parent="#accordionSpoiler9" aria-labelledby="headingSpoiler9">
+<div id="collapseSpoiler9" class="accordion-collapse collapse" aria-labelledby="headingSpoiler9" data-bs-parent="#accordionSpoiler9">
 <div class="accordion-body">
 <p>text = “Natural language processing (NLP) is a subfield of computer
 science, information engineering, and artificial intelligence concerned
@@ -1284,12 +1296,12 @@ understanding, and natural language generation.”</p>
 </div>
 </div>
 </div>
-<div id="challenge-4" class="callout challenge">
+<div id="challenge-5" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge<em>(continued)</em><a class="anchor" aria-label="anchor" href="#challenge-4"></a>
+<div id="challenge-5" class="callout-inner">
+<h3 class="callout-title">Challenge<em>(continued)</em><a class="anchor" aria-label="anchor" href="#challenge-5"></a>
 </h3>
 <div class="callout-content">
 <p>You can use the following code to load the Gensim library and the
@@ -1306,12 +1318,12 @@ pre-trained model for topic modeling:</p>
 </div>
 </div>
 </div>
-<div id="accordionSolution5" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
-  <h4 class="accordion-header" id="headingSolution5">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
+  <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <p>A:</p>
 <div class="codewrapper sourceCode" id="cb21">
@@ -1377,12 +1389,12 @@ transformers, which can generate summaries that are more coherent and
 closer to what a human might write. Transformers use models like BERT
 and GPT to understand the context and semantics of the text, allowing
 for more sophisticated abstractive summaries.</p>
-<div id="challenge-5" class="callout challenge">
+<div id="challenge-6" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
-<div id="challenge-5" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
+<div id="challenge-6" class="callout-inner">
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-6"></a>
 </h3>
 <div class="callout-content">
 <p>Q: Fill in the blanks with the correct terms related to text
@@ -1400,12 +1412,12 @@ text.</li>
 </ul></div>
 </div>
 </div>
-<div id="accordionSolution6" class="accordion challenge-accordion accordion-flush">
+<div id="accordionSolution7" class="accordion challenge-accordion accordion-flush">
 <div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
-  <h4 class="accordion-header" id="headingSolution6">Show me the solution</h4>
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
+  <h4 class="accordion-header" id="headingSolution7">Show me the solution</h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <p>A:</p>
 <ul><li><p>Extractive summarization selects sentences directly from the
@@ -1531,8 +1543,8 @@ any links that you are not going to use.
   "url": "https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/03-text-analysis.html",
   "identifier": "https://qcif-training.github.io/intro_nlp_lmm_v1.0/instructor/03-text-analysis.html",
   "dateCreated": "2024-05-10",
-  "dateModified": "2024-05-12",
-  "datePublished": "2024-05-14"
+  "dateModified": "2024-05-15",
+  "datePublished": "2024-05-15"
 }
 
   </script><script>
