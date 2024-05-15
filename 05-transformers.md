@@ -230,6 +230,12 @@ By the end, you get the German translation of **“What time is it?”** as **�
 :::
 
 
+::: callout 
+
+### Pipelines
+The pipeline module from Hugging Face’s [transformers library](https://huggingface.co/docs/transformers/en/main_classes/pipelines) is a high-level API that simplifies the use of complex machine learning models for a variety of NLP tasks. It is a versatile tool for NLP tasks, enabling users to perform **text generation**, **sentiment analysis**, **question answering**, **summarization**, and **translation** with minimal code. By abstracting away the intricacies of model selection, tokenization, and output generation, the pipeline module makes state-of-the-art AI accessible to developers of all skill levels, allowing them to harness the power of language models efficiently and intuitively.
+:::
+
 
 :::::::::::::::::::::::::::::::::::::::::: spoiler
 
