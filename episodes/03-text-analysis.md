@@ -649,18 +649,11 @@ A:
 
 ::: callout
 
-With that being said we still can use libraries such as Gensim for text summarization. We need to import the summarize module first:
-
-```python
-
-from gensim.summarization import summarize
-# next we need to load our text data into a variable:
-text = "Perovskite nanocrystals have unique properties that make them excellent for optoelectronic devices."
-# Now we can generate the Summary.
-# Use the summarize function to create a summary:
-summary = summarize(text, ratio=0.5)
-print(summary)
+In the rapidly evolving field of NLP, summarization tasks are increasingly being carried out using transformer-based models due to their advanced capabilities in understanding context and generating coherent summaries. Tools like Gensim’s summarization module 
 ```
+from gensim.summarization import summarize
+```
+have become outdated and were removed in its 4.0 release [source](), as they relied on extractive methods that simply selected parts of the existing text, which is less effective compared to the abstractive approach of transformers. These cutting-edge transformer models, which can create concise and fluent summaries by generating new sentences, are leading to the gradual disappearance of older, less efficient summarization methods.
 
 :::
 
