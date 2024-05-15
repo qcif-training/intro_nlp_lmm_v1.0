@@ -650,10 +650,12 @@ A:
 ::: callout
 
 In the rapidly evolving field of NLP, summarization tasks are increasingly being carried out using transformer-based models due to their advanced capabilities in understanding context and generating coherent summaries. Tools like Gensim’s summarization module 
-```
+
+```python
 from gensim.summarization import summarize
 ```
-have become outdated and were removed in its 4.0 release [source](), as they relied on extractive methods that simply selected parts of the existing text, which is less effective compared to the abstractive approach of transformers. These cutting-edge transformer models, which can create concise and fluent summaries by generating new sentences, are leading to the gradual disappearance of older, less efficient summarization methods.
+
+have become outdated and were removed in its 4.0 release ([source](https://github.com/piskvorky/gensim/wiki/Migrating-from-Gensim-3.x-to-4#12-removed-gensimsummarization)), as they relied on extractive methods that simply selected parts of the existing text, which is less effective compared to the abstractive approach of transformers. These cutting-edge transformer models, which can create concise and fluent summaries by generating new sentences, are leading to the gradual disappearance of older, less efficient summarization methods.
 
 :::
 
