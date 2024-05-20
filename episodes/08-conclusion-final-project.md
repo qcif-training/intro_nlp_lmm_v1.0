@@ -218,7 +218,13 @@ Teamwork: Share insights on how NLP can be applied in your field of interest.
 
 ## Mini-Project: Using an LLM 
 Context Example: Environmental science and climate change
-Using Hugging Face model distilbert-base-uncased and Few-Shot Prompting: To improve the model’s performance in answering field-specific questions, we will use few-shot prompting by providing examples of questions and answers related to environmental topics.
+Based on what you have learned within this workshop, select and improve a suitable language model’s performance in answering field-specific questions.
+
+
+:::::::::::::::::::::::: solution 
+
+A: Using Hugging Face model *distilbert-base-uncased* and *Few-Shot Prompting* to improve the model’s performance in answering field-specific questions. 
+We will use few-shot prompting by providing examples of questions and answers related to environmental topics.
 
 ```python
 from transformers import pipeline
@@ -250,7 +256,6 @@ prompt = {
 response = qa_pipeline(prompt)
 print(response['answer'])
 ```
-:::::::::::::::::::::::: solution 
 
 The model should provide a relevant answer based on the few-shot examples provided. For instance, it might say: “Individuals can combat climate change by reducing their carbon footprint, using less energy, recycling, and supporting eco-friendly policies”. 
 
