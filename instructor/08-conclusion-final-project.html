@@ -422,7 +422,7 @@ little meaning.</strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>A:</p>
 <p><strong>1. A masked language model for NLP tasks that require a good
@@ -489,7 +489,7 @@ interest.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p><strong><em>Environmental Science</em></strong></p>
 <ul><li>NLP for Climate Change Research: How can NLP help in analyzing large
@@ -522,11 +522,25 @@ level.</li>
 <h3 class="callout-title">Mini-Project: Using an LLM<a class="anchor" aria-label="anchor" href="#mini-project-using-an-llm"></a>
 </h3>
 <div class="callout-content">
-<p>Context Example: Environmental science and climate change Using
-Hugging Face model distilbert-base-uncased and Few-Shot Prompting: To
-improve the model’s performance in answering field-specific questions,
-we will use few-shot prompting by providing examples of questions and
-answers related to environmental topics.</p>
+<p>Context Example: Environmental science and climate change Based on
+what you have learned within this workshop, select and improve a
+suitable language model’s performance in answering field-specific
+questions.</p>
+</div>
+</div>
+</div>
+<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
+  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
+</button>
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div class="accordion-body">
+<p>A: Using Hugging Face model <em>distilbert-base-uncased</em> and
+<em>Few-Shot Prompting</em> to improve the model’s performance in
+answering field-specific questions. We will use few-shot prompting by
+providing examples of questions and answers related to environmental
+topics.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -559,16 +573,6 @@ answers related to environmental topics.</p>
 <span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a>response <span class="op">=</span> qa_pipeline(prompt)</span>
 <span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a><span class="bu">print</span>(response[<span class="st">'answer'</span>])</span></code></pre>
 </div>
-</div>
-</div>
-</div>
-<div id="accordionSolution3" class="accordion challenge-accordion accordion-flush">
-<div class="accordion-item">
-<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
-  <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
-</button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
-<div class="accordion-body">
 <p>The model should provide a relevant answer based on the few-shot
 examples provided. For instance, it might say: “Individuals can combat
 climate change by reducing their carbon footprint, using less energy,
