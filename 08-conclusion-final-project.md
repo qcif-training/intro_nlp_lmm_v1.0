@@ -226,6 +226,13 @@ Based on what you have learned within this workshop, select and improve a suitab
 A: Using Hugging Face model *distilbert-base-uncased* and *Few-Shot Prompting* to improve the model’s performance in answering field-specific questions. 
 We will use few-shot prompting by providing examples of questions and answers related to environmental topics.
 
+**Set Up Your Environment**:
+   - Ensure Python is installed on your system.
+   - Install the `transformers` library using pip:
+     ```shell
+     pip install transformers
+     ```
+
 ```python
 from transformers import pipeline
 # Initialize the question-answering pipeline with DistilBERT
@@ -243,7 +250,7 @@ Question: What are the consequences of deforestation?
 Answer: Deforestation can lead to loss of biodiversity, increased greenhouse gas emissions, and disruption of water cycles.
 """
 
-# User's field-specific question
+# Ask user's field-specific question
 user_question = "What can individuals do to combat climate change?"
 
 # Prepare the prompt for the model
@@ -256,6 +263,22 @@ prompt = {
 response = qa_pipeline(prompt)
 print(response['answer'])
 ```
+
+**Run Your Script**:
+   - Save the `climate_qa.py` file.
+   - Open a terminal or command prompt.
+   - Navigate to the directory where your script is saved.
+   - Run the script using Python:
+     ```shell
+     python climate_qa.py
+     ```
+   - Enter your question when prompted, and the script will display the answer.
+
+
+**Test and Iterate**:
+   - Test your script with various questions related to environmental science and climate change.
+   - If necessary, refine the few-shot examples to improve the model's performance.
+   - 
 
 The model should provide a relevant answer based on the few-shot examples provided. For instance, it might say: “Individuals can combat climate change by reducing their carbon footprint, using less energy, recycling, and supporting eco-friendly policies”. 
 
