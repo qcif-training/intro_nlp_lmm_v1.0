@@ -422,7 +422,7 @@ little meaning.</strong></p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>A:</p>
 <p><strong>1. A masked language model for NLP tasks that require a good
@@ -489,7 +489,7 @@ interest.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p><strong><em>Environmental Science</em></strong></p>
 <ul><li>NLP for Climate Change Research: How can NLP help in analyzing large
@@ -534,13 +534,16 @@ questions.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <p>A: Using Hugging Face model <em>distilbert-base-uncased</em> and
 <em>Few-Shot Prompting</em> to improve the model’s performance in
 answering field-specific questions. We will use few-shot prompting by
 providing examples of questions and answers related to environmental
 topics.</p>
+<p><strong>Set Up Your Environment</strong>: - Ensure Python is
+installed on your system. - Install the <code>transformers</code>
+library using pip: <code>shell      pip install transformers</code></p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -560,7 +563,7 @@ topics.</p>
 <span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="st">Answer: Deforestation can lead to loss of biodiversity, increased greenhouse gas emissions, and disruption of water cycles.</span></span>
 <span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a><span class="st">"""</span></span>
 <span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co"># User's field-specific question</span></span>
+<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a><span class="co"># Ask user's field-specific question</span></span>
 <span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>user_question <span class="op">=</span> <span class="st">"What can individuals do to combat climate change?"</span></span>
 <span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a></span>
 <span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a><span class="co"># Prepare the prompt for the model</span></span>
@@ -573,6 +576,15 @@ topics.</p>
 <span id="cb1-27"><a href="#cb1-27" tabindex="-1"></a>response <span class="op">=</span> qa_pipeline(prompt)</span>
 <span id="cb1-28"><a href="#cb1-28" tabindex="-1"></a><span class="bu">print</span>(response[<span class="st">'answer'</span>])</span></code></pre>
 </div>
+<p><strong>Run Your Script</strong>: - Save the
+<code>climate_qa.py</code> file. - Open a terminal or command prompt. -
+Navigate to the directory where your script is saved. - Run the script
+using Python: <code>shell      python climate_qa.py</code> - Enter your
+question when prompted, and the script will display the answer.</p>
+<p><strong>Test and Iterate</strong>: - Test your script with various
+questions related to environmental science and climate change. - If
+necessary, refine the few-shot examples to improve the model’s
+performance. -</p>
 <p>The model should provide a relevant answer based on the few-shot
 examples provided. For instance, it might say: “Individuals can combat
 climate change by reducing their carbon footprint, using less energy,
