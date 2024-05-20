@@ -151,7 +151,7 @@ Teamwork: What is DSL and why are they useful for research tasks? Think of some 
 
 ## 7.2. Prompting
 
-For research applications where highly reliable answers are crucial, Prompt Engineering combined with Retrieval-Augmented Generation (RAG) is often the most suitable approach. This combination allows for flexibility and high-quality outputs by leveraging both the generative capabilities of LLMs and the precision of domain-specific data sources:
+Prompting is a technique employed to craft concise and clear instructions that guide the LLM in generating more accurate domain-specific outputs. In many cases, it does not coding but keep in mind that the quality of the input critically influences the output’s quality. It is a relatively easy and fast DSL method for harnessing LLM’s capabilities. We can see how it works through the following example:
 
 
 ```python
@@ -180,6 +180,14 @@ print(f"{label}: {score:.4f}")
 
 ```
 
+
+::: callout
+
+### Which tool do researchers require?
+
+For research applications where highly reliable answers are crucial, **Prompt Engineering** combined with **Retrieval-Augmented Generation** (RAG) is often the most suitable approach. This combination allows for flexibility and high-quality outputs by leveraging both the generative capabilities of LLMs and the precision of domain-specific data sources:
+
+:::
 
 
 ::::::::::::::::::::::::::::::::::::::::: spoiler 
