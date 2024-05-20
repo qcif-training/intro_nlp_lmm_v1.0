@@ -35,11 +35,11 @@ We have covered a vast landscape of NLP, starting with the basics and moving tow
 ### Quiz
 
 
-**A)** Stemming
+**A)** Gensim
 
 **B)** Word2Vec	
 
-**C)** Text Preprocessing	
+**C)** Named Entity Recognition	
 
 **D)** Part-of-Speech Tagging	
 
@@ -57,7 +57,7 @@ We have covered a vast landscape of NLP, starting with the basics and moving tow
 
 
 
-**1. A statistical approach to modeling the meaning of words based on their context.**
+**1.  A masked language model for NLP tasks that require a good contextual understanding of an entire sequence. **
 
 [ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
 
@@ -81,7 +81,7 @@ We have covered a vast landscape of NLP, starting with the basics and moving tow
 
 
 
-**5. A method for cleaning and preparing text data before analysis.**
+**5. A process where an algorithm takes a string of text and identifies relevant nouns that are mentioned in that string.**
 
 [ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
 
@@ -120,7 +120,64 @@ We have covered a vast landscape of NLP, starting with the basics and moving tow
 :::::::::::::::: solution
 
 A:
-1
+
+**1.  A masked language model for NLP tasks that require a good contextual understanding of an entire sequence.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [X] I - [ ] J
+
+
+
+**2. “A process of reducing words to their root form, enabling the analysis of word frequency.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [X] J
+
+
+
+**3. An algorithm that uses neural networks to understand the relationships and meanings in human language.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [X] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**4. A technique for identifying the parts of speech for each word in a given sentence.**
+
+[ ] A - [ ] B - [ ] C - [X] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**5. A process where an algorithm takes a string of text and identifies relevant nouns that are mentioned in that string.**
+
+[ ] A - [ ] B - [X] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**6. A library that provides tools for machine learning and statistical modeling.**
+
+[X] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**7. A model that predicts the next word in a sentence based on the words that come before it.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [X] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**8. One of the first steps in text analysis, which involves breaking down text into individual elements. **
+
+[ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [X] H - [ ] I - [ ] J
+
+
+
+**9. A technique that groups similar words together in vector space.**
+
+[ ] A - [X] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
+
+
+
+**10. A method for removing commonly used words that carry little meaning.**
+
+[ ] A - [ ] B - [ ] C - [ ] D - [X] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
