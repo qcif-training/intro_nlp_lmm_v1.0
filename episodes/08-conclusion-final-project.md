@@ -216,7 +216,7 @@ Teamwork: Share insights on how NLP can be applied in your field of interest.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Mini-Project: Build and Optimize a DSL Question-Answering System
+## Capstone Project: Build and Optimize a DSL Question-Answering System
 
 From the Hugging Face model hub, use the **GPT-2** model to build a question-answering system that can answer questions specific to a particular field (e.g., environmental science).
 I. Test your model using the zero-shot prompting technique.
