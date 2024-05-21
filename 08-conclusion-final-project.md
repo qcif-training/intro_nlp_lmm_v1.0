@@ -1,7 +1,7 @@
 ---
 title: 'Wrap-up and Final Project'
 teaching: 10
-exercises: 1
+exercises: 2
 ---
 
 :::::::::::::::::::::::::::::::::::::: questions 
