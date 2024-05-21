@@ -57,7 +57,7 @@ We have covered a vast landscape of NLP, starting with the basics and moving tow
 
 
 
-**1.  A masked language model for NLP tasks that require a good contextual understanding of an entire sequence. **
+**1.  A masked language model for NLP tasks that require a good contextual understanding of an entire sequence.**
 
 [ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
 
@@ -99,7 +99,7 @@ We have covered a vast landscape of NLP, starting with the basics and moving tow
 
 
 
-**8. A framework for building and training neural networks to understand and generate human language.**
+**8. One of the first steps in text analysis, which involves breaking down text into individual elements.**
 
 [ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [ ] H - [ ] I - [ ] J
 
@@ -163,7 +163,7 @@ A:
 
 
 
-**8. One of the first steps in text analysis, which involves breaking down text into individual elements. **
+**8. One of the first steps in text analysis, which involves breaking down text into individual elements.**
 
 [ ] A - [ ] B - [ ] C - [ ] D - [ ] E - [ ] F - [ ] G - [X] H - [ ] I - [ ] J
 
@@ -216,75 +216,253 @@ Teamwork: Share insights on how NLP can be applied in your field of interest.
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
-## Mini-Project: Using an LLM 
-Context Example: Environmental science and climate change
-Based on what you have learned within this workshop, select and improve a suitable language model’s performance in answering field-specific questions.
+## Mini-Project: Build and Optimize a DSL Question-Answering System
 
+From the Hugging Face model hub, use the **GPT-2** model to build a question-answering system that can answer questions specific to a particular field (e.g., environmental science).
+I. Test your model using the zero-shot prompting technique.
+II. Test your model using the few-shot prompting technique. Ask the same question as in the zero-shot test and compare the generated answers.
 
 :::::::::::::::::::::::: solution 
 
-A: Using Hugging Face model *distilbert-base-uncased* and *Few-Shot Prompting* to improve the model’s performance in answering field-specific questions. 
-We will use few-shot prompting by providing examples of questions and answers related to environmental topics.
+A.I: 
 
-**Set Up Your Environment**:
-   - Ensure Python is installed on your system.
-   - Install the `transformers` library using pip:
-     ```shell
-     pip install transformers
-     ```
+Context Example: Environmental science and climate change
 
 ```python
-from transformers import pipeline
-# Initialize the question-answering pipeline with DistilBERT
-qa_pipeline = pipeline('question-answering', model='distilbert-base-uncased')
+from transformers import GPT2Tokenizer, GPT2LMHeadModel
 
-# Few-shot prompting with examples
-context = """
-Question: What is the greenhouse effect?
-Answer: The greenhouse effect is a natural process that warms the Earth's surface.
+# Initialize the tokenizer and model
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+model = GPT2LMHeadModel.from_pretrained('gpt2')
 
-Question: How can we reduce carbon emissions?
-Answer: We can reduce carbon emissions by using renewable energy sources, improving energy efficiency, and planting trees.
+# Since GPT-2 does not have a pad token, we set it to the eos_token
+tokenizer.pad_token = tokenizer.eos_token
 
-Question: What are the consequences of deforestation?
-Answer: Deforestation can lead to loss of biodiversity, increased greenhouse gas emissions, and disruption of water cycles.
-"""
+# Function to generate a response from the model
+def get_model_response(question):
+    # Encode the prompt with an attention mask and padding
+    encoded_input = tokenizer.encode_plus(
+        question,
+        add_special_tokens=True,
+        return_tensors='pt',
+        padding='max_length',  # Pad to max length
+        truncation=True,
+        max_length=100
+    )
+    
+    # Generate the response with the attention mask and pad token id
+    outputs = model.generate(
+        input_ids=encoded_input['input_ids'],
+        attention_mask=encoded_input['attention_mask'],
+        pad_token_id=tokenizer.eos_token_id,
+        max_length=200,
+        num_return_sequences=1
+    )
+    
+    # Decode and return the response
+    response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    return response
 
-# Ask user's field-specific question
-user_question = "What can individuals do to combat climate change?"
-
-# Prepare the prompt for the model
-prompt = {
-    'context': context,
-    'question': user_question
-}
-
-# Get the answer from the model
-response = qa_pipeline(prompt)
-print(response['answer'])
 ```
 
-**Run Your Script**:
-   - Save the `climate_qa.py` file.
-   - Open a terminal or command prompt.
-   - Navigate to the directory where your script is saved.
-   - Run the script using Python:
-     ```shell
-     python climate_qa.py
-     ```
-   - Enter your question when prompted, and the script will display the answer.
+Now, we need to create a function that takes user inputs and provides answers:
+
+```python
+
+# Main function to interact with the user
+def main():
+    # Ask the user for their question
+    user_question = input("What is your question about climate change? ")
+    
+    # Get the model's response
+    answer = get_model_response(user_question)
+    
+    # Print the answer
+    print(f"AI: {answer}")
+
+# Run the main function
+if __name__ == "__main__":
+    main()
+
+```
+
+For the second part of the project, We will use few-shot prompting by providing examples of questions and answers related to environmental topics.
+
+A.II: 
+
+```python
+
+from transformers import GPT2Tokenizer, GPT2LMHeadModel
+
+# Initialize the tokenizer and model
+tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
+model = GPT2LMHeadModel.from_pretrained('gpt2')
+
+# Set the pad token to the eos token for the tokenizer
+tokenizer.pad_token = tokenizer.eos_token
+
+# Function to generate a response from the model
+def get_model_response(question):
+    # Construct the prompt with clear instructions and examples
+    prompt = f"""
+    I am an AI trained to answer questions about climate change. Here are some examples:
+    Q: What causes climate change?
+    A: Climate change is primarily caused by the accumulation of greenhouse gases in the atmosphere due to human activities such as burning fossil fuels and deforestation.
+    Q: How does deforestation affect climate change?
+    A: Deforestation leads to increased carbon dioxide levels in the atmosphere because trees that absorb carbon dioxide are removed.
+    Q: What is climate change?
+    A: Climate change refers to significant changes in global temperatures and weather patterns over time.
+    Q: What causes global warming?
+    A: Global warming is primarily caused by the increase of greenhouse gases like carbon dioxide in the atmosphere due to human activities.
+    Q: How does deforestation affect climate change?
+    A: Deforestation contributes to climate change by reducing the number of trees that can absorb carbon dioxide, a greenhouse gas.
+    Q: Can planting trees help combat climate change?
+    A: Yes, planting trees can help mitigate climate change as trees absorb carbon dioxide from the atmosphere.
+    Q: What is renewable energy?
+    A: Renewable energy is derived from natural processes that are replenished constantly, like wind or solar power.
+    Q: Why is conserving water important for the environment?
+    A: Conserving water helps protect ecosystems, saves energy, and reduces the impact on water resources.
+    Q: What is sustainable living?
+    A: Sustainable living involves reducing one's carbon footprint by altering transportation methods, energy consumption, and diet.
+    Q: How do electric cars reduce pollution?
+    A: Electric cars produce fewer greenhouse gases and air pollutants than conventional vehicles.
+    Q: What is the impact of climate change on wildlife?
+    A: Climate change can alter habitats and food sources, leading to species migration and possible extinction.
+    Q: How does recycling help the environment?
+    A: Recycling reduces the need for raw materials, saves energy, and decreases pollution.
+    Q: What is carbon footprint?
+    A: A carbon footprint is the total amount of greenhouse gases emitted by an individual, organization, event, or product.
+    Q: Why is biodiversity important for the ecosystem?
+    A: Biodiversity boosts ecosystem productivity where each species has an important role to play.
+    Q: What are the effects of ocean acidification?
+    A: Ocean acidification can lead to the weakening of coral reefs and impact shell-forming marine life, disrupting the ocean's balance.
+    Q: How does climate change affect agriculture?
+    A: Climate change can alter crop yield, reduce water availability, and increase pests and diseases.
+    Q: What is the Paris Agreement?
+    A: The Paris Agreement is an international treaty aimed at reducing carbon emissions to combat climate change.
+    Q: How do fossil fuels contribute to global warming?
+    A: Burning fossil fuels releases large amounts of CO2, a major greenhouse gas, into the atmosphere.
+    Q: What is the significance of the ozone layer?
+    A: The ozone layer absorbs most of the sun's harmful ultraviolet radiation, protecting living organisms on Earth.
+    Q: What are green jobs?
+    A: Green jobs are positions in businesses that contribute to preserving or restoring the environment.
+    Q: How can we make our homes more energy-efficient?
+    A: We can insulate our homes, use energy-efficient appliances, and install smart thermostats to reduce energy consumption.
+    Q: What is the role of the United Nations in climate change?
+    A: The United Nations facilitates global climate negotiations and helps countries develop and implement climate policies.
+    Q: What are climate change mitigation and adaptation?
+    A: Mitigation involves reducing the flow of greenhouse gases into the atmosphere, while adaptation involves adjusting to current or expected climate change.
+    Q: How does urbanization affect the environment?
+    A: Urbanization can lead to habitat destruction, increased pollution, and higher energy consumption.
+    Q: What is a carbon tax?
+    A: A carbon tax is a fee imposed on the burning of carbon-based fuels, aimed at reducing greenhouse gas emissions.
+    Q: How does air pollution contribute to climate change?
+    A: Certain air pollutants like methane and black carbon have a warming effect on the atmosphere.
+    Q: What is an ecological footprint?
+    A: An ecological footprint measures the demand on Earth's ecosystems and compares it to nature's ability to regenerate resources.
+    Q: What are sustainable development goals?
+    A: Sustainable development goals are a collection of 17 global goals set by the United Nations to end poverty, protect the planet, and ensure prosperity for all.
+    Q: How does meat consumption affect the environment?
+    A: Meat production is resource-intensive and contributes to deforestation, water scarcity, and greenhouse gas emissions.
+    Q: What is an endangered species?
+    A: An endangered species is a type of organism that is at risk of extinction due to a drastic decline in population.
+    Q: How can businesses reduce their environmental impact?
+    A: Businesses can implement sustainable practices, reduce waste, use renewable energy, and invest in eco-friendly technologies.
+    Q: What is a climate model?
+    A: A climate model is a computer simulation used to predict future climate patterns based on different environmental scenarios.
+    Q: Why are wetlands important for the environment?
+    A: Wetlands provide critical habitat for many species, store floodwaters, and maintain surface water flow during dry periods.
+    Q: What is geoengineering?
+    A: Geoengineering is the deliberate large-scale intervention in the Earth’s climate system, aimed at mitigating the adverse effects of climate change.
+    Q: How does plastic pollution affect marine life?
+    A: Plastic pollution can injure or poison marine wildlife and disrupt marine ecosystems through ingestion and entanglement.
+    Q: What is a carbon sink?
+    A: A carbon sink is a natural or artificial reservoir that accumulates and stores carbon-containing chemical compounds for an indefinite period.
+    Q: How do solar panels work?
+    A: Solar panels convert sunlight into electricity through photovoltaic cells.
+    Q: What is the impact of climate change on human health?
+    A: Climate change can lead to health issues like heatstroke, allergies, and diseases spread by mosquitoes and ticks.
+    Q: What is a green economy?
+    A: A green economy is an economy that aims for sustainable development without degrading the environment.
+    Q: How does energy consumption contribute to climate change?
+    A: High energy consumption, especially from non-renewable sources, leads to higher emissions of greenhouse gases.
+    Q: What is the Kyoto Protocol?
+    A: The Kyoto Protocol is an international treaty that commits its parties to reduce greenhouse gas emissions.
+    Q: How can we protect coastal areas from rising sea levels?
+    A: We can protect coastal areas by restoring mangroves, building sea walls, and implementing better land-use policies.
+    Q: What is a heatwave, and how is it linked to climate change?
+    A: A heatwave is a prolonged period of excessively hot weather, which may become more frequent and intense due to climate change.
+    Q: How does climate change affect water resources?
+    A: Climate change can lead to changes in precipitation patterns, reduced snowpack, and increased evaporation rates.
+    Q: What is a carbon credit?
+    A: A carbon credit is a permit that allows the holder to emit a certain amount of carbon dioxide or other greenhouse gases.
+    Q: What are the benefits of wind energy?
+    A: Wind energy is a clean, renewable resource that reduces reliance on fossil fuels and decreases greenhouse gas emissions.
+    Q: What is an energy audit?
+    A: An energy audit is an assessment of energy use in a home or business to identify ways to improve efficiency and reduce costs.
+    Q: How do wildfires contribute to climate change?
+    A: Wildfires release stored carbon dioxide into the atmosphere and reduce the number of trees that can absorb CO2.
+    Q: What is a sustainable diet?
+    A: A sustainable diet involves consuming food that is healthy for individuals and sustainable for the environment.
+    Q: How does climate change affect the polar regions?
+    A: Climate change leads to melting ice caps, which can result in rising sea levels and loss of habitat for polar species.
+    Q: What is the role of youth in climate action?
+    A: Youth can play a crucial role in climate action through advocacy, innovation, and leading by example in sustainable practices.
+    Q: What is the significance of Earth Day?
+    A: Earth Day is an annual event to demonstrate support for environmental protection and promote awareness of environmental issues.
+
+    Q: {question}
+    A:"""
+    
+    # Encode the prompt with an attention mask and padding
+    encoded_input = tokenizer.encode_plus(
+        prompt,
+        add_special_tokens=True,
+        return_tensors='pt',
+        padding='max_length',  # Pad to max length
+        truncation=True,
+        max_length=100
+    )
+    
+    # Generate the response with the attention mask and pad token id
+    outputs = model.generate(
+        input_ids=encoded_input['input_ids'],
+        attention_mask=encoded_input['attention_mask'],
+        pad_token_id=tokenizer.eos_token_id,
+        max_length=200,
+        num_return_sequences=1
+    )
+    
+    # Decode and return the response
+    response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+    return response.split('A:')[1].strip()  # Extract the AI's response
+
+```
+
+Similar to the first part of the project, we need to create a user interface function:
+
+```python
+
+def main():
+    user_question = input("Please enter your question about climate change: ")
+    
+    # Get the model's response
+    answer = get_model_response(user_question)
+    
+    # Print the answer
+    print(f"AI: {answer}")
+
+# Run the main function
+if __name__ == "__main__":
+    main()
+
+```
 
 
-**Test and Iterate**:
-   - Test your script with various questions related to environmental science and climate change.
-   - If necessary, refine the few-shot examples to improve the model's performance.
-   - 
 
-The model should provide a relevant answer based on the few-shot examples provided. For instance, it might say: “Individuals can combat climate change by reducing their carbon footprint, using less energy, recycling, and supporting eco-friendly policies”. 
+The model should provide a more relevant answer based on the few-shot examples provided. In this challenge, we used the **GPT-2** model from Hugging Face’s transformers library to create a question-answering system. Few-shot prompting is employed to give the model context about environmental topics, which helps it generate more accurate answers to user queries. 
 
-In this challenge, we used the **distilbert-base-uncased** model from Hugging Face’s transformers library to create a question-answering system. Few-shot prompting is employed to give the model context about environmental topics, which helps it generate more accurate answers to user queries. The **qa_pipeline** function is used to pass the prompt to the model, which then processes the information and returns an answer to the user’s question. 
-
-This mini-project showcases how LLMs can be fine-tuned to specific fields of interest, providing valuable assistance in answering domain-specific queries.
+However, you should note that the performance enhancement is not impressive sometimes and it may need fine-tuning to get more accurate responses.
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
