@@ -308,9 +308,12 @@ brown_text = brown.words()
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
-- Image datasets can be found online or created uniquely for your research question.
-- Images consist of pixels arranged in a particular order.
-- Image data is usually preprocessed before use in a CNN for efficiency, consistency, and robustness.
-- Input data generally consists of three sets: a training set used to fit model parameters; a validation set used to evaluate the model fit on training data; and a test set used to evaluate the final model performance.
+- Natural Language Processing (NLP) is a field of artificial intelligence focused on enabling computers to understand, interpret, and generate human language.
+- NLP research applications include sentiment analysis, information extraction, text summarisation and named entity recognition (NER).
+- In NLP, a token represents a unit of text, a stem is a reduced form of a word, and a lemma is its root or dictionary form.
+- Natural Language Toolkit (NLTK) and Hugging Face are popular sources of training data, in addition to the tools, models, and algorithms they provide for NLP.
+- spaCy and gensim provide algorithms and methods for NLP analyses.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
+
+
