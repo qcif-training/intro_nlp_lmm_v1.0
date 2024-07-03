@@ -242,6 +242,10 @@ squad_dataset = load_dataset("squad")
 print(squad_dataset["train"].info)
 ```
 
+```output
+DatasetInfo(description='', citation='', homepage='', license='', features={'id': Value(dtype='string', id=None), 'title': Value(dtype='string', id=None), 'context': Value(dtype='string', id=None), 'question': Value(dtype='string', id=None), 'answers': Sequence(feature={'text': Value(dtype='string', id=None), 'answer_start': Value(dtype='int32', id=None)}, length=-1, id=None)}, post_processed=None, supervised_keys=None, task_templates=None, builder_name='parquet', dataset_name='squad', config_name='plain_text', version=0.0.0, splits={'train': SplitInfo(name='train', num_bytes=79357058, num_examples=87599, shard_lengths=None, dataset_name='squad'), 'validation': SplitInfo(name='validation', num_bytes=10477330, num_examples=10570, shard_lengths=None, dataset_name='squad')}, download_checksums={'hf://datasets/squad@7b6d24c440a36b6815f21b70d25016731768db1f/plain_text/train-00000-of-00001.parquet': {'num_bytes': 14458314, 'checksum': None}, 'hf://datasets/squad@7b6d24c440a36b6815f21b70d25016731768db1f/plain_text/validation-00000-of-00001.parquet': {'num_bytes': 1819889, 'checksum': None}}, download_size=16278203, post_processing_size=None, dataset_size=89834388, size_in_bytes=106112591)
+```
+
 Each data point is a dictionary with keys corresponding to data elements (e.g., question, context). Access them using those keys within square brackets:
 
 
@@ -258,7 +262,10 @@ print(f"Question: {question}")
 print(f"Context: {context}")
 ```
 
-
+```output
+Question: To whom did the Virgin Mary allegedly appear in 1858 in Lourdes France?
+Context: Architecturally, the school has a Catholic character. Atop the Main Building's gold dome is a golden statue of the Virgin Mary. Immediately in front of the Main Building and facing it, is a copper statue of Christ with arms upraised with the legend "Venite Ad Me Omnes". Next to the Main Building is the Basilica of the Sacred Heart. Immediately behind the basilica is the Grotto, a Marian place of prayer and reflection. It is a replica of the grotto at Lourdes, France where the Virgin Mary reputedly appeared to Saint Bernadette Soubirous in 1858. At the end of the main drive (and in a direct line that connects through 3 statues and the Gold Dome), is a simple, modern stone statue of Mary.
+```
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
@@ -298,6 +305,40 @@ print(gutenberg.readme())
 gutenberg_text = gutenberg.raw('austen-emma.txt')
 brown_text = brown.words()
 ```
+```output
+Project Gutenberg Selections
+http://gutenberg.net/
+
+This corpus contains etexts from from Project Gutenberg,
+by the following authors:
+
+* Jane Austen (3)
+* William Blake (2)
+* Thornton W. Burgess
+* Sarah Cone Bryant
+* Lewis Carroll
+* G. K. Chesterton (3)
+* Maria Edgeworth
+* King James Bible
+* Herman Melville
+* John Milton
+* William Shakespeare (3)
+* Walt Whitman
+
+The beginning of the body of each book could not be identified automatically,
+so the semi-generic header of each file has been removed, and included below.
+Some source files ended with a line "End of The Project Gutenberg Etext...",
+and this has been deleted.
+
+Information about Project Gutenberg (one page)
+...
+This "Small Print!" by Charles B. Kramer, Attorney
+Internet (72600.2026@compuserve.com); TEL: (212-254-5093)
+*END*THE SMALL PRINT! FOR PUBLIC DOMAIN ETEXTS*Ver.04.29.93*END*
+
+Output is truncated. View as a scrollable element or open in a text editor. Adjust cell output settings...
+```
+
 
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
