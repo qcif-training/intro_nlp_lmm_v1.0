@@ -69,8 +69,8 @@ for sentence in sentences:
 ```
 
 
-```
-Output: Perovskite nanocrystals are a class of semiconductor nanocrystals with unique properties that distinguish them from traditional quantum dots.
+```output
+Perovskite nanocrystals are a class of semiconductor nanocrystals with unique properties that distinguish them from traditional quantum dots.
 These nanocrystals have an ABX3 composition, where 'A' can be cesium, methylammonium (MA), or formamidinium (FA); 'B' is typically lead or tin; and 'X' is a halogen ion like chloride, bromide, or iodide.
 Their remarkable optoelectronic properties, such as high photoluminescence quantum yields and tunable emission across the visible spectrum, make them ideal for applications in light-emitting diodes, lasers, and solar cells.
 ```
@@ -249,8 +249,7 @@ print("Perovskite Tokens:", perovskite_tokens)
 print("Trading Tokens:", trading_tokens)
 ```
 
-```
-Output: 
+```output
 Perovskite Tokens: ['Perovskite', 'nanocrystals', 'are', 'a', 'class', 'of', 'semiconductor', 'nanocrystals', 'with', 'unique', 'properties', 'that', 'distinguish', 'them', 'from', 'traditional', 'quantum', 'dots', '.']
 Trading Tokens: ['Trading', 'strategies', 'often', 'involve', 'analyzing', 'patterns', 'and', 'executing', 'trades', 'based', 'on', 'predicted', 'market', 'movements', '.', 'Successful', 'traders', 'analyze', 'trends', 'and', 'volatility', 'to', 'make', 'informed', 'decisions', '.']
 ```
@@ -300,13 +299,11 @@ print("Original Text:", perovskite_text)
 print("Lemmatized Text:", ' '.join(lemmas))
 ```
 
+```output
+Original Text: Perovskite nanocrystals are a class of semiconductor nanocrystals with unique properties that distinguish them from traditional quantum dots. These nanocrystals have an ABX3 composition, where 'A' can be cesium, methylammonium (MA), or formamidinium (FA); 'B' is typically lead or tin; and 'X' is a halogen ion like chloride, bromide, or iodide. Their remarkable optoelectronic properties, such as high photoluminescence quantum yields and tunable emission across the visible spectrum, make them ideal for applications in light-emitting diodes, lasers, and solar cells.
 
-Output: 
-
-**Original Text**: Perovskite nanocrystals are a class of semiconductor nanocrystals with unique properties that distinguish them from traditional quantum dots. These nanocrystals have an ABX3 composition, where 'A' can be cesium, methylammonium (MA), or formamidinium (FA); 'B' is typically lead or tin; and 'X' is a halogen ion like chloride, bromide, or iodide. Their remarkable optoelectronic properties, such as high photoluminescence quantum yields and tunable emission across the visible spectrum, make them ideal for applications in light-emitting diodes, lasers, and solar cells.
-
-**Lemmatized Text**: Perovskite nanocrystal be a class of semiconductor nanocrystal with unique property that distinguish they from traditional quantum dot . these nanocrystal have an ABX3 composition , where ' A ' can be cesium , methylammonium ( MA ) , or formamidinium ( FA ) ; ' b ' be typically lead or tin ; and ' x ' be a halogen ion like chloride , bromide , or iodide . their remarkable optoelectronic property , such as high photoluminescence quantum yield and tunable emission across the visible spectrum , make they ideal for application in light - emit diode , laser , and solar cell .
-
+Lemmatized Text: Perovskite nanocrystal be a class of semiconductor nanocrystal with unique property that distinguish they from traditional quantum dot . these nanocrystal have an ABX3 composition , where ' A ' can be cesium , methylammonium ( MA ) , or formamidinium ( FA ) ; ' b ' be typically lead or tin ; and ' x ' be a halogen ion like chloride , bromide , or iodide . their remarkable optoelectronic property , such as high photoluminescence quantum yield and tunable emission across the visible spectrum , make they ideal for application in light - emit diode , laser , and solar cell .
+```
 
 
 
@@ -465,9 +462,9 @@ filtered_sentence = [word for word in doc if not word.is_stop]
 print("Filtered sentence:", filtered_sentence)
 ```
 
-Output: 
+```output
 Filtered sentence: [Perovskite, nanocrystals, class, semiconductor, nanocrystals, unique, properties, distinguish, traditional, quantum, dots, ., nanocrystals, ABX3, composition, ,, ', ', cesium, ,, methylammonium, (, MA, ), ,, formamidinium, (, FA, ), ;, ', B, ', typically, lead, tin, ;, ', X, ', halogen, ion, like, chloride, ,, bromide, ,, iodide, ., remarkable, optoelectronic, properties, ,, high, photoluminescence, quantum, yields, tunable, emission, visible, spectrum, ,, ideal, applications, light, -, emitting, diodes, ,, lasers, ,, solar, cells, .]
-
+```
 
 List comprehensions provide a convenient method for rapidly generating lists based on a straightforward condition. 
 
