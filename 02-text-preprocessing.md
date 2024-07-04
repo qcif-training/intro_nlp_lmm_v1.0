@@ -139,8 +139,8 @@ Teamwork: Why is text preprocessing necessary for NLP tasks? Think of some examp
 
 Q: Use the spaCy library to perform sentence segmentation and tokenization on the following text:
 
-```python
-text: "The research (Ref. [1]) focuses on developing perovskite nanocrystals with a bandgap of 1.5 eV, suitable for solar cell applications!". 
+```
+"The research (Ref. [1]) focuses on developing perovskite nanocrystals with a bandgap of 1.5 eV, suitable for solar cell applications!" 
 ```
 Print the number of sentences and tokens in the text, and the list of sentences and tokens. You can use the following code to load the *spaCy* library and the English language model:
 
@@ -162,7 +162,7 @@ import spacy
 nlp = spacy.load("en_core_web_sm")
 
 # Define the text with marks, letters, and numbers:
-text = "The research (Ref. [1]) focuses on developing perovskite nanocrystals with a bandgap of 1.5 eV, suitable for solar cell applications.!"
+text = "The research (Ref. [1]) focuses on developing perovskite nanocrystals with a bandgap of 1.5 eV, suitable for solar cell applications!"
 
 # Process the text with spaCy
 doc = nlp(text)
@@ -185,7 +185,14 @@ tokens = [token.text for token in doc]
 print("Tokens:")
 print(tokens)
 ```
-
+```output
+Original text: The research (Ref. [1]) focuses on developing perovskite nanocrystals with a bandgap of 1.5 eV, suitable for solar cell applications.!
+Sentences:
+The research (Ref.
+[1]) focuses on developing perovskite nanocrystals with a bandgap of 1.5 eV, suitable for solar cell applications.!
+Tokens:
+['The', 'research', '(', 'Ref', '.', '[', '1', ']', ')', 'focuses', 'on', 'developing', 'perovskite', 'nanocrystals', 'with', 'a', 'bandgap', 'of', '1.5', 'eV', ',', 'suitable', 'for', 'solar', 'cell', 'applications', '.', '!']
+```
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
 
