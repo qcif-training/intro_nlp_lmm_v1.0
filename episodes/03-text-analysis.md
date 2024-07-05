@@ -144,11 +144,11 @@ Q: How can you interpret the labels in the output?
 :::::::::::::::: solution
 
 A: You can use the following code to get information about each one of the labels. For example, we want to know what GPE represents here. We can use *explain()* to get the required information:
-spacy.explain(‘GPE’)
+spacy.explain('GPE')
 
 ```python
 
-spacy.explain(‘GPE’)
+spacy.explain('GPE')
 
 ```
 
