@@ -499,8 +499,11 @@ A:
 import spacy
 nlp = spacy.load("en_core_web_sm")
 doc = nlp("This is a very simple and short sentence.")
-filtered_sentence = [word for words in doc if not word.is_stop]
+filtered_sentence = [word for word in doc if not word.is_stop]
 print("Filtered sentence:", filtered_sentence)
+```
+```output
+Filtered sentence: [simple, short, sentence, .]
 ```
 
 :::::::::::::::::::::::::
