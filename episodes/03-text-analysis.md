@@ -100,8 +100,8 @@ Use for loop to print all the named entities in the document:
 
 doc = nlp(text)
 
-For ent in doc.ents:
-    Print(ent.text, ent.label_)
+for ent in doc.ents:
+    print(ent.text, ent.label_)
 
 ```
 
