@@ -107,9 +107,7 @@ For ent in doc.ents:
 
 The results will be:
 
-```
-
-output:
+```output
 
 Australian Shares Exchange Ltd ORG
 ASX ORG
@@ -152,8 +150,8 @@ spacy.explain(‘GPE’)
 
 ```
 
-```
-Output: ‘Countries, cities, states’
+```output
+ ‘Countries, cities, states’
 
 ```
 
