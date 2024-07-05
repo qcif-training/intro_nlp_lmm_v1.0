@@ -207,7 +207,7 @@ Teamwork: To better understand how it works let’s Match tokens from the provid
 ```python
 sentence_to_tokenize = sentences[0]
 # Tokenize the chosen sentence by using a list comprehension:
-tokens = [token.perovskite_text for token in sentence_to_tokenize]
+tokens = [token.text for token in sentence_to_tokenize]
 # We can print the tokens:
 print(tokens)
 ```
