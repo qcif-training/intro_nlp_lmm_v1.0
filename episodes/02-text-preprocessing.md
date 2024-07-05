@@ -445,7 +445,10 @@ print("Original text:", text)
 lemmatized_text = " ".join([token.lemma_ for token in doc])
 print("Lemmatized text:", lemmatized_text)
 ```
-
+```output
+Original text: Perovskite nanocrystals are a promising class of materials for optoelectronic applications due to their tunable bandgaps and high photoluminescence efficiencies.
+Lemmatized text: Perovskite nanocrystal be a promising class of material for optoelectronic application due to their tunable bandgap and high photoluminescence efficiency .
+```
 :::::::::::::::::::::::::
 :::::::::::::::::::::::::::::::::::::::::::::::
 
