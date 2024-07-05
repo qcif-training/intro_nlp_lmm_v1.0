@@ -46,7 +46,7 @@ Teamwork: Name some of the common techniques in text analysis and associating li
 
 
 
-## 3.1. Named Entity Recognition
+## 3.2. Named Entity Recognition
 
 Named Entity Recognition is a process of identifying and classifying key elements in text into predefined categories. The categories could be names of persons, organizations, locations, expressions of times, quantities, monetary values, percentages, etc. Next, let’s discuss how it works. 
 
@@ -270,7 +270,7 @@ NER helps in quickly finding specific information in large datasets, which is pa
 :::
 
 
-## 3.2. Topic Modeling
+## 3.3. Topic Modeling
 
 Topic Modeling is an unsupervised model for discovering the abstract “topics” that occur in a collection of documents. It is useful in understanding the main themes of a large corpus of text. To better understand this and to find the connection between concepts we have learned so far, let’s match the following terms to their brief definitions:
 
@@ -600,7 +600,7 @@ LDA relies on statistical analysis of documents to discover hidden topics. With 
 :::
 
 
-## 3.3. Text Summarization
+## 3.4. Text Summarization
 
 
 Text summarization in NLP is the process of creating a concise and coherent version of a longer text document, preserving its key information. There are two primary approaches to text summarization:
