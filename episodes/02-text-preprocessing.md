@@ -191,7 +191,7 @@ print(tokens)
 
 
 
-## 2.2. Tokeniziation
+## 2.2. Tokenization
 
 As already mentioned, in the first episode, Tokenization breaks down text into individual words or tokens, which is a fundamental step for many NLP tasks.
 
