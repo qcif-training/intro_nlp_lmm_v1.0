@@ -418,10 +418,12 @@ tokens = simple_preprocess(text)
 dictionary = corpora.Dictionary([tokens])
 corpus = [dictionary.doc2bow(tokens)]
 model = LdaModel(corpus, num_topics=2, id2word=dictionary)
-print(text)
 print(model.print_topics())
 
 
+```
+```output
+[(0, '0.065*"the" + 0.025*"asx" + 0.024*"of" + 0.023*"and" + 0.015*"to" + 0.015*"in" + 0.014*"on" + 0.013*"market" + 0.011*"is" + 0.010*"trading"'), (1, '0.051*"the" + 0.024*"in" + 0.019*"and" + 0.018*"on" + 0.017*"asx" + 0.014*"of" + 0.013*"to" + 0.011*"exchange" + 0.011*"is" + 0.011*"market"')]
 ```
 
 :::::::::::::::::::::::::
