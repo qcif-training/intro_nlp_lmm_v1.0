@@ -361,7 +361,9 @@ topics = lda_model.print_topics(num_words=4)
     for topic in topics:
     print(topic)
 ```
-
+```output
+(0, '0.059*"the" + 0.022*"asx" + 0.021*"and" + 0.020*"of"')
+```
 
 ::::::::::::::::::::::::::::::::::::: challenge
 
