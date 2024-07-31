@@ -294,11 +294,9 @@ After the analysis is completed, you can print out the results:
 ```python
 
 print(f"Sentiment: {sentiment[0]['label']}, Confidence: {sentiment[0]['score']:.2f}")
-
-# Output
-
-Output: Sentiment: POSITIVE, Confidence: 1.00
-
+```
+```output
+Sentiment: POSITIVE, Confidence: 1.00
 ```
 
 In this example, the sentiment analysis pipeline from the Hugging Face library is used to analyze the sentiment of a research paper abstract. The model predicts the sentiment as positive, negative, or neutral, along with a confidence score. This can be particularly useful for gauging the reception of research papers in a field.
@@ -340,7 +338,9 @@ vader_sentiment = analyzer.polarity_scores(text)
 
 # Print the sentiment:
 print(f"Sentiment: {vader_sentiment}")
-Output: Sentiment: {'neg': 0.069, 'neu': 0.818, 'pos': 0.113, 'compound': 0.1779}
+```
+```output
+Sentiment: {'neg': 0.069, 'neu': 0.818, 'pos': 0.113, 'compound': 0.1779}
 ```
 
 :::
@@ -392,12 +392,8 @@ text = "This book is amazing. It is well-written, engaging, and informative. I l
 print(text)
 print(sentiment_analysis(text))
 ```
-Output:
-
-```python
-
-output: "Perovskite nanocrystals have emerged as a promising class of materials for next-generation optoelectronic devices due to their unique properties. Their crystal structure allows for tunable bandgaps, which are the energy differences between occupied and unoccupied electronic states. This tunability enables the creation of materials that can absorb and emit light across a wide range of the electromagnetic spectrum, making them suitable for applications like solar cells, light-emitting diodes (LEDs), and lasers."
-
+```output
+This book is amazing. It is well-written, engaging, and informative. I learned a lot from reading it and I highly recommend it to anyone interested in natural language processing.
 [{'label': 'POSITIVE', 'score': 0.9998656511306763}]
 ```
 
@@ -491,11 +487,9 @@ Now we can perform summarization and print the results:
 summary = summarizer(text, max_length=130, min_length=30, do_sample=False)
 # Print the summary:
 print("Summary:", summary[0]['summary_text'])
-
-
-Output: 
-
-
+```
+```output
+Summary:  UNIST researchers have unveiled the world’s most efficient quantum dot (QD) solar cell . They have demonstrated exceptional performance, retaining their efficiency even after long-term storage . This remarkable achievement represents the highest efficiency among quantum dot solar cells recognized by the National Renewable Energy Laboratory (NREL) in the United States .
 ```
 
 
@@ -532,9 +526,13 @@ summary = summarizer(parser.document, 5)
 
 for sentence in summary:
     print(sentence)
-
-Output:
-
+```
+```output
+This cutting-edge QD solution and device have demonstrated exceptional performance, retaining their efficiency even after long-term storage.
+Organic PQDs face notable challenges, including defects in their crystals and surfaces during the substitution process.
+In this study, the research team employed an alkyl ammonium iodide-based ligand exchange strategy, effectively substituting ligands for organic PQDs with excellent solar utilization.
+Moreover, these solar cells demonstrate exceptional stability, maintaining their performance even after long-term storage for over two years.
+The findings of this study, co-authored by Dr. Javid Aqoma Khoiruddin and Sang-Hak Lee, have been published online in Nature Energy on January 27, 2024.
 ```
 
 Sumy extracts key sentences from the original text, which can be quicker but may lack the cohesiveness of an abstractive summary. On the other hand, Transformer is suitable for generating a new summary that captures the text’s essence in a coherent and often more readable form.
@@ -542,6 +540,7 @@ Sumy extracts key sentences from the original text, which can be quicker but may
 
 :::
 
+Summary:  UNIST researchers have unveiled the world’s most efficient quantum dot (QD) solar cell . They have demonstrated exceptional performance, retaining their efficiency even after long-term storage . This remarkable achievement represents the highest efficiency among quantum dot solar cells recognized by the National Renewable Energy Laboratory (NREL) in the United States .
 
 
 ::::::::::::::::::::::::::::::::::::: challenge
